@@ -1,0 +1,141 @@
+  [1m[35m (450.3ms)[0m  [1m[35mCREATE DATABASE "dropify_development" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (319.5ms)[0m  [1m[35mCREATE DATABASE "dropify_test" ENCODING = 'unicode'[0m
+  ↳ bin/rails:9
+  [1m[35m (37.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:9
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to CreateUsers (20190528173920)
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (18.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "username" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "birth_month" character varying NOT NULL, "birth_day" integer NOT NULL, "birth_year" integer NOT NULL, "gender" character varying NOT NULL, "country" character varying, "image_url" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  ↳ db/migrate/20190528173920_create_users.rb:3
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_username" ON "users"  ("username")[0m
+  ↳ db/migrate/20190528173920_create_users.rb:17
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_session_token" ON "users"  ("session_token")[0m
+  ↳ db/migrate/20190528173920_create_users.rb:18
+  [1m[35m (2.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_password_digest" ON "users"  ("password_digest")[0m
+  ↳ db/migrate/20190528173920_create_users.rb:19
+  [1m[36mActiveRecord::SchemaMigration Create (3.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190528173920"]]
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Create (2.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-05-28 18:02:08.263926"], ["updated_at", "2019-05-28 18:02:08.263926"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_advisory_unlock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (2.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2019-05-28 15:37:16 -0400
+  [1m[35m (4.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 82ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/3fb3a2c58e7e258a/variables" for ::1 at 2019-05-28 15:37:17 -0400
+Started GET "/" for ::1 at 2019-05-28 15:40:53 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 88ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/2d0515a6724249c7/variables" for ::1 at 2019-05-28 15:40:54 -0400
+Started GET "/" for ::1 at 2019-05-28 15:41:42 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 87ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/40ef4c04ba85f09b/variables" for ::1 at 2019-05-28 15:41:42 -0400
+Started GET "/" for ::1 at 2019-05-28 15:43:08 -0400
+Processing by StaticPagesController#root as HTML
+Completed 406 Not Acceptable in 85ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::UnknownFormat - StaticPagesController#root is missing a template for this request format and variant.
+
+request.formats: ["text/html"]
+request.variant: []
+
+NOTE! For XHR/Ajax or API requests, this action would normally respond with 204 No Content: an empty white screen. Since you're loading it in a web browser, we assume that you expected to actually render a template, not nothing, so we're showing an error to be extra-clear. If you expect 204 No Content, carry on. That's what you'll get from an XHR or API request. Give it a shot.:
+
+Started POST "/__better_errors/03d57a9023b68c23/variables" for ::1 at 2019-05-28 15:43:08 -0400
+Started GET "/" for ::1 at 2019-05-28 15:43:32 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (3.0ms)
+Started GET "/" for ::1 at 2019-05-28 15:43:34 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+Completed 200 OK in 3396ms (Views: 3393.4ms | ActiveRecord: 0.0ms)
+
+
+Completed 200 OK in 1490ms (Views: 1487.9ms | ActiveRecord: 0.0ms)
+
+
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2019-05-28 16:51:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.0ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 17:11:39 -0400
+  [1m[35m (3.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (3.1ms)
+Completed 200 OK in 3414ms (Views: 3366.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2019-05-28 17:12:02 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+Completed 200 OK in 87ms (Views: 85.4ms | ActiveRecord: 0.0ms)
+
+

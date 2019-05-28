@@ -113,3 +113,13 @@ Completed 200 OK in 3396ms (Views: 3393.4ms | ActiveRecord: 0.0ms)
 Completed 200 OK in 1490ms (Views: 1487.9ms | ActiveRecord: 0.0ms)
 
 
+  [1m[36mUser Load (6.7ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Started GET "/" for ::1 at 2019-05-28 16:51:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.0ms)
+Completed 200 OK in 72ms (Views: 67.9ms | ActiveRecord: 0.0ms)
+
+

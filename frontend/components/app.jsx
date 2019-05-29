@@ -4,7 +4,8 @@ import { Provider } from 'react-redux';
 
 
 const App = () => (
-    <div>hello!</div>
+    <div>hello! DROP</div>
+    <FrontPageHeader /> 
 )
 
 export default App;

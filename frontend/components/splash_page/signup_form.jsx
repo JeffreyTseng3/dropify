@@ -1,10 +1,13 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom'
+
 
 class SignupForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            email: "",
             username: "",
             password: ""
         };
@@ -25,15 +28,18 @@ class SignupForm extends React.Component {
     }
 
     render() {
+
         return (<>
-            <h1>Signup</h1>
+       
+            <h1>Sign up with your email address</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <label> USERNAME
+                <label> Email
                             <input
                         type="text"
-                        value={this.state.username}
-                        onChange={this.handleInput('username')}
+                        value={this.state.email}
+                        onChange={this.handleInput('email')}
+                        placeholder="email"
                     />
                 </label>
                 <label> PASSWORD
@@ -43,9 +49,26 @@ class SignupForm extends React.Component {
                         onChange={this.handleInput('password')}
                     />
                 </label>
-                <input type="submit" value="signup!" />
-                {/* <Link to="/browse"></Link> */}
+                <label> What should we call you?
+                            <input
+                        type="text"
+                        value={this.state.username}
+                        onChange={this.handleInput('username')}
+                    />
+                </label>
+            
+                    <input type="radio" name="gender" value="male" /> Male
+                    <input type="radio" name="gender" value="female"/> Female
+                    <input type="radio" name="gender" value="other"/> Non-binary 
+             
+                <input type="submit" value="SIGN UP" />
+
             </form>
+
+            <div>
+                <p>Already have an account? LoginButton
+                </p>
+            </div>
 
         </>)
     }

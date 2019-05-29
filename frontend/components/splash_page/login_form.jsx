@@ -6,7 +6,8 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             username: "",
-            password: ""
+            password: "",
+            
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -31,23 +32,25 @@ class LoginForm extends React.Component {
                 <h1>Login</h1>
                 
                 <form onSubmit={this.handleSubmit}>
-                    <label> USERNAME
-                            <input
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.handleInput('username')}
-                        />
+                    <label> Email
+                        <input type="text"
+                            value={this.state.email}/>
                     </label>
-                    <label> PASSWORD
+                    <label> Password
                             <input
                             type="password"
                             value={this.state.password}
                             onChange={this.handleInput('password')}
                         />
                     </label>
-                    <input type="submit" value="login!" />
+                    
+                    <input type="submit" value="LOG IN" />
                     {/* <Link to="/browse"></Link> */}
                 </form>
+                <div>
+                    <p>Don't have an account? SignupButton</p>
+                    
+                </div>
             </>
         );
     }

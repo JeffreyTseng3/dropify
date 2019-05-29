@@ -7,6 +7,7 @@ import SplashPageHeader from "./splash_page/splash_page_header";
 const App = () => {
     return (
     <>
+            
         <div></div>
         <SplashPageHeader /> 
     </>

@@ -8,8 +8,8 @@ import { Link } from 'react-router-dom';
 const SplashPageHeader = () => {
     return (
         <>  <span>DROPIFY</span>
-            <Link className="login-btn" to="/login">LOGIN</Link>
-            <Link className="signup-btn" to="/signup">SIGNUP</Link>
+            <Link className="login-btn" to="/login">Log In</Link>
+            <Link className="signup-btn" to="/signup">Sign Up</Link>
             <Route path="/login" component={LoginFormContainer}/>
             <Route path="/signup" component={SignupFormContainer}/>
         </>

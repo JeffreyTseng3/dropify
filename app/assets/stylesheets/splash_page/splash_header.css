@@ -1,0 +1,57 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0.8;
+}
+
+.splash-header-navbar {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-around;
+    /* font-family:  Helvetica, Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    min-height: 80px;
+    border: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+    
+}
+
+.splash-logo-text-combo {
+    display: flex;
+    /* margin-left: 180px; */
+}
+
+.splash-logo-text {
+
+    font-size: 20px;
+    display: flex; 
+    align-items: center;
+    margin-left: 5px;
+    
+}
+
+.splash-header-login-signup-combo {
+
+    width: 150px;
+    /* margin-right: 200px; */
+}
+
+.login-btn {
+    padding: 5px;
+}
+.signup-btn {
+    padding: 5px;
+}
+
+a:visited{
+  color:white;
+}
+.login-btn:hover {
+    color: #1ED760;
+}
+.signup-btn:hover {
+    color: #1ED760;
+}
+

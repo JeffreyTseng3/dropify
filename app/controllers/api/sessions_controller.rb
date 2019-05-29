@@ -1,10 +1,13 @@
  def create
     @user = User.find_by_credentials(
-      params[:user][:username],
+      # debugger
+      # keyinginto info to return an email or username
+      params[:user][:info],
       params[:user][:password]
     )
 
     if @user
+      # render is the return of the api request
       login!(@user)
       render "api/users/show"
     else

@@ -1,11 +1,12 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+// import logo from "../../../app/assets/images/"
 
 class LoginForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            username: "",
+            info: "",
             password: "",
             
         };
@@ -29,13 +30,15 @@ class LoginForm extends React.Component {
     render() {
         return (
             <> 
+                <Link to="/">  <i className="fab fa-spotify"></i> </Link>
                 {/* Login information */}
                 <h1>Login</h1>
                 <form onSubmit={this.handleSubmit}>
                     {/* email address or username */}
                     <label> 
                         <input type="text"
-                            value={this.state.email}
+                            value={this.state.info}
+                            onChange={this.handleInput('info')}
                             placeholder="Email address or username"/>
                     </label>
                     {/* password */}
@@ -49,7 +52,6 @@ class LoginForm extends React.Component {
                     </label>
                     {/* submit */}
                     <input type="submit" value="LOG IN" />
-                    {/* <Link to="/browse"></Link> */}
                 </form>
 
                 {/* sign up button */}

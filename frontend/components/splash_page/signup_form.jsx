@@ -8,8 +8,12 @@ class SignupForm extends React.Component {
         super(props);
         this.state = {
             email: "",
+            password: "",
             username: "",
-            password: ""
+            birth_month: "",
+            birth_day: "",
+            birth_year: "",
+            gender: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -34,33 +38,62 @@ class SignupForm extends React.Component {
             <h1>Sign up with your email address</h1>
 
             <form onSubmit={this.handleSubmit}>
-                <label> Email
-                            <input
+                {/* email */}
+                <label for="signup-form-email"> 
+                    <input
                         type="text"
                         value={this.state.email}
                         onChange={this.handleInput('email')}
                         placeholder="email"
                     />
                 </label>
-                <label> PASSWORD
-                            <input
+                {/* password */}
+                <label for="signup-form-password"> 
+                    <input
                         type="password"
                         value={this.state.password}
                         onChange={this.handleInput('password')}
+                        placeholder="Password"
                     />
                 </label>
-                <label> What should we call you?
-                            <input
+                {/* username */}
+                <label for="signup-form-username">
+                    <input
                         type="text"
                         value={this.state.username}
                         onChange={this.handleInput('username')}
+                        placeholder="What should we call you?"
                     />
                 </label>
-            
+                {/* birth date */}
+                <p> 
+                    {/* month */}
+                    <label for="signup-form-birth-month-select">
+
+                    </label>
+                    {/* day */}
+                    <label for="signup-form-birth-day-select">
+                        <input 
+                        type="text"
+                        value={this.state.birth_day}
+                        onChange={this.handleInput('birth_day')}
+                        placeholder="Day"
+                        />
+                    </label>
+                    {/* year */}
+                    <label for="signup-form-birth-year-select" >
+
+                    </label>
+                </p>
+
+
+                {/* gender */}
+                <label > 
                     <input type="radio" name="gender" value="male" /> Male
                     <input type="radio" name="gender" value="female"/> Female
-                    <input type="radio" name="gender" value="other"/> Non-binary 
-             
+                    <input type="radio" name="gender" value="non-binary"/> Non-binary 
+                </label>
+                {/* submit */}
                 <input type="submit" value="SIGN UP" />
 
             </form>

@@ -21,9 +21,10 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         const user = Object.assign({}, this.state);
-        this.props.login(user);
-        // ADD HISTORY TO BROWSE
+        debugger
+        this.props.login(user).then(() => this.props.history.push("/main"));
     }
 
 

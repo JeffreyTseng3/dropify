@@ -26,13 +26,17 @@ class SignupForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        
         const user = Object.assign({}, this.state);
-        this.props.login(user);
-        // ADD HISTORY TO BROWSE
+        user.birth_day = Number(user.birth_day);
+        user.birth_year = Number(user.birth_year);
+        
+        
+        this.props.signup(user).then(() => this.props.history.push('/main'));
+        
     }
 
     render() {
-
         return (<>
                 <div className="signup-logo-text-combo">
                     <Link to="/">
@@ -81,7 +85,7 @@ class SignupForm extends React.Component {
                         <div className="signup-dob">
                             {/* month */}
                             <label className="signup-form-birth-month-select">
-                                <select id="select-months">
+                                <select onChange={this.handleInput('birth_month')} id="select-months">
                                     <option value="">Month</option>
                                     <option value="01">January</option>
                                     <option value="02">February</option>
@@ -123,9 +127,9 @@ class SignupForm extends React.Component {
                         {/* gender */}
                         <div className="gender-btns">
                             
-                            <div className="gender-btn"><input className="gender-male" type="radio" name="gender" value="male" />Male</div>
-                            <div className="gender-btn"><input className="gender-female" type="radio" name="gender" value="female" />Female</div> 
-                            <div className="gender-btn"><input className="gender-non-binary" type="radio" name="gender" value="non-binary" />Non-binary </div>  
+                            <div className="gender-btn"><input className="gender-male" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" />Male</div>
+                            <div className="gender-btn"><input className="gender-female" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />Female</div> 
+                            <div className="gender-btn"><input className="gender-non-binary" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />Non-binary </div>  
                             
                         </div>
                         {/* submit */}

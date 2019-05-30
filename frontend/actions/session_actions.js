@@ -13,15 +13,19 @@ export const logoutCurrentUser = () => ({
     type: LOGOUT_CURRENT_USER,
 });
 
-export const receiveErrors = errors => ({
+export const receiveErrors = errors => {
+    return {
     type: RECEIVE_SESSION_ERRORS,
     errors
-});
+}};
 
 export const signup = formUser => dispatch => {
+ 
     return SessionAPIUtil.signup(formUser)
         .then(
+
             user => {
+          
             return dispatch(receiveCurrentUser(user))
             }, err => {
             return dispatch(receiveErrors(err.responseJSON))
@@ -29,9 +33,11 @@ export const signup = formUser => dispatch => {
 };
 
 export const login = formUser => dispatch => {
+    debugger
     return SessionAPIUtil.login(formUser)
         .then(
             user => {
+                debugger
             return dispatch(receiveCurrentUser(user))
             }, err => {
             return dispatch(receiveErrors(err.responseJSON))

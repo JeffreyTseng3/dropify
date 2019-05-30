@@ -1,6 +1,6 @@
  def create
     @user = User.find_by_credentials(
-      # debugger
+      debugger
       # keyinginto info to return an email or username
       params[:user][:info],
       params[:user][:password]

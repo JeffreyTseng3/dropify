@@ -137,9 +137,7 @@ var signup = function signup(formUser) {
 };
 var login = function login(formUser) {
   return function (dispatch) {
-    debugger;
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](formUser).then(function (user) {
-      debugger;
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
       return dispatch(receiveErrors(err.responseJSON));
@@ -186,12 +184,12 @@ var App = function App() {
     exact: true,
     path: "/",
     component: _splash_page_splash_page_header__WEBPACK_IMPORTED_MODULE_3__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
-    path: "/login",
-    component: _splash_page_login_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
-  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
     path: "/signup",
     component: _splash_page_signup_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
+    path: "/login",
+    component: _splash_page_login_form_container__WEBPACK_IMPORTED_MODULE_4__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["ProtectedRoute"], {
     path: "/main",
     component: _main_main_page_container__WEBPACK_IMPORTED_MODULE_6__["default"]
@@ -399,9 +397,7 @@ function (_React$Component) {
       var _this3 = this;
 
       e.preventDefault();
-      debugger;
       var user = Object.assign({}, this.state);
-      debugger;
       this.props.login(user).then(function () {
         return _this3.props.history.push("/main");
       });
@@ -1159,7 +1155,7 @@ var signup = function signup(user) {
 var login = function login(user) {
   return $.ajax({
     method: 'POST',
-    url: '/api/session',
+    url: 'api/session',
     data: {
       user: user
     }

@@ -21,9 +21,8 @@ class LoginForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
         const user = Object.assign({}, this.state);
-        debugger
+        
         this.props.login(user).then(() => this.props.history.push("/main"));
     }
 

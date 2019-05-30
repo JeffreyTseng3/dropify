@@ -33,11 +33,11 @@ export const signup = formUser => dispatch => {
 };
 
 export const login = formUser => dispatch => {
-    debugger
+
     return SessionAPIUtil.login(formUser)
         .then(
             user => {
-                debugger
+       
             return dispatch(receiveCurrentUser(user))
             }, err => {
             return dispatch(receiveErrors(err.responseJSON))

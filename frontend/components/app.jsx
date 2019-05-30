@@ -10,9 +10,8 @@ const App = () => {
     return (
     <>
         <Route exact path="/" component={SplashPageHeader}/>
-        <Route path="/login" component={LoginFormContainer} />
-        {/* <AuthRoute path="/signup" component={SignupFormContainer} /> */}
-        <Route path="/signup" component={SignupFormContainer} />
+        <AuthRoute path="/signup" component={SignupFormContainer} />
+        <AuthRoute path="/login" component={LoginFormContainer} />
         <ProtectedRoute path="/main" component={MainPageContainer} />
 
     </>

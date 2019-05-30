@@ -299,26 +299,52 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-logo-text-combo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
-      }, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-spotify"
-      }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Login"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
-        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-spotify fa-3x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "login-logo-text"
+      }, "DROPIFY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "login-form-greeting"
+      }, "To continue, log in to Dropify."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        onSubmit: this.handleSubmit,
+        className: "login-form"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-info"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
+        className: "login-email-user-input",
         value: this.state.info,
         onChange: this.handleInput('info'),
         placeholder: "Email address or username"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
+        className: "login-password-input",
         value: this.state.password,
         onChange: this.handleInput('password'),
         placeholder: "Password"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "remember-me-checkbox",
+        type: "checkbox"
+      }), "Remember me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
+        className: "login-submit-btn",
         value: "LOG IN"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Don't have an account? SignupButton")));
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-no-account-text"
+      }, " Don't have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "login-page-sign-up-btn",
+        to: "/signup"
+      }, "SIGN UP FOR SPOTIFY"))));
     }
   }]);
 
@@ -444,18 +470,31 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-logo-text-combo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
-      }, "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-spotify"
-      }), " "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fab fa-spotify fa-3x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        to: "/"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "login-logo-text"
+      }, "DROPIFY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-master"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-page"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "signup-greeting-text"
+      }, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "signup-form",
         onSubmit: this.handleSubmit
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-email",
         type: "text",
         value: this.state.email,
         onChange: this.handleInput('email'),
-        placeholder: "email"
+        placeholder: "Email"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-password",
         type: "password",
@@ -468,9 +507,9 @@ function (_React$Component) {
         value: this.state.username,
         onChange: this.handleInput('username'),
         placeholder: "What should we call you?"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        htmlFor: "dob-label"
-      }, "Date of Birth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-dob"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
         className: "signup-form-birth-month-select"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         id: "select-months"
@@ -512,22 +551,41 @@ function (_React$Component) {
         value: this.state.birth_year,
         onChange: this.handleInput('birth_year'),
         placeholder: "Year"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "gender-btns"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "gender-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "gender-male",
         type: "radio",
         name: "gender",
         value: "male"
-      }), " Male", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "Male"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "gender-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "gender-female",
         type: "radio",
         name: "gender",
         value: "female"
-      }), " Female", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "Female"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "gender-btn"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "gender-non-binary",
         type: "radio",
         name: "gender",
         value: "non-binary"
-      }), " Non-binary"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "Non-binary ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
+        className: "signup-submit-btn",
         value: "SIGN UP"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Already have an account? LoginButton")));
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-switch-login"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-switch-login-text"
+      }, "Already have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "signup-switch-login-btn",
+        to: "/login"
+      }, " Log In")))));
     }
   }]);
 

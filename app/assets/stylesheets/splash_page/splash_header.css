@@ -1,0 +1,86 @@
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6);
+    opacity: 0.8;
+}
+
+.splash-header-navbar {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: space-between;
+    /* font-family:  Helvetica, Arial, sans-serif; */
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    min-height: 80px;
+    border: 0;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.splash-logo-text-combo {
+    display: flex;
+}
+
+.splash-logo-text {
+    font-size: 20px;
+    display: flex; 
+    align-items: center;
+    margin-left: 5px;  
+}
+
+.splash-header-login-signup-combo {
+    width: 150px;
+}
+
+.login-btn {
+    padding: 5px;
+}
+.signup-btn {
+    padding: 5px;
+}
+
+/* a:visited{
+  color:white;
+} */
+.login-btn:hover {
+    color: #1ED760;
+}
+.signup-btn:hover {
+    color: #1ED760;
+}
+
+.tophalf {
+    background: linear-gradient(#ef7380 ,#f39b69);
+    height: 660px;
+
+}
+.white-space {
+    height: 50px;
+    background: white;
+    position:relative;
+}
+.splash-img {
+    position: relative;
+}
+.get-premium {
+    background: #488172;
+    height: 480px;
+    position:relative;
+}
+.tophalf-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    /* position: relative; */
+    color:white;
+    margin-top: 250px;
+    z-index: 1;
+}
+.footer {
+   height: 450px; 
+   background:#000;
+    position:relative;
+
+}

@@ -1,0 +1,105 @@
+.login-page{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     font-family: 'Montserrat', sans-serif;
+}
+
+.login-logo-text-combo {
+    display: flex;
+    justify-content: center;
+    color: black;
+    border-bottom: rgb(217, 218, 220) solid 1px;
+    padding: 10px;
+     font-family: 'Montserrat', sans-serif;
+}
+
+.login-logo-text {
+    color: black;
+    display: flex;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 11px;
+    margin-left: 4px;
+}
+
+.login-form-greeting {
+    font-weight: bold;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.login-form {
+    display: flex;
+     align-content: center;
+     flex-direction: column;
+}
+
+.login-module {
+    width: 50%;
+    align-content: center;
+    flex-direction: column;
+}
+.login {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    margin-top: 5px;
+    border-bottom: rgb(217, 218, 220) solid 1px;
+}
+
+
+.login-info {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+
+.login-email-user-input{
+    width: 300px;
+    padding: 10px;
+    border: rgb(217, 218, 220) solid 1px;
+    margin: 10px;
+}
+.login-password-input{
+    width: 300px;
+    padding: 10px;
+    border: rgb(217, 218, 220) solid 1px;
+    margin: 10px;
+}
+
+.login-submit-btn {
+    background: #1ED760;
+    font-size: 14px;
+    border-radius: 500px;
+    color: white;
+    padding: 10px 50px;
+    font-weight: bold;
+}
+
+.login-no-account-text {
+    
+    font-weight: bold;
+    margin: 20px;
+}
+
+
+.login-page-sign-up-btn {
+
+    color: #616467;
+    box-shadow: inset 0 0 0 2px #616467;
+    background-color: transparent;
+    font-size: 14px;
+    line-height: 1;
+    border-radius: 500px;
+    padding: 16px 48px 18px;
+    border-width: 0;
+    letter-spacing: 2px;
+    min-width: 160px;
+    text-transform: uppercase;
+    white-space: normal;
+   font-weight: bold;
+}

@@ -12,19 +12,23 @@ class MainPage extends React.Component {
         
         let navDisplay = (
             <NavBar />
+            
         )
         
         let musicDisplay = (
             <MusicPlayerBar />
+            
         )
 
         return (<> 
         <div className="main-page-module"> 
             {navDisplay}
             {musicDisplay}
+            <Link onClick={this.props.logout} to="/">LOGOUT</Link>
 
 
         </div> 
+
             </>)
     }
 

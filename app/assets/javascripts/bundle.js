@@ -255,7 +255,10 @@ function (_React$Component) {
       var musicDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-module"
-      }, navDisplay, musicDisplay));
+      }, navDisplay, musicDisplay, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onClick: this.props.logout,
+        to: "/"
+      }, "LOGOUT")));
     }
   }]);
 
@@ -1174,7 +1177,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
-  window.store = store;
+  window.store = store; // window.logout = logout();
+
   window.getState = store.getState();
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store

@@ -9,7 +9,7 @@ class MainPage extends React.Component {
     }
 
     render() {
-        
+         
         let navDisplay = (
             <NavBar />
             

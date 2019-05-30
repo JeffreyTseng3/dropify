@@ -30,58 +30,62 @@ class SignupForm extends React.Component {
         const user = Object.assign({}, this.state);
         user.birth_day = Number(user.birth_day);
         user.birth_year = Number(user.birth_year);
-        
-        
         this.props.signup(user).then(() => this.props.history.push('/main'));
-        
     }
 
-    render() {
+    render() {    
+        let emailError = this.props.errors.includes("email") ? <div className="email-errors"> Please enter your email.</div> : null;
+        let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please choose your password.</div> : null;
+        let usernameError = this.props.errors.includes("username") ? <div className="username-errors">What should we call you?</div> : null;
+        let monthError = this.props.errors.includes("birth_month") ? <div className="month-errors">Please enter your birth month.</div> : null;
+        let dayError = this.props.errors.includes("birth_day") ? <div className="day-errors">Please enter your birth day.</div> : null;
+        let yearError = this.props.errors.includes("birth_year") ? <div className="year-errors">Please enter your birth year.</div> : null;
+        let genderError = this.props.errors.includes("gender") ? <div className="gender-errors">Please indicate your gender.</div> : null;
+        
         return (<>
+               
                 <div className="signup-logo-text-combo">
                     <Link to="/">
                         <i className="fab fa-spotify fa-3x"></i>
                     </Link>
                     <Link to="/"><span className="login-logo-text">DROPIFY</span></Link>
                 </div>
-                
+            
+            
+
             <div className="signup-master"> 
                 <div className="signup-page">
                     <h1 className="signup-greeting-text">Sign up with your email address</h1>
 
                     <form className="signup-form"onSubmit={this.handleSubmit}>
-                        {/* email */}
-                        <label> 
-                            <input
-                                className="signup-form-email"
-                                type="text"
-                                value={this.state.email}
-                                onChange={this.handleInput('email')}
-                                placeholder="Email"
-                            />
-                        </label>
-                        {/* password */}
-                        <label > 
-                            <input
-                                className="signup-form-password"
-                                type="password"
-                                value={this.state.password}
-                                onChange={this.handleInput('password')}
-                                placeholder="Password"
-                            />
-                        </label>
-                        {/* username */}
-                        <label>
-                            <input
-                                className="signup-form-username"
-                                type="text"
-                                value={this.state.username}
-                                onChange={this.handleInput('username')}
-                                placeholder="What should we call you?"
-                            />
-                        </label>
-                        {/* birth date */}
+                        <input
+                            className="signup-form-email"
+                            type="text"
+                            value={this.state.email}
+                            onChange={this.handleInput('email')}
+                            placeholder="Email"
+                        />
+                        {emailError}
+                     
+                        <input
+                            className="signup-form-password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.handleInput('password')}
+                            placeholder="Password"
+                        />
+                        {passwordError}
 
+                     
+                        <input
+                            className="signup-form-username"
+                            type="text"
+                            value={this.state.username}
+                            onChange={this.handleInput('username')}
+                            placeholder="What should we call you?"
+                        />
+                        {usernameError}
+                      
                         <div className="signup-dob">
                             {/* month */}
                             <label className="signup-form-birth-month-select">
@@ -101,7 +105,8 @@ class SignupForm extends React.Component {
                                     <option value="12">December</option>
                                 </select>
                             </label>
-                            {/* day */}
+                            
+                         
                             <label >
                                 <input 
                                 className="signup-form-birth-day-select"
@@ -111,7 +116,7 @@ class SignupForm extends React.Component {
                                 placeholder="Day"
                                 />
                             </label>
-                            {/* year */}
+                          
                             <label>
                                 <input 
                                     className="signup-form-birth-year-select"
@@ -122,16 +127,16 @@ class SignupForm extends React.Component {
                                 />
                             </label>
                         </div>
+                        {monthError}
+                        {dayError}
+                        {yearError}
 
-
-                        {/* gender */}
                         <div className="gender-btns">
-                            
                             <div className="gender-btn"><input className="gender-male" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" />Male</div>
                             <div className="gender-btn"><input className="gender-female" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />Female</div> 
                             <div className="gender-btn"><input className="gender-non-binary" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />Non-binary </div>  
-                            
                         </div>
+                        {genderError}
                         {/* submit */}
                         <input type="submit" className="signup-submit-btn" value="SIGN UP" />
                     </form>

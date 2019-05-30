@@ -24,10 +24,6 @@ module.exports = {
     devtool: 'source-map',
     resolve: {
         extensions: [".js", ".jsx", "*"]
-    },
-    
-    module.loaders = [
-        { test: /\.svg$/, loader: 'svg-loader?pngScale=2' }
-    ]
+    }
 };
 

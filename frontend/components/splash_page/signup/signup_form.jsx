@@ -14,6 +14,7 @@ class SignupForm extends React.Component {
             birth_day: "",
             birth_year: "",
             gender: ""
+            
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -33,15 +34,21 @@ class SignupForm extends React.Component {
         this.props.signup(user).then(() => this.props.history.push('/main'));
     }
 
+    componentDidMount() {
+        this.forceUpdate();
+    }
+
+
+
     render() {    
-        let emailError = this.props.errors.includes("email") ? <div className="email-errors"> Please enter your email.</div> : null;
-        let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please choose your password.</div> : null;
-        let usernameError = this.props.errors.includes("username") ? <div className="username-errors">What should we call you?</div> : null;
-        let monthError = this.props.errors.includes("birth_month") ? <div className="month-errors">Please enter your birth month.</div> : null;
-        let dayError = this.props.errors.includes("birth_day") ? <div className="day-errors">Please enter your birth day.</div> : null;
-        let yearError = this.props.errors.includes("birth_year") ? <div className="year-errors">Please enter your birth year.</div> : null;
-        let genderError = this.props.errors.includes("gender") ? <div className="gender-errors">Please indicate your gender.</div> : null;
-        
+        let emailError = this.props.errors.includes("email") ? <div className="signup-email-errors"> Please enter your email.</div> : null;
+        let passwordError = this.props.errors.includes("password") ? <div className="signup-password-errors">Please choose your password.</div> : null;
+        let usernameError = this.props.errors.includes("username") ? <div className="signup-username-errors">What should we call you?</div> : null;
+        let monthError = this.props.errors.includes("birth_month") ? <div className="signup-month-errors">Please enter your birth month.</div> : null;
+        let dayError = this.props.errors.includes("birth_day") ? <div className="signup-day-errors">Please enter your birth day.</div> : null;
+        let yearError = this.props.errors.includes("birth_year") ? <div className="signup-year-errors">Please enter your birth year.</div> : null;
+        let genderError = this.props.errors.includes("gender") ? <div className="signup-gender-errors">Please indicate your gender.</div> : null;
+
         return (<>
                
                 <div className="signup-logo-text-combo">
@@ -57,7 +64,7 @@ class SignupForm extends React.Component {
                 <div className="signup-page">
                     <h1 className="signup-greeting-text">Sign up with your email address</h1>
 
-                    <form className="signup-form"onSubmit={this.handleSubmit}>
+                    <form className="signup-form" onSubmit={this.handleSubmit}>
                         <input
                             className="signup-form-email"
                             type="text"
@@ -88,8 +95,8 @@ class SignupForm extends React.Component {
                       
                         <div className="signup-dob">
                             {/* month */}
-                            <label className="signup-form-birth-month-select">
-                                <select onChange={this.handleInput('birth_month')} id="select-months">
+
+                                <select className="signup-form-birth-month-select" onChange={this.handleInput('birth_month')} id="select-months">
                                     <option value="">Month</option>
                                     <option value="01">January</option>
                                     <option value="02">February</option>
@@ -104,10 +111,9 @@ class SignupForm extends React.Component {
                                     <option value="11">November</option>
                                     <option value="12">December</option>
                                 </select>
-                            </label>
+                  
                             
                          
-                            <label >
                                 <input 
                                 className="signup-form-birth-day-select"
                                 type="number"
@@ -115,9 +121,9 @@ class SignupForm extends React.Component {
                                 onChange={this.handleInput('birth_day')}
                                 placeholder="Day"
                                 />
-                            </label>
                           
-                            <label>
+                          
+                       
                                 <input 
                                     className="signup-form-birth-year-select"
                                     type="number"
@@ -125,8 +131,9 @@ class SignupForm extends React.Component {
                                     onChange={this.handleInput('birth_year')}
                                     placeholder="Year"
                                 />
-                            </label>
+                        
                         </div>
+
                         {monthError}
                         {dayError}
                         {yearError}
@@ -143,7 +150,7 @@ class SignupForm extends React.Component {
 
                     <div className="signup-switch-login">
                         <div className="signup-switch-login-text">Already have an account? </div>
-                        <Link className="signup-switch-login-btn" to="/login"> Log In</Link>
+                        <Link className="signup-switch-login-btn"  to="/login"> Log In</Link>
                     </div>
                 </div>
             </div>

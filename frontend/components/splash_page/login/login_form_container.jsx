@@ -6,6 +6,7 @@ const msp = state => {
    
     return {
         errors: state.errors.session,
+        // error: state.errors
     };
 };
 

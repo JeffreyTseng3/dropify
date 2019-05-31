@@ -38,19 +38,19 @@
     width: 400px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
-    margin: 10px;
+    margin: 10px 10px 5px 10px;
 }
 .signup-form-password {
     width: 400px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
-    margin: 10px;
+     margin: 10px 10px 5px 10px;
 }
 .signup-form-username {
     width: 400px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
-    margin: 10px;
+     margin: 10px 10px 5px 10px;
 }
 
 
@@ -59,15 +59,15 @@
     flex-direction: row;
     align-items: center; 
     justify-content: space-between;
-    width: 100%;
+    width: 422px;
     padding: 3px;
 }
 
 .signup-form-birth-month-select {
     width: 180px;
-    padding: 10px;
+ 
     border: rgb(217, 218, 220) solid 1px;
-    margin-left: 10px;
+    
 }
 .signup-form-birth-day-select {
     width: 50px;
@@ -80,30 +80,29 @@
     width: 80px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
-    margin-right: 10px;
+  
 }
 
 .gender-btns {
-    /* margin: 10px; */
+
     display: flex;
     flex-direction: row;
     align-items: flex-end; 
     width: 420px;
 }
 .gender-btn {
-    /* margin-left: 2px: */
+
 }
 
 .gender-male {
-    /* margin-left: 5px; */
+   
 }
 .gender-female {
-    /* margin-left: 5px; */
+
 
 }
 .gender-non-binary {
     /* margin-left: 5px; */
-
 }
 
 .signup-submit-btn {
@@ -133,3 +132,57 @@
     margin-right: 10px;
     margin-left: 2px;
 }
+
+.signup-email-errors {
+    width: 422px;
+    font-size: 12px;
+    margin: 0px 2px 4px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+
+.signup-password-errors {
+    width: 422px;
+    font-size: 12px;
+    margin: 0px 2px 4px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+
+.signup-username-errors {
+    width: 422px;
+    font-size: 12px;
+    margin: 0px 2px 4px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+
+.signup-month-errors {
+    width: 422px;
+    font-size: 12px;
+    margin: 5px 2px 2px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+.signup-day-errors{
+    width: 422px;
+    font-size: 12px;
+    margin: 2px 2px 2px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+.signup-year-errors {
+    width: 422px;
+    font-size: 12px;
+    margin: 2px 2px 10px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}
+
+.signup-gender-errors{
+    width: 422px;
+    font-size: 12px;
+    margin: 8px 2px 4px 5px;
+    font-weight: bold;
+    color: #bd3200;
+}   

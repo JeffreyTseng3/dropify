@@ -7,8 +7,7 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             info: "",
-            password: "",
-            
+            password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,12 +25,21 @@ class LoginForm extends React.Component {
         this.props.login(user).then(() => this.props.history.push("/main"));
     }
 
+    componentDidUpdate() {
+   
+    }
+
+
+    componentDidMount(e) {
+    
+    }
+
 
     render() {
-         
+     
             let infoError = this.props.errors.includes("info") ? <div className="info-errors"> Please enter your Dropify username or email address.</div> : null;
             let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please enter your password.</div> : null;
-    
+        let invalidError = this.props.errors.includes("Invalid username/password combination") ? <div className="invalid-errors"><div> Incorrect username or password.</div></div> : null;
         return (
 
             
@@ -51,6 +59,8 @@ class LoginForm extends React.Component {
                         <h1 className="login-form-greeting">
                             To continue, log in to Dropify.
                         </h1>
+
+                        {invalidError}
                     
                         <form onSubmit={this.handleSubmit} className="login-form" >
                             {/* email address or username */}

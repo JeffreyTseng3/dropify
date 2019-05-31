@@ -209,6 +209,17 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/components/main/explore_module/explore_module.jsx":
+/*!********************************************************************!*\
+  !*** ./frontend/components/main/explore_module/explore_module.jsx ***!
+  \********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /Users/jeffreytseng/Desktop/dropify/frontend/components/main/explore_module/explore_module.jsx: JSX attributes must only be assigned a non-empty expression (13:61)\n\n\u001b[0m \u001b[90m 11 | \u001b[39m        \u001b[36mreturn\u001b[39m (\u001b[33m<\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 12 | \u001b[39m        \u001b[33m<\u001b[39m\u001b[33mdiv\u001b[39m className\u001b[33m=\u001b[39m\u001b[32m\"explore-module-main\"\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 13 | \u001b[39m                \u001b[33m<\u001b[39m\u001b[33mProtectedRoute\u001b[39m path\u001b[33m=\u001b[39m\u001b[32m\"/collection\"\u001b[39m component\u001b[33m=\u001b[39m{} \u001b[33m/\u001b[39m\u001b[33m>\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m    | \u001b[39m                                                             \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 14 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 15 | \u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 16 | \u001b[39m\u001b[0m\n    at Object.raise (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:6344:17)\n    at Object.jsxParseAttributeValue (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3420:22)\n    at Object.jsxParseAttribute (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3468:44)\n    at Object.jsxParseOpeningElementAfterName (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3488:28)\n    at Object.jsxParseOpeningElementAt (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3481:17)\n    at Object.jsxParseElementAt (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3513:33)\n    at Object.jsxParseElementAt (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3529:32)\n    at Object.jsxParseElementAt (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3529:32)\n    at Object.jsxParseElement (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3587:17)\n    at Object.parseExprAtom (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3594:19)\n    at Object.parseExprSubscripts (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8413:23)\n    at Object.parseMaybeUnary (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8393:21)\n    at Object.parseExprOps (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8280:23)\n    at Object.parseMaybeConditional (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8253:23)\n    at Object.parseMaybeAssign (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8200:21)\n    at Object.parseParenAndDistinguishExpression (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8963:28)\n    at Object.parseExprAtom (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8760:21)\n    at Object.parseExprAtom (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:3599:20)\n    at Object.parseExprSubscripts (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8413:23)\n    at Object.parseMaybeUnary (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8393:21)\n    at Object.parseExprOps (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8280:23)\n    at Object.parseMaybeConditional (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8253:23)\n    at Object.parseMaybeAssign (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8200:21)\n    at Object.parseExpression (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:8148:23)\n    at Object.parseReturnStatement (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:10157:28)\n    at Object.parseStatementContent (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:9836:21)\n    at Object.parseStatement (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:9788:17)\n    at Object.parseBlockOrModuleBlockBody (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:10364:25)\n    at Object.parseBlockBody (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:10351:10)\n    at Object.parseBlock (/Users/jeffreytseng/Desktop/dropify/node_modules/@babel/parser/lib/index.js:10335:10)");
+
+/***/ }),
+
 /***/ "./frontend/components/main/main_page_module/main_page.jsx":
 /*!*****************************************************************!*\
   !*** ./frontend/components/main/main_page_module/main_page.jsx ***!
@@ -223,6 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../navbar/navbar_container */ "./frontend/components/main/navbar/navbar_container.jsx");
 /* harmony import */ var _music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../music_player_bar/music_player_bar_container */ "./frontend/components/main/music_player_bar/music_player_bar_container.jsx");
+/* harmony import */ var _explore_module_explore_module__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../explore_module/explore_module */ "./frontend/components/main/explore_module/explore_module.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -246,6 +258,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var MainPage =
 /*#__PURE__*/
 function (_React$Component) {
@@ -262,9 +275,12 @@ function (_React$Component) {
     value: function render() {
       var navDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       var musicDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      var exploreDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_explore_module_explore_module__WEBPACK_IMPORTED_MODULE_4__["default"], null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-module"
-      }, navDisplay, musicDisplay, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-explore"
+      }, navDisplay, exploreDisplay), musicDisplay, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         onClick: this.props.logout,
         to: "/"
       }, "LOGOUT")));
@@ -362,7 +378,9 @@ function (_React$Component) {
   _createClass(MusicPlayerBar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "music-player-module"
+      }, "ITEMS"));
     }
   }]);
 
@@ -681,6 +699,12 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {}
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount(e) {}
+  }, {
     key: "render",
     value: function render() {
       var infoError = this.props.errors.includes("info") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -689,6 +713,9 @@ function (_React$Component) {
       var passwordError = this.props.errors.includes("password") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "password-errors"
       }, "Please enter your password.") : null;
+      var invalidError = this.props.errors.includes("Invalid username/password combination") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "invalid-errors"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " Incorrect username or password.")) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-logo-text-combo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -703,7 +730,7 @@ function (_React$Component) {
         className: "login-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-form-greeting"
-      }, "To continue, log in to Dropify."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "To continue, log in to Dropify."), invalidError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -763,7 +790,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state) {
   return {
-    errors: state.errors.session
+    errors: state.errors.session // error: state.errors
+
   };
 };
 
@@ -864,28 +892,33 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.forceUpdate();
+    }
+  }, {
     key: "render",
     value: function render() {
       var emailError = this.props.errors.includes("email") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "email-errors"
+        className: "signup-email-errors"
       }, " Please enter your email.") : null;
       var passwordError = this.props.errors.includes("password") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "password-errors"
+        className: "signup-password-errors"
       }, "Please choose your password.") : null;
       var usernameError = this.props.errors.includes("username") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "username-errors"
+        className: "signup-username-errors"
       }, "What should we call you?") : null;
       var monthError = this.props.errors.includes("birth_month") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "month-errors"
+        className: "signup-month-errors"
       }, "Please enter your birth month.") : null;
       var dayError = this.props.errors.includes("birth_day") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "day-errors"
+        className: "signup-day-errors"
       }, "Please enter your birth day.") : null;
       var yearError = this.props.errors.includes("birth_year") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "year-errors"
+        className: "signup-year-errors"
       }, "Please enter your birth year.") : null;
       var genderError = this.props.errors.includes("gender") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "gender-errors"
+        className: "signup-gender-errors"
       }, "Please indicate your gender.") : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-logo-text-combo"
@@ -926,9 +959,8 @@ function (_React$Component) {
         placeholder: "What should we call you?"
       }), usernameError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-dob"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "signup-form-birth-month-select"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "signup-form-birth-month-select",
         onChange: this.handleInput('birth_month'),
         id: "select-months"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -957,19 +989,19 @@ function (_React$Component) {
         value: "11"
       }, "November"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "12"
-      }, "December"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "December")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-birth-day-select",
         type: "number",
         value: this.state.birth_day,
         onChange: this.handleInput('birth_day'),
         placeholder: "Day"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-birth-year-select",
         type: "number",
         value: this.state.birth_year,
         onChange: this.handleInput('birth_year'),
         placeholder: "Year"
-      }))), monthError, dayError, yearError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), monthError, dayError, yearError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btn"

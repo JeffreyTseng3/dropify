@@ -1,12 +1,23 @@
 .main-page-module {
-    height: 100vh;
-    width: 100vw;
-    background-image: linear-gradient(to right,hsl(171, 40%, 26%), hsl(173, 46%, 11%));
+    height: 100%;
+    width: 100%;
     position: absolute;
+
     z-index: 0;
+    background-image: linear-gradient(to right,hsl(171, 40%, 26%), hsl(173, 46%, 11%));
+
+    display: grid;
+    grid-template-columns: 230px auto;
+    grid-template-rows: auto 105px;
+    grid-template-areas: 
+        "navbar explore"
+        "music music"
 }
 
-.nav-explore{
-    display: flex;
-    flex-direction: row;
+
+.main-explore-container{ 
+    grid-area: explore;
+}
+.main-music-container{ 
+    grid-area: music;
 }

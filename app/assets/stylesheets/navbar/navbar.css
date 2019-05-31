@@ -1,5 +1,4 @@
 .nav-bar-module {
-    width: 200px;
     background: hsl(195, 15%, 5%);
     color: hsl(0, 0%, 70%);
     font-family: 'Montserrat', sans-serif;
@@ -7,14 +6,10 @@
     font-weight: 500 bold;
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    column-fill: auto;
-    height: 100vh;
     opacity: 0.9;
-    position: fixed;
     z-index: 1;
+    grid-area: navbar;
 }
-
 
 .navbar-splash-logo-text-combo {
     display: flex;

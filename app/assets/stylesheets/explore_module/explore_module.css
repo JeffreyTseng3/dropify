@@ -1,8 +1,6 @@
 .explore-module-main{
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
     z-index: 1;
-    position: relative;
-    margin-left: 200px;
+    grid-area: explore;
+
 }

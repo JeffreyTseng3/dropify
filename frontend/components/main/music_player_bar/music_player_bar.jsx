@@ -8,12 +8,11 @@ class MusicPlayerBar extends React.Component {
 
     render() {
 
-        return (<>
-        <div className="music-player-module">
-            ITEMS
-
-        </div>
-        </>)
+        return (
+            <div className="music-player-module">
+                
+            </div>
+        )
     }
 
 }

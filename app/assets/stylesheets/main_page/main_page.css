@@ -3,5 +3,10 @@
     width: 100vw;
     background-image: linear-gradient(to right,hsl(171, 40%, 26%), hsl(173, 46%, 11%));
     position: absolute;
-    z-index: -1;
+    z-index: 0;
+}
+
+.nav-explore{
+    display: flex;
+    flex-direction: row;
 }

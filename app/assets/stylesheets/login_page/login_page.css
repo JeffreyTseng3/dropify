@@ -30,11 +30,11 @@
     justify-content: center;
 }
 
-.login-form {
+/* .login-form {
     display: flex;
      align-content: center;
      flex-direction: column;
-}
+} */
 
 .login-module {
     width: 50%;
@@ -52,25 +52,65 @@
 
 .login-info {
     display: flex;
+    width: 500px;
     flex-direction: column;
     align-content: center;
     align-items: center;
 }
+.info-errors {
+    width: 342px;
+    font-size: 12px;
+    color: #bd3200;
+    font-weight: bold;
+}
+.password-errors {
+    width: 342px;
+    font-size: 12px;
+    color: #bd3200;
+    font-weight: bold;
+}
 
+.invalid-errors {
+    display: flex;
+    justify-content: center;
+    background-color: #f59b23;
+    border-width: 0;
+    width: 450px;
+    font-size: 12px;
+    padding: 14px 14px 12px;
+    font-weight: 400;
+    border-color: #f59b23;
+    color: #fff;
+    margin: 10px;
+}
 
 .login-email-user-input{
-    width: 300px;
+    width: 320px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
     margin: 10px;
+
 }
 .login-password-input{
-    width: 300px;
+    width: 320px;
     padding: 10px;
     border: rgb(217, 218, 220) solid 1px;
     margin: 10px;
 }
 
+.error-login-email-user-input {
+    width: 320px;
+    padding: 10px;
+    border: #bd3200 solid 1px;
+    margin: 10px;
+}
+
+.error-login-password-input {
+     width: 320px;
+    padding: 10px;
+    border: #bd3200 solid 1px;
+    margin: 10px;
+}
 .login-submit-btn {
     background: #1ED760;
     font-size: 14px;

@@ -7,8 +7,7 @@ class LoginForm extends React.Component {
         super(props);
         this.state = {
             info: "",
-            password: "",
-            
+            password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -26,11 +25,25 @@ class LoginForm extends React.Component {
         this.props.login(user).then(() => this.props.history.push("/main"));
     }
 
+    componentDidUpdate() {
+   
+    }
+
+
+    componentDidMount(e) {
+    
+    }
+
 
     render() {
+       
+            let infoError = this.props.errors.includes("info") ? <div className="info-errors"> Please enter your Dropify username or email address.</div> : null;
+            let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please enter your password.</div> : null;
+        let invalidError = this.props.errors.includes("Invalid username/password combination") ? <div className="invalid-errors"><div> Incorrect username or password.</div></div> : null;
         return (
+
+            
             <> 
-                
                 
                 <div className="login-logo-text-combo">
                     <Link to="/">
@@ -46,28 +59,31 @@ class LoginForm extends React.Component {
                         <h1 className="login-form-greeting">
                             To continue, log in to Dropify.
                         </h1>
+
+                        {invalidError}
                     
                         <form onSubmit={this.handleSubmit} className="login-form" >
                             {/* email address or username */}
                                 <div className="login-info"> 
-                                    <label> 
-                                        <input 
-                                            type="text"
-                                            className="login-email-user-input"
-                                            value={this.state.info}
-                                            onChange={this.handleInput('info')}
-                                            placeholder="Email address or username"/>
-                                    </label>
-                                    {/* password */}
-                                    <label> 
-                                        <input
-                                            type="password"
-                                            className="login-password-input"
-                                            value={this.state.password}
-                                            onChange={this.handleInput('password')}
-                                            placeholder="Password"
-                                        />
-                                    </label>
+                                    
+                            <input 
+                                type="text"
+                                className={infoError ? "error-login-email-user-input" : "login-email-user-input"  }
+                                value={this.state.info}
+                                onChange={this.handleInput('info')}
+                                placeholder="Email address or username"/>
+                                {infoError}
+                                    
+                            <input
+                                type="password"
+                                className={passwordError ? "error-login-password-input" : "login-password-input"}
+                                value={this.state.password}
+                                onChange={this.handleInput('password')}
+                                placeholder="Password"
+                            />
+                        
+                                   {passwordError}
+
                                 </div>
                                 {/* submit */}
                                 <div className="login">

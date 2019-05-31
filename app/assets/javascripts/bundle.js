@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveErrors, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_USERS_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveSessionErrors, receiveUsersErrors, signup, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -98,9 +98,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CURRENT_USER", function() { return RECEIVE_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USERS_ERRORS", function() { return RECEIVE_USERS_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveErrors", function() { return receiveErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSessionErrors", function() { return receiveSessionErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUsersErrors", function() { return receiveUsersErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
@@ -109,6 +111,7 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
+var RECEIVE_USERS_ERRORS = 'RECEIVE_USERS_ERRORS';
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -120,9 +123,15 @@ var logoutCurrentUser = function logoutCurrentUser() {
     type: LOGOUT_CURRENT_USER
   };
 };
-var receiveErrors = function receiveErrors(errors) {
+var receiveSessionErrors = function receiveSessionErrors(errors) {
   return {
     type: RECEIVE_SESSION_ERRORS,
+    errors: errors
+  };
+};
+var receiveUsersErrors = function receiveUsersErrors(errors) {
+  return {
+    type: RECEIVE_USERS_ERRORS,
     errors: errors
   };
 };
@@ -131,7 +140,7 @@ var signup = function signup(formUser) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["signup"](formUser).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+      return dispatch(receiveUsersErrors(err.responseJSON));
     });
   };
 };
@@ -140,7 +149,7 @@ var login = function login(formUser) {
     return _util_session_api_util__WEBPACK_IMPORTED_MODULE_0__["login"](formUser).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
-      return dispatch(receiveErrors(err.responseJSON));
+      return dispatch(receiveSessionErrors(err.responseJSON));
     });
   };
 };
@@ -200,6 +209,17 @@ var App = function App() {
 
 /***/ }),
 
+/***/ "./frontend/components/main/explore_module/explore_module_container.jsx":
+/*!******************************************************************************!*\
+  !*** ./frontend/components/main/explore_module/explore_module_container.jsx ***!
+  \******************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/jeffreytseng/Desktop/dropify/frontend/components/main/explore_module/explore_module_container.jsx'");
+
+/***/ }),
+
 /***/ "./frontend/components/main/main_page_module/main_page.jsx":
 /*!*****************************************************************!*\
   !*** ./frontend/components/main/main_page_module/main_page.jsx ***!
@@ -214,6 +234,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../navbar/navbar_container */ "./frontend/components/main/navbar/navbar_container.jsx");
 /* harmony import */ var _music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../music_player_bar/music_player_bar_container */ "./frontend/components/main/music_player_bar/music_player_bar_container.jsx");
+/* harmony import */ var _explore_module_explore_module_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../explore_module/explore_module_container */ "./frontend/components/main/explore_module/explore_module_container.jsx");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -237,6 +258,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
 var MainPage =
 /*#__PURE__*/
 function (_React$Component) {
@@ -253,9 +275,12 @@ function (_React$Component) {
     value: function render() {
       var navDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null);
       var musicDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+      var exploreDisplay = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_explore_module_explore_module_container__WEBPACK_IMPORTED_MODULE_4__["default"], null);
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "main-page-module"
-      }, navDisplay, musicDisplay));
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "nav-explore"
+      }, navDisplay, exploreDisplay), musicDisplay));
     }
   }]);
 
@@ -350,7 +375,9 @@ function (_React$Component) {
   _createClass(MusicPlayerBar, [{
     key: "render",
     value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null);
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "music-player-module"
+      }, "ITEMS"));
     }
   }]);
 
@@ -465,7 +492,7 @@ function (_React$Component) {
         className: "nav-item-search"
       }, "Search")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "nav-bar-lib",
-        to: "/"
+        to: "/main/collection/playlist"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "nav-item-img"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
@@ -506,7 +533,10 @@ function (_React$Component) {
         className: "nav-bar-playlist-item-detail"
       }, " PlaylistName"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-playlist-item-detail"
-      }, "Playlist"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }, "Playlist"))))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onClick: this.props.logout,
+        to: "/"
+      }, "LOGOUT"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "nav-bar-footer"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
@@ -549,6 +579,8 @@ function (_React$Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _navbar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./navbar */ "./frontend/components/main/navbar/navbar.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
 
 
 
@@ -557,7 +589,11 @@ var msp = function msp(state) {
 };
 
 var mdp = function mdp(dispatch) {
-  return {};
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
+    }
+  };
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_navbar__WEBPACK_IMPORTED_MODULE_1__["default"]));
@@ -669,8 +705,23 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentDidUpdate",
+    value: function componentDidUpdate() {}
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount(e) {}
+  }, {
     key: "render",
     value: function render() {
+      var infoError = this.props.errors.includes("info") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "info-errors"
+      }, " Please enter your Dropify username or email address.") : null;
+      var passwordError = this.props.errors.includes("password") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "password-errors"
+      }, "Please enter your password.") : null;
+      var invalidError = this.props.errors.includes("Invalid username/password combination") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "invalid-errors"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " Incorrect username or password.")) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-logo-text-combo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -685,24 +736,24 @@ function (_React$Component) {
         className: "login-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-form-greeting"
-      }, "To continue, log in to Dropify."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "To continue, log in to Dropify."), invalidError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "text",
-        className: "login-email-user-input",
+        className: infoError ? "error-login-email-user-input" : "login-email-user-input",
         value: this.state.info,
         onChange: this.handleInput('info'),
         placeholder: "Email address or username"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), infoError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "password",
-        className: "login-password-input",
+        className: passwordError ? "error-login-password-input" : "login-password-input",
         value: this.state.password,
         onChange: this.handleInput('password'),
         placeholder: "Password"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), passwordError), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "remember-me-checkbox",
@@ -745,7 +796,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state) {
   return {
-    errors: state.errors
+    errors: state.errors.session // error: state.errors
+
   };
 };
 
@@ -846,8 +898,34 @@ function (_React$Component) {
       });
     }
   }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {
+      this.forceUpdate();
+    }
+  }, {
     key: "render",
     value: function render() {
+      var emailError = this.props.errors.includes("email") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-email-errors"
+      }, " Please enter your email.") : null;
+      var passwordError = this.props.errors.includes("password") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-password-errors"
+      }, "Please choose your password.") : null;
+      var usernameError = this.props.errors.includes("username") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-username-errors"
+      }, "What should we call you?") : null;
+      var monthError = this.props.errors.includes("birth_month") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-month-errors"
+      }, "Please enter your birth month.") : null;
+      var dayError = this.props.errors.includes("birth_day") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-day-errors"
+      }, "Please enter your birth day.") : null;
+      var yearError = this.props.errors.includes("birth_year") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-year-errors"
+      }, "Please enter your birth year.") : null;
+      var genderError = this.props.errors.includes("gender") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-gender-errors"
+      }, "Please indicate your gender.") : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-logo-text-combo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
@@ -867,29 +945,28 @@ function (_React$Component) {
       }, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup-form",
         onSubmit: this.handleSubmit
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-email",
         type: "text",
         value: this.state.email,
         onChange: this.handleInput('email'),
         placeholder: "Email"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), emailError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-password",
         type: "password",
         value: this.state.password,
         onChange: this.handleInput('password'),
         placeholder: "Password"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), passwordError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-username",
         type: "text",
         value: this.state.username,
         onChange: this.handleInput('username'),
         placeholder: "What should we call you?"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), usernameError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-dob"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", {
-        className: "signup-form-birth-month-select"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
+        className: "signup-form-birth-month-select",
         onChange: this.handleInput('birth_month'),
         id: "select-months"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
@@ -918,19 +995,19 @@ function (_React$Component) {
         value: "11"
       }, "November"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("option", {
         value: "12"
-      }, "December"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "December")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-birth-day-select",
         type: "number",
         value: this.state.birth_day,
         onChange: this.handleInput('birth_day'),
         placeholder: "Day"
-      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         className: "signup-form-birth-year-select",
         type: "number",
         value: this.state.birth_year,
         onChange: this.handleInput('birth_year'),
         placeholder: "Year"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      })), monthError, dayError, yearError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btn"
@@ -956,7 +1033,7 @@ function (_React$Component) {
         type: "radio",
         name: "gender",
         value: "non-binary"
-      }), "Non-binary ")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), "Non-binary ")), genderError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "signup-submit-btn",
         value: "SIGN UP"
@@ -996,7 +1073,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state) {
   return {
-    errors: state.errors
+    errors: state.errors.users
   };
 };
 
@@ -1174,7 +1251,8 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   var store = Object(_store_store__WEBPACK_IMPORTED_MODULE_3__["default"])(preloadedState);
-  window.store = store;
+  window.store = store; // window.logout = logout();
+
   window.getState = store.getState();
   react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_4__["default"], {
     store: store
@@ -1214,10 +1292,13 @@ var entitiesReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! redux */ "./node_modules/redux/es/redux.js");
 /* harmony import */ var _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./session_errors_reducer */ "./frontend/reducers/session_errors_reducer.js");
+/* harmony import */ var _users_errors_reducer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./users_errors_reducer */ "./frontend/reducers/users_errors_reducer.js");
+
 
 
 var errorsReducer = Object(redux__WEBPACK_IMPORTED_MODULE_0__["combineReducers"])({
-  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"]
+  session: _session_errors_reducer__WEBPACK_IMPORTED_MODULE_1__["default"],
+  users: _users_errors_reducer__WEBPACK_IMPORTED_MODULE_2__["default"]
 });
 /* harmony default export */ __webpack_exports__["default"] = (errorsReducer);
 
@@ -1261,18 +1342,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../actions/session_actions */ "./frontend/actions/session_actions.js");
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_SESSION_ERRORS"]:
-      return Object.assign({}, {
-        session: action.errors
-      });
+      return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
-      return {};
+      return [];
 
     default:
       return state;
@@ -1316,6 +1395,17 @@ var sessionReducer = function sessionReducer() {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (sessionReducer);
+
+/***/ }),
+
+/***/ "./frontend/reducers/users_errors_reducer.js":
+/*!***************************************************!*\
+  !*** ./frontend/reducers/users_errors_reducer.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, exports) {
+
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nError: ENOENT: no such file or directory, open '/Users/jeffreytseng/Desktop/dropify/frontend/reducers/users_errors_reducer.js'");
 
 /***/ }),
 

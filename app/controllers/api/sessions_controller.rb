@@ -2,6 +2,23 @@
  
   def create
       
+    # ERRORS
+   
+    errors = []
+    if params[:user][:info] == "" 
+      errors << "info"
+    end 
+
+    if params[:user][:password] == ""
+      errors << "password"
+    end
+      
+    if !errors.empty?
+      render json: errors, status: 401
+      return 
+    end
+
+    # REGULAR
       @user = User.find_by_credentials(
         # keyinginto info to return an email or username
         params[:user][:info],

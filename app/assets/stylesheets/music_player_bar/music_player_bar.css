@@ -1,0 +1,11 @@
+.music-player-module {
+    /* display: flex; */
+    /* justify-content: flex-end; */
+    height: 100px;
+    width: 100vw;
+    position: fixed;
+    bottom: 0;
+    background: #282828;
+    border-top: black solid 1px;
+    z-index: 2;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 
+
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
@@ -26,7 +27,7 @@ class NavBar extends React.Component {
                             <span className="nav-item-search">Search</span>
                     </Link>
 
-                    <Link className="nav-bar-lib" to="/">
+                    <Link className="nav-bar-lib" to="/main/collection/playlist">
                             <span className="nav-item-img"><i className="fas fa-book-open fa-2x"></i></span>
                             <span className="nav-item">Library</span>
                     </Link>
@@ -63,7 +64,12 @@ class NavBar extends React.Component {
                     </ul>
                 </div>
 
+                    <Link onClick={this.props.logout} to="/">LOGOUT</Link>
+               
+
                 <div className="nav-bar-footer">
+                   
+
                     <Link to="/" className="nav-bar-download">
                         <span to="/" className="nav-bar-download-img"><i className="fas fa-download"></i></span>
                         <span to="/" className="nav-bar-download-text">Install</span>
@@ -77,7 +83,6 @@ class NavBar extends React.Component {
                   
                 </div>
 
-                {/* <Link onClick={this.props.logout} to="/">LogOut</Link> */}
             </div>
         )
 

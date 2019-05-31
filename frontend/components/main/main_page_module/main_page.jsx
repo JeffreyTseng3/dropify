@@ -10,37 +10,15 @@ class MainPage extends React.Component {
     }
 
     render() {
-            
-        let navDisplay = (
-            <NavBarContainer />
-            
-        )
+        return (
+            <div className="main-page-module"> 
+                    <NavBarContainer /> 
+                    <ExploreModuleContainer /> 
+                    <MusicPlayerBarContainer />
+            </div> 
+            )
+        }
         
-        let musicDisplay = (
-            <MusicPlayerBarContainer />
-            
-        )
-
-        let exploreDisplay = (
-            <ExploreModuleContainer />
-        )
-        
-        return (<> 
-        <div className="main-page-module"> 
-            <div className="nav-explore">
-                {navDisplay}
-                {exploreDisplay}
-            </div>
-                
-            {musicDisplay}
-            
-            
-
-        </div> 
-            
-            </>)
     }
-
-}
-
-export default MainPage;
+    
+    export default MainPage;

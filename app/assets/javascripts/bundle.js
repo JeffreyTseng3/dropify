@@ -1017,12 +1017,14 @@ function (_React$Component) {
       var invalidError = this.props.errors.includes("Invalid username/password combination") ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "invalid-errors"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, " Incorrect username or password.")) : null;
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-module"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-logo-text-combo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-spotify fa-3x"
+        className: "fas fa-feather fa-4x"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1031,7 +1033,17 @@ function (_React$Component) {
         className: "login-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-form-greeting"
-      }, "To continue, log in to Dropify."), invalidError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+      }, "To continue, log in to Dropify."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "login-demo"
+      }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-or-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "login-or-before"
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-or-text"
+      }, "OR"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "login-or-before"
+      })), invalidError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         onSubmit: this.handleSubmit,
         className: "login-form"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1049,20 +1061,24 @@ function (_React$Component) {
         onChange: this.handleInput('password'),
         placeholder: "Password"
       }), passwordError), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "login"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("label", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "remember-me-checkbox",
+        className: "login-submit"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "login-remember-me"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "login-remember-me-checkbox",
         type: "checkbox"
-      }), "Remember me"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "login-remember-me-text"
+      }, "Remember me")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "login-submit-btn",
         value: "LOG IN"
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-no-account-text"
-      }, " Don't have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+      }, " Don't have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "login-page-sign-up-btn",
         to: "/signup"
-      }, "SIGN UP FOR SPOTIFY")));
+      }, "SIGN UP FOR SPOTIFY"))));
     }
   }]);
 
@@ -1222,20 +1238,22 @@ function (_React$Component) {
         className: "signup-gender-errors"
       }, "Please indicate your gender.") : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-module"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-logo-text-combo"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        className: "fab fa-spotify fa-3x"
+        className: "fas fa-feather fa-4x"
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
         className: "login-logo-text"
       }, "DROPIFY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "signup-master"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-page"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "signup-login-demo"
+      }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "signup-greeting-text"
       }, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup-form",

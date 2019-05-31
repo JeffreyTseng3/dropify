@@ -8,13 +8,12 @@ import MainPageContainer from "../components/main/main_page_module/main_page_con
 
 const App = () => {
     return (
-    <>
-        <Route exact path="/" component={SplashPageHeader}/>
-        <AuthRoute path="/signup" component={SignupFormContainer} />
-        <AuthRoute path="/login" component={LoginFormContainer} />
-        <ProtectedRoute path="/main" component={MainPageContainer} />
-
-    </>
+        <>
+            <Route exact path="/" component={SplashPageHeader}/>
+            <AuthRoute path="/signup" component={SignupFormContainer} />
+            <AuthRoute path="/login" component={LoginFormContainer} />
+            <ProtectedRoute path="/main" component={MainPageContainer} />
+        </>
     )
 }
 

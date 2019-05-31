@@ -49,112 +49,118 @@ class SignupForm extends React.Component {
         let yearError = this.props.errors.includes("birth_year") ? <div className="signup-year-errors">Please enter your birth year.</div> : null;
         let genderError = this.props.errors.includes("gender") ? <div className="signup-gender-errors">Please indicate your gender.</div> : null;
 
-        return (<>
+        return (
+            <>
+                <div className="signup-module"> 
+                    
+                    <div className="signup-logo-text-combo">
+                        <Link to="/">
+                        <i className="fas fa-feather fa-4x"></i>
+
+                            {/* <i className="fab fa-spotify fa-3x"></i> */}
+                        </Link>
+                        <Link to="/"><span className="login-logo-text">DROPIFY</span></Link>
+                    </div>
+            
+            
                
-                <div className="signup-logo-text-combo">
-                    <Link to="/">
-                        <i className="fab fa-spotify fa-3x"></i>
-                    </Link>
-                    <Link to="/"><span className="login-logo-text">DROPIFY</span></Link>
-                </div>
-            
-            
+                    
+                    <div className="signup-page">
+                        <button className="signup-login-demo">DEMO LOG IN</button>
+                        <h1 className="signup-greeting-text">Sign up with your email address</h1>
 
-            <div className="signup-master"> 
-                <div className="signup-page">
-                    <h1 className="signup-greeting-text">Sign up with your email address</h1>
-
-                    <form className="signup-form" onSubmit={this.handleSubmit}>
-                        <input
-                            className="signup-form-email"
-                            type="text"
-                            value={this.state.email}
-                            onChange={this.handleInput('email')}
-                            placeholder="Email"
-                        />
-                        {emailError}
-                     
-                        <input
-                            className="signup-form-password"
-                            type="password"
-                            value={this.state.password}
-                            onChange={this.handleInput('password')}
-                            placeholder="Password"
-                        />
-                        {passwordError}
-
-                     
-                        <input
-                            className="signup-form-username"
-                            type="text"
-                            value={this.state.username}
-                            onChange={this.handleInput('username')}
-                            placeholder="What should we call you?"
-                        />
-                        {usernameError}
-                      
-                        <div className="signup-dob">
-                            {/* month */}
-
-                                <select className="signup-form-birth-month-select" onChange={this.handleInput('birth_month')} id="select-months">
-                                    <option value="">Month</option>
-                                    <option value="01">January</option>
-                                    <option value="02">February</option>
-                                    <option value="03">March</option>
-                                    <option value="04">April</option>
-                                    <option value="05">May</option>
-                                    <option value="06">June</option>
-                                    <option value="07">July</option>
-                                    <option value="08">August</option>
-                                    <option value="09">September</option>
-                                    <option value="10">October</option>
-                                    <option value="11">November</option>
-                                    <option value="12">December</option>
-                                </select>
-                  
-                            
-                         
-                                <input 
-                                className="signup-form-birth-day-select"
-                                type="number"
-                                value={this.state.birth_day}
-                                onChange={this.handleInput('birth_day')}
-                                placeholder="Day"
-                                />
-                          
-                          
-                       
-                                <input 
-                                    className="signup-form-birth-year-select"
-                                    type="number"
-                                    value={this.state.birth_year}
-                                    onChange={this.handleInput('birth_year')}
-                                    placeholder="Year"
-                                />
+                        <form className="signup-form" onSubmit={this.handleSubmit}>
+                            <input
+                                className="signup-form-email"
+                                type="text"
+                                value={this.state.email}
+                                onChange={this.handleInput('email')}
+                                placeholder="Email"
+                            />
+                            {emailError}
                         
+                            <input
+                                className="signup-form-password"
+                                type="password"
+                                value={this.state.password}
+                                onChange={this.handleInput('password')}
+                                placeholder="Password"
+                            />
+                            {passwordError}
+
+                        
+                            <input
+                                className="signup-form-username"
+                                type="text"
+                                value={this.state.username}
+                                onChange={this.handleInput('username')}
+                                placeholder="What should we call you?"
+                            />
+                            {usernameError}
+                        
+                            <div className="signup-dob">
+                                {/* month */}
+
+                                    <select className="signup-form-birth-month-select" onChange={this.handleInput('birth_month')} id="select-months">
+                                        <option value="">Month</option>
+                                        <option value="01">January</option>
+                                        <option value="02">February</option>
+                                        <option value="03">March</option>
+                                        <option value="04">April</option>
+                                        <option value="05">May</option>
+                                        <option value="06">June</option>
+                                        <option value="07">July</option>
+                                        <option value="08">August</option>
+                                        <option value="09">September</option>
+                                        <option value="10">October</option>
+                                        <option value="11">November</option>
+                                        <option value="12">December</option>
+                                    </select>
+                    
+                                
+                            
+                                    <input 
+                                    className="signup-form-birth-day-select"
+                                    type="number"
+                                    value={this.state.birth_day}
+                                    onChange={this.handleInput('birth_day')}
+                                    placeholder="Day"
+                                    />
+                            
+                            
+                        
+                                    <input 
+                                        className="signup-form-birth-year-select"
+                                        type="number"
+                                        value={this.state.birth_year}
+                                        onChange={this.handleInput('birth_year')}
+                                        placeholder="Year"
+                                    />
+                            
+                            </div>
+
+                            {monthError}
+                            {dayError}
+                            {yearError}
+
+                            <div className="gender-btns">
+                                <div className="gender-btn"><input className="gender-male" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" />Male</div>
+                                <div className="gender-btn"><input className="gender-female" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />Female</div> 
+                                <div className="gender-btn"><input className="gender-non-binary" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />Non-binary </div>  
+                            </div>
+                            {genderError}
+                            {/* submit */}
+                            <input type="submit" className="signup-submit-btn" value="SIGN UP" />
+                        </form>
+
+                        <div className="signup-switch-login">
+                            <div className="signup-switch-login-text">Already have an account? </div>
+                            <Link className="signup-switch-login-btn"  to="/login"> Log In</Link>
                         </div>
-
-                        {monthError}
-                        {dayError}
-                        {yearError}
-
-                        <div className="gender-btns">
-                            <div className="gender-btn"><input className="gender-male" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" />Male</div>
-                            <div className="gender-btn"><input className="gender-female" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />Female</div> 
-                            <div className="gender-btn"><input className="gender-non-binary" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />Non-binary </div>  
-                        </div>
-                        {genderError}
-                        {/* submit */}
-                        <input type="submit" className="signup-submit-btn" value="SIGN UP" />
-                    </form>
-
-                    <div className="signup-switch-login">
-                        <div className="signup-switch-login-text">Already have an account? </div>
-                        <Link className="signup-switch-login-btn"  to="/login"> Log In</Link>
                     </div>
                 </div>
-            </div>
-        </>)
+            </>
+        )
     }
 
 

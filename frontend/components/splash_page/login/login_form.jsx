@@ -37,68 +37,74 @@ class LoginForm extends React.Component {
 
     render() {
        
-            let infoError = this.props.errors.includes("info") ? <div className="info-errors"> Please enter your Dropify username or email address.</div> : null;
-            let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please enter your password.</div> : null;
-            let invalidError = this.props.errors.includes("Invalid username/password combination") ? <div className="invalid-errors"><div> Incorrect username or password.</div></div> : null;
+        let infoError = this.props.errors.includes("info") ? <div className="info-errors"> Please enter your Dropify username or email address.</div> : null;
+        let passwordError = this.props.errors.includes("password") ? <div className="password-errors">Please enter your password.</div> : null;
+        let invalidError = this.props.errors.includes("Invalid username/password combination") ? <div className="invalid-errors"><div> Incorrect username or password.</div></div> : null;
         
-            return (
-            <> 
+        return (
 
-                <div className="login-logo-text-combo">
-                    <Link to="/">
-                        <i className="fab fa-spotify fa-3x"></i>
-                    </Link>
-                    <Link to="/"><span className="login-logo-text">DROPIFY</span></Link>
-                </div>
+            
+            
+                <div className="login-module"> 
+                    <div className="login-logo-text-combo">
+                        <Link to="/">
+                                <i className="fas fa-feather fa-4x"></i>
+                            {/* <i className="fab fa-spotify fa-4x"></i> */}
+                        </Link>
+                        <Link to="/"><span className="login-logo-text">DROPIFY</span></Link>
+                    </div>
 
-                <div className="login-page">
-                        
+                    <div className="login-page">
+                    
                         <h1 className="login-form-greeting">
                             To continue, log in to Dropify.
                         </h1>
 
+                        <button className="login-demo">DEMO LOG IN</button>
+
+                        <div className="login-or-container"> 
+                                <span className="login-or-before"></span> <div className="login-or-text">OR</div>  <span className="login-or-before"></span> 
+                        </div>
+
                         {invalidError}
-                    
-                        <form onSubmit={this.handleSubmit} className="login-form" >
-                           
-                            <div className="login-info"> 
-                                    
+                        
+                        <form onSubmit={this.handleSubmit} className="login-form">
+                            <div className="login-info">     
                                 <input 
                                     type="text"
                                     className={infoError ? "error-login-email-user-input" : "login-email-user-input"  }
                                     value={this.state.info}
                                     onChange={this.handleInput('info')}
-                                    placeholder="Email address or username" />
-                                
-                                {infoError}
+                                    placeholder="Email address or username"/>
+                                    {infoError}
                                         
                                 <input
                                     type="password"
                                     className={passwordError ? "error-login-password-input" : "login-password-input"}
                                     value={this.state.password}
                                     onChange={this.handleInput('password')}
-                                    placeholder="Password" />
-                            
+                                    placeholder="Password"
+                                />
                                 {passwordError}
-
                             </div>
-                               
-                                <div className="login">
-                                   <label>
-                                         <input className="remember-me-checkbox" type="checkbox"/>Remember me
-                                    </label> 
-                                 <input type="submit" className="login-submit-btn" value="LOG IN" />
-                                </div>
-
+                                
+                            <div className="login-submit">
+                                <div className="login-remember-me">
+                                    <input className="login-remember-me-checkbox" type="checkbox" /> 
+                                    <span className="login-remember-me-text">Remember me</span> 
+                                </div> 
+                                <input type="submit" className="login-submit-btn" value="LOG IN" />
+                            </div>
                         </form>
 
-                    
+                        
                         <div className="login-no-account-text"> Don't have an account? </div>
-
-                        <Link className="login-page-sign-up-btn" to="/signup">SIGN UP FOR SPOTIFY</Link> 
-                         
-                </div>
-            </>
+                        <form> 
+                            <Link className="login-page-sign-up-btn" to="/signup">SIGN UP FOR SPOTIFY</Link> 
+                        </form>
+                    </div>
+            </div>
+            
         );
     }
 }

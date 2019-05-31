@@ -1,17 +1,25 @@
 import React from "react";
-import CollectionBar from "./collection_bar_container";
-import { connect } from "react-redux";
+import { Link } from 'react-router-dom';
 
-const msp = (state, ownProps) => {
-    return ({
+class CollectionBar extends React.Component {
+    constructor(props) {
+        super(props);
+    }
 
-    });
-};
+    render() {
+        return (
+     
+             <div className="collection-bar-module">
+                 {/* <div>playlist</div>
+                 <div>made for me</div>
+                 <div>songs</div>
+                 <div>albums</div>
+                 <div>artists</div>
+                 <div>podcasts</div> */}
+            </div>
 
-const mdp = dispatch => {
-    return ({
+        );
+    }
+}
 
-    });
-};
-
-export default connect(msp, mdp)(CollectionBar);
+export default CollectionBar;

@@ -10,7 +10,7 @@ class MusicPlayerBar extends React.Component {
 
         return (
             <div className="music-player-module">
-                ITEMS
+                
             </div>
         )
     }

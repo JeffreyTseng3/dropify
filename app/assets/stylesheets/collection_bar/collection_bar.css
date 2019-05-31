@@ -1,6 +1,7 @@
 .collection-bar-module {
     display: flex;
-    justify-content: space-around;
-    align-content: center;
-    
+    justify-content: center;
+
+    height: 20px;
+    width: 150px;
 }

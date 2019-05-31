@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
-import NavBar from "../navbar/navbar_container";
-import MusicPlayerBar from "../music_player_bar/music_player_bar_container";
-import ExploreModule from "../explore_module/explore_module";
+import NavBarContainer from "../navbar/navbar_container";
+import MusicPlayerBarContainer from "../music_player_bar/music_player_bar_container";
+import ExploreModuleContainer from "../explore_module/explore_module_container"
 
 class MainPage extends React.Component {
     constructor(props) {
@@ -10,19 +10,19 @@ class MainPage extends React.Component {
     }
 
     render() {
-         
+            
         let navDisplay = (
-            <NavBar />
+            <NavBarContainer />
             
         )
         
         let musicDisplay = (
-            <MusicPlayerBar />
+            <MusicPlayerBarContainer />
             
         )
 
         let exploreDisplay = (
-            <ExploreModule />
+            <ExploreModuleContainer />
         )
         
         return (<> 
@@ -31,12 +31,13 @@ class MainPage extends React.Component {
                 {navDisplay}
                 {exploreDisplay}
             </div>
+                
             {musicDisplay}
-            <Link onClick={this.props.logout} to="/">LOGOUT</Link>
-
+            
+            
 
         </div> 
-
+            
             </>)
     }
 

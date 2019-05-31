@@ -3,7 +3,7 @@
   def create
       
     # ERRORS
-
+   
     errors = []
     if params[:user][:info] == "" 
       errors << "info"

@@ -7,6 +7,7 @@ const msp = state => {
 
     return {
         loggedIn: Boolean(state.session.currentUserId)
+        
     };
 };
 

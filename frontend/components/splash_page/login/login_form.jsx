@@ -10,8 +10,16 @@ class LoginForm extends React.Component {
             password: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
+
+    handleDemoLogin(e) {
+        e.preventDefault();
+        const demoUser = { info: "jt1", password: "123123" };
+        this.props.login(demoUser).then(() => this.props.history.push('/main'));
+    }
+    
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
@@ -60,7 +68,7 @@ class LoginForm extends React.Component {
                             To continue, log in to Dropify.
                         </h1>
 
-                        <button className="login-demo">DEMO LOG IN</button>
+                        <button className="login-demo" onClick={this.handleDemoLogin}>DEMO LOG IN</button>
 
                         <div className="login-or-container"> 
                                 <span className="login-or-before"></span> <div className="login-or-text">OR</div>  <span className="login-or-before"></span> 
@@ -100,7 +108,7 @@ class LoginForm extends React.Component {
                         
                         <div className="login-no-account-text"> Don't have an account? </div>
                         <form> 
-                            <Link className="login-page-sign-up-btn" to="/signup">SIGN UP FOR SPOTIFY</Link> 
+                        <Link className="login-page-sign-up-btn" onClick={this.props.clearErrors} to="/signup">SIGN UP FOR SPOTIFY</Link> 
                         </form>
                     </div>
             </div>

@@ -17,12 +17,19 @@ class SignupForm extends React.Component {
             
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemoLogin = this.handleDemoLogin.bind(this);
     }
 
     handleInput(type) {
         return (e) => {
             this.setState({ [type]: e.target.value });
         };
+    }
+
+    handleDemoLogin(e) {
+        e.preventDefault();
+        const demoUser = {info: "jt1", password: "123123"};
+        this.props.login(demoUser).then(() => this.props.history.push('/main'));
     }
 
     handleSubmit(e) {
@@ -66,7 +73,7 @@ class SignupForm extends React.Component {
                
                     
                     <div className="signup-page">
-                        <button className="signup-demo">DEMO LOG IN</button>
+                        <button className="signup-demo" onClick={this.handleDemoLogin}>DEMO LOG IN</button>
                         
                         <div className="signup-or-container">
                             <span className="signup-or-before"></span> <div className="signup-or-text">OR</div>  <span className="sign-or-before"></span>
@@ -102,10 +109,11 @@ class SignupForm extends React.Component {
                                 placeholder="What should we call you?"
                             />
                             {usernameError}
-                        
-                            <div className="signup-dob">
-                                {/* month */}
 
+                            <div className="signup-dob-mod">
+                                <div className="signup-dob-text">Date of Birth</div>
+                                {/* month */}
+                                <div className="signup-dob"> 
                                     <select className="signup-form-birth-month-select" onChange={this.handleInput('birth_month')} id="select-months">
                                         <option value="">Month</option>
                                         <option value="01">January</option>
@@ -141,7 +149,7 @@ class SignupForm extends React.Component {
                                         onChange={this.handleInput('birth_year')}
                                         placeholder="Year"
                                     />
-                            
+                                </div>
                             </div>
 
                             {monthError}
@@ -149,9 +157,16 @@ class SignupForm extends React.Component {
                             {yearError}
 
                             <div className="gender-btns">
-                                <div className="gender-btn"><input className="gender-male" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" />Male</div>
-                                <div className="gender-btn"><input className="gender-female" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />Female</div> 
-                                <div className="gender-btn"><input className="gender-non-binary" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />Non-binary </div>  
+                               
+                                <div className="gender-btn"><input className="gender-type" onChange={this.handleInput('gender')} type="radio" name="gender" value="male" /> 
+                                    <span className="gender-text">Male</span>
+                                </div>
+                                <div className="gender-btn"><input className="gender-type" onChange={this.handleInput('gender')} type="radio" name="gender" value="female" />
+                                    <span className="gender-text">Female</span> 
+                                </div> 
+                                <div className="gender-btn"><input className="gender-type" onChange={this.handleInput('gender')} type="radio" name="gender" value="non-binary" />
+                                    <span className="gender-text">Non-binary</span> 
+                                </div>  
                             </div>
                             {genderError}
                             {/* submit */}
@@ -160,7 +175,7 @@ class SignupForm extends React.Component {
 
                         <div className="signup-switch-login">
                             <div className="signup-switch-login-text">Already have an account? </div>
-                            <Link className="signup-switch-login-btn"  to="/login"> Log In</Link>
+                            <Link className="signup-switch-login-btn" onClick={this.props.clearErrors}  to="/login"> Log In</Link>
                         </div>
                     </div>
                 </div>

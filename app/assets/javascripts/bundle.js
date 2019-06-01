@@ -90,7 +90,7 @@
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
   \*********************************************/
-/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_USERS_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveSessionErrors, receiveUsersErrors, signup, login, logout */
+/*! exports provided: RECEIVE_CURRENT_USER, LOGOUT_CURRENT_USER, RECEIVE_SESSION_ERRORS, RECEIVE_USERS_ERRORS, RECEIVE_CLEAR_FORM_ERRORS, receiveCurrentUser, logoutCurrentUser, receiveSessionErrors, receiveUsersErrors, receiveClearFormErrors, signup, login, logout */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -99,10 +99,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LOGOUT_CURRENT_USER", function() { return LOGOUT_CURRENT_USER; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_SESSION_ERRORS", function() { return RECEIVE_SESSION_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_USERS_ERRORS", function() { return RECEIVE_USERS_ERRORS; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_CLEAR_FORM_ERRORS", function() { return RECEIVE_CLEAR_FORM_ERRORS; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveCurrentUser", function() { return receiveCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logoutCurrentUser", function() { return logoutCurrentUser; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveSessionErrors", function() { return receiveSessionErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveUsersErrors", function() { return receiveUsersErrors; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receiveClearFormErrors", function() { return receiveClearFormErrors; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "signup", function() { return signup; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "login", function() { return login; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "logout", function() { return logout; });
@@ -112,6 +114,7 @@ var RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var LOGOUT_CURRENT_USER = 'LOGOUT_CURRENT_USER';
 var RECEIVE_SESSION_ERRORS = 'RECEIVE_SESSION_ERRORS';
 var RECEIVE_USERS_ERRORS = 'RECEIVE_USERS_ERRORS';
+var RECEIVE_CLEAR_FORM_ERRORS = "RECEIVE_CLEAR_SESSION_FORM_ERRORS";
 var receiveCurrentUser = function receiveCurrentUser(currentUser) {
   return {
     type: RECEIVE_CURRENT_USER,
@@ -133,6 +136,11 @@ var receiveUsersErrors = function receiveUsersErrors(errors) {
   return {
     type: RECEIVE_USERS_ERRORS,
     errors: errors
+  };
+};
+var receiveClearFormErrors = function receiveClearFormErrors() {
+  return {
+    type: RECEIVE_CLEAR_FORM_ERRORS
   };
 };
 var signup = function signup(formUser) {
@@ -176,7 +184,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var _util_route_util__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../util/route_util */ "./frontend/util/route_util.js");
-/* harmony import */ var _splash_page_splash_logged_out_splash_page_header__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_page/splash_logged_out/splash_page_header */ "./frontend/components/splash_page/splash_logged_out/splash_page_header.jsx");
+/* harmony import */ var _splash_page_splash_logged_out_splash_page_header_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./splash_page/splash_logged_out/splash_page_header_container */ "./frontend/components/splash_page/splash_logged_out/splash_page_header_container.jsx");
 /* harmony import */ var _splash_page_login_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./splash_page/login/login_form_container */ "./frontend/components/splash_page/login/login_form_container.jsx");
 /* harmony import */ var _splash_page_signup_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash_page/signup/signup_form_container */ "./frontend/components/splash_page/signup/signup_form_container.jsx");
 /* harmony import */ var _components_main_main_page_module_main_page_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/main/main_page_module/main_page_container */ "./frontend/components/main/main_page_module/main_page_container.jsx");
@@ -192,7 +200,7 @@ var App = function App() {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
-    component: _splash_page_splash_logged_out_splash_page_header__WEBPACK_IMPORTED_MODULE_3__["default"]
+    component: _splash_page_splash_logged_out_splash_page_header_container__WEBPACK_IMPORTED_MODULE_3__["default"]
   }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_util_route_util__WEBPACK_IMPORTED_MODULE_2__["AuthRoute"], {
     path: "/signup",
     component: _splash_page_signup_signup_form_container__WEBPACK_IMPORTED_MODULE_5__["default"]
@@ -976,27 +984,42 @@ function (_React$Component) {
       password: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoLogin = _this.handleDemoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
   _createClass(LoginForm, [{
-    key: "handleInput",
-    value: function handleInput(type) {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(e) {
       var _this2 = this;
 
+      e.preventDefault();
+      var demoUser = {
+        info: "jt1",
+        password: "123123"
+      };
+      this.props.login(demoUser).then(function () {
+        return _this2.props.history.push('/main');
+      });
+    }
+  }, {
+    key: "handleInput",
+    value: function handleInput(type) {
+      var _this3 = this;
+
       return function (e) {
-        _this2.setState(_defineProperty({}, type, e.target.value));
+        _this3.setState(_defineProperty({}, type, e.target.value));
       };
     }
   }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
       var user = Object.assign({}, this.state);
       this.props.login(user).then(function () {
-        return _this3.props.history.push("/main");
+        return _this4.props.history.push("/main");
       });
     }
   }, {
@@ -1034,7 +1057,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "login-form-greeting"
       }, "To continue, log in to Dropify."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "login-demo"
+        className: "login-demo",
+        onClick: this.handleDemoLogin
       }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "login-or-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1077,6 +1101,7 @@ function (_React$Component) {
         className: "login-no-account-text"
       }, " Don't have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "login-page-sign-up-btn",
+        onClick: this.props.clearErrors,
         to: "/signup"
       }, "SIGN UP FOR SPOTIFY"))));
     }
@@ -1116,6 +1141,9 @@ var mdp = function mdp(dispatch) {
   return {
     login: function login(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(formUser));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveClearFormErrors"])());
     }
   };
 };
@@ -1183,6 +1211,7 @@ function (_React$Component) {
       gender: ""
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    _this.handleDemoLogin = _this.handleDemoLogin.bind(_assertThisInitialized(_this));
     return _this;
   }
 
@@ -1196,16 +1225,30 @@ function (_React$Component) {
       };
     }
   }, {
+    key: "handleDemoLogin",
+    value: function handleDemoLogin(e) {
+      var _this3 = this;
+
+      e.preventDefault();
+      var demoUser = {
+        info: "jt1",
+        password: "123123"
+      };
+      this.props.login(demoUser).then(function () {
+        return _this3.props.history.push('/main');
+      });
+    }
+  }, {
     key: "handleSubmit",
     value: function handleSubmit(e) {
-      var _this3 = this;
+      var _this4 = this;
 
       e.preventDefault();
       var user = Object.assign({}, this.state);
       user.birth_day = Number(user.birth_day);
       user.birth_year = Number(user.birth_year);
       this.props.signup(user).then(function () {
-        return _this3.props.history.push('/main');
+        return _this4.props.history.push('/main');
       });
     }
   }, {
@@ -1252,7 +1295,8 @@ function (_React$Component) {
       }, "DROPIFY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "signup-demo"
+        className: "signup-demo",
+        onClick: this.handleDemoLogin
       }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-or-container"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
@@ -1285,6 +1329,10 @@ function (_React$Component) {
         onChange: this.handleInput('username'),
         placeholder: "What should we call you?"
       }), usernameError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-dob-mod"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-dob-text"
+      }, "Date of Birth"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-dob"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("select", {
         className: "signup-form-birth-month-select",
@@ -1328,33 +1376,39 @@ function (_React$Component) {
         value: this.state.birth_year,
         onChange: this.handleInput('birth_year'),
         placeholder: "Year"
-      })), monthError, dayError, yearError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }))), monthError, dayError, yearError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btns"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "gender-male",
+        className: "gender-type",
         onChange: this.handleInput('gender'),
         type: "radio",
         name: "gender",
         value: "male"
-      }), "Male"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "gender-text"
+      }, "Male")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "gender-female",
+        className: "gender-type",
         onChange: this.handleInput('gender'),
         type: "radio",
         name: "gender",
         value: "female"
-      }), "Female"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "gender-text"
+      }, "Female")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "gender-btn"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        className: "gender-non-binary",
+        className: "gender-type",
         onChange: this.handleInput('gender'),
         type: "radio",
         name: "gender",
         value: "non-binary"
-      }), "Non-binary ")), genderError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "gender-text"
+      }, "Non-binary"))), genderError, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
         type: "submit",
         className: "signup-submit-btn",
         value: "SIGN UP"
@@ -1364,6 +1418,7 @@ function (_React$Component) {
         className: "signup-switch-login-text"
       }, "Already have an account? "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         className: "signup-switch-login-btn",
+        onClick: this.props.clearErrors,
         to: "/login"
       }, " Log In")))));
     }
@@ -1402,6 +1457,12 @@ var mdp = function mdp(dispatch) {
   return {
     signup: function signup(formUser) {
       return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["signup"])(formUser));
+    },
+    login: function login(formUser) {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["login"])(formUser));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_1__["receiveClearFormErrors"])());
     }
   };
 };
@@ -1450,9 +1511,13 @@ function (_React$Component) {
   _inherits(SplashPageHeader, _React$Component);
 
   function SplashPageHeader(props) {
+    var _this;
+
     _classCallCheck(this, SplashPageHeader);
 
-    return _possibleConstructorReturn(this, _getPrototypeOf(SplashPageHeader).call(this, props));
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(SplashPageHeader).call(this, props));
+    _this.state = {};
+    return _this;
   }
 
   _createClass(SplashPageHeader, [{
@@ -1461,10 +1526,24 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var displayLoggedOut = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "tophalf"
+      var displaySessionButtons = this.props.loggedIn ? react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        onClick: this.props.logout,
+        to: "/"
+      }, "LOG OUT")) : react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-header-login-signup-combo"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "splash-signup-btn",
+        to: "/signup"
+      }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "splash-login-btn",
+        to: "/login"
+      }, "Log In"));
+      var displayLoggedOut = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-logged-out-module"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "navbar"
+        className: "splash-tophalf"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "navbar-module"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "splash-header-navbar"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -1476,20 +1555,16 @@ function (_React$Component) {
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         to: "/",
         className: "splash-logo-text"
-      }, "DROPIFY")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "splash-header-login-signup-combo"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "signup-btn",
+      }, "DROPIFY")), displaySessionButtons)), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-tophalf-info"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-info-1"
+      }, "Music for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-info-2"
+      }, "Millions of songs. No credit card needed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
+        className: "splash-info-btn",
         to: "/signup"
-      }, "Sign Up"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
-        className: "login-btn",
-        to: "/login"
-      }, "Log In")))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "tophalf-info"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "Music for everyone."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h3", null, "Millions of songs. No credit card needed."), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "submit",
-        value: "GET SPOTIFY FREE"
-      }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
+      }, "GET DROPIFY FREE")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("svg", {
         className: "splash-img",
         viewBox: "0 0 860 670",
         version: "1.1",
@@ -1513,14 +1588,18 @@ function (_React$Component) {
         fill: "url(#linearGradientMobile)",
         transform: "translate(432.044812, 334.613911) rotate(269.000000) translate(-432.044812, -334.613911) "
       }))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "white-space"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "get-premium"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "white-space"
-      }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "footer"
-      }));
+        className: "splash-white-space"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-get-premium"
+      }, "Welcome!")), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "splash-footer"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "splash-github-jeff",
+        href: "https://github.com/JeffreyTseng3"
+      }, "Github"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("a", {
+        className: "splash-linkedin-jeff",
+        href: "https://www.linkedin.com/in/jeffrey-tseng-32789965"
+      }, "LinkedIn")));
       var displayLoggedIn = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "hello,"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Link"], {
         onClick: this.props.logout,
         to: "/"
@@ -1535,6 +1614,40 @@ function (_React$Component) {
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (SplashPageHeader);
+
+/***/ }),
+
+/***/ "./frontend/components/splash_page/splash_logged_out/splash_page_header_container.jsx":
+/*!********************************************************************************************!*\
+  !*** ./frontend/components/splash_page/splash_logged_out/splash_page_header_container.jsx ***!
+  \********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _splash_page_header__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./splash_page_header */ "./frontend/components/splash_page/splash_logged_out/splash_page_header.jsx");
+/* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/session_actions */ "./frontend/actions/session_actions.js");
+
+
+
+
+var msp = function msp(state) {
+  return {
+    loggedIn: Boolean(state.session.currentUserId)
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    logout: function logout() {
+      return dispatch(Object(_actions_session_actions__WEBPACK_IMPORTED_MODULE_2__["logout"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_splash_page_header__WEBPACK_IMPORTED_MODULE_1__["default"]));
 
 /***/ }),
 
@@ -1674,6 +1787,9 @@ __webpack_require__.r(__webpack_exports__);
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
       return [];
 
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CLEAR_FORM_ERRORS"]:
+      return [];
+
     default:
       return state;
   }
@@ -1740,6 +1856,9 @@ __webpack_require__.r(__webpack_exports__);
       return action.errors;
 
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CURRENT_USER"]:
+      return [];
+
+    case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__["RECEIVE_CLEAR_FORM_ERRORS"]:
       return [];
 
     default:

@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from "../../../util/route_util";
 import CollectionBarContainer from "../collection_bar/collection_bar_container";
-import PlaylistsExploreContainer from "../playlists/playlists_on_explore_container";
+import PlaylistsExploreContainer from "../playlists_on_explore/playlists_on_explore_container";
 class ExploreModule extends React.Component {
     constructor(props) {
         super(props);

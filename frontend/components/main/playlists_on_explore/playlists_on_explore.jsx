@@ -7,7 +7,7 @@ class PlaylistsExplore extends React.Component {
     render() {
         return (
             <div className="playlists-on-explore-container">
-               
+               HEllo!
             </div>
         )
     }

@@ -101,7 +101,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        createPlaylist: playlist => dispatch(createPlaylist(playlist)),
+        createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
         closeModal: () => dispatch(closeModal())
     }
 }

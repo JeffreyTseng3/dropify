@@ -19,7 +19,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.signup-login-demo {
+.signup-demo {
     background-color: #3b5998;
     color: #fff;
     font-size: 14px;
@@ -28,9 +28,32 @@
     padding: 16px 160px 18px;
     letter-spacing: 2px;
     margin: 10px;
-    width: 500px;
 }
 
+.signup-or-container {
+    display: flex;
+    justify-content: center;
+    width: 450px;
+    margin: 12px 0px 12px 0px;
+}
+
+.signup-or-text {
+    display: flex;
+    justify-content: center;
+    width: 40px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    padding: 0 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.signup-or-before {
+    border-top: 1px solid #d9dadc;
+    margin: 8px;
+    width: 450px;
+
+}
 .signup-page {
     display: flex;
     flex-direction: column;

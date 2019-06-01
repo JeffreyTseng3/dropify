@@ -1252,8 +1252,16 @@ function (_React$Component) {
       }, "DROPIFY"))), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "signup-page"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-        className: "signup-login-demo"
-      }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
+        className: "signup-demo"
+      }, "DEMO LOG IN"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-or-container"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "signup-or-before"
+      }), " ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "signup-or-text"
+      }, "OR"), "  ", react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("span", {
+        className: "sign-or-before"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
         className: "signup-greeting-text"
       }, "Sign up with your email address"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
         className: "signup-form",

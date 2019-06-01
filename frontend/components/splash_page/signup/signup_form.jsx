@@ -66,7 +66,12 @@ class SignupForm extends React.Component {
                
                     
                     <div className="signup-page">
-                        <button className="signup-login-demo">DEMO LOG IN</button>
+                        <button className="signup-demo">DEMO LOG IN</button>
+                        
+                        <div className="signup-or-container">
+                            <span className="signup-or-before"></span> <div className="signup-or-text">OR</div>  <span className="sign-or-before"></span>
+                        </div>
+
                         <h1 className="signup-greeting-text">Sign up with your email address</h1>
 
                         <form className="signup-form" onSubmit={this.handleSubmit}>

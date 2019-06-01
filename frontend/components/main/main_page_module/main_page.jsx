@@ -10,8 +10,11 @@ class MainPage extends React.Component {
     }
 
     render() {
+
+        let main_page_class = this.props.modal ? "main-page-module-modal-open" : "main-page-module";
+
         return (
-            <div className="main-page-module"> 
+            <div className={main_page_class}> 
                     <NavBarContainer /> 
                     <ExploreModuleContainer /> 
                     <MusicPlayerBarContainer />

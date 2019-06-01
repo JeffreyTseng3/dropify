@@ -6,7 +6,8 @@ import { logout }from "../../../actions/session_actions";
 
 const msp = (state, ownProps) => {
     return ({
-        currentUserId: state.session.currentUserId
+        currentUserId: state.session.currentUserId,
+        modal: state.ui.modal
     });
 };
 

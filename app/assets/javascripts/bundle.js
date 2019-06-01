@@ -530,8 +530,9 @@ function (_React$Component) {
   _createClass(MainPage, [{
     key: "render",
     value: function render() {
+      var main_page_class = this.props.modal ? "main-page-module-modal-open" : "main-page-module";
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "main-page-module"
+        className: main_page_class
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_navbar_navbar_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_explore_module_explore_module_container__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_music_player_bar_music_player_bar_container__WEBPACK_IMPORTED_MODULE_3__["default"], null));
     }
   }]);
@@ -564,7 +565,8 @@ __webpack_require__.r(__webpack_exports__);
 
 var msp = function msp(state, ownProps) {
   return {
-    currentUserId: state.session.currentUserId
+    currentUserId: state.session.currentUserId,
+    modal: state.ui.modal
   };
 };
 
@@ -699,7 +701,8 @@ function (_React$Component) {
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
         className: "new-playlist-modal-cancel",
         onClick: closeModal
-      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+      }, "CANCEL"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "new-playlist-modal-submit",
         type: "submit",
         value: "CREATE"
       }))));

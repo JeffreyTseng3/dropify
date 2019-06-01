@@ -44,9 +44,10 @@ class NewPlaylistModal extends React.Component {
 
         return (
             <div className="new-playlist-modal-background">
-                <form className="new-playlist-form"
+                <form 
+                    className="new-playlist-form"
                     onClick={e => e.stopPropagation()}
-                  onSubmit={this.handleSubmit}
+                    onSubmit={this.handleSubmit}
                 >
                     <button className="new-playlist-form-close-modal" onClick={closeModal}>
                         <i className="fas fa-times fa-3x"></i>
@@ -69,11 +70,12 @@ class NewPlaylistModal extends React.Component {
 
                     <div className="new-playlist-modal-submission-box">
                         <button className="new-playlist-modal-cancel" onClick={closeModal}>
-                                Cancel
+                                CANCEL
                         </button>
 
 
                         <input 
+                            className="new-playlist-modal-submit"
                             type="submit" 
                             value="CREATE"
                         />

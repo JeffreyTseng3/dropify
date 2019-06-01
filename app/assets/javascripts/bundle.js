@@ -593,45 +593,121 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _new_playlist_form_modal_new_playlist_form_modal_container__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../new_playlist_form_modal/new_playlist_form_modal_container */ "./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal_container.jsx");
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
 
 
+ // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
 
+var NewPlaylistModal =
+/*#__PURE__*/
+function (_React$Component) {
+  _inherits(NewPlaylistModal, _React$Component);
 
-function NewPlaylistModal(_ref) {
-  var modal = _ref.modal,
-      closeModal = _ref.closeModal;
+  function NewPlaylistModal(props) {
+    var _this;
 
-  if (!modal) {
-    return null;
+    _classCallCheck(this, NewPlaylistModal);
+
+    _this = _possibleConstructorReturn(this, _getPrototypeOf(NewPlaylistModal).call(this, props));
+    _this.state = {
+      playlist_name: ""
+    };
+    _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
+    return _this;
   }
 
-  var component;
+  _createClass(NewPlaylistModal, [{
+    key: "handleInput",
+    value: function handleInput(type) {
+      var _this2 = this;
 
-  switch (modal) {
-    case 'new':
-      component = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_new_playlist_form_modal_new_playlist_form_modal_container__WEBPACK_IMPORTED_MODULE_3__["default"], null);
-      break;
-
-    default:
-      return null;
-  }
-
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "new-playlist-modal-background"
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-    className: "new-playlist-form",
-    onClick: function onClick(e) {
-      return e.stopPropagation();
+      return function (e) {
+        _this2.setState(_defineProperty({}, type, e.target.value));
+      };
     }
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
-    className: "new-playlist-form-close-modal",
-    onClick: closeModal
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fas fa-times fa-3x"
-  })), component));
-}
+  }, {
+    key: "handleSubmit",
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var new_playlist = Object.assign({}, this.state);
+      this.props.createPlaylist(new_playlist);
+    }
+  }, {
+    key: "render",
+    value: function render() {
+      var _this$props = this.props,
+          modal = _this$props.modal,
+          closeModal = _this$props.closeModal;
+
+      if (!modal) {
+        return null;
+      } // let component;
+      // switch (modal) {
+      //     case 'new':
+      //         component = <NewPlaylistFormModalContainer />;
+      //         break;
+      //     default:
+      //         return null;
+      // }
+
+
+      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-playlist-modal-background"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("form", {
+        className: "new-playlist-form",
+        onClick: function onClick(e) {
+          return e.stopPropagation();
+        },
+        onSubmit: this.handleSubmit
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "new-playlist-form-close-modal",
+        onClick: closeModal
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+        className: "fas fa-times fa-3x"
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-playlist-form-modal-text"
+      }, "Create new playlist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-playlist-input-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-playlist-input-text"
+      }, "Playlist Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        className: "new-playlist-input",
+        type: "text",
+        placeholder: "Start typing...",
+        onChange: this.handleInput("playlist_name")
+      })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        className: "new-playlist-modal-submission-box"
+      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
+        className: "new-playlist-modal-cancel",
+        onClick: closeModal
+      }, "Cancel"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
+        type: "submit",
+        value: "CREATE"
+      }))));
+    }
+  }]);
+
+  return NewPlaylistModal;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 var msp = function msp(state) {
   return {
@@ -641,6 +717,9 @@ var msp = function msp(state) {
 
 var mdp = function mdp(dispatch) {
   return {
+    createPlaylist: function createPlaylist() {
+      return console.log('created playlist');
+    },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["closeModal"])());
     }
@@ -919,100 +998,6 @@ var mdp = function mdp(dispatch) {
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_navbar__WEBPACK_IMPORTED_MODULE_1__["default"]));
-
-/***/ }),
-
-/***/ "./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal.jsx":
-/*!**************************************************************************************!*\
-  !*** ./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal.jsx ***!
-  \**************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-
-
-var NewPlaylistFormModal =
-/*#__PURE__*/
-function (_React$Component) {
-  _inherits(NewPlaylistFormModal, _React$Component);
-
-  function NewPlaylistFormModal(props) {
-    _classCallCheck(this, NewPlaylistFormModal);
-
-    return _possibleConstructorReturn(this, _getPrototypeOf(NewPlaylistFormModal).call(this, props));
-  }
-
-  _createClass(NewPlaylistFormModal, [{
-    key: "render",
-    value: function render() {
-      return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "new-playlist-form-modal-text"
-      }, "Create new playlist"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "new-playlist-input-box"
-      }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        className: "new-playlist-input-text"
-      }, "Playlist Name"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("input", {
-        type: "text",
-        placeholder: "Start typing..."
-      })));
-    }
-  }]);
-
-  return NewPlaylistFormModal;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
-
-/* harmony default export */ __webpack_exports__["default"] = (NewPlaylistFormModal); // should i export withRouter;
-
-/***/ }),
-
-/***/ "./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal_container.jsx":
-/*!************************************************************************************************!*\
-  !*** ./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal_container.jsx ***!
-  \************************************************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _new_playlist_form_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./new_playlist_form_modal */ "./frontend/components/main/new_playlist_form_modal/new_playlist_form_modal.jsx");
-
-
-
-
-var msp = function msp(state) {
-  return {};
-};
-
-var mdp = function mdp(dispatch) {
-  return {};
-};
-
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_0__["connect"])(msp, mdp)(_new_playlist_form_modal__WEBPACK_IMPORTED_MODULE_2__["default"]));
 
 /***/ }),
 

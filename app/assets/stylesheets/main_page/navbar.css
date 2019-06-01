@@ -115,7 +115,7 @@
     margin: 10px 0px 10px 0px;
     display: flex;
     align-content: center;   
-    border-bottom: rgb(217, 218, 220) solid 1px;
+    /* border-bottom: rgb(217, 218, 220) solid 1px; */
 }
 .nav-bar-download:hover {
     color: white;

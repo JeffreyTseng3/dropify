@@ -25,7 +25,7 @@
     font-size: 14px;
 }
 
-.new-playlist-modal{
+.new-playlist-modal-btn{
     /* width: 90px; */
     display: flex;
     justify-content: center;
@@ -39,11 +39,11 @@
 }
 /* background: #1ED760 */
 
-.new-playlist-modal:hover{
+.new-playlist-modal-btn:hover{
    
 }
 
-.new-playlist-modal-text{
+.new-playlist-modal-btn-text{
     width: 100px;
 }
 

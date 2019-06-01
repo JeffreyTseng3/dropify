@@ -1,0 +1,40 @@
+/* 
+styles 
+
+/components/main/modals/new_playlist_modal
+/components/main/new_playlist_form_modal/new_playlist_form_modal
+
+ */
+
+.new-playlist-modal-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-playlist-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.new-playlist-form-close-modal {
+    color: white;
+    font-size: 20px;
+}
+
+.new-playlist-form-modal-text {
+    color: white;
+    font-size: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+}   

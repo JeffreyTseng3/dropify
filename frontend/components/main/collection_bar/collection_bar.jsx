@@ -32,7 +32,9 @@ class CollectionBar extends React.Component {
                    
 
                 </div>
-                <button className="new-playlist-modal"> <span className="new-playlist-modal-text">NEW PLAYLIST</span></button>
+                <button className="new-playlist-modal-btn" onClick={this.props.openModal}> 
+                    <span className="new-playlist-modal-btn-text">NEW PLAYLIST</span>
+                </button>
             </div>
         );
     }

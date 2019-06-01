@@ -1,13 +1,16 @@
 import React from 'react';
 import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
+import { createPlaylist } from "../../../actions/playlist_actions";
+
 // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
 
 class NewPlaylistModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playlist_name: ""
+            playlist_title: "",
+            author_id: this.props.currentUserId,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -62,7 +65,7 @@ class NewPlaylistModal extends React.Component {
                             className="new-playlist-input"
                             type="text"
                             placeholder="Start typing..."
-                            onChange={this.handleInput("playlist_name")}
+                            onChange={this.handleInput("playlist_title")}
                         />
                     </div>
 
@@ -91,13 +94,14 @@ class NewPlaylistModal extends React.Component {
 
 const msp = state => {
     return {
-        modal: state.ui.modal
+        modal: state.ui.modal,
+        currentUserId: state.session.currentUserId,
     };
 };
 
 const mdp = dispatch => {
     return {
-        createPlaylist: () => console.log('created playlist'),
+        createPlaylist: playlist => dispatch(createPlaylist(playlist)),
         closeModal: () => dispatch(closeModal())
     }
 }

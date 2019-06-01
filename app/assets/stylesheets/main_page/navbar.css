@@ -9,6 +9,7 @@
     opacity: 0.9;
     z-index: 1;
     grid-area: navbar;
+    width: 230px;
 }
 
 .navbar-splash-logo-text-combo {
@@ -143,3 +144,7 @@
     font-size: 15px;
     
 } 
+
+.nav-bar-footer {
+   
+}

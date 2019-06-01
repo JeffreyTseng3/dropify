@@ -115,6 +115,36 @@ var closeModal = function closeModal() {
 
 /***/ }),
 
+/***/ "./frontend/actions/playlist_actions.js":
+/*!**********************************************!*\
+  !*** ./frontend/actions/playlist_actions.js ***!
+  \**********************************************/
+/*! exports provided: RECEIVE_PLAYLIST, receivePlaylist, createPlaylist */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "RECEIVE_PLAYLIST", function() { return RECEIVE_PLAYLIST; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "receivePlaylist", function() { return receivePlaylist; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlaylist", function() { return createPlaylist; });
+var RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
+var receivePlaylist = function receivePlaylist(_ref) {
+  var playlist_title = _ref.playlist_title,
+      author_id = _ref.author_id;
+  return {
+    type: RECEIVE_PLAYLIST,
+    playlist_title: playlist_title,
+    author_id: author_id
+  };
+};
+var createPlaylist = function createPlaylist(playlist) {
+  return function (dispatch) {
+    return dispatch(receivePlaylist(playlist));
+  };
+};
+
+/***/ }),
+
 /***/ "./frontend/actions/session_actions.js":
 /*!*********************************************!*\
   !*** ./frontend/actions/session_actions.js ***!
@@ -595,6 +625,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -617,6 +648,7 @@ function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || func
 
 
 
+
  // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
 
 var NewPlaylistModal =
@@ -631,7 +663,8 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NewPlaylistModal).call(this, props));
     _this.state = {
-      playlist_name: ""
+      playlist_title: "",
+      author_id: _this.props.currentUserId
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
     return _this;
@@ -695,7 +728,7 @@ function (_React$Component) {
         className: "new-playlist-input",
         type: "text",
         placeholder: "Start typing...",
-        onChange: this.handleInput("playlist_name")
+        onChange: this.handleInput("playlist_title")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-playlist-modal-submission-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -714,14 +747,15 @@ function (_React$Component) {
 
 var msp = function msp(state) {
   return {
-    modal: state.ui.modal
+    modal: state.ui.modal,
+    currentUserId: state.session.currentUserId
   };
 };
 
 var mdp = function mdp(dispatch) {
   return {
-    createPlaylist: function createPlaylist() {
-      return console.log('created playlist');
+    createPlaylist: function createPlaylist(playlist) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["createPlaylist"])(playlist));
     },
     closeModal: function closeModal() {
       return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["closeModal"])());

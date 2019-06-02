@@ -1,9 +1,32 @@
 import React from 'react';
 import { closeModal } from '../../../actions/modal_actions';
 import { connect } from 'react-redux';
-import { createPlaylist } from "../../../actions/playlist_actions";
+import { createPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 
 // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
+
+
+// 
+
+const msp = state => {
+    return {
+        modal: state.ui.modal,
+        currentUserId: state.session.currentUserId,
+    };
+};
+
+const mdp = dispatch => {
+    return {
+        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),
+        createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
+        closeModal: () => dispatch(closeModal())
+    }
+}
+
+
+// 
+
+
 
 class NewPlaylistModal extends React.Component {
     constructor(props) {
@@ -24,8 +47,15 @@ class NewPlaylistModal extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
+        let { closeModal, createPlaylist, fetchPlaylists } = this.props;
+
         const new_playlist = Object.assign({}, this.state);
-        this.props.createPlaylist(new_playlist);
+        createPlaylist(new_playlist)
+        closeModal();
+        // history.push
+
+        // TESTING FETCHPLAYSLIST
+        // fetchPlaylists(this.state.author_id);
     }
     
     componentDidMount() {
@@ -95,18 +125,5 @@ class NewPlaylistModal extends React.Component {
     
 }
 
-const msp = state => {
-    return {
-        modal: state.ui.modal,
-        currentUserId: state.session.currentUserId,
-    };
-};
-
-const mdp = dispatch => {
-    return {
-        createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
-        closeModal: () => dispatch(closeModal())
-    }
-}
-
 export default connect(msp, mdp)(NewPlaylistModal);
+

@@ -1,11 +1,12 @@
 import merge from 'lodash/merge';
 
-import {  RECEIVE_PLAYLIST } from "../actions/playlist_actions";
+import {  RECEIVE_PLAYLIST, RECEIVE_PLAYLISTS } from "../actions/playlist_actions";
 
 const playlistsReducer = (state = {}, action) => {
     Object.freeze(state);
-    debugger
     switch(action.type) {
+        case RECEIVE_PLAYLISTS:
+            return merge( {}, state, { allPlaylists: action.playlists});
         case RECEIVE_PLAYLIST:
             const playlist = {
                 title: action.title,

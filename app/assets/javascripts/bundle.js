@@ -143,9 +143,7 @@ var receivePlaylist = function receivePlaylist(_ref) {
 };
 var createPlaylist = function createPlaylist(playlist) {
   return function (dispatch) {
-    debugger;
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["createPlaylist"](playlist).then(function (playlist) {
-      debugger;
       dispatch(receivePlaylist(playlist));
     });
   };

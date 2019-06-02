@@ -12,10 +12,10 @@ export const receivePlaylist = ({id, title, author_id }) => {
 };
 
 export const createPlaylist = (playlist) => dispatch => {
-    debugger
+
     return PlaylistAPIUtil.createPlaylist(playlist)
         .then(playlist => {
-            debugger
+  
             dispatch(receivePlaylist(playlist))
              }
         )

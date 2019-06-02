@@ -14,9 +14,9 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),
         createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),                      
     }
 }
 

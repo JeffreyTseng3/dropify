@@ -7,10 +7,18 @@ import ExploreModuleContainer from "../explore_module/explore_module_container"
 class MainPage extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            author_id: this.props.currentUserId
+        }
+    }
+
+    componentDidMount() {
+        // debugger
+        this.props.fetchPlaylists(this.state.author_id);
     }
 
     render() {
-
+        // THIS prevents overscrolling 
         let main_page_class = this.props.modal ? "main-page-module-modal-open" : "main-page-module";
 
         return (

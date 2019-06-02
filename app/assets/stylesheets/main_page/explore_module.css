@@ -4,5 +4,6 @@
     grid-area: explore;
     /* justify-content: space-around; */
     flex-direction: column;
+    /* overflow: scroll; */
     
 }

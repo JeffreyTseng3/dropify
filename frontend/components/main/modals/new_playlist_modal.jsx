@@ -1,4 +1,5 @@
 import React from 'react';
+import { fetchPlaylists } from '../../../util/playlist_api_util';
 
 // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
 
@@ -27,17 +28,17 @@ class NewPlaylistModal extends React.Component {
             return
         }
         const new_playlist = Object.assign({}, this.state);
-        createPlaylist(new_playlist)
+        createPlaylist(new_playlist);
         closeModal();
         this.props.history.push("/main/playlist");
+        fetchPlaylists(this.state.author_id);
     }
 
     
 
 
     componentDidMount() {
-        this.props.fetchPlaylists();
-        
+       
         // CHECK IF THIS IS OKAY TO RESET TITLE, it was not clearing cache previosuly without
         // this in the case of test an empty title submission
         this.state.title = "";

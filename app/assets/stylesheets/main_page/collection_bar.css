@@ -5,7 +5,13 @@
     font-family: 'Montserrat', sans-serif;
     margin-top: 30px;
     letter-spacing: .16em;
-
+    position: relative;
+    /* top: 0px;
+    right: 0px;
+    left: 230px;
+    width: 100%;
+    align-content: center;
+    justify-content: center; */
 }
 
 .collection-bar {

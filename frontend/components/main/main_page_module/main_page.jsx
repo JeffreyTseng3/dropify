@@ -15,6 +15,7 @@ class MainPage extends React.Component {
     componentDidMount() {
         // debugger
         this.props.fetchPlaylists(this.state.author_id);
+
     }
 
     render() {

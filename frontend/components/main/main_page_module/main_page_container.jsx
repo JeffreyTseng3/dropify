@@ -3,7 +3,7 @@ import MainPage from "./main_page";
 import { connect } from "react-redux";
 import { logout }from "../../../actions/session_actions";
 import { fetchPlaylists } from '../../../actions/playlist_actions';
-
+import { withRouter } from "react-router"
 
 const msp = (state, ownProps) => {
     return ({
@@ -19,4 +19,4 @@ const mdp = dispatch => {
     });
 };
 
-export default connect(msp, mdp)(MainPage);
+export default withRouter(connect(msp, mdp)(MainPage));

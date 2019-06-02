@@ -120,7 +120,7 @@
 .splash-get-premium {
     background: hsl(164, 28%, 39%);
     height: 400px;
-    width: 1200px;
+    width: 100%;
     position: absolute;
     z-index: 0;
     display: flex;

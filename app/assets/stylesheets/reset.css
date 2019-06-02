@@ -48,5 +48,6 @@ input[type="submit"] {
 }
 
 body {
-    overscroll-behavior-y: none
+    overscroll-behavior-y: none;
+    overscroll-behavior-x: none;
 }

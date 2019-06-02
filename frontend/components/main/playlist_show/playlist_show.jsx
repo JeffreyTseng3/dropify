@@ -7,7 +7,12 @@ class PlaylistsExplore extends React.Component {
     render() {
         return (
             <div className="playlist-show-container">
-                SHOW PLAYLIST
+
+                <div className="playlist-show-info-module">
+                    <div className="playlist-show-picture">Picture</div>
+                    <div className="playlist-show-info"></div>
+                </div>
+                
             </div>
         )
     }

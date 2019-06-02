@@ -5,13 +5,25 @@ class PlaylistsOnExploreItem extends React.Component {
 
     constructor(props) {
         super(props);
-
     }
 
+    
+
     render() {
+        let playlist_title = this.props.playlist.title;
+        let playlist_id = this.props.playlist.id;
+        
         return ( 
             <>
-                <h1>playlist item</h1>
+                <button 
+                    onClick={() => this.props.history.push(`/main/playlist/${playlist_id}`)}
+                    className="playlists-explore-item">
+                    <div className="playlists-explore-item-img">
+                        <i className="fas fa-music fa-3x"></i>
+                        {/* <i class="fas fa-play-circle"></i> */}
+                    </div>
+                        <div className="playlists-explore-item-text">{playlist_title}</div>
+                </button>
             </>
         )
     }

@@ -1,6 +1,8 @@
 import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import PlaylistsOnExploreItem from "../playlists_on_explore_item/playlists_on_explore_item_container";
 
 class PlaylistsExplore extends React.Component {
 
@@ -22,14 +24,15 @@ class PlaylistsExplore extends React.Component {
     
         let displayPlayists = playlists ? playlists.map(playlist => {
             return (
-                <h1>hello</h1>
+
+                    <PlaylistsOnExploreItem key={playlist.id} playlist={playlist} />
+
             )
         }) : null ;
 
 
         return (
             <div className="playlists-on-explore-container">
-
                 {displayPlayists}
             </div>
         )

@@ -1271,19 +1271,19 @@ function (_React$Component) {
 
   _createClass(PlaylistsExplore, [{
     key: "componentDidMount",
-    value: function componentDidMount() {// this.props.fetchPlaylists(this.state.author_id);
+    value: function componentDidMount() {
+      this.props.fetchPlaylists(this.state.author_id);
     }
   }, {
     key: "render",
     value: function render() {
-      // let { playlists } = this.props;
-      // let displayPlayists = playlists.map( playlist => {
-      //     return 'HELLO'
-      // })
-      // debugger
+      var playlists = this.props.playlists;
+      var displayPlayists = playlists ? playlists.map(function (playlist) {
+        return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", null, "hello");
+      }) : null;
       return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "playlists-on-explore-container"
-      });
+      }, displayPlayists);
     }
   }]);
 
@@ -1308,6 +1308,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _playlists_on_explore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./playlists_on_explore */ "./frontend/components/main/playlists_on_explore/playlists_on_explore.jsx");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+
 
 
 
@@ -1328,7 +1330,7 @@ var mdp = function mdp(dispatch) {
   };
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(_playlists_on_explore__WEBPACK_IMPORTED_MODULE_1__["default"]));
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(_playlists_on_explore__WEBPACK_IMPORTED_MODULE_1__["default"])));
 
 /***/ }),
 

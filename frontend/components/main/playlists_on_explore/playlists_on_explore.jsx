@@ -12,24 +12,25 @@ class PlaylistsExplore extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchPlaylists(this.state.author_id);
+        this.props.fetchPlaylists(this.state.author_id);
     }
 
 
     render() {
+        
+        const playlists = this.props.playlists;
+    
+        let displayPlayists = playlists ? playlists.map(playlist => {
+            return (
+                <h1>hello</h1>
+            )
+        }) : null ;
 
-
-        // let { playlists } = this.props;
-        // let displayPlayists = playlists.map( playlist => {
-        //     return 'HELLO'
-        // })
-        // debugger
 
         return (
             <div className="playlists-on-explore-container">
 
-
-
+                {displayPlayists}
             </div>
         )
     }

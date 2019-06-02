@@ -5,12 +5,12 @@ import SplashPageHeaderContainer from "./splash_page/splash_logged_out/splash_pa
 import LoginFormContainer from "./splash_page/login/login_form_container";
 import SignupFormContainer from "./splash_page/signup/signup_form_container";
 import MainPageContainer from "../components/main/main_page_module/main_page_container"
-import NewPlaylistModal from './main/modals/new_playlist_modal';
+import NewPlaylistModalContainer from './main/modals/new_playlist_modal_container';
 
 const App = () => {
     return (
         <>
-            <NewPlaylistModal />
+            <NewPlaylistModalContainer />
             <Route exact path="/" component={SplashPageHeaderContainer}/>
             <AuthRoute path="/signup" component={SignupFormContainer} />
             <AuthRoute path="/login" component={LoginFormContainer} />

@@ -157,7 +157,8 @@ var createPlaylist = function createPlaylist(playlist) {
       dispatch(receivePlaylist(playlist));
     });
   };
-};
+}; // IDENTIFIES FROM AUTHOR_ID, to show all the author's playlists
+
 var fetchPlaylists = function fetchPlaylists(author_id) {
   return function (dispatch) {
     console.log('fetch from actions', author_id);
@@ -271,7 +272,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _splash_page_login_login_form_container__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./splash_page/login/login_form_container */ "./frontend/components/splash_page/login/login_form_container.jsx");
 /* harmony import */ var _splash_page_signup_signup_form_container__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./splash_page/signup/signup_form_container */ "./frontend/components/splash_page/signup/signup_form_container.jsx");
 /* harmony import */ var _components_main_main_page_module_main_page_container__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/main/main_page_module/main_page_container */ "./frontend/components/main/main_page_module/main_page_container.jsx");
-/* harmony import */ var _main_modals_new_playlist_modal__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/modals/new_playlist_modal */ "./frontend/components/main/modals/new_playlist_modal.jsx");
+/* harmony import */ var _main_modals_new_playlist_modal_container__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/modals/new_playlist_modal_container */ "./frontend/components/main/modals/new_playlist_modal_container.jsx");
 
 
 
@@ -282,7 +283,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var App = function App() {
-  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_modals_new_playlist_modal__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
+  return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_main_modals_new_playlist_modal_container__WEBPACK_IMPORTED_MODULE_7__["default"], null), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__["Route"], {
     exact: true,
     path: "/",
     component: _splash_page_splash_logged_out_splash_page_header_container__WEBPACK_IMPORTED_MODULE_3__["default"]
@@ -647,9 +648,6 @@ var mdp = function mdp(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
-/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
-/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
 function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -670,33 +668,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
 
-
-
-
  // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
-// 
-
-var msp = function msp(state) {
-  return {
-    modal: state.ui.modal,
-    currentUserId: state.session.currentUserId
-  };
-};
-
-var mdp = function mdp(dispatch) {
-  return {
-    fetchPlaylists: function fetchPlaylists(author_id) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["fetchPlaylists"])(author_id));
-    },
-    createPlaylist: function createPlaylist(new_playlist) {
-      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_3__["createPlaylist"])(new_playlist));
-    },
-    closeModal: function closeModal() {
-      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_1__["closeModal"])());
-    }
-  };
-}; // 
-
 
 var NewPlaylistModal =
 /*#__PURE__*/
@@ -732,17 +704,25 @@ function (_React$Component) {
       e.preventDefault();
       var _this$props = this.props,
           closeModal = _this$props.closeModal,
-          createPlaylist = _this$props.createPlaylist,
-          fetchPlaylists = _this$props.fetchPlaylists;
+          createPlaylist = _this$props.createPlaylist;
+
+      if (this.state.title === "") {
+        return;
+      }
+
       var new_playlist = Object.assign({}, this.state);
       createPlaylist(new_playlist);
-      closeModal(); // history.push
-      // TESTING FETCHPLAYSLIST
-      // fetchPlaylists(this.state.author_id);
+      closeModal();
+      this.props.history.push("/main/playlist");
     }
   }, {
     key: "componentDidMount",
-    value: function componentDidMount() {}
+    value: function componentDidMount() {
+      this.props.fetchPlaylists(); // CHECK IF THIS IS OKAY TO RESET TITLE, it was not clearing cache previosuly without
+      // this in the case of test an empty title submission
+
+      this.state.title = "";
+    }
   }, {
     key: "render",
     value: function render() {
@@ -802,7 +782,53 @@ function (_React$Component) {
   return NewPlaylistModal;
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(react_redux__WEBPACK_IMPORTED_MODULE_2__["connect"])(msp, mdp)(NewPlaylistModal));
+/* harmony default export */ __webpack_exports__["default"] = (NewPlaylistModal);
+
+/***/ }),
+
+/***/ "./frontend/components/main/modals/new_playlist_modal_container.jsx":
+/*!**************************************************************************!*\
+  !*** ./frontend/components/main/modals/new_playlist_modal_container.jsx ***!
+  \**************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../actions/modal_actions */ "./frontend/actions/modal_actions.js");
+/* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
+/* harmony import */ var _new_playlist_modal__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./new_playlist_modal */ "./frontend/components/main/modals/new_playlist_modal.jsx");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+
+
+
+
+
+
+var msp = function msp(state) {
+  return {
+    modal: state.ui.modal,
+    currentUserId: state.session.currentUserId,
+    playlists: state.entities.playlists
+  };
+};
+
+var mdp = function mdp(dispatch) {
+  return {
+    fetchPlaylists: function fetchPlaylists(author_id) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["fetchPlaylists"])(author_id));
+    },
+    createPlaylist: function createPlaylist(new_playlist) {
+      return dispatch(Object(_actions_playlist_actions__WEBPACK_IMPORTED_MODULE_2__["createPlaylist"])(new_playlist));
+    },
+    closeModal: function closeModal() {
+      return dispatch(Object(_actions_modal_actions__WEBPACK_IMPORTED_MODULE_0__["closeModal"])());
+    }
+  };
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(react_router__WEBPACK_IMPORTED_MODULE_4__["withRouter"])(Object(react_redux__WEBPACK_IMPORTED_MODULE_1__["connect"])(msp, mdp)(_new_playlist_modal__WEBPACK_IMPORTED_MODULE_3__["default"])));
 
 /***/ }),
 
@@ -2048,8 +2074,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash/merge */ "./node_modules/lodash/merge.js");
 /* harmony import */ var lodash_merge__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_merge__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../actions/playlist_actions */ "./frontend/actions/playlist_actions.js");
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-
 
 
 
@@ -2060,18 +2084,21 @@ var playlistsReducer = function playlistsReducer() {
 
   switch (action.type) {
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PLAYLISTS"]:
-      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, {
+      var allPlaylists = {
         allPlaylists: action.playlists
-      });
+      };
+      return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, allPlaylists);
 
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PLAYLIST"]:
       var playlist = {
+        id: action.id,
         title: action.title,
         author_id: action.author_id
+      }; // const newPlaylist = { [action.id]: playlist };
+
+      var newPlaylist = {
+        newPlaylist: playlist
       };
-
-      var newPlaylist = _defineProperty({}, action.id, playlist);
-
       return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, newPlaylist);
 
     default:

@@ -19,14 +19,16 @@ export const receivePlaylists = (playlists) => {
     };
 };
 
+
 export const createPlaylist = (playlist) => dispatch => {
 
     return PlaylistAPIUtil.createPlaylist(playlist)
         .then(playlist => {
             dispatch(receivePlaylist(playlist))
         });
-}
+};
 
+// IDENTIFIES FROM AUTHOR_ID, to show all the author's playlists
 export const fetchPlaylists = (author_id) => dispatch => {
     console.log('fetch from actions', author_id);
     return PlaylistAPIUtil.fetchPlaylists(author_id)
@@ -34,4 +36,5 @@ export const fetchPlaylists = (author_id) => dispatch => {
             dispatch(receivePlaylists(playlists))
         });
 }
+
 

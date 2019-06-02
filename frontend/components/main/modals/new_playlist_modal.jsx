@@ -1,32 +1,6 @@
 import React from 'react';
-import { closeModal } from '../../../actions/modal_actions';
-import { connect } from 'react-redux';
-import { createPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 
 // import NewPlaylistFormModalContainer from "../new_playlist_form_modal/new_playlist_form_modal_container";
-
-
-// 
-
-const msp = state => {
-    return {
-        modal: state.ui.modal,
-        currentUserId: state.session.currentUserId,
-    };
-};
-
-const mdp = dispatch => {
-    return {
-        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),
-        createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
-        closeModal: () => dispatch(closeModal())
-    }
-}
-
-
-// 
-
-
 
 class NewPlaylistModal extends React.Component {
     constructor(props) {
@@ -47,19 +21,26 @@ class NewPlaylistModal extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        let { closeModal, createPlaylist, fetchPlaylists } = this.props;
+        let { closeModal, createPlaylist} = this.props;
 
+        if (this.state.title === "") {
+            return
+        }
         const new_playlist = Object.assign({}, this.state);
         createPlaylist(new_playlist)
         closeModal();
-        // history.push
-
-        // TESTING FETCHPLAYSLIST
-        // fetchPlaylists(this.state.author_id);
+        this.props.history.push("/main/playlist");
     }
+
     
+
+
     componentDidMount() {
-      
+        this.props.fetchPlaylists();
+        
+        // CHECK IF THIS IS OKAY TO RESET TITLE, it was not clearing cache previosuly without
+        // this in the case of test an empty title submission
+        this.state.title = "";
     }
   
     render () {
@@ -125,5 +106,5 @@ class NewPlaylistModal extends React.Component {
     
 }
 
-export default connect(msp, mdp)(NewPlaylistModal);
+export default NewPlaylistModal;
 

@@ -9,7 +9,7 @@ class NewPlaylistModal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            playlist_title: "",
+            title: "",
             author_id: this.props.currentUserId,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -28,6 +28,9 @@ class NewPlaylistModal extends React.Component {
         this.props.createPlaylist(new_playlist);
     }
     
+    componentDidMount() {
+      
+    }
   
     render () {
         let { modal, closeModal } = this.props;
@@ -65,7 +68,7 @@ class NewPlaylistModal extends React.Component {
                             className="new-playlist-input"
                             type="text"
                             placeholder="Start typing..."
-                            onChange={this.handleInput("playlist_title")}
+                            onChange={this.handleInput("title")}
                         />
                     </div>
 

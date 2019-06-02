@@ -1,5 +1,6 @@
 export const createPlaylist = playlist => {
-    $.ajax({
+    
+    return $.ajax({
         method: "POST",
         url: '/api/playlists',
         data: { playlist }

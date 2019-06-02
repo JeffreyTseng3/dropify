@@ -2,16 +2,22 @@ export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 import * as PlaylistAPIUtil from "../util/playlist_api_util";
 
 
-export const receivePlaylist = ({playlist_title, author_id }) => {
+export const receivePlaylist = ({id, title, author_id }) => {
     return{
         type: RECEIVE_PLAYLIST,
-        playlist_title, 
+        id,
+        title, 
         author_id
     };
 };
 
 export const createPlaylist = (playlist) => dispatch => {
+    debugger
     return PlaylistAPIUtil.createPlaylist(playlist)
-        .then(playlist => dispatch(receivePlaylist(playlist)))
+        .then(playlist => {
+            debugger
+            dispatch(receivePlaylist(playlist))
+             }
+        )
 }
 

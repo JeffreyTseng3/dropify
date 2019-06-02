@@ -18,7 +18,8 @@ class Playlist < ApplicationRecord
         foreign_key: :author_id,
         class_name: :User
 
-        
-
+    # has_many :songs
+    # song_ids => []
+    # playlist.song_ids returns an array of all ids..
 
 end

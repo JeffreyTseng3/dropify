@@ -131,18 +131,22 @@ __webpack_require__.r(__webpack_exports__);
 var RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 
 var receivePlaylist = function receivePlaylist(_ref) {
-  var playlist_title = _ref.playlist_title,
+  var id = _ref.id,
+      title = _ref.title,
       author_id = _ref.author_id;
   return {
     type: RECEIVE_PLAYLIST,
-    playlist_title: playlist_title,
+    id: id,
+    title: title,
     author_id: author_id
   };
 };
 var createPlaylist = function createPlaylist(playlist) {
   return function (dispatch) {
+    debugger;
     return _util_playlist_api_util__WEBPACK_IMPORTED_MODULE_0__["createPlaylist"](playlist).then(function (playlist) {
-      return dispatch(receivePlaylist(playlist));
+      debugger;
+      dispatch(receivePlaylist(playlist));
     });
   };
 };
@@ -667,7 +671,7 @@ function (_React$Component) {
 
     _this = _possibleConstructorReturn(this, _getPrototypeOf(NewPlaylistModal).call(this, props));
     _this.state = {
-      playlist_title: "",
+      title: "",
       author_id: _this.props.currentUserId
     };
     _this.handleSubmit = _this.handleSubmit.bind(_assertThisInitialized(_this));
@@ -690,6 +694,9 @@ function (_React$Component) {
       var new_playlist = Object.assign({}, this.state);
       this.props.createPlaylist(new_playlist);
     }
+  }, {
+    key: "componentDidMount",
+    value: function componentDidMount() {}
   }, {
     key: "render",
     value: function render() {
@@ -732,7 +739,7 @@ function (_React$Component) {
         className: "new-playlist-input",
         type: "text",
         placeholder: "Start typing...",
-        onChange: this.handleInput("playlist_title")
+        onChange: this.handleInput("title")
       })), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         className: "new-playlist-modal-submission-box"
       }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("button", {
@@ -2022,10 +2029,16 @@ var playlistsReducer = function playlistsReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
   Object.freeze(state);
+  debugger;
 
   switch (action.type) {
     case _actions_playlist_actions__WEBPACK_IMPORTED_MODULE_1__["RECEIVE_PLAYLIST"]:
-      var newPlaylist = _defineProperty({}, action.playlist.id, action.playlist);
+      var playlist = {
+        title: action.title,
+        author_id: action.author_id
+      };
+
+      var newPlaylist = _defineProperty({}, action.id, playlist);
 
       return lodash_merge__WEBPACK_IMPORTED_MODULE_0___default()({}, state, newPlaylist);
 
@@ -2264,7 +2277,7 @@ var configureStore = function configureStore() {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "createPlaylist", function() { return createPlaylist; });
 var createPlaylist = function createPlaylist(playlist) {
-  $.ajax({
+  return $.ajax({
     method: "POST",
     url: '/api/playlists',
     data: {

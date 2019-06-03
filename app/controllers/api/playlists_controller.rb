@@ -17,7 +17,6 @@ class Api::PlaylistsController < ApplicationController
     end 
 
     def show
-        # debugger
         id = params[:id].to_i
         @playlist = Playlist.find(id)
         render "api/playlists/show"

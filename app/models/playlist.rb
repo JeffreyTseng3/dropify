@@ -22,4 +22,13 @@ class Playlist < ApplicationRecord
     # song_ids => []
     # playlist.song_ids returns an array of all ids..
 
+    has_many :playlist_songs, 
+        primary_key: :id, 
+        foreign_key: :playlist_id,
+        class_name: :PlaylistSong 
+
+    has_many :songs, 
+        through: :playlist_songs, 
+        source: :song
+
 end

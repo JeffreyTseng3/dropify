@@ -30154,3 +30154,119 @@ Processing by Api::PlaylistsController#index as JSON
 Completed 200 OK in 61ms (Views: 33.3ms | ActiveRecord: 11.3ms)
 
 
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangePlaylistsSongsToPlaylistSongs (20190603212018)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.2ms)[0m  [1m[35mALTER TABLE "playlists_songs" RENAME TO "playlist_songs"[0m
+  ↳ db/migrate/20190603212018_change_playlists_songs_to_playlist_songs.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mALTER INDEX "playlists_songs_pkey" RENAME TO "playlist_songs_pkey"[0m
+  ↳ db/migrate/20190603212018_change_playlists_songs_to_playlist_songs.rb:3
+  [1m[35m (0.8ms)[0m  [1m[35mALTER TABLE "public"."playlists_songs_id_seq" RENAME TO "playlist_songs_id_seq"[0m
+  ↳ db/migrate/20190603212018_change_playlists_songs_to_playlist_songs.rb:3
+  [1m[35m (0.7ms)[0m  [1m[35mALTER INDEX "index_playlists_songs_on_playlist_id" RENAME TO "index_playlist_songs_on_playlist_id"[0m
+  ↳ db/migrate/20190603212018_change_playlists_songs_to_playlist_songs.rb:3
+  [1m[35m (1.5ms)[0m  [1m[35mALTER INDEX "index_playlists_songs_on_song_id" RENAME TO "index_playlist_songs_on_song_id"[0m
+  ↳ db/migrate/20190603212018_change_playlists_songs_to_playlist_songs.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190603212018"]]
+  ↳ bin/rails:9
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/bin/annotate:23
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/bin/annotate:23
+Started GET "/" for ::1 at 2019-06-03 17:36:04 -0400
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (2.5ms)
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "X8NluM_S1nafE-J5hK6VxA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 3890ms (Views: 3875.1ms | ActiveRecord: 11.8ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 17:36:08 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (14.8ms)
+Completed 200 OK in 36ms (Views: 18.0ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 17:36:08 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (2.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (8.9ms)
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 17:36:10 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (7.6ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 17:36:14 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (5.0ms)
+Completed 200 OK in 15ms (Views: 13.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 17:36:14 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (5.3ms)
+Completed 200 OK in 18ms (Views: 17.2ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 18:35:55 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (8.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (51.0ms)
+Completed 200 OK in 120ms (Views: 59.3ms | ActiveRecord: 30.2ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-03 18:35:55 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (13.1ms)
+Completed 200 OK in 28ms (Views: 27.2ms | ActiveRecord: 0.5ms)
+
+

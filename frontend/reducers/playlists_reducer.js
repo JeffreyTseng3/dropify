@@ -16,9 +16,11 @@ const playlistsReducer = (state = {}, action) => {
                 title: action.title,
                 author_id: action.author_id
             };
+            // was previously newPlaylist key to accomodate for new
+            // playlist redirect
             // const newPlaylist = { [action.id]: playlist };
-            const newPlaylist = { newPlaylist: playlist };
-            return merge({}, state, newPlaylist);
+            const showSinglePlaylist = { showSinglePlaylist: playlist };
+            return merge({}, state, showSinglePlaylist);
         default: 
             return state;
     }

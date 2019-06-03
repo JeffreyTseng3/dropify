@@ -1,6 +1,7 @@
 export const RECEIVE_PLAYLIST = "RECEIVE_PLAYLIST";
 export const RECEIVE_PLAYLISTS = "RECEIVE_PLAYLISTS";
 import * as PlaylistAPIUtil from "../util/playlist_api_util";
+import { log } from "util";
 
 
 export const receivePlaylist = ({id, title, author_id }) => {
@@ -30,11 +31,17 @@ export const createPlaylist = (playlist) => dispatch => {
 
 // IDENTIFIES FROM AUTHOR_ID, to show all the author's playlists
 export const fetchPlaylists = (author_id) => dispatch => {
-    console.log('fetch from actions', author_id);
+
     return PlaylistAPIUtil.fetchPlaylists(author_id)
         .then(playlists => {
             dispatch(receivePlaylists(playlists))
         });
 }
 
+export const fetchPlaylist = id => dispatch => {
+    return PlaylistAPIUtil.fetchPlaylist(id)
+        .then(playlist => {
+            return dispatch(receivePlaylist(playlist))
+        });
+}
 

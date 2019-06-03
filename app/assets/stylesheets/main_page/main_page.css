@@ -6,7 +6,7 @@
     left: 0;
 
     z-index: 0;
-    background-image: linear-gradient(to right,hsl(171, 40%, 26%), hsl(173, 46%, 11%));
+    background-image: linear-gradient(to bottom right,hsl(171, 40%, 26%) 10%, hsl(173, 46%, 11%));
 
     display: grid;
     grid-template-columns: 230px auto;

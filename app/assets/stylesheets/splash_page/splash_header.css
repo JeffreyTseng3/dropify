@@ -1,6 +1,19 @@
-.navbar {
+.splash-logged-out-module {
+    display: grid;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-module {
     background-color: rgba(0, 0, 0, 0.6);
     opacity: 0.8;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
 }
 
 .splash-header-navbar {
@@ -8,13 +21,11 @@
     color: white;
     align-items: center;
     justify-content: space-between;
-    /* font-family:  Helvetica, Arial, sans-serif; */
-    font-family: 'Montserrat', sans-serif;
     font-weight: 500;
-    min-height: 80px;
-    border: 0;
-    margin-left: 20px;
-    margin-right: 20px;
+    height: 80px;
+    width: 1100px;
+    margin-left: 40px;
+    margin-right: 40px;
 }
 
 .splash-logo-text-combo {
@@ -29,58 +40,115 @@
 }
 
 .splash-header-login-signup-combo {
+    display: flex;
+    justify-content: space-between;
     width: 150px;
 }
 
-.login-btn {
+.splash-login-btn {
     padding: 5px;
 }
-.signup-btn {
+.splash-signup-btn {
     padding: 5px;
 }
 
-/* a:visited{
-  color:white;
-} */
-.login-btn:hover {
+.splash-login-btn:hover {
     color: #1ED760;
 }
-.signup-btn:hover {
+.splash-signup-btn:hover {
     color: #1ED760;
 }
 
-.tophalf {
+.splash-tophalf {
     background: linear-gradient(#ef7380 ,#f39b69);
     height: 660px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
 
-}
-.white-space {
-    height: 50px;
-    background: white;
-    position:relative;
-}
-.splash-img {
-    position: relative;
-}
-.get-premium {
-    background: #488172;
-    height: 480px;
-    position:relative;
-}
-.tophalf-info {
+.splash-tophalf-info {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    font-family: 'Montserrat', sans-serif;
-    /* position: relative; */
     color:white;
-    margin-top: 250px;
     z-index: 1;
 }
-.footer {
+
+.splash-info-1 {
+    font-size: 70px;
+    font-weight: bold;
+    margin: 10px
+}
+
+.splash-info-2 {
+    font-weight: 400;
+    font-size: 20px;
+    margin: 10px
+
+}
+
+
+.splash-info-btn {
+    background-color: #1db954;
+    font-size: 12px;
+    border-radius: 500px;
+    color: white;
+    margin: 20px 10px 10px 10px;
+    padding: 15px 70px;
+    font-weight: bold; 
+    letter-spacing: 0.2em;
+}
+
+.splash-img {
+    position: absolute;
+}
+
+
+.splash-white-space {
+    height: 500px;
+    background: white;
+    position:relative;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.splash-get-premium {
+    background: hsl(164, 28%, 39%);
+    height: 400px;
+    width: 100%;
+    position: absolute;
+    z-index: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;   
+
+}
+
+
+.splash-footer {
    height: 450px; 
    background:#000;
     position:relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.splash-github-jeff {
+    color: white;
+    margin: 10px;
+}
+
+.splash-linkedin-jeff {
+    color: white;
+    margin: 10px;
 
 }

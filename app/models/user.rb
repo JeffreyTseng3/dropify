@@ -25,6 +25,10 @@ class User < ApplicationRecord
    
     # ASSOCIATIONS
 
+    has_many :playlists,
+        primary_key: :id, 
+        foreign_key: :author_id,
+        class_name: :Playlist
 
     # FIGVAPOR
     attr_reader :password

@@ -1,0 +1,9 @@
+.explore-module-main{
+    display: flex;
+    z-index: 1;
+    grid-area: explore;
+    /* justify-content: space-around; */
+    flex-direction: column;
+    /* overflow: scroll; */
+    
+}

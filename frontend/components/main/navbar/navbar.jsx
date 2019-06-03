@@ -29,7 +29,7 @@ class NavBar extends React.Component {
                         <span className="nav-item-search">Search</span>
                     </Link>
 
-                    <Link className="nav-bar-lib" to="/main/collection/playlist">
+                    <Link className="nav-bar-lib" to="/main/collection/playlists">
                         <span className="nav-item-img"><i className="fas fa-book-open fa-2x"></i></span>
                         <span className="nav-item">Library</span>
                     </Link>

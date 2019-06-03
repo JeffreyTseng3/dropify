@@ -6,19 +6,34 @@ class SplashPageHeader extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state =  {}
         
     }
 
     componentDidMount() {
-     
     }
 
     render() { 
         
+        const displaySessionButtons = this.props.loggedIn ? ( 
+                <div>
+                    <Link onClick={this.props.logout} to="/">LOG OUT</Link>
+                </div>
+        ) : 
+
+        (
+             < div className = "splash-header-login-signup-combo" >
+                <Link className="splash-signup-btn" to="/signup">Sign Up</Link>
+                <Link className="splash-login-btn" to="/login">Log In</Link>
+            </div >
+
+        )
+        
         const displayLoggedOut = (
-            <div>
-                <div className="tophalf">
-                    <div className="navbar">
+            <div className="splash-logged-out-module">
+                
+                <div className="splash-tophalf">
+                    <div className="navbar-module">
                         <div className="splash-header-navbar">
                             <div className="splash-logo-text-combo">
                                 <Link to="/">
@@ -27,19 +42,14 @@ class SplashPageHeader extends React.Component {
 
                                 <Link to="/" className="splash-logo-text">DROPIFY</Link>
                             </div>
-                            <div className="splash-header-login-signup-combo">
-                                <Link className="signup-btn" to="/signup">Sign Up</Link>
-                                <Link className="login-btn" to="/login">Log In</Link>
-                            </div>
+                            {displaySessionButtons}
                         </div>
                     </div>
 
-                    <div className="tophalf-info">
-                        <h1>Music for everyone.</h1>
-                        <h3>Millions of songs. No credit card needed.</h3>
-                        <form>
-                            <input type="submit" value="GET SPOTIFY FREE" />
-                        </form>
+                    <div className="splash-tophalf-info">
+                        <div className="splash-info-1">Music for everyone.</div>
+                        <div className="splash-info-2">Millions of songs. No credit card needed.</div>
+                        <Link className="splash-info-btn" to="/signup">GET DROPIFY FREE</Link>  
                     </div>
 
                     <svg className="splash-img" viewBox="0 0 860 670" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -51,13 +61,15 @@ class SplashPageHeader extends React.Component {
                     </svg>
                 </div>
 
-                <div className="white-space"></div>
-                <div className="get-premium">
-
+                <div className="splash-white-space">
+                    <div className="splash-get-premium">
+                        Welcome!
+                    </div>
                 </div>
-                <div className="white-space"></div>
-                <div className='footer'>
-
+                
+                <div className='splash-footer'>
+                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">Github</a>
+                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">LinkedIn</a>
                 </div>
             </div>
         )

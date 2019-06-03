@@ -1,0 +1,37 @@
+.playlists-explore-item {
+    display: flex;
+    flex-direction: column;
+    margin: 5px;
+    height: 140px;
+    width: 120px;
+    position: relative;
+    align-items: center;
+    
+}
+
+.playlists-explore-item-img {
+    background: grey;
+    /* border: black 1px solid; */
+    margin: 5px;
+    height: 100px;
+    width: 100px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 0 10px rgba(0,0,0,.3);
+}
+
+.playlists-explore-item-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    padding: 5px;
+    margin: 5px;
+}
+
+/* .fa-play-circle {
+    color: white;
+} */
+
+.fa-music {
+    color: white;
+}

@@ -1,0 +1,150 @@
+.nav-bar-module {
+    background: hsl(195, 15%, 5%);
+    color: hsl(0, 0%, 70%);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    font-weight: 500 bold;
+    display: flex;
+    flex-direction: column;
+    opacity: 0.9;
+    z-index: 1;
+    grid-area: navbar;
+    width: 230px;
+}
+
+.navbar-splash-logo-text-combo {
+    display: flex;
+    justify-content: flex-start;
+    color: hsl(0, 0%, 100%);
+    padding-left: 20px;
+    padding-top: 20px;
+    padding-bottom: 5px;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.nav-bar-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+
+
+.nav-item-img {
+    margin: 5px;
+}
+
+.nav-item {
+    margin: 10px;
+}
+.nav-item-search {
+    margin: 10px;
+    padding-left: 3px;
+}
+
+.nav-bar-home {
+    padding-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+}
+.nav-bar-home:hover {
+    color: white;
+    transition  : 0.5s ease;
+}
+.nav-bar-search {
+    padding-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+}
+.nav-bar-search:hover {
+    color: white;
+    transition  : 0.5s ease;
+}
+.nav-bar-lib {
+    padding-left: 10px;
+    margin-top: 10px;
+    display: flex;
+    align-content: center;
+}
+.nav-bar-lib:hover {
+    color: white;
+    transition  : 0.5s ease;
+}
+
+.nav-bar-recent {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 10px;
+}
+
+.nav-bar-recent-text{
+      padding-left: 10px;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    align-content: center;
+}
+
+.nav-bar-playlists {
+    padding-left: 10px;
+    margin: 10px 0px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+
+.nav-bar-playlist-item {
+    margin-top: 10px;
+    
+}
+
+.nav-bar-playlist-item:hover {
+    color: white;
+    transition  : 0.5s ease;
+}
+/* might have to give diff detail1 and detail2 css for perfection */
+.nav-bar-playlist-item-detail {
+   margin: 7px 0px 3px 0px
+}
+
+.nav-bar-download {
+   padding-left: 10px;
+    margin: 10px 0px 10px 0px;
+    display: flex;
+    align-content: center;   
+    /* border-bottom: rgb(217, 218, 220) solid 1px; */
+}
+.nav-bar-download:hover {
+    color: white;
+    transition  : 0.5s ease;
+}
+
+.nav-bar-download-img {
+    padding-left: 10px;
+    margin: 10px 0px 10px 0px;
+}
+
+.nav-bar-download-text {
+    padding-left: 10px;
+    margin: 10px 0px 10px 0px;
+    font-weight: bold;
+} 
+
+.nav-bar-profile {
+    padding-left: 10px;
+    margin: 10px 0px 10px 10px;
+    display: flex;
+    align-content: center;  
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+    
+} 
+
+.nav-bar-footer {
+   
+}

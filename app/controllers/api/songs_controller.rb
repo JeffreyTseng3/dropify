@@ -1,5 +1,8 @@
 class Api::SongsController < ApplicationController
 
+
+    # tentative not debugged
+
     def index 
         @songs = Song.all 
         render "api/songs/index"
@@ -10,8 +13,6 @@ class Api::SongsController < ApplicationController
         @song = Song.first 
         render "api/songs/show"
     end 
-
-    
 
 
 end

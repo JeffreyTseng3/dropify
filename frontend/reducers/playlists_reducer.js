@@ -11,6 +11,7 @@ const playlistsReducer = (state = {}, action) => {
             }
             return merge( {}, state, allPlaylists);
         case RECEIVE_PLAYLIST:
+            debugger
             const playlist = {
                 id: action.id,
                 title: action.title,

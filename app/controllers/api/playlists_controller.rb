@@ -3,6 +3,7 @@ class Api::PlaylistsController < ApplicationController
     def create 
         @playlist = Playlist.new(playlist_params)
         if @playlist.save 
+            # debugger
             render "api/playlists/show"
         else 
             render json: @playlist.errors.full_messages, status: 422
@@ -16,6 +17,7 @@ class Api::PlaylistsController < ApplicationController
     end 
 
     def show
+        # debugger
         id = params[:id].to_i
         @playlist = Playlist.find(id)
         render "api/playlists/show"

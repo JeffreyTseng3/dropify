@@ -8,13 +8,15 @@ const msp = state => {
     return {
         modal: state.ui.modal,
         currentUserId: state.session.currentUserId,
-        playlists: state.entities.playlists
+        playlists: state.entities.playlists,
+        showSinglePlaylist: state.entities.playlists.showSinglePlaylist,
+        
     };
 };
 
 const mdp = dispatch => {
     return {
-        createPlaylist: new_playlist => dispatch(createPlaylist(new_playlist)),
+        createPlaylist: (new_playlist, history ) => dispatch(createPlaylist(new_playlist,history)),
         closeModal: () => dispatch(closeModal()),
         fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),                      
     }

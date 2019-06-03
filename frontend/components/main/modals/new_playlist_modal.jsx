@@ -22,23 +22,27 @@ class NewPlaylistModal extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
-        let { closeModal, createPlaylist} = this.props;
+        let { closeModal, createPlaylist, showSinglePlaylist} = this.props;
 
         if (this.state.title === "") {
             return
         }
+        debugger
         const new_playlist = Object.assign({}, this.state);
-        createPlaylist(new_playlist);
+        createPlaylist(new_playlist, this.props.history).then(playlist => {
+            debugger
+            // this.props.history.push(`/main/playlist/${showSinglePlaylist.id}`)}
+        });
+
         closeModal();
-        this.props.history.push("/main/playlist");
-        fetchPlaylists(this.state.author_id);
     }
-
     
-
-
+    
+    
+    
     componentDidMount() {
-       
+        
+        fetchPlaylists(this.state.author_id);
         // CHECK IF THIS IS OKAY TO RESET TITLE, it was not clearing cache previosuly without
         // this in the case of test an empty title submission
         this.state.title = "";

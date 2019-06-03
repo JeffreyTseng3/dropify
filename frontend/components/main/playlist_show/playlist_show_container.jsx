@@ -2,7 +2,7 @@ import React from "react";
 import PlaylistShow from "./playlist_show"
 import { connect } from "react-redux";
 import { withRouter } from "react-router"
-import { fetchPlaylist } from "../../../actions/playlist_actions";
+import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 
 const msp = (state, ownProps) => {
     return ({
@@ -12,7 +12,8 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return ({
-        fetchPlaylist: id => dispatch(fetchPlaylist(id))
+        fetchPlaylist: id => dispatch(fetchPlaylist(id)),
+        fetchPlaylists: () => dispatch(fetchPlaylists())
     });
 };
 

@@ -21,11 +21,13 @@ export const receivePlaylists = (playlists) => {
 };
 
 
-export const createPlaylist = (playlist) => dispatch => {
+export const createPlaylist = (playlist, history) => dispatch => {
 
     return PlaylistAPIUtil.createPlaylist(playlist)
         .then(playlist => {
-            dispatch(receivePlaylist(playlist))
+            // debugger
+            history.push(`/main/playlist/${playlist.id}`);
+            dispatch(receivePlaylist(playlist));
         });
 };
 

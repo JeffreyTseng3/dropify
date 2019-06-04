@@ -11,4 +11,11 @@
 class Genre < ApplicationRecord 
     validates :category, presence: true
 
+    has_many :artists, 
+        primary_key: :id, 
+        foreign_key: :genre_id,
+        class_name: :Artist 
+        
+    
+
 end

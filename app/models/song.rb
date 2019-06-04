@@ -9,7 +9,7 @@
 #  album_id    :integer
 #  created_at  :datetime         not null
 #  updated_at  :datetime         not null
-#
+
 
 class Song < ApplicationRecord 
     validates :song_title, :song_length, presence: true
@@ -20,5 +20,12 @@ class Song < ApplicationRecord
         primary_key: :id,
         foreign_key: :song_id,
         class_name: :PlaylistSong 
+
+    belongs_to :album,
+        primary_key: :id,
+        foreign_key: :album_id,
+        class_name: :Album
+
+    
 
 end

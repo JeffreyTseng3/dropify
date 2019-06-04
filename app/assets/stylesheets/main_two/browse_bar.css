@@ -1,0 +1,15 @@
+.browse-bar-module {
+    width: 80%;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: hsl(0, 0%, 70%);
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .16em;
+}
+
+.browse-bar-item:hover {
+    color: white;
+    transition  : 0.5s ease;
+}

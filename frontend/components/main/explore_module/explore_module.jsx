@@ -5,7 +5,7 @@ import { AuthRoute, ProtectedRoute } from "../../../util/route_util";
 import CollectionBarContainer from "../collection_bar/collection_bar_container";
 import PlaylistsExploreContainer from "../playlists_on_explore/playlists_on_explore_container";
 import PlaylistShowContainer from "../playlist_show/playlist_show_container";
-
+import BrowseModuleContainer from "../../main_two/browse/browse_module/browse_module_container";
 
 class ExploreModule extends React.Component {
     constructor(props) {
@@ -19,7 +19,7 @@ class ExploreModule extends React.Component {
             <Route path="/main/collection/" component={CollectionBarContainer} />
             <Route path="/main/collection/playlists" component={PlaylistsExploreContainer} />
             <Route path="/main/playlist/:playlistId" component={PlaylistShowContainer}/>
-            
+            <Route path="/main/browse/featured" component={BrowseModuleContainer}/>
         </div>
         )
     }

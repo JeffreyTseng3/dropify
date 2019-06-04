@@ -20,6 +20,11 @@ class Album < ApplicationRecord
         foreign_key: :artist_id, 
         class_name: :Artist 
 
+    has_many :songs, 
+        primary_key: :id, 
+        foreign_key: :album_id,
+        class_name: :Song
+
     # belongs_to :genre,
     #     primary_key: :id,
     #     foreign_key: :genre_id, 

@@ -19,7 +19,7 @@ class NavBar extends React.Component {
 
                 <div className="nav-bar-group">
 
-                    <Link className="nav-bar-home" to="/">
+                    <Link className="nav-bar-home" to="/main/browse/featured">
                         <span className="nav-item-img"><i className="fas fa-igloo fa-2x"></i></span>
                         <span className="nav-item">Home</span>
                     </Link>

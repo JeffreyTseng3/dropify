@@ -6,7 +6,6 @@ class Api::ArtistsController < ApplicationController
     end 
 
     def show 
-        
         @artist = Artist.find(params[:id])
         render 'api/artists/show'
     end

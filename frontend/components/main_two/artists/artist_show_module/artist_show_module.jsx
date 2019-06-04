@@ -1,4 +1,6 @@
 import React from "react";
+import ArtistShowHeaderContainer from "../artist_show_header/artist_show_header_container";
+import ArtistShowAreaContainer from "../artist_show_area/artist_show_area_container";
 
 class ArtistShowModule extends React.Component {
     constructor(props) {
@@ -13,10 +15,19 @@ class ArtistShowModule extends React.Component {
     }
 
     render() {
+        let { artist } = this.props
+        let artist_prop = artist ? artist : null;
+
+
         return (
             <>
-            ArtistHeaderContainer 
-            ArtistMusicContainer
+                <div className="artist-show-module">   
+                    <ArtistShowHeaderContainer artist={artist_prop} />
+                    < ArtistShowAreaContainer />
+                    
+        
+                </div>
+           
             </>
         )
     }

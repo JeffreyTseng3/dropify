@@ -37455,3 +37455,1459 @@ Processing by Api::ArtistsController#show as JSON
 Completed 200 OK in 22ms (Views: 18.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for ::1 at 2019-06-04 13:49:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.8ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "n7qsit5QT8Jgh4jpomJV3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 717ms (Views: 697.2ms | ActiveRecord: 14.8ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:49:02 -0400
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:49:02 -0400
+Processing by Api::ArtistsController#show as JSON
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"id"=>"1"}
+  Parameters: {"author_id"=>"17"}
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/playlists/index.json.jbuilder
+  Rendering api/artists/show.json.jbuilder
+  [1m[36mPlaylist Load (2.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (88.2ms)
+Completed 200 OK in 151ms (Views: 73.2ms | ActiveRecord: 56.8ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:49:02 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (13.2ms)
+Completed 200 OK in 27ms (Views: 25.2ms | ActiveRecord: 1.3ms)
+
+
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (260.7ms)
+  Rendered api/artists/show.json.jbuilder (266.6ms)
+Completed 200 OK in 345ms (Views: 243.0ms | ActiveRecord: 65.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 13:51:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "n7qsit5QT8Jgh4jpomJV3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 178ms (Views: 170.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:51:18 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (6.1ms)
+  Rendered api/artists/show.json.jbuilder (10.2ms)
+Completed 200 OK in 30ms (Views: 25.0ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/api/artists" for ::1 at 2019-06-04 13:51:21 -0400
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  Rendered api/artists/index.json.jbuilder (96.8ms)
+Completed 200 OK in 108ms (Views: 88.0ms | ActiveRecord: 19.5ms)
+
+
+Started GET "/api/artist/1" for ::1 at 2019-06-04 13:51:40 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/api/artist/1"):
+  
+actionpack (5.2.3) lib/action_dispatch/middleware/debug_exceptions.rb:65:in `call'
+web-console (3.7.0) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.7.0) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.7.0) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (5.2.3) lib/rails/rack/logger.rb:38:in `call_app'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `block in tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (5.2.3) lib/active_support/tagged_logging.rb:71:in `tagged'
+railties (5.2.3) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (5.2.3) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (5.2.3) lib/action_dispatch/middleware/static.rb:127:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+railties (5.2.3) lib/rails/engine.rb:524:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:51:44 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (2.2ms)
+  Rendered api/artists/show.json.jbuilder (3.5ms)
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:52:31 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (62.8ms)
+  Rendered api/artists/show.json.jbuilder (65.4ms)
+Completed 500 Internal Server Error in 77ms (ActiveRecord: 2.1ms)
+
+
+
+NoMethodError - undefined method `/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712/bruno_mars.jpg' for #<Artist:0x00007f9479bb2078>:
+  app/views/api/artists/_artist.json.jbuilder:1:in `_app_views_api_artists__artist_json_jbuilder___1024633325782170515_70137837082680'
+  app/views/api/artists/show.json.jbuilder:1:in `_app_views_api_artists_show_json_jbuilder__1170265385237683642_70137832068300'
+  app/controllers/api/artists_controller.rb:10:in `show'
+
+Started POST "/__better_errors/0c1a9f3270d578ef/variables" for ::1 at 2019-06-04 13:52:31 -0400
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:52:45 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.9ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (2.0ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (5.8ms)
+  Rendered api/artists/show.json.jbuilder (7.9ms)
+Completed 200 OK in 22ms (Views: 15.9ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/artists" for ::1 at 2019-06-04 13:52:49 -0400
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (1.7ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  Rendered api/artists/index.json.jbuilder (25.5ms)
+Completed 200 OK in 34ms (Views: 29.4ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:53:14 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (9.6ms)
+  Rendered api/artists/show.json.jbuilder (12.6ms)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:53:49 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (10.1ms)
+  Rendered api/artists/show.json.jbuilder (11.8ms)
+Completed 200 OK in 25ms (Views: 21.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/artists/" for ::1 at 2019-06-04 13:53:51 -0400
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 3]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 4]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  Rendered api/artists/index.json.jbuilder (33.8ms)
+Completed 200 OK in 45ms (Views: 39.7ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 13:54:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "n7qsit5QT8Jgh4jpomJV3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 664ms (Views: 657.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:54:26 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (8.5ms)
+Completed 200 OK in 21ms (Views: 19.4ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/api/session" for ::1 at 2019-06-04 13:54:27 -0400
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "n7qsit5QT8Jgh4jpomJV3Q"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:53
+  [1m[36mUser Update (6.8ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "GsK2P9p4QZUPoYjpcQTo9A"], ["updated_at", "2019-06-04 17:54:27.682048"], ["id", 17]]
+  ↳ app/models/user.rb:53
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:53
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (3.6ms)
+Completed 200 OK in 28ms (Views: 12.0ms | ActiveRecord: 9.9ms)
+
+
+Started POST "/api/session" for ::1 at 2019-06-04 13:54:28 -0400
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"info"=>"jt1", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jt1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "jt1"], ["LIMIT", 1]]
+  ↳ app/models/user.rb:38
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/models/user.rb:53
+  [1m[36mUser Update (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["updated_at", "2019-06-04 17:54:28.809853"], ["id", 17]]
+  ↳ app/models/user.rb:53
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/models/user.rb:53
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (2.9ms)
+Completed 200 OK in 91ms (Views: 9.3ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:54:28 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (7.3ms)
+Completed 200 OK in 22ms (Views: 19.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:54:30 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (5.2ms)
+Completed 200 OK in 15ms (Views: 13.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists" for ::1 at 2019-06-04 13:54:39 -0400
+Processing by Api::ArtistsController#index as JSON
+  Rendering api/artists/index.json.jbuilder
+  [1m[36mArtist Load (0.5ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ app/views/api/artists/index.json.jbuilder:1
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 2]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 3]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 4]]
+  ↳ app/views/api/artists/index.json.jbuilder:2
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ app/views/api/artists/index.json.jbuilder:3
+  Rendered api/artists/index.json.jbuilder (27.9ms)
+Completed 200 OK in 40ms (Views: 34.8ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e19f89ea8b688b892acdcfdd320c133564cce1fb/alina_baraz.jpg" for ::1 at 2019-06-04 13:54:39 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712/bruno_mars.jpg" for ::1 at 2019-06-04 13:54:39 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBOQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f93b1b5da8c953b01188497ea6a8774f2b83692/chris_brown.jpg" for ::1 at 2019-06-04 13:54:39 -0400
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91c88227301aa6be21591f8db7dc991c7d4ccbc3/amine.jpg" for ::1 at 2019-06-04 13:54:39 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNdz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--e19f89ea8b688b892acdcfdd320c133564cce1fb", "filename"=>"alina_baraz"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: SAVQNnFpQdZ8VPihrcC3nYKH (https://dropify-dev-aa.s3.amazonaws.com/SAVQNnFpQdZ8VPihrcC3nYKH?response-content-disposition=inline%3B%20filename%3D%22alina_baraz.jpg%22%3B%20filename%2A%3DUTF-8%27%27alina_baraz.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5e3feedc1e4f41859e6e410f165272e9daf68fde552fdf87143a6f2afd9c7d1a)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/SAVQNnFpQdZ8VPihrcC3nYKH?response-content-disposition=inline%3B%20filename%3D%22alina_baraz.jpg%22%3B%20filename%2A%3DUTF-8%27%27alina_baraz.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5e3feedc1e4f41859e6e410f165272e9daf68fde552fdf87143a6f2afd9c7d1a
+Completed 302 Found in 9ms (ActiveRecord: 0.4ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBOQT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--7f93b1b5da8c953b01188497ea6a8774f2b83692", "filename"=>"chris_brown"}
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--91c88227301aa6be21591f8db7dc991c7d4ccbc3", "filename"=>"amine"}
+  [1m[36mActiveStorage::Blob Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 47], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.6ms) [0m[34mGenerated URL for file at key: G3g5F2opsbns6U6NANP5jmLF (https://dropify-dev-aa.s3.amazonaws.com/G3g5F2opsbns6U6NANP5jmLF?response-content-disposition=inline%3B%20filename%3D%22chris_brown.jpg%22%3B%20filename%2A%3DUTF-8%27%27chris_brown.jpg&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=982d3a13fb26e1404254ac7071aedbede6d65a44002c8d50e8e23405a236f127)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/G3g5F2opsbns6U6NANP5jmLF?response-content-disposition=inline%3B%20filename%3D%22chris_brown.jpg%22%3B%20filename%2A%3DUTF-8%27%27chris_brown.jpg&response-content-type=image%2Fpng&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=982d3a13fb26e1404254ac7071aedbede6d65a44002c8d50e8e23405a236f127
+Completed 302 Found in 13ms (ActiveRecord: 4.8ms)
+
+
+  [1m[36mActiveStorage::Blob Load (2.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (4.9ms) [0m[34mGenerated URL for file at key: WCdjo5Y2t5i8ntLhywwHPwgN (https://dropify-dev-aa.s3.amazonaws.com/WCdjo5Y2t5i8ntLhywwHPwgN?response-content-disposition=inline%3B%20filename%3D%22amine.jpg%22%3B%20filename%2A%3DUTF-8%27%27amine.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=eefdb4e5ebe5baeced9655378c2b624b39068c55e73ed4f34cdefcc22cd5e223)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/WCdjo5Y2t5i8ntLhywwHPwgN?response-content-disposition=inline%3B%20filename%3D%22amine.jpg%22%3B%20filename%2A%3DUTF-8%27%27amine.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=eefdb4e5ebe5baeced9655378c2b624b39068c55e73ed4f34cdefcc22cd5e223
+Completed 302 Found in 15ms (ActiveRecord: 2.7ms)
+
+
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712", "filename"=>"bruno_mars"}
+  [1m[36mActiveStorage::Blob Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (1.8ms) [0m[34mGenerated URL for file at key: 3A14N45jVbZT2x2946RPropb (https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d50da53809591e81ec49807c73fb4a945e1b7a7bbd8906a80ad609e816ef37f0)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T175439Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=d50da53809591e81ec49807c73fb4a945e1b7a7bbd8906a80ad609e816ef37f0
+Completed 302 Found in 7ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:54:48 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.8ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (151.5ms)
+  Rendered api/artists/show.json.jbuilder (154.2ms)
+Completed 200 OK in 165ms (Views: 159.5ms | ActiveRecord: 4.2ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 13:54:52 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.4ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 119ms (Views: 114.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:54:52 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:54:52 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  [1m[36mPlaylist Load (1.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Parameters: {"id"=>"1"}
+  Rendered api/playlists/index.json.jbuilder (8.9ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mArtist Load (1.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:54:52 -0400
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  [1m[35m (3.5ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (5.7ms)
+  [1m[36mActiveStorage::Attachment Load (4.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+Completed 200 OK in 19ms (Views: 17.4ms | ActiveRecord: 0.6ms)
+
+
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (29.3ms)
+  Rendered api/artists/show.json.jbuilder (31.5ms)
+Completed 200 OK in 51ms (Views: 34.4ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 13:55:00 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 704ms (Views: 698.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:55:01 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:55:01 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  [1m[36mPlaylist Load (2.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  Parameters: {"id"=>"1"}
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.9ms)
+  [1m[36mArtist Load (5.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 200 OK in 23ms (Views: 19.8ms | ActiveRecord: 2.2ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:55:01 -0400
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (6.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mPlaylist Load (2.4ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  Rendered api/playlists/index.json.jbuilder (7.9ms)
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 2.4ms)
+
+
+  Rendered api/artists/_artist.json.jbuilder (31.1ms)
+  Rendered api/artists/show.json.jbuilder (35.0ms)
+Completed 200 OK in 58ms (Views: 41.1ms | ActiveRecord: 14.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 13:55:07 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 131ms (Views: 128.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:55:08 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.4ms)
+Completed 200 OK in 20ms (Views: 19.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 13:55:19 -0400
+Started GET "/api/artists/1" for ::1 at 2019-06-04 13:55:19 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (10.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (21.3ms)
+Completed 200 OK in 40ms (Views: 29.1ms | ActiveRecord: 10.1ms)
+
+
+  [1m[36mArtist Load (18.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (6.6ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (106.1ms)
+  Rendered api/artists/show.json.jbuilder (109.1ms)
+Completed 200 OK in 149ms (Views: 118.0ms | ActiveRecord: 28.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:00:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (2.7ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 794ms (Views: 782.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:00:07 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:00:07 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (1.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/playlists/index.json.jbuilder (15.9ms)
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 200 OK in 33ms (Views: 29.4ms | ActiveRecord: 1.8ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:00:07 -0400
+Processing by Api::PlaylistsController#index as JSON
+  [1m[35m (2.3ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Parameters: {"author_id"=>"17"}
+  [1m[36mActiveStorage::Attachment Load (4.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/artists/_artist.json.jbuilder (32.3ms)
+  Rendered api/artists/show.json.jbuilder (46.1ms)
+Completed 200 OK in 74ms (Views: 51.8ms | ActiveRecord: 9.8ms)
+
+
+  Rendered api/playlists/index.json.jbuilder (15.3ms)
+Completed 200 OK in 33ms (Views: 31.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:03:33 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 755ms (Views: 750.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:03:34 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:03:34 -0400
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (11.7ms)
+Processing by Api::ArtistsController#show as JSON
+Completed 200 OK in 27ms (Views: 25.8ms | ActiveRecord: 0.8ms)
+
+
+  Parameters: {"id"=>"1"}
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:03:34 -0400
+  [1m[36mArtist Load (1.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/playlists/index.json.jbuilder
+  Rendering api/artists/show.json.jbuilder
+  [1m[36mPlaylist Load (16.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (29.5ms)
+Completed 200 OK in 52ms (Views: 34.5ms | ActiveRecord: 16.5ms)
+
+
+  [1m[35m (24.6ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (119.0ms)
+  Rendered api/artists/show.json.jbuilder (150.6ms)
+Completed 200 OK in 197ms (Views: 150.6ms | ActiveRecord: 31.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:04:48 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (3.6ms)
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 876ms (Views: 866.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:04:50 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:04:50 -0400
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+Processing by Api::ArtistsController#show as JSON
+  Rendered api/playlists/index.json.jbuilder (13.0ms)
+  Parameters: {"id"=>"1"}
+Completed 200 OK in 25ms (Views: 23.0ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:04:50 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[35m (8.7ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (437.2ms)
+  [1m[36mActiveStorage::Attachment Load (9.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+Completed 200 OK in 453ms (Views: 451.8ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (456.9ms)
+  Rendered api/artists/show.json.jbuilder (464.3ms)
+Completed 200 OK in 479ms (Views: 457.0ms | ActiveRecord: 20.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:05:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 228ms (Views: 221.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:05:59 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:05:59 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (3.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (14.3ms)
+  [1m[36mArtist Load (9.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 28ms (Views: 23.8ms | ActiveRecord: 3.1ms)
+
+
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:05:59 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  [1m[35m (76.8ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (5.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (2.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (108.9ms)
+  Rendered api/artists/show.json.jbuilder (117.3ms)
+Completed 200 OK in 245ms (Views: 146.3ms | ActiveRecord: 94.0ms)
+
+
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.1ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (17.0ms)
+Completed 200 OK in 229ms (Views: 227.2ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:07:58 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (5.9ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 897ms (Views: 888.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:09:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 628ms (Views: 622.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:09:25 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 620ms (Views: 615.8ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:09:26 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (13.8ms)
+Completed 200 OK in 31ms (Views: 28.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:09:57 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.1ms)
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 571ms (Views: 567.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:09:58 -0400
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:09:58 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mArtist Load (16.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  [1m[36mPlaylist Load (8.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (18.3ms)
+Completed 200 OK in 40ms (Views: 30.3ms | ActiveRecord: 8.8ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (20.8ms)
+  Rendered api/artists/show.json.jbuilder (25.9ms)
+Completed 200 OK in 86ms (Views: 62.6ms | ActiveRecord: 20.5ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:09:58 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.8ms)
+Completed 200 OK in 26ms (Views: 24.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:10:13 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:10:13 -0400
+  [1m[36mArtist Load (2.2ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/artists/show.json.jbuilder
+  Rendering api/playlists/index.json.jbuilder
+  [1m[35m (11.9ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mPlaylist Load (3.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (2.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/playlists/index.json.jbuilder (22.1ms)
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (71.9ms)
+  Rendered api/artists/show.json.jbuilder (77.6ms)
+Completed 200 OK in 107ms (Views: 85.2ms | ActiveRecord: 16.7ms)
+
+
+Completed 200 OK in 84ms (Views: 79.8ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:10:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 649ms (Views: 645.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:10:50 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (16.1ms)
+Completed 200 OK in 26ms (Views: 25.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:11:16 -0400
+Processing by Api::ArtistsController#show as JSON
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:11:16 -0400
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (1.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (2.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (6.5ms)
+  [1m[35m (3.7ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 2.6ms)
+
+
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (3.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (19.0ms)
+  Rendered api/artists/show.json.jbuilder (241.7ms)
+Completed 200 OK in 267ms (Views: 252.7ms | ActiveRecord: 8.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:12:03 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.3ms)
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 1125ms (Views: 1121.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:12:04 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (6.8ms)
+Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:12:06 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (2.1ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:12:06 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  Rendering api/artists/show.json.jbuilder
+  [1m[36mPlaylist Load (15.5ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (24.4ms)
+Completed 200 OK in 41ms (Views: 25.0ms | ActiveRecord: 15.5ms)
+
+
+  [1m[35m (4.8ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (7.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (105.6ms)
+  Rendered api/artists/show.json.jbuilder (124.7ms)
+Completed 200 OK in 169ms (Views: 152.5ms | ActiveRecord: 15.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:12:21 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 565ms (Views: 561.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:12:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 643ms (Views: 638.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:12:45 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.3ms)
+Completed 200 OK in 23ms (Views: 21.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:12:47 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:12:47 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (5.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (19.1ms)
+Completed 200 OK in 38ms (Views: 31.8ms | ActiveRecord: 5.3ms)
+
+
+  [1m[36mArtist Load (12.5ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (145.9ms)
+  Rendered api/artists/show.json.jbuilder (150.8ms)
+Completed 200 OK in 181ms (Views: 163.5ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:13:01 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.4ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 699ms (Views: 694.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:13:02 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:13:02 -0400
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  Rendered api/playlists/index.json.jbuilder (11.2ms)
+Completed 200 OK in 26ms (Views: 24.4ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:13:02 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Parameters: {"author_id"=>"17"}
+  [1m[36mActiveStorage::Attachment Load (3.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (21.6ms)
+  [1m[36mPlaylist Load (2.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  Rendered api/artists/show.json.jbuilder (24.8ms)
+Completed 200 OK in 42ms (Views: 31.6ms | ActiveRecord: 8.7ms)
+
+
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (12.1ms)
+Completed 200 OK in 23ms (Views: 19.9ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:13:35 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.9ms)
+  [1m[36mUser Load (7.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 378ms (Views: 362.2ms | ActiveRecord: 7.7ms)
+
+
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:13:38 -0400
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mArtist Load (0.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (19.8ms)
+  Rendered api/artists/show.json.jbuilder (24.8ms)
+Completed 200 OK in 45ms (Views: 37.7ms | ActiveRecord: 4.4ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:14:06 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:14:06 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (0.9ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  [1m[36mArtist Load (0.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/playlists/index.json.jbuilder (8.6ms)
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 200 OK in 27ms (Views: 25.4ms | ActiveRecord: 0.9ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:14:06 -0400
+Processing by Api::PlaylistsController#index as JSON
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Parameters: {"author_id"=>"17"}
+  [1m[36mActiveStorage::Attachment Load (2.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  Rendered api/artists/_artist.json.jbuilder (20.4ms)
+  Rendered api/artists/show.json.jbuilder (25.4ms)
+Completed 200 OK in 44ms (Views: 30.0ms | ActiveRecord: 6.2ms)
+
+
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (10.0ms)
+Completed 200 OK in 22ms (Views: 20.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:14:08 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.2ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 624ms (Views: 620.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:14:09 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:14:09 -0400
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.2ms)
+  [1m[36mArtist Load (4.6ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 200 OK in 22ms (Views: 20.2ms | ActiveRecord: 0.8ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:14:09 -0400
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (7.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mPlaylist Load (3.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (15.9ms)
+  [1m[36mActiveStorage::Blob Load (11.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+Completed 200 OK in 29ms (Views: 24.5ms | ActiveRecord: 3.6ms)
+
+
+  Rendered api/artists/_artist.json.jbuilder (36.8ms)
+  Rendered api/artists/show.json.jbuilder (40.3ms)
+Completed 200 OK in 59ms (Views: 31.3ms | ActiveRecord: 24.8ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712/bruno_mars.jpg" for ::1 at 2019-06-04 14:14:09 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712", "filename"=>"bruno_mars"}
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (10.4ms) [0m[34mGenerated URL for file at key: 3A14N45jVbZT2x2946RPropb (https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T181409Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b5679f1b1a0c0435f7dc6556af9afa1a7325188a35296e8262d4f463a9111312)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T181409Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=b5679f1b1a0c0435f7dc6556af9afa1a7325188a35296e8262d4f463a9111312
+Completed 302 Found in 17ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:22:14 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (2.1ms)
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 813ms (Views: 804.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:22:15 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:22:15 -0400
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (1.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (12.7ms)
+Completed 200 OK in 28ms (Views: 25.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:22:15 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (2.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (10.1ms)
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mArtist Load (1.4ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+  Rendering api/artists/show.json.jbuilder
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (20.6ms)
+  Rendered api/artists/show.json.jbuilder (24.2ms)
+Completed 200 OK in 42ms (Views: 29.9ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712/bruno_mars.jpg" for ::1 at 2019-06-04 14:22:15 -0400
+Processing by ActiveStorage::BlobsController#show as JPEG
+  Parameters: {"signed_id"=>"eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBNUT09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--f2d348548e25f5b5a2599d25598fe8947e812712", "filename"=>"bruno_mars"}
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ /Users/jeffreytseng/.rbenv/versions/2.5.1/lib/ruby/gems/2.5.0/gems/activerecord-5.2.3/lib/active_record/log_subscriber.rb:98
+[36m  S3 Storage (11.0ms) [0m[34mGenerated URL for file at key: 3A14N45jVbZT2x2946RPropb (https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T182215Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5b5f8827de8c1a12b6ecdfca1817358eee9bf73b7292692cf9688699a36528dc)[0m
+Redirected to https://dropify-dev-aa.s3.amazonaws.com/3A14N45jVbZT2x2946RPropb?response-content-disposition=inline%3B%20filename%3D%22bruno_mars.jpg%22%3B%20filename%2A%3DUTF-8%27%27bruno_mars.jpg&response-content-type=image%2Fjpeg&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAZISZLAZE3C6K3EG3%2F20190604%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20190604T182215Z&X-Amz-Expires=300&X-Amz-SignedHeaders=host&X-Amz-Signature=5b5f8827de8c1a12b6ecdfca1817358eee9bf73b7292692cf9688699a36528dc
+Completed 302 Found in 32ms (ActiveRecord: 0.8ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:22:49 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 629ms (Views: 622.4ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:22:50 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:22:50 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  [1m[36mPlaylist Load (1.2ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  Parameters: {"id"=>"1"}
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (8.3ms)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 1.2ms)
+
+
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:22:50 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (6.8ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.6ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (1.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (24.1ms)
+  Rendered api/artists/show.json.jbuilder (30.9ms)
+Completed 200 OK in 50ms (Views: 36.3ms | ActiveRecord: 5.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:23:10 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 604ms (Views: 599.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:23:11 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:23:11 -0400
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (0.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+Processing by Api::ArtistsController#show as JSON
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Parameters: {"id"=>"1"}
+  Rendered api/playlists/index.json.jbuilder (7.3ms)
+Completed 200 OK in 21ms (Views: 19.6ms | ActiveRecord: 0.7ms)
+
+
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:23:11 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[35m (5.5ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mPlaylist Load (2.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (7.4ms)
+  [1m[36mActiveStorage::Attachment Load (4.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+Completed 200 OK in 20ms (Views: 17.4ms | ActiveRecord: 2.0ms)
+
+
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (21.8ms)
+  Rendered api/artists/show.json.jbuilder (29.0ms)
+Completed 200 OK in 42ms (Views: 28.3ms | ActiveRecord: 11.9ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:23:22 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 181ms (Views: 176.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:23:22 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:23:22 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (1.3ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/playlists/index.json.jbuilder (6.9ms)
+  ↳ app/controllers/api/artists_controller.rb:9
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 1.3ms)
+
+
+  Rendering api/artists/show.json.jbuilder
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:23:23 -0400
+Processing by Api::PlaylistsController#index as JSON
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  Parameters: {"author_id"=>"17"}
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mActiveStorage::Attachment Load (6.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mPlaylist Load (2.0ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (219.2ms)
+  Rendered api/playlists/index.json.jbuilder (202.8ms)
+Completed 200 OK in 217ms (Views: 214.3ms | ActiveRecord: 2.0ms)
+
+
+  Rendered api/artists/show.json.jbuilder (224.4ms)
+Completed 200 OK in 243ms (Views: 227.6ms | ActiveRecord: 9.3ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:24:06 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (0.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 187ms (Views: 181.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:24:06 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:24:06 -0400
+  Rendering api/playlists/index.json.jbuilder
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mPlaylist Load (1.7ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (7.4ms)
+  [1m[36mArtist Load (4.0ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 1.7ms)
+
+
+  ↳ app/controllers/api/artists_controller.rb:9
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:24:06 -0400
+  Rendering api/artists/show.json.jbuilder
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+  [1m[35m (6.9ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mPlaylist Load (2.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (9.5ms)
+Completed 200 OK in 22ms (Views: 18.3ms | ActiveRecord: 2.8ms)
+
+
+  [1m[36mActiveStorage::Attachment Load (6.2ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (26.7ms)
+  Rendered api/artists/show.json.jbuilder (32.1ms)
+Completed 200 OK in 51ms (Views: 30.3ms | ActiveRecord: 17.6ms)
+
+
+Started GET "/" for ::1 at 2019-06-04 14:25:44 -0400
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html within layouts/application
+  Rendered static_pages/root.html within layouts/application (1.7ms)
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RZ8L8G3f7T0ai4vLHbuJSA"], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:8
+Completed 200 OK in 366ms (Views: 357.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:25:45 -0400
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/playlists/index.json.jbuilder
+Started GET "/api/artists/1" for ::1 at 2019-06-04 14:25:45 -0400
+  [1m[36mPlaylist Load (0.8ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (18.8ms)
+Completed 200 OK in 40ms (Views: 37.1ms | ActiveRecord: 0.8ms)
+
+
+Processing by Api::ArtistsController#show as JSON
+  Parameters: {"id"=>"1"}
+Started GET "/api/playlists?author_id=17" for ::1 at 2019-06-04 14:25:45 -0400
+  [1m[36mArtist Load (3.7ms)[0m  [1m[34mSELECT  "artists".* FROM "artists" WHERE "artists"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/api/artists_controller.rb:9
+Processing by Api::PlaylistsController#index as JSON
+  Parameters: {"author_id"=>"17"}
+  Rendering api/artists/show.json.jbuilder
+  Rendering api/playlists/index.json.jbuilder
+  [1m[36mPlaylist Load (4.6ms)[0m  [1m[34mSELECT "playlists".* FROM "playlists" WHERE "playlists"."author_id" = $1[0m  [["author_id", 17]]
+  ↳ app/views/api/playlists/index.json.jbuilder:1
+  Rendered api/playlists/index.json.jbuilder (17.3ms)
+  [1m[35m (12.4ms)[0m  [1m[34mSELECT "songs"."id" FROM "songs" INNER JOIN "albums" ON "songs"."album_id" = "albums"."id" WHERE "albums"."artist_id" = $1[0m  [["artist_id", 1]]
+Completed 200 OK in 34ms (Views: 29.2ms | ActiveRecord: 4.6ms)
+
+
+  ↳ app/views/api/artists/_artist.json.jbuilder:1
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 1], ["record_type", "Artist"], ["name", "artist_img"], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/views/api/artists/_artist.json.jbuilder:2
+  Rendered api/artists/_artist.json.jbuilder (33.3ms)
+  Rendered api/artists/show.json.jbuilder (48.0ms)
+Completed 200 OK in 77ms (Views: 54.2ms | ActiveRecord: 17.4ms)
+
+

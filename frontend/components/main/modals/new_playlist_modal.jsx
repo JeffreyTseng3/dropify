@@ -27,10 +27,10 @@ class NewPlaylistModal extends React.Component {
         if (this.state.title === "") {
             return
         }
-        debugger
+        // debugger
         const new_playlist = Object.assign({}, this.state);
         createPlaylist(new_playlist, this.props.history).then(playlist => {
-            debugger
+            // debugger
             // this.props.history.push(`/main/playlist/${showSinglePlaylist.id}`)}
         });
 

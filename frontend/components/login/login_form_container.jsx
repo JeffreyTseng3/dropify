@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { login, receiveClearFormErrors } from "../../../actions/session_actions";
+import { login, receiveClearFormErrors } from "../../actions/session_actions";
 import LoginForm from './login_form';
 
 const msp = state => {

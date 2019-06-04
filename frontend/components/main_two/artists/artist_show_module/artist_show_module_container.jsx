@@ -6,7 +6,7 @@ import { fetchArtist } from "../../../../actions/artist_actions";
 
 const msp = state => {
     return ({
-        artist: state.entities.artists.artist
+        artists: state.entities.artists
     })
 }
 

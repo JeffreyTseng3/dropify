@@ -15,8 +15,9 @@ class ArtistShowModule extends React.Component {
     }
 
     render() {
-        let { artist } = this.props
-        let artist_prop = artist ? artist : null;
+        let { artists } = this.props
+        debugger
+        let artist_prop = artists ? artists : null;
 
 
         return (

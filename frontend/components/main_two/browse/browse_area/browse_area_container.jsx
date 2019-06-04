@@ -5,10 +5,10 @@ import BrowseArea from "./browse_area";
 import { fetchArtists } from '../../../../actions/artist_actions';
 
 const msp = state => {
-    let four_artists = state.entities.artists.displayArtists ? 
-        state.entities.artists.displayArtists.slice(0,4) : null;
+    let artists =  Object.values(state.entities.artists)
+
     return ({
-        four_artists: four_artists,
+        artists: artists,
     })
 }
 

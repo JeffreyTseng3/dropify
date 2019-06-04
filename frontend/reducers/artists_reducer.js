@@ -6,16 +6,19 @@ const artistsReducer = (state = {}, action) => {
 
     switch(action.type) {
         case RECEIVE_ARTISTS: 
-        // this is for showing artists on the featured page atm
-            let displayArtists = {
-                displayArtists: action.artists
-            }; 
-            return merge({}, state, displayArtists);
+        // // this is for showing artists on the featured page atm
+        //     let displayArtists = {
+        //         displayArtists: action.artists
+        //     }; 
+        
+            
+            return merge({}, state, action.artists );
         case RECEIVE_ARTIST: 
-            let displayArtist = {
-                artist: action.artist
-            }
-            return merge({}, state, displayArtist)
+            // let displayArtist = {
+            //     artist: action.artist
+            // }
+            let artist = action.artist;
+            return merge({}, state, {[artist.id]: artist})
 
         default: 
             return state;

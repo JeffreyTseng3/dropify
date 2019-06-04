@@ -6,22 +6,11 @@ const playlistsReducer = (state = {}, action) => {
     Object.freeze(state);
     switch(action.type) {
         case RECEIVE_PLAYLISTS:
-            let allPlaylists = {
-                allPlaylists: action.playlists
-            }
-            return merge( {}, state, allPlaylists);
+            return merge( {}, state, action.playlists);
         case RECEIVE_PLAYLIST:
-       
-            const playlist = {
-                id: action.id,
-                title: action.title,
-                author_id: action.author_id
-            };
-            // was previously newPlaylist key to accomodate for new
-            // playlist redirect
-            // const newPlaylist = { [action.id]: playlist };
-            const showSinglePlaylist = { showSinglePlaylist: playlist };
-            return merge({}, state, showSinglePlaylist);
+       debugger
+            let playlist = action.playlist;
+            return merge({}, state, {[playlist.id]: playlist} );
         default: 
             return state;
     }

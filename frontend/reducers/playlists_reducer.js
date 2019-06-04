@@ -8,7 +8,7 @@ const playlistsReducer = (state = {}, action) => {
         case RECEIVE_PLAYLISTS:
             return merge( {}, state, action.playlists);
         case RECEIVE_PLAYLIST:
-       debugger
+       
             let playlist = action.playlist;
             return merge({}, state, {[playlist.id]: playlist} );
         default: 

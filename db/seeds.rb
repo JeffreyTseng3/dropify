@@ -32,7 +32,7 @@ artist2.save!
 
 
 artist3 = genre_pop.artists.create(name: 'Alina Baraz', about: 'electricity')
-artist_file3 = open('https://dropify-seeds.s3.amazonaws.com/electric_alina_baraz.jpg')
+artist_file3 = open('https://dropify-seeds.s3.amazonaws.com/alina_baraz.jpg')
 artist3.artist_img.attach(io: artist_file3, filename: 'alina_baraz.jpg')
 artist3.save!
 

@@ -17,7 +17,7 @@ class LoginForm extends React.Component {
     handleDemoLogin(e) {
         e.preventDefault();
         const demoUser = { info: "jt1", password: "123123" };
-        this.props.login(demoUser).then(() => this.props.history.push('/main'));
+        this.props.login(demoUser).then(() => this.props.history.push('/main/browse/featured'));
     }
     
     handleInput(type) {
@@ -30,7 +30,7 @@ class LoginForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         
-        this.props.login(user).then(() => this.props.history.push("/main"));
+        this.props.login(user).then(() => this.props.history.push("/main/browse/featured"));
     }
 
     componentDidUpdate() {

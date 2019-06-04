@@ -1,0 +1,39 @@
+.browse-area-module {
+    height: 100%;
+    width: 100%;
+    padding: 20px 0px;
+}
+
+.browse-artists-text {
+      color: white;
+      font-size: 30px;
+      font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+    width: 80%;
+    padding: 10px 0px;
+}
+.browse-artists {
+    display: flex;
+    height: 200px;
+    width: 90%;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.browse-albums {
+    display: flex;
+    /* flex-direction: column; */
+    padding: 15px;
+    width: 80%;
+    height: 150px;
+}
+
+.browse-albums-text {
+        color: white;
+      font-size: 30px;
+      font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+    width: 80%;
+}

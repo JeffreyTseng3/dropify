@@ -17,7 +17,7 @@ class ArtistShowHeader extends React.Component {
         return (
             <>
                 <div className="artist-show-header">
-                    <div className="artist-header-name"> {name}</div>
+                    <div className="artist-header-name">{name}</div>
                     
                     <img src={img} className="artist-header-img"/>
                 </div>

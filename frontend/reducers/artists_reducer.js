@@ -20,8 +20,6 @@ const artistsReducer = (state = {}, action) => {
         default: 
             return state;
     }
-
-
 }
 
 export default artistsReducer;

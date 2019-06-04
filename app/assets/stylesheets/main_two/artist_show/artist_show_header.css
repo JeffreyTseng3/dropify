@@ -1,4 +1,21 @@
 .artist-show-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
     height: 400px;
+}
+
+.artist-header-name {
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: .05em;
+}
+
+.artist-header-img {
+    /* position: absolute;  */
+    top: 0; 
 }

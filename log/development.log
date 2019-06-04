@@ -30370,3 +30370,1633 @@ Migrating to CreateGenres (20190603235041)
   [1m[36mSong Load (0.5ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (5.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSong Load (4.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (7.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (1.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (2.1ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40] Performing ActiveStorage::PurgeJob (Job ID: d8d66b4d-85bf-4e96-b7a0-024f4061cf40) from Inline(default) with arguments: #<GlobalID:0x00007f9dbc843008 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/2>>
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   [1m[36mActiveStorage::Attachment Exists (2.2ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 2], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   [1m[36mActiveStorage::Blob Destroy (5.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 2]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 2], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40] [36m  S3 Storage (144.1ms) [0m[31mDeleted file from key: vuCBMNQeRcuNgScJme7Prvp8[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [d8d66b4d-85bf-4e96-b7a0-024f4061cf40] Performed ActiveStorage::PurgeJob (Job ID: d8d66b4d-85bf-4e96-b7a0-024f4061cf40) from Inline(default) in 187.13ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: d8d66b4d-85bf-4e96-b7a0-024f4061cf40) to Inline(default) with arguments: #<GlobalID:0x00007f9dba6df9c0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/2>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (1.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812] Performing ActiveStorage::PurgeJob (Job ID: 7cddf28d-dc7e-4454-9fe8-a6b49236c812) from Inline(default) with arguments: #<GlobalID:0x00007f9dba6ad3f8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/3>>
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   [1m[36mActiveStorage::Attachment Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 3], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 3]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 3], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812] [36m  S3 Storage (32.1ms) [0m[31mDeleted file from key: nqYMiXZoKjejasPJK1huyB6d[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [7cddf28d-dc7e-4454-9fe8-a6b49236c812] Performed ActiveStorage::PurgeJob (Job ID: 7cddf28d-dc7e-4454-9fe8-a6b49236c812) from Inline(default) in 42.02ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 7cddf28d-dc7e-4454-9fe8-a6b49236c812) to Inline(default) with arguments: #<GlobalID:0x00007f9dbb882a38 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/3>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 3]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693] Performing ActiveStorage::PurgeJob (Job ID: fe51dea6-7536-45d8-8b01-059f2c7e9693) from Inline(default) with arguments: #<GlobalID:0x00007f9db7a46620 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/4>>
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 4], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 4]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 4], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693] [36m  S3 Storage (33.4ms) [0m[31mDeleted file from key: FKDqjzTU4d8qw4YnJPAf4F1f[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fe51dea6-7536-45d8-8b01-059f2c7e9693] Performed ActiveStorage::PurgeJob (Job ID: fe51dea6-7536-45d8-8b01-059f2c7e9693) from Inline(default) in 41.31ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: fe51dea6-7536-45d8-8b01-059f2c7e9693) to Inline(default) with arguments: #<GlobalID:0x00007f9dbb82be90 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/4>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.5ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28] Performing ActiveStorage::PurgeJob (Job ID: 8c53aaa7-7029-4ade-9bc8-f990d8bc5c28) from Inline(default) with arguments: #<GlobalID:0x00007f9db7a2cc98 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/5>>
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 5], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   [1m[36mActiveStorage::Blob Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 5]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 5], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28] [36m  S3 Storage (30.7ms) [0m[31mDeleted file from key: fFko6NHjj2sTyUgZ589AUJvc[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [8c53aaa7-7029-4ade-9bc8-f990d8bc5c28] Performed ActiveStorage::PurgeJob (Job ID: 8c53aaa7-7029-4ade-9bc8-f990d8bc5c28) from Inline(default) in 39.3ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 8c53aaa7-7029-4ade-9bc8-f990d8bc5c28) to Inline(default) with arguments: #<GlobalID:0x00007f9dba587398 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/5>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa] Performing ActiveStorage::PurgeJob (Job ID: 2fc29f53-5133-437c-a043-6655c08e2cfa) from Inline(default) with arguments: #<GlobalID:0x00007f9db77c5090 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/6>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 6], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 6]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 6], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa] [36m  S3 Storage (42.3ms) [0m[31mDeleted file from key: NKYoCZksJw9sfE8MzimhMmom[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2fc29f53-5133-437c-a043-6655c08e2cfa] Performed ActiveStorage::PurgeJob (Job ID: 2fc29f53-5133-437c-a043-6655c08e2cfa) from Inline(default) in 50.3ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2fc29f53-5133-437c-a043-6655c08e2cfa) to Inline(default) with arguments: #<GlobalID:0x00007f9db77745c8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/6>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:14
+  [1m[36mSong Create (10.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Electric"], ["song_length", 245], ["created_at", "2019-06-04 12:56:01.749888"], ["updated_at", "2019-06-04 12:56:01.749888"]]
+  ↳ db/seeds.rb:14
+  [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:14
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:16
+[36m  S3 Storage (426.5ms) [0m[32mUploaded file to key: HzfctLcJn3sffyhPbvtHutbD (checksum: iyccAS8o9EwrA4Zz4F11uw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActiveStorage::Blob Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "HzfctLcJn3sffyhPbvtHutbD"], ["filename", "electric_alina_baraz.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9944627], ["checksum", "iyccAS8o9EwrA4Zz4F11uw=="], ["created_at", "2019-06-04 12:56:03.416992"]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:16
+  [1m[36mActiveStorage::Attachment Create (3.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 7], ["blob_id", 7], ["created_at", "2019-06-04 12:56:03.426935"]]
+  ↳ db/seeds.rb:16
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:03.432252"], ["id", 7]]
+  ↳ db/seeds.rb:16
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:16
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28] Performing ActiveStorage::AnalyzeJob (Job ID: f605f4f7-867a-4d6a-8dda-21de6e435e28) from Inline(default) with arguments: #<GlobalID:0x00007f9dba390fa8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   [1m[36mActiveStorage::Blob Update (2.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 7]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28]   ↳ db/seeds.rb:16
+[ActiveJob] [ActiveStorage::AnalyzeJob] [f605f4f7-867a-4d6a-8dda-21de6e435e28] Performed ActiveStorage::AnalyzeJob (Job ID: f605f4f7-867a-4d6a-8dda-21de6e435e28) from Inline(default) in 8.72ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: f605f4f7-867a-4d6a-8dda-21de6e435e28) to Inline(default) with arguments: #<GlobalID:0x00007f9dba313df0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/7>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:18
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Heebeejeebies"], ["song_length", 220], ["created_at", "2019-06-04 12:56:03.455799"], ["updated_at", "2019-06-04 12:56:03.455799"]]
+  ↳ db/seeds.rb:18
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:18
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:20
+[36m  S3 Storage (242.6ms) [0m[32mUploaded file to key: EvtJ4XTQXjbtwKFJqiTPpeoL (checksum: gCHOEDQ4rcsQyTTJuY6Elg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "EvtJ4XTQXjbtwKFJqiTPpeoL"], ["filename", "heebeejeebies_amine.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 5913602], ["checksum", "gCHOEDQ4rcsQyTTJuY6Elg=="], ["created_at", "2019-06-04 12:56:04.350523"]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:20
+  [1m[36mActiveStorage::Attachment Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 8], ["blob_id", 8], ["created_at", "2019-06-04 12:56:04.358673"]]
+  ↳ db/seeds.rb:20
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:04.362655"], ["id", 8]]
+  ↳ db/seeds.rb:20
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:20
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:20
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674] Performing ActiveStorage::AnalyzeJob (Job ID: 3e08caa7-8740-4790-a0ef-cdc38482d674) from Inline(default) with arguments: #<GlobalID:0x00007f9db73ace40 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   ↳ db/seeds.rb:20
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 8]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   ↳ db/seeds.rb:20
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674]   ↳ db/seeds.rb:20
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3e08caa7-8740-4790-a0ef-cdc38482d674] Performed ActiveStorage::AnalyzeJob (Job ID: 3e08caa7-8740-4790-a0ef-cdc38482d674) from Inline(default) in 7.99ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3e08caa7-8740-4790-a0ef-cdc38482d674) to Inline(default) with arguments: #<GlobalID:0x00007f9db883f038 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/8>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:22
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Chunky"], ["song_length", 185], ["created_at", "2019-06-04 12:56:04.384109"], ["updated_at", "2019-06-04 12:56:04.384109"]]
+  ↳ db/seeds.rb:22
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:22
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:24
+[36m  S3 Storage (283.6ms) [0m[32mUploaded file to key: o9BrjfCtHZU95bVhEXE2JYrF (checksum: ihkEXK3rC0FYnuYZEW1Jsw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "o9BrjfCtHZU95bVhEXE2JYrF"], ["filename", "chunky_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7547287], ["checksum", "ihkEXK3rC0FYnuYZEW1Jsw=="], ["created_at", "2019-06-04 12:56:05.714843"]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:24
+  [1m[36mActiveStorage::Attachment Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 9], ["blob_id", 9], ["created_at", "2019-06-04 12:56:05.719990"]]
+  ↳ db/seeds.rb:24
+  [1m[36mSong Update (0.4ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:05.721627"], ["id", 9]]
+  ↳ db/seeds.rb:24
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:24
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:24
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d] Performing ActiveStorage::AnalyzeJob (Job ID: 07a6af9c-baf0-41ee-bd3f-13230af46c5d) from Inline(default) with arguments: #<GlobalID:0x00007f9db75d2b70 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   ↳ db/seeds.rb:24
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   [1m[36mActiveStorage::Blob Update (0.5ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 9]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   ↳ db/seeds.rb:24
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d]   ↳ db/seeds.rb:24
+[ActiveJob] [ActiveStorage::AnalyzeJob] [07a6af9c-baf0-41ee-bd3f-13230af46c5d] Performed ActiveStorage::AnalyzeJob (Job ID: 07a6af9c-baf0-41ee-bd3f-13230af46c5d) from Inline(default) in 4.3ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 07a6af9c-baf0-41ee-bd3f-13230af46c5d) to Inline(default) with arguments: #<GlobalID:0x00007f9db8869130 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/9>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:26
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Finesse"], ["song_length", 188], ["created_at", "2019-06-04 12:56:05.734012"], ["updated_at", "2019-06-04 12:56:05.734012"]]
+  ↳ db/seeds.rb:26
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:26
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:28
+[36m  S3 Storage (259.6ms) [0m[32mUploaded file to key: PW5MWUuDHcsbecFmtcggRc1d (checksum: WIVYR6E24lS7W/njt3KsFw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "PW5MWUuDHcsbecFmtcggRc1d"], ["filename", "finesse_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7688561], ["checksum", "WIVYR6E24lS7W/njt3KsFw=="], ["created_at", "2019-06-04 12:56:07.357139"]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:28
+  [1m[36mActiveStorage::Attachment Create (1.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 10], ["blob_id", 10], ["created_at", "2019-06-04 12:56:07.364756"]]
+  ↳ db/seeds.rb:28
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:07.368702"], ["id", 10]]
+  ↳ db/seeds.rb:28
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:28
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:28
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727] Performing ActiveStorage::AnalyzeJob (Job ID: 12ceef9b-eefe-40f3-82f1-3be94cc17727) from Inline(default) with arguments: #<GlobalID:0x00007f9dbc8aa938 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   ↳ db/seeds.rb:28
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 10]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   ↳ db/seeds.rb:28
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727]   ↳ db/seeds.rb:28
+[ActiveJob] [ActiveStorage::AnalyzeJob] [12ceef9b-eefe-40f3-82f1-3be94cc17727] Performed ActiveStorage::AnalyzeJob (Job ID: 12ceef9b-eefe-40f3-82f1-3be94cc17727) from Inline(default) in 7.23ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 12ceef9b-eefe-40f3-82f1-3be94cc17727) to Inline(default) with arguments: #<GlobalID:0x00007f9dbc8a69c8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/10>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:30
+  [1m[36mSong Create (1.1ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Perm"], ["song_length", 210], ["created_at", "2019-06-04 12:56:07.389393"], ["updated_at", "2019-06-04 12:56:07.389393"]]
+  ↳ db/seeds.rb:30
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:30
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:32
+[36m  S3 Storage (275.8ms) [0m[32mUploaded file to key: maurqhC3sqPo42YmuN8ssnk6 (checksum: T6qFkguJbBx88OzKwkwEug==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "maurqhC3sqPo42YmuN8ssnk6"], ["filename", "perm_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8457726], ["checksum", "T6qFkguJbBx88OzKwkwEug=="], ["created_at", "2019-06-04 12:56:08.547152"]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:32
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 11], ["blob_id", 11], ["created_at", "2019-06-04 12:56:08.555361"]]
+  ↳ db/seeds.rb:32
+  [1m[36mSong Update (2.0ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:08.558270"], ["id", 11]]
+  ↳ db/seeds.rb:32
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:32
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:32
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245] Performing ActiveStorage::AnalyzeJob (Job ID: 5f612876-34e1-457a-86f4-06ebaf80d245) from Inline(default) with arguments: #<GlobalID:0x00007f9dba78e3a8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   ↳ db/seeds.rb:32
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 11]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   ↳ db/seeds.rb:32
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245]   ↳ db/seeds.rb:32
+[ActiveJob] [ActiveStorage::AnalyzeJob] [5f612876-34e1-457a-86f4-06ebaf80d245] Performed ActiveStorage::AnalyzeJob (Job ID: 5f612876-34e1-457a-86f4-06ebaf80d245) from Inline(default) in 5.94ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 5f612876-34e1-457a-86f4-06ebaf80d245) to Inline(default) with arguments: #<GlobalID:0x00007f9dbb89e9e0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/11>>
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:34
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Run It"], ["song_length", 192], ["created_at", "2019-06-04 12:56:08.576357"], ["updated_at", "2019-06-04 12:56:08.576357"]]
+  ↳ db/seeds.rb:34
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:34
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:36
+[36m  S3 Storage (513.1ms) [0m[32mUploaded file to key: SFhoBfJyFU8UPYVSkCb4wQ7H (checksum: q8sMbo+4jvYqaqgiomkUTw==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "SFhoBfJyFU8UPYVSkCb4wQ7H"], ["filename", "run_it_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7822365], ["checksum", "q8sMbo+4jvYqaqgiomkUTw=="], ["created_at", "2019-06-04 12:56:09.979041"]]
+  ↳ db/seeds.rb:36
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:36
+  [1m[36mActiveStorage::Attachment Create (1.4ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 12], ["blob_id", 12], ["created_at", "2019-06-04 12:56:09.985175"]]
+  ↳ db/seeds.rb:36
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:09.988214"], ["id", 12]]
+  ↳ db/seeds.rb:36
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:36
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a] Performing ActiveStorage::AnalyzeJob (Job ID: ca036393-406b-4eb9-ad66-f352b467616a) from Inline(default) with arguments: #<GlobalID:0x00007f9db79caa70 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 12]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a]   ↳ db/seeds.rb:36
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ca036393-406b-4eb9-ad66-f352b467616a] Performed ActiveStorage::AnalyzeJob (Job ID: ca036393-406b-4eb9-ad66-f352b467616a) from Inline(default) in 4.48ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ca036393-406b-4eb9-ad66-f352b467616a) to Inline(default) with arguments: #<GlobalID:0x00007f9db886a7b0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/12>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:38
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Yo (Excuse Me Miss)"], ["song_length", 225], ["created_at", "2019-06-04 12:56:10.002267"], ["updated_at", "2019-06-04 12:56:10.002267"]]
+  ↳ db/seeds.rb:38
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:38
+  [1m[36mActiveStorage::Attachment Load (8.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:40
+[36m  S3 Storage (309.4ms) [0m[32mUploaded file to key: ciZnHfD7miYYjWBETNUmuuBv (checksum: yVF8lNNzexK8flUI4wuQ9g==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mActiveStorage::Blob Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ciZnHfD7miYYjWBETNUmuuBv"], ["filename", "yo_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9130593], ["checksum", "yVF8lNNzexK8flUI4wuQ9g=="], ["created_at", "2019-06-04 12:56:11.445493"]]
+  ↳ db/seeds.rb:40
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:40
+  [1m[36mActiveStorage::Attachment Create (0.7ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 13], ["blob_id", 13], ["created_at", "2019-06-04 12:56:11.450595"]]
+  ↳ db/seeds.rb:40
+  [1m[36mSong Update (2.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 12:56:11.483649"], ["id", 13]]
+  ↳ db/seeds.rb:40
+  [1m[35m (6.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:40
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:40
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501] Performing ActiveStorage::AnalyzeJob (Job ID: 31946376-0068-470a-9c0f-4b2247d2a501) from Inline(default) with arguments: #<GlobalID:0x00007f9dba1d0b28 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/13>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   ↳ db/seeds.rb:40
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   [1m[36mActiveStorage::Blob Update (1.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 13]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   ↳ db/seeds.rb:40
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501]   ↳ db/seeds.rb:40
+[ActiveJob] [ActiveStorage::AnalyzeJob] [31946376-0068-470a-9c0f-4b2247d2a501] Performed ActiveStorage::AnalyzeJob (Job ID: 31946376-0068-470a-9c0f-4b2247d2a501) from Inline(default) in 9.88ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 31946376-0068-470a-9c0f-4b2247d2a501) to Inline(default) with arguments: #<GlobalID:0x00007f9dba240400 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/13>>
+  [1m[36mAlbum Load (1.1ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.9ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:45
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:45
+[36m  S3 Storage (63.0ms) [0m[32mUploaded file to key: EVJuKWuRNvJUeqZnzen9crGA (checksum: 5x9ebH2UjmA7gRSWiihFxw==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "EVJuKWuRNvJUeqZnzen9crGA"], ["filename", "24k_bruno_mars.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8487], ["checksum", "5x9ebH2UjmA7gRSWiihFxw=="], ["created_at", "2019-06-04 12:56:11.836736"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:49
+[36m  S3 Storage (61.6ms) [0m[32mUploaded file to key: dnU4SBTJVqW2Xmpy2iVrNerQ (checksum: vXnDnsfeI12JEQMj1sKGeg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "dnU4SBTJVqW2Xmpy2iVrNerQ"], ["filename", "electric_alina_baraz.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7785], ["checksum", "vXnDnsfeI12JEQMj1sKGeg=="], ["created_at", "2019-06-04 12:56:12.004948"]]
+  ↳ db/seeds.rb:51
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:53
+[36m  S3 Storage (53.6ms) [0m[32mUploaded file to key: UuxqR6MtBH2iwKr4ArP2x9sy (checksum: 0fviVNs+C9lPV9FzrzI4Ig==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "UuxqR6MtBH2iwKr4ArP2x9sy"], ["filename", "heebeejeebies_amine.jpg"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 53997], ["checksum", "0fviVNs+C9lPV9FzrzI4Ig=="], ["created_at", "2019-06-04 12:56:12.201847"]]
+  ↳ db/seeds.rb:55
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:57
+[36m  S3 Storage (80.0ms) [0m[32mUploaded file to key: EGKzpA3R9yGvD32CPdCavJww (checksum: /W2257d8l1WXNPF8L3aRVw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "EGKzpA3R9yGvD32CPdCavJww"], ["filename", "chris_brown_album.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 24374], ["checksum", "/W2257d8l1WXNPF8L3aRVw=="], ["created_at", "2019-06-04 12:56:12.417668"]]
+  ↳ db/seeds.rb:59
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:59
+  [1m[36mArtist Load (2.4ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:63
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:63
+[36m  S3 Storage (79.9ms) [0m[32mUploaded file to key: EtEuctvk5uJbHUPgwTdSw8vX (checksum: rCxha4DEHTLNsrUjF7jXgQ==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "EtEuctvk5uJbHUPgwTdSw8vX"], ["filename", "bruno_mars.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 43261], ["checksum", "rCxha4DEHTLNsrUjF7jXgQ=="], ["created_at", "2019-06-04 12:56:12.693548"]]
+  ↳ db/seeds.rb:65
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:65
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:67
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:67
+[36m  S3 Storage (62.5ms) [0m[32mUploaded file to key: wPtmNVTydwjtk7fPn6Wfzn3a (checksum: V4M3TfrvsbqnRN1AL2TKFA==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[36mActiveStorage::Blob Create (0.4ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "wPtmNVTydwjtk7fPn6Wfzn3a"], ["filename", "amine.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 127149], ["checksum", "V4M3TfrvsbqnRN1AL2TKFA=="], ["created_at", "2019-06-04 12:56:12.947848"]]
+  ↳ db/seeds.rb:69
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:69
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:71
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:71
+[36m  S3 Storage (53.0ms) [0m[32mUploaded file to key: Zh367hGB8Xv7PGrpEwie1DGy (checksum: vXnDnsfeI12JEQMj1sKGeg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Zh367hGB8Xv7PGrpEwie1DGy"], ["filename", "alina_baraz.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7785], ["checksum", "vXnDnsfeI12JEQMj1sKGeg=="], ["created_at", "2019-06-04 12:56:13.096047"]]
+  ↳ db/seeds.rb:73
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:73
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:75
+  [1m[35m (0.8ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:75
+[36m  S3 Storage (120.1ms) [0m[32mUploaded file to key: xfFdsovE6TJLg4fxpnvNuDEJ (checksum: XDZcuc6yDCrl6PVmLh/tFg==)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[36mActiveStorage::Blob Create (0.6ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "xfFdsovE6TJLg4fxpnvNuDEJ"], ["filename", "chris_brown.jpg"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 146149], ["checksum", "XDZcuc6yDCrl6PVmLh/tFg=="], ["created_at", "2019-06-04 12:56:13.425654"]]
+  ↳ db/seeds.rb:77
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:77
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:77
+  [1m[36mAlbum Load (1.5ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (1.3ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[36mSong Load (2.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 6]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d] Performing ActiveStorage::PurgeJob (Job ID: 1759f5e5-d365-4a12-b98f-e23a9a6d379d) from Inline(default) with arguments: #<GlobalID:0x00007fda0a786130 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/7>>
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   [1m[36mActiveStorage::Attachment Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 7], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 7]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 7], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d] [36m  S3 Storage (446.3ms) [0m[31mDeleted file from key: HzfctLcJn3sffyhPbvtHutbD[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [1759f5e5-d365-4a12-b98f-e23a9a6d379d] Performed ActiveStorage::PurgeJob (Job ID: 1759f5e5-d365-4a12-b98f-e23a9a6d379d) from Inline(default) in 482.47ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 1759f5e5-d365-4a12-b98f-e23a9a6d379d) to Inline(default) with arguments: #<GlobalID:0x00007fda0a693ed0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/7>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.4ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855] Performing ActiveStorage::PurgeJob (Job ID: 2e102ef9-13e5-4396-814c-0cb6b6b81855) from Inline(default) with arguments: #<GlobalID:0x00007fda07193988 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/8>>
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 8], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 8]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 8], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855] [36m  S3 Storage (58.6ms) [0m[31mDeleted file from key: EvtJ4XTQXjbtwKFJqiTPpeoL[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [2e102ef9-13e5-4396-814c-0cb6b6b81855] Performed ActiveStorage::PurgeJob (Job ID: 2e102ef9-13e5-4396-814c-0cb6b6b81855) from Inline(default) in 67.54ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 2e102ef9-13e5-4396-814c-0cb6b6b81855) to Inline(default) with arguments: #<GlobalID:0x00007fda0b831c28 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/8>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8] Performing ActiveStorage::PurgeJob (Job ID: 898634e9-043a-413c-becf-05345d5806f8) from Inline(default) with arguments: #<GlobalID:0x00007fda0a62b768 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/9>>
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 9], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 9]]
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 9], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8] [36m  S3 Storage (139.1ms) [0m[31mDeleted file from key: o9BrjfCtHZU95bVhEXE2JYrF[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [898634e9-043a-413c-becf-05345d5806f8] Performed ActiveStorage::PurgeJob (Job ID: 898634e9-043a-413c-becf-05345d5806f8) from Inline(default) in 146.92ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 898634e9-043a-413c-becf-05345d5806f8) to Inline(default) with arguments: #<GlobalID:0x00007fda06fc7d70 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/9>>
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (1.3ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840] Performing ActiveStorage::PurgeJob (Job ID: edcb3e6a-20b9-440b-897a-1e20a1af2840) from Inline(default) with arguments: #<GlobalID:0x00007fda080db0f8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/10>>
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 10], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 10]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   [1m[35m (2.0ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 10], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840] [36m  S3 Storage (75.4ms) [0m[31mDeleted file from key: PW5MWUuDHcsbecFmtcggRc1d[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [edcb3e6a-20b9-440b-897a-1e20a1af2840] Performed ActiveStorage::PurgeJob (Job ID: edcb3e6a-20b9-440b-897a-1e20a1af2840) from Inline(default) in 85.59ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: edcb3e6a-20b9-440b-897a-1e20a1af2840) to Inline(default) with arguments: #<GlobalID:0x00007fda06f3e9f8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/10>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47] Performing ActiveStorage::PurgeJob (Job ID: ca9251fb-2c8f-4b3b-8562-43ee9b10af47) from Inline(default) with arguments: #<GlobalID:0x00007fda06f27ca8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/11>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 11], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   [1m[36mActiveStorage::Blob Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 11]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 11], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47] [36m  S3 Storage (78.4ms) [0m[31mDeleted file from key: maurqhC3sqPo42YmuN8ssnk6[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ca9251fb-2c8f-4b3b-8562-43ee9b10af47] Performed ActiveStorage::PurgeJob (Job ID: ca9251fb-2c8f-4b3b-8562-43ee9b10af47) from Inline(default) in 88.18ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ca9251fb-2c8f-4b3b-8562-43ee9b10af47) to Inline(default) with arguments: #<GlobalID:0x00007fda0a54dbc0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/11>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 11]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 12], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9] Performing ActiveStorage::PurgeJob (Job ID: 25951e00-1a72-4eb0-b4a5-d939296bfae9) from Inline(default) with arguments: #<GlobalID:0x00007fda0a525648 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/12>>
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   [1m[36mActiveStorage::Attachment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 12], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   [1m[36mActiveStorage::Blob Destroy (1.2ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 12]]
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 12], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9] [36m  S3 Storage (272.8ms) [0m[31mDeleted file from key: SFhoBfJyFU8UPYVSkCb4wQ7H[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [25951e00-1a72-4eb0-b4a5-d939296bfae9] Performed ActiveStorage::PurgeJob (Job ID: 25951e00-1a72-4eb0-b4a5-d939296bfae9) from Inline(default) in 285.66ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 25951e00-1a72-4eb0-b4a5-d939296bfae9) to Inline(default) with arguments: #<GlobalID:0x00007fda0a4a53a8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/12>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.6ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 12]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 13], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178] Performing ActiveStorage::PurgeJob (Job ID: a4ec7d90-c55d-4b09-b247-8959a250c178) from Inline(default) with arguments: #<GlobalID:0x00007fda0a3ecd58 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/13>>
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 13], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   [1m[36mActiveStorage::Blob Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 13]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 13], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178] [36m  S3 Storage (150.4ms) [0m[31mDeleted file from key: ciZnHfD7miYYjWBETNUmuuBv[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a4ec7d90-c55d-4b09-b247-8959a250c178] Performed ActiveStorage::PurgeJob (Job ID: a4ec7d90-c55d-4b09-b247-8959a250c178) from Inline(default) in 158.8ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: a4ec7d90-c55d-4b09-b247-8959a250c178) to Inline(default) with arguments: #<GlobalID:0x00007fda0a2d71e8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/13>>
+  [1m[36mAlbum Load (1.0ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Electric"], ["song_length", 245], ["created_at", "2019-06-04 13:00:41.715220"], ["updated_at", "2019-06-04 13:00:41.715220"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+[36m  S3 Storage (395.9ms) [0m[32mUploaded file to key: B6KGvcrPzFNs3v559uPpHCJX (checksum: iyccAS8o9EwrA4Zz4F11uw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "B6KGvcrPzFNs3v559uPpHCJX"], ["filename", "electric_alina_baraz.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9944627], ["checksum", "iyccAS8o9EwrA4Zz4F11uw=="], ["created_at", "2019-06-04 13:00:43.732043"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mActiveStorage::Attachment Create (2.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 14], ["blob_id", 22], ["created_at", "2019-06-04 13:00:43.741195"]]
+  ↳ db/seeds.rb:19
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:43.745598"], ["id", 14]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114] Performing ActiveStorage::AnalyzeJob (Job ID: b4a038fa-1471-45e6-a80b-7e78af908114) from Inline(default) with arguments: #<GlobalID:0x00007fda0a39e040 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   [1m[36mActiveStorage::Blob Update (0.6ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 22]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [b4a038fa-1471-45e6-a80b-7e78af908114] Performed ActiveStorage::AnalyzeJob (Job ID: b4a038fa-1471-45e6-a80b-7e78af908114) from Inline(default) in 5.26ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: b4a038fa-1471-45e6-a80b-7e78af908114) to Inline(default) with arguments: #<GlobalID:0x00007fda0809a558 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/22>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Heebeejeebies"], ["song_length", 220], ["created_at", "2019-06-04 13:00:43.766504"], ["updated_at", "2019-06-04 13:00:43.766504"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+[36m  S3 Storage (239.6ms) [0m[32mUploaded file to key: i91PNUETqmK996dG4X15xkVx (checksum: gCHOEDQ4rcsQyTTJuY6Elg==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "i91PNUETqmK996dG4X15xkVx"], ["filename", "heebeejeebies_amine.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 5913602], ["checksum", "gCHOEDQ4rcsQyTTJuY6Elg=="], ["created_at", "2019-06-04 13:00:44.927458"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mActiveStorage::Attachment Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 15], ["blob_id", 23], ["created_at", "2019-06-04 13:00:44.937679"]]
+  ↳ db/seeds.rb:23
+  [1m[36mSong Update (0.6ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:44.941367"], ["id", 15]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24] Performing ActiveStorage::AnalyzeJob (Job ID: 7fbb0a96-8bad-44d4-82dc-294be897ed24) from Inline(default) with arguments: #<GlobalID:0x00007fda0a0a5370 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/23>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   [1m[36mActiveStorage::Blob Update (0.7ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 23]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [7fbb0a96-8bad-44d4-82dc-294be897ed24] Performed ActiveStorage::AnalyzeJob (Job ID: 7fbb0a96-8bad-44d4-82dc-294be897ed24) from Inline(default) in 5.96ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 7fbb0a96-8bad-44d4-82dc-294be897ed24) to Inline(default) with arguments: #<GlobalID:0x00007fda06d4fd18 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/23>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mSong Create (0.5ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Chunky"], ["song_length", 185], ["created_at", "2019-06-04 13:00:44.957597"], ["updated_at", "2019-06-04 13:00:44.957597"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+[36m  S3 Storage (331.3ms) [0m[32mUploaded file to key: 7XeshhmD4F4zCBpiiJGom6uR (checksum: ihkEXK3rC0FYnuYZEW1Jsw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "7XeshhmD4F4zCBpiiJGom6uR"], ["filename", "chunky_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7547287], ["checksum", "ihkEXK3rC0FYnuYZEW1Jsw=="], ["created_at", "2019-06-04 13:00:46.170259"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.7ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 16], ["blob_id", 24], ["created_at", "2019-06-04 13:00:46.177544"]]
+  ↳ db/seeds.rb:27
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:46.180402"], ["id", 16]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac] Performing ActiveStorage::AnalyzeJob (Job ID: da365f2a-6291-4155-ba8a-647e6c2eacac) from Inline(default) with arguments: #<GlobalID:0x00007fda0a19ca80 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/24>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 24]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [da365f2a-6291-4155-ba8a-647e6c2eacac] Performed ActiveStorage::AnalyzeJob (Job ID: da365f2a-6291-4155-ba8a-647e6c2eacac) from Inline(default) in 7.29ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: da365f2a-6291-4155-ba8a-647e6c2eacac) to Inline(default) with arguments: #<GlobalID:0x00007fda06dd6278 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/24>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Finesse"], ["song_length", 188], ["created_at", "2019-06-04 13:00:46.200083"], ["updated_at", "2019-06-04 13:00:46.200083"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+[36m  S3 Storage (269.4ms) [0m[32mUploaded file to key: BSwNnzLhWUNJJUqA13A5ycxL (checksum: WIVYR6E24lS7W/njt3KsFw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "BSwNnzLhWUNJJUqA13A5ycxL"], ["filename", "finesse_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7688561], ["checksum", "WIVYR6E24lS7W/njt3KsFw=="], ["created_at", "2019-06-04 13:00:47.751093"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 17], ["blob_id", 25], ["created_at", "2019-06-04 13:00:47.758436"]]
+  ↳ db/seeds.rb:31
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:47.761266"], ["id", 17]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540] Performing ActiveStorage::AnalyzeJob (Job ID: 89d1094d-d20d-4aaa-9eb6-d843bb491540) from Inline(default) with arguments: #<GlobalID:0x00007fda0a7f3aa0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/25>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 25]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [89d1094d-d20d-4aaa-9eb6-d843bb491540] Performed ActiveStorage::AnalyzeJob (Job ID: 89d1094d-d20d-4aaa-9eb6-d843bb491540) from Inline(default) in 6.79ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 89d1094d-d20d-4aaa-9eb6-d843bb491540) to Inline(default) with arguments: #<GlobalID:0x00007fda0a7d1a40 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/25>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Perm"], ["song_length", 210], ["created_at", "2019-06-04 13:00:47.779557"], ["updated_at", "2019-06-04 13:00:47.779557"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+[36m  S3 Storage (306.0ms) [0m[32mUploaded file to key: cLd1dsrb8mnMs7njs5XtZkNV (checksum: T6qFkguJbBx88OzKwkwEug==)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "cLd1dsrb8mnMs7njs5XtZkNV"], ["filename", "perm_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8457726], ["checksum", "T6qFkguJbBx88OzKwkwEug=="], ["created_at", "2019-06-04 13:00:49.684197"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 18], ["blob_id", 26], ["created_at", "2019-06-04 13:00:49.691555"]]
+  ↳ db/seeds.rb:35
+  [1m[36mSong Update (1.1ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:49.694345"], ["id", 18]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44] Performing ActiveStorage::AnalyzeJob (Job ID: 6273337c-752b-49cf-a06c-88e06fcb4b44) from Inline(default) with arguments: #<GlobalID:0x00007fda0b8b3020 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/26>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 26]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [6273337c-752b-49cf-a06c-88e06fcb4b44] Performed ActiveStorage::AnalyzeJob (Job ID: 6273337c-752b-49cf-a06c-88e06fcb4b44) from Inline(default) in 6.72ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 6273337c-752b-49cf-a06c-88e06fcb4b44) to Inline(default) with arguments: #<GlobalID:0x00007fda0a6f78b8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/26>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Run It"], ["song_length", 192], ["created_at", "2019-06-04 13:00:49.712219"], ["updated_at", "2019-06-04 13:00:49.712219"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Attachment Load (1.0ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+[36m  S3 Storage (350.9ms) [0m[32mUploaded file to key: yRqotdMvoSqMf55FBU5KRxpj (checksum: q8sMbo+4jvYqaqgiomkUTw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "yRqotdMvoSqMf55FBU5KRxpj"], ["filename", "run_it_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7822365], ["checksum", "q8sMbo+4jvYqaqgiomkUTw=="], ["created_at", "2019-06-04 13:00:50.954905"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mActiveStorage::Attachment Create (3.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 19], ["blob_id", 27], ["created_at", "2019-06-04 13:00:50.961757"]]
+  ↳ db/seeds.rb:39
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:50.968134"], ["id", 19]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (1.1ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455] Performing ActiveStorage::AnalyzeJob (Job ID: 930129df-0b69-40a8-994f-2cee63dd3455) from Inline(default) with arguments: #<GlobalID:0x00007fda0a1d42c8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/27>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   [1m[36mActiveStorage::Blob Update (1.1ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 27]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [930129df-0b69-40a8-994f-2cee63dd3455] Performed ActiveStorage::AnalyzeJob (Job ID: 930129df-0b69-40a8-994f-2cee63dd3455) from Inline(default) in 9.59ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 930129df-0b69-40a8-994f-2cee63dd3455) to Inline(default) with arguments: #<GlobalID:0x00007fda06e03d40 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/27>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Yo (Excuse Me Miss)"], ["song_length", 225], ["created_at", "2019-06-04 13:00:50.992097"], ["updated_at", "2019-06-04 13:00:50.992097"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+[36m  S3 Storage (517.5ms) [0m[32mUploaded file to key: a8ZF9BYP8MRTWn1UgmSaztRr (checksum: yVF8lNNzexK8flUI4wuQ9g==)[0m
+  [1m[35m (2.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mActiveStorage::Blob Create (1.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "a8ZF9BYP8MRTWn1UgmSaztRr"], ["filename", "yo_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9130593], ["checksum", "yVF8lNNzexK8flUI4wuQ9g=="], ["created_at", "2019-06-04 13:00:53.803808"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 20], ["blob_id", 28], ["created_at", "2019-06-04 13:00:53.812527"]]
+  ↳ db/seeds.rb:43
+  [1m[36mSong Update (1.0ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:00:53.816068"], ["id", 20]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773] Performing ActiveStorage::AnalyzeJob (Job ID: 8e594c1e-b355-4542-bf18-925c80190773) from Inline(default) with arguments: #<GlobalID:0x00007fda0a28f730 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/28>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 28]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [8e594c1e-b355-4542-bf18-925c80190773] Performed ActiveStorage::AnalyzeJob (Job ID: 8e594c1e-b355-4542-bf18-925c80190773) from Inline(default) in 5.14ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 8e594c1e-b355-4542-bf18-925c80190773) to Inline(default) with arguments: #<GlobalID:0x00007fda0a32cd28 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/28>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:47
+[36m  S3 Storage (90.3ms) [0m[32mUploaded file to key: q1heX45nt4ybp7SS7KiPZFNR (checksum: 5x9ebH2UjmA7gRSWiihFxw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "q1heX45nt4ybp7SS7KiPZFNR"], ["filename", "24k_bruno_mars.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8487], ["checksum", "5x9ebH2UjmA7gRSWiihFxw=="], ["created_at", "2019-06-04 13:00:54.073588"]]
+  ↳ db/seeds.rb:49
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:49
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:51
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:51
+[36m  S3 Storage (57.7ms) [0m[32mUploaded file to key: T1iSmAZTQjGQBhVj7XfZLyz1 (checksum: vXnDnsfeI12JEQMj1sKGeg==)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[36mActiveStorage::Blob Create (0.5ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "T1iSmAZTQjGQBhVj7XfZLyz1"], ["filename", "electric_alina_baraz.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7785], ["checksum", "vXnDnsfeI12JEQMj1sKGeg=="], ["created_at", "2019-06-04 13:00:54.372710"]]
+  ↳ db/seeds.rb:53
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:53
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:55
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:55
+[36m  S3 Storage (114.3ms) [0m[32mUploaded file to key: NZDJpa49WWds57P5KdZ4hv8n (checksum: 0fviVNs+C9lPV9FzrzI4Ig==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "NZDJpa49WWds57P5KdZ4hv8n"], ["filename", "heebeejeebies_amine.jpg"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 53997], ["checksum", "0fviVNs+C9lPV9FzrzI4Ig=="], ["created_at", "2019-06-04 13:00:54.717679"]]
+  ↳ db/seeds.rb:57
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:57
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:59
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:59
+[36m  S3 Storage (80.4ms) [0m[32mUploaded file to key: LdYAVa8kjQg77AbkrzhSdwq3 (checksum: /W2257d8l1WXNPF8L3aRVw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "LdYAVa8kjQg77AbkrzhSdwq3"], ["filename", "chris_brown_album.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 24374], ["checksum", "/W2257d8l1WXNPF8L3aRVw=="], ["created_at", "2019-06-04 13:00:54.955091"]]
+  ↳ db/seeds.rb:61
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:61
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:64
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:64
+[36m  S3 Storage (93.5ms) [0m[32mUploaded file to key: x1MRkP5h611kyKmed3RWVkeE (checksum: rCxha4DEHTLNsrUjF7jXgQ==)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "x1MRkP5h611kyKmed3RWVkeE"], ["filename", "bruno_mars.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 43261], ["checksum", "rCxha4DEHTLNsrUjF7jXgQ=="], ["created_at", "2019-06-04 13:00:55.201485"]]
+  ↳ db/seeds.rb:66
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:66
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:68
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:68
+[36m  S3 Storage (86.9ms) [0m[32mUploaded file to key: 641Hbf3mz155SSGHxqw3pLR5 (checksum: V4M3TfrvsbqnRN1AL2TKFA==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "641Hbf3mz155SSGHxqw3pLR5"], ["filename", "amine.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 127149], ["checksum", "V4M3TfrvsbqnRN1AL2TKFA=="], ["created_at", "2019-06-04 13:00:55.491111"]]
+  ↳ db/seeds.rb:70
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:70
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:72
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:72
+[36m  S3 Storage (58.1ms) [0m[32mUploaded file to key: LicvZVHSAAT7AEhRFn9sbsTM (checksum: vXnDnsfeI12JEQMj1sKGeg==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:74
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "LicvZVHSAAT7AEhRFn9sbsTM"], ["filename", "alina_baraz.jpg"], ["content_type", "image/jpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7785], ["checksum", "vXnDnsfeI12JEQMj1sKGeg=="], ["created_at", "2019-06-04 13:00:55.664744"]]
+  ↳ db/seeds.rb:74
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:74
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:76
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:76
+[36m  S3 Storage (94.5ms) [0m[32mUploaded file to key: GHjsCCx6eHq7mLsuNAbGXwCK (checksum: XDZcuc6yDCrl6PVmLh/tFg==)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[36mActiveStorage::Blob Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "GHjsCCx6eHq7mLsuNAbGXwCK"], ["filename", "chris_brown.jpg"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 146149], ["checksum", "XDZcuc6yDCrl6PVmLh/tFg=="], ["created_at", "2019-06-04 13:00:55.972375"]]
+  ↳ db/seeds.rb:78
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:78
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:78
+  [1m[36mSong Load (1.1ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mAlbum Load (1.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mSong Load (1.8ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  [1m[36mSong Load (0.9ms)[0m  [1m[34mSELECT  "songs".* FROM "songs" ORDER BY "songs"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+  [1m[36mSong Load (1.0ms)[0m  [1m[34mSELECT "songs".* FROM "songs"[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.9ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (1.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 14], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.4ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 13]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 22], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2] Performing ActiveStorage::PurgeJob (Job ID: 47ae467a-b8ca-4450-aa0c-1f41211f01d2) from Inline(default) with arguments: #<GlobalID:0x00007fde9e855280 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/22>>
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   [1m[36mActiveStorage::Attachment Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 22], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   [1m[36mActiveStorage::Blob Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 22]]
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2] [36m  S3 Storage (130.3ms) [0m[31mDeleted file from key: B6KGvcrPzFNs3v559uPpHCJX[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [47ae467a-b8ca-4450-aa0c-1f41211f01d2] Performed ActiveStorage::PurgeJob (Job ID: 47ae467a-b8ca-4450-aa0c-1f41211f01d2) from Inline(default) in 163.65ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 47ae467a-b8ca-4450-aa0c-1f41211f01d2) to Inline(default) with arguments: #<GlobalID:0x00007fde99eeea10 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/22>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (1.0ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 15], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.5ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 14]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 23], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72] Performing ActiveStorage::PurgeJob (Job ID: 589148aa-9a5e-4757-a15e-16f7cb1d6f72) from Inline(default) with arguments: #<GlobalID:0x00007fde9b16e8e8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/23>>
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 23], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 23]]
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72] [36m  S3 Storage (36.5ms) [0m[31mDeleted file from key: i91PNUETqmK996dG4X15xkVx[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [589148aa-9a5e-4757-a15e-16f7cb1d6f72] Performed ActiveStorage::PurgeJob (Job ID: 589148aa-9a5e-4757-a15e-16f7cb1d6f72) from Inline(default) in 45.16ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 589148aa-9a5e-4757-a15e-16f7cb1d6f72) to Inline(default) with arguments: #<GlobalID:0x00007fde99e58a10 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/23>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 16], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 15]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 24], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1] Performing ActiveStorage::PurgeJob (Job ID: a9a7e224-9dce-488c-838a-2f87ea8cf5d1) from Inline(default) with arguments: #<GlobalID:0x00007fde99235df0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/24>>
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   [1m[36mActiveStorage::Attachment Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 24], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   [1m[36mActiveStorage::Blob Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 24]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1] [36m  S3 Storage (34.5ms) [0m[31mDeleted file from key: 7XeshhmD4F4zCBpiiJGom6uR[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [a9a7e224-9dce-488c-838a-2f87ea8cf5d1] Performed ActiveStorage::PurgeJob (Job ID: a9a7e224-9dce-488c-838a-2f87ea8cf5d1) from Inline(default) in 42.96ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: a9a7e224-9dce-488c-838a-2f87ea8cf5d1) to Inline(default) with arguments: #<GlobalID:0x00007fde991c73f0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/24>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 17], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.6ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 16]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd] Performing ActiveStorage::PurgeJob (Job ID: fbfbe260-ad2f-495c-8206-7bd4b67075cd) from Inline(default) with arguments: #<GlobalID:0x00007fde9b156680 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/25>>
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   [1m[36mActiveStorage::Attachment Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 25], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   [1m[36mActiveStorage::Blob Destroy (1.5ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 25]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd] [36m  S3 Storage (33.1ms) [0m[31mDeleted file from key: BSwNnzLhWUNJJUqA13A5ycxL[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [fbfbe260-ad2f-495c-8206-7bd4b67075cd] Performed ActiveStorage::PurgeJob (Job ID: fbfbe260-ad2f-495c-8206-7bd4b67075cd) from Inline(default) in 46.08ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: fbfbe260-ad2f-495c-8206-7bd4b67075cd) to Inline(default) with arguments: #<GlobalID:0x00007fde9ce55768 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/25>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.8ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 18], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 17]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711] Performing ActiveStorage::PurgeJob (Job ID: ac60907d-c68a-4f2e-92f4-bab7dcf07711) from Inline(default) with arguments: #<GlobalID:0x00007fde9ce328f8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/26>>
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   [1m[36mActiveStorage::Attachment Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 26], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   [1m[36mActiveStorage::Blob Destroy (1.1ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 26]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711] [36m  S3 Storage (36.8ms) [0m[31mDeleted file from key: cLd1dsrb8mnMs7njs5XtZkNV[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [ac60907d-c68a-4f2e-92f4-bab7dcf07711] Performed ActiveStorage::PurgeJob (Job ID: ac60907d-c68a-4f2e-92f4-bab7dcf07711) from Inline(default) in 50.38ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: ac60907d-c68a-4f2e-92f4-bab7dcf07711) to Inline(default) with arguments: #<GlobalID:0x00007fde9cdb9d18 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/26>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.7ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 19], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.7ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 18]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 27], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff] Performing ActiveStorage::PurgeJob (Job ID: 935a7528-44ac-4218-83a6-d5bac2cb2dff) from Inline(default) with arguments: #<GlobalID:0x00007fde9cd891e0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/27>>
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   [1m[36mActiveStorage::Attachment Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 27], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   [1m[36mActiveStorage::Blob Destroy (1.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 27]]
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff] [36m  S3 Storage (31.7ms) [0m[31mDeleted file from key: yRqotdMvoSqMf55FBU5KRxpj[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [935a7528-44ac-4218-83a6-d5bac2cb2dff] Performed ActiveStorage::PurgeJob (Job ID: 935a7528-44ac-4218-83a6-d5bac2cb2dff) from Inline(default) in 43.89ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 935a7528-44ac-4218-83a6-d5bac2cb2dff) to Inline(default) with arguments: #<GlobalID:0x00007fde99d59920 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/27>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mSong Destroy (0.7ms)[0m  [1m[31mDELETE FROM "songs" WHERE "songs"."id" = $1[0m  [["id", 20]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 20], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:12
+  [1m[36mActiveStorage::Attachment Destroy (0.8ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = $1[0m  [["id", 19]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:12
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d] Performing ActiveStorage::PurgeJob (Job ID: 115eb6e6-85db-414f-91b8-1d302e95cc9d) from Inline(default) with arguments: #<GlobalID:0x00007fde9cc3e9e8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/28>>
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   [1m[36mActiveStorage::Attachment Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = $1 LIMIT $2[0m  [["blob_id", 28], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   [1m[36mActiveStorage::Blob Destroy (0.9ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1[0m  [["id", 28]]
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 28], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d]   ↳ db/seeds.rb:12
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d] [36m  S3 Storage (32.2ms) [0m[31mDeleted file from key: a8ZF9BYP8MRTWn1UgmSaztRr[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [115eb6e6-85db-414f-91b8-1d302e95cc9d] Performed ActiveStorage::PurgeJob (Job ID: 115eb6e6-85db-414f-91b8-1d302e95cc9d) from Inline(default) in 44.76ms
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 115eb6e6-85db-414f-91b8-1d302e95cc9d) to Inline(default) with arguments: #<GlobalID:0x00007fde9cb5b3f0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/28>>
+  [1m[36mAlbum Load (2.2ms)[0m  [1m[34mSELECT "albums".* FROM "albums"[0m
+  ↳ db/seeds.rb:13
+  [1m[36mArtist Load (1.0ms)[0m  [1m[34mSELECT "artists".* FROM "artists"[0m
+  ↳ db/seeds.rb:14
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:17
+  [1m[36mSong Create (0.6ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Electric"], ["song_length", 245], ["created_at", "2019-06-04 13:05:08.409678"], ["updated_at", "2019-06-04 13:05:08.409678"]]
+  ↳ db/seeds.rb:17
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:17
+  [1m[36mActiveStorage::Attachment Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 21], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:19
+[36m  S3 Storage (415.7ms) [0m[32mUploaded file to key: ABc5kvEmHdVkpcg9WbnCuU17 (checksum: iyccAS8o9EwrA4Zz4F11uw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mActiveStorage::Blob Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "ABc5kvEmHdVkpcg9WbnCuU17"], ["filename", "electric_alina_baraz.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9944627], ["checksum", "iyccAS8o9EwrA4Zz4F11uw=="], ["created_at", "2019-06-04 13:05:10.721837"]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:19
+  [1m[36mActiveStorage::Attachment Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 21], ["blob_id", 37], ["created_at", "2019-06-04 13:05:10.732054"]]
+  ↳ db/seeds.rb:19
+  [1m[36mSong Update (0.6ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:10.735468"], ["id", 21]]
+  ↳ db/seeds.rb:19
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:19
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 37], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf] Performing ActiveStorage::AnalyzeJob (Job ID: 3c005c6d-5c11-4fec-863d-308da59572bf) from Inline(default) with arguments: #<GlobalID:0x00007fde9cc08668 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/37>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 37]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf]   ↳ db/seeds.rb:19
+[ActiveJob] [ActiveStorage::AnalyzeJob] [3c005c6d-5c11-4fec-863d-308da59572bf] Performed ActiveStorage::AnalyzeJob (Job ID: 3c005c6d-5c11-4fec-863d-308da59572bf) from Inline(default) in 4.57ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 3c005c6d-5c11-4fec-863d-308da59572bf) to Inline(default) with arguments: #<GlobalID:0x00007fde9cb815c8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/37>>
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:21
+  [1m[36mSong Create (0.4ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Heebeejeebies"], ["song_length", 220], ["created_at", "2019-06-04 13:05:10.750777"], ["updated_at", "2019-06-04 13:05:10.750777"]]
+  ↳ db/seeds.rb:21
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:21
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 22], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:23
+[36m  S3 Storage (237.6ms) [0m[32mUploaded file to key: mnBfuzDEq8tthgCb5cmeCBdA (checksum: gCHOEDQ4rcsQyTTJuY6Elg==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mActiveStorage::Blob Create (1.3ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "mnBfuzDEq8tthgCb5cmeCBdA"], ["filename", "heebeejeebies_amine.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 5913602], ["checksum", "gCHOEDQ4rcsQyTTJuY6Elg=="], ["created_at", "2019-06-04 13:05:11.792978"]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:23
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 22], ["blob_id", 38], ["created_at", "2019-06-04 13:05:11.801442"]]
+  ↳ db/seeds.rb:23
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:11.804195"], ["id", 22]]
+  ↳ db/seeds.rb:23
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:23
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 38], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6] Performing ActiveStorage::AnalyzeJob (Job ID: ccf79666-efe0-48fb-9124-9dbe01f2b5b6) from Inline(default) with arguments: #<GlobalID:0x00007fde9c95ab78 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/38>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   [1m[36mActiveStorage::Blob Update (0.9ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 38]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6]   ↳ db/seeds.rb:23
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ccf79666-efe0-48fb-9124-9dbe01f2b5b6] Performed ActiveStorage::AnalyzeJob (Job ID: ccf79666-efe0-48fb-9124-9dbe01f2b5b6) from Inline(default) in 9.58ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ccf79666-efe0-48fb-9124-9dbe01f2b5b6) to Inline(default) with arguments: #<GlobalID:0x00007fde9c98b958 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/38>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:25
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Chunky"], ["song_length", 185], ["created_at", "2019-06-04 13:05:11.828336"], ["updated_at", "2019-06-04 13:05:11.828336"]]
+  ↳ db/seeds.rb:25
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:25
+  [1m[36mActiveStorage::Attachment Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 23], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:27
+[36m  S3 Storage (270.7ms) [0m[32mUploaded file to key: RxyH3nsV7N9b41uLzcLhzZcw (checksum: ihkEXK3rC0FYnuYZEW1Jsw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "RxyH3nsV7N9b41uLzcLhzZcw"], ["filename", "chunky_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7547287], ["checksum", "ihkEXK3rC0FYnuYZEW1Jsw=="], ["created_at", "2019-06-04 13:05:13.142455"]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:27
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 23], ["blob_id", 39], ["created_at", "2019-06-04 13:05:13.149597"]]
+  ↳ db/seeds.rb:27
+  [1m[36mSong Update (0.9ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:13.152562"], ["id", 23]]
+  ↳ db/seeds.rb:27
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:27
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 39], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7] Performing ActiveStorage::AnalyzeJob (Job ID: ace80e37-5911-47a3-988c-3eed0b566ae7) from Inline(default) with arguments: #<GlobalID:0x00007fde9ca62fe8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/39>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 39]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7]   ↳ db/seeds.rb:27
+[ActiveJob] [ActiveStorage::AnalyzeJob] [ace80e37-5911-47a3-988c-3eed0b566ae7] Performed ActiveStorage::AnalyzeJob (Job ID: ace80e37-5911-47a3-988c-3eed0b566ae7) from Inline(default) in 6.71ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: ace80e37-5911-47a3-988c-3eed0b566ae7) to Inline(default) with arguments: #<GlobalID:0x00007fde9cae0dd0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/39>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:29
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Finesse"], ["song_length", 188], ["created_at", "2019-06-04 13:05:13.171203"], ["updated_at", "2019-06-04 13:05:13.171203"]]
+  ↳ db/seeds.rb:29
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:29
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 24], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:31
+[36m  S3 Storage (320.5ms) [0m[32mUploaded file to key: Ykm1B89pE3PQLH8FiRyuv7Ye (checksum: WIVYR6E24lS7W/njt3KsFw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mActiveStorage::Blob Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "Ykm1B89pE3PQLH8FiRyuv7Ye"], ["filename", "finesse_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7688561], ["checksum", "WIVYR6E24lS7W/njt3KsFw=="], ["created_at", "2019-06-04 13:05:14.531610"]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:31
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 24], ["blob_id", 40], ["created_at", "2019-06-04 13:05:14.539010"]]
+  ↳ db/seeds.rb:31
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:14.541915"], ["id", 24]]
+  ↳ db/seeds.rb:31
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:31
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.6ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 40], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54] Performing ActiveStorage::AnalyzeJob (Job ID: 0bd7d823-a56a-4e72-879e-800f5c83db54) from Inline(default) with arguments: #<GlobalID:0x00007fde9e8c4978 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/40>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 40]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54]   ↳ db/seeds.rb:31
+[ActiveJob] [ActiveStorage::AnalyzeJob] [0bd7d823-a56a-4e72-879e-800f5c83db54] Performed ActiveStorage::AnalyzeJob (Job ID: 0bd7d823-a56a-4e72-879e-800f5c83db54) from Inline(default) in 7.47ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 0bd7d823-a56a-4e72-879e-800f5c83db54) to Inline(default) with arguments: #<GlobalID:0x00007fde9e8a6590 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/40>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:33
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Perm"], ["song_length", 210], ["created_at", "2019-06-04 13:05:14.561752"], ["updated_at", "2019-06-04 13:05:14.561752"]]
+  ↳ db/seeds.rb:33
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:33
+  [1m[36mActiveStorage::Attachment Load (0.3ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 25], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:35
+[36m  S3 Storage (295.8ms) [0m[32mUploaded file to key: tvuCpxQwffH1v18PaMzdqyUo (checksum: T6qFkguJbBx88OzKwkwEug==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "tvuCpxQwffH1v18PaMzdqyUo"], ["filename", "perm_bruno_mars.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 8457726], ["checksum", "T6qFkguJbBx88OzKwkwEug=="], ["created_at", "2019-06-04 13:05:15.719135"]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:35
+  [1m[36mActiveStorage::Attachment Create (1.0ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 25], ["blob_id", 41], ["created_at", "2019-06-04 13:05:15.726715"]]
+  ↳ db/seeds.rb:35
+  [1m[36mSong Update (1.0ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:15.729456"], ["id", 25]]
+  ↳ db/seeds.rb:35
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:35
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 41], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937] Performing ActiveStorage::AnalyzeJob (Job ID: e0d5c843-b69c-4de0-98cf-0282af6eb937) from Inline(default) with arguments: #<GlobalID:0x00007fde9cfd19e8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/41>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   [1m[36mActiveStorage::Blob Update (1.2ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 41]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937]   ↳ db/seeds.rb:35
+[ActiveJob] [ActiveStorage::AnalyzeJob] [e0d5c843-b69c-4de0-98cf-0282af6eb937] Performed ActiveStorage::AnalyzeJob (Job ID: e0d5c843-b69c-4de0-98cf-0282af6eb937) from Inline(default) in 7.08ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: e0d5c843-b69c-4de0-98cf-0282af6eb937) to Inline(default) with arguments: #<GlobalID:0x00007fde9cfb9208 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/41>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:37
+  [1m[36mSong Create (0.7ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Run It"], ["song_length", 192], ["created_at", "2019-06-04 13:05:15.747653"], ["updated_at", "2019-06-04 13:05:15.747653"]]
+  ↳ db/seeds.rb:37
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:37
+  [1m[36mActiveStorage::Attachment Load (0.4ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 26], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:39
+[36m  S3 Storage (2208.8ms) [0m[32mUploaded file to key: 2kn5qRugXaWHRhaGj51q17of (checksum: q8sMbo+4jvYqaqgiomkUTw==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "2kn5qRugXaWHRhaGj51q17of"], ["filename", "run_it_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 7822365], ["checksum", "q8sMbo+4jvYqaqgiomkUTw=="], ["created_at", "2019-06-04 13:05:18.732482"]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:39
+  [1m[36mActiveStorage::Attachment Create (1.1ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 26], ["blob_id", 42], ["created_at", "2019-06-04 13:05:18.739808"]]
+  ↳ db/seeds.rb:39
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:18.742674"], ["id", 26]]
+  ↳ db/seeds.rb:39
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:39
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.8ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 42], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76] Performing ActiveStorage::AnalyzeJob (Job ID: a94e6554-493c-4372-b718-da5128193b76) from Inline(default) with arguments: #<GlobalID:0x00007fde9ca609c8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/42>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   [1m[36mActiveStorage::Blob Update (1.0ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 42]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76]   ↳ db/seeds.rb:39
+[ActiveJob] [ActiveStorage::AnalyzeJob] [a94e6554-493c-4372-b718-da5128193b76] Performed ActiveStorage::AnalyzeJob (Job ID: a94e6554-493c-4372-b718-da5128193b76) from Inline(default) in 6.76ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: a94e6554-493c-4372-b718-da5128193b76) to Inline(default) with arguments: #<GlobalID:0x00007fde9caf8d18 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/42>>
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:41
+  [1m[36mSong Create (0.8ms)[0m  [1m[32mINSERT INTO "songs" ("song_title", "song_length", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["song_title", "Yo (Excuse Me Miss)"], ["song_length", 225], ["created_at", "2019-06-04 13:05:18.761120"], ["updated_at", "2019-06-04 13:05:18.761120"]]
+  ↳ db/seeds.rb:41
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:41
+  [1m[36mActiveStorage::Attachment Load (0.9ms)[0m  [1m[34mSELECT  "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = $1 AND "active_storage_attachments"."record_type" = $2 AND "active_storage_attachments"."name" = $3 LIMIT $4[0m  [["record_id", 27], ["record_type", "Song"], ["name", "audio_track"], ["LIMIT", 1]]
+  ↳ db/seeds.rb:43
+[36m  S3 Storage (288.6ms) [0m[32mUploaded file to key: iTR2ynyVKquteFgVwUiwGUsE (checksum: yVF8lNNzexK8flUI4wuQ9g==)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mActiveStorage::Blob Create (0.8ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["key", "iTR2ynyVKquteFgVwUiwGUsE"], ["filename", "yo_chris_brown.mp3"], ["content_type", "audio/mpeg"], ["metadata", "{\"identified\":true}"], ["byte_size", 9130593], ["checksum", "yVF8lNNzexK8flUI4wuQ9g=="], ["created_at", "2019-06-04 13:05:19.994845"]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:43
+  [1m[36mActiveStorage::Attachment Create (0.9ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["name", "audio_track"], ["record_type", "Song"], ["record_id", 27], ["blob_id", 43], ["created_at", "2019-06-04 13:05:20.001972"]]
+  ↳ db/seeds.rb:43
+  [1m[36mSong Update (0.8ms)[0m  [1m[33mUPDATE "songs" SET "updated_at" = $1 WHERE "songs"."id" = $2[0m  [["updated_at", "2019-06-04 13:05:20.004493"], ["id", 27]]
+  ↳ db/seeds.rb:43
+  [1m[35m (1.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/seeds.rb:43
+[ActiveJob]   [1m[36mActiveStorage::Blob Load (0.5ms)[0m  [1m[34mSELECT  "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+[ActiveJob]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916] Performing ActiveStorage::AnalyzeJob (Job ID: 4f57b163-7930-4626-a19a-c05034470916) from Inline(default) with arguments: #<GlobalID:0x00007fde99d1bcb0 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/43>>
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   [1m[36mActiveStorage::Blob Update (0.8ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = $1 WHERE "active_storage_blobs"."id" = $2[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 43]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916]   ↳ db/seeds.rb:43
+[ActiveJob] [ActiveStorage::AnalyzeJob] [4f57b163-7930-4626-a19a-c05034470916] Performed ActiveStorage::AnalyzeJob (Job ID: 4f57b163-7930-4626-a19a-c05034470916) from Inline(default) in 6.92ms
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 4f57b163-7930-4626-a19a-c05034470916) to Inline(default) with arguments: #<GlobalID:0x00007fde99154dc8 @uri=#<URI::GID gid://dropify/ActiveStorage::Blob/43>>
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/seeds.rb:47
+  [1m[36mAlbum Create (11.7ms)[0m  [1m[32mINSERT INTO "albums" ("title", "created_at", "updated_at") VALUES ($1, $2, $3) RETURNING "id"[0m  [["title", "24K Magic"], ["created_at", "2019-06-04 13:05:20.040406"], ["updated_at", "2019-06-04 13:05:20.040406"]]
+  ↳ db/seeds.rb:47
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+  ↳ db/seeds.rb:47
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9
+Migrating to ChangePlaylistAlbumNull (20190604130747)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (6.7ms)[0m  [1m[35mALTER TABLE "albums" ALTER COLUMN "artist_id" DROP NOT NULL[0m
+  ↳ db/migrate/20190604130747_change_playlist_album_null.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20190604130747"]]
+  ↳ bin/rails:9
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ bin/rails:9
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ bin/rails:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(3543885751508838540)[0m
+  ↳ bin/rails:9
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:9

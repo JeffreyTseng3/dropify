@@ -10,6 +10,39 @@
 require 'open-uri'
 
 Song.destroy_all
+Album.destroy_all 
+Artist.destroy_all 
+Genre.destroy_all 
+
+genre1 = Genre.create(category: "pop")
+genre2 = Genre.create(category: 'rap')
+genre3 = Genre.create(category: 'r&b')
+genre4 = Genre.create(category: 'rock')
+
+
+artist1 = Artist.create(name: 'Bruno Mars', about: 'King of Pop')
+artist_file1 = open('https://dropify-seeds.s3.amazonaws.com/bruno_mars.jpg')
+artist1.artist_img.attach(io: artist_file1, filename: 'bruno_mars.jpg')
+artist1.save!
+
+artist2 = Artist.create(name: 'Amine', about: 'R&B Master')
+artist_file2 = open('https://dropify-seeds.s3.amazonaws.com/amine.jpg')
+artist2.artist_img.attach(io: artist_file2, filename: 'amine.jpg')
+artist2.save!
+
+
+artist3 = Artist.create(name: 'Alina Baraz', about: 'electricity')
+artist_file3 = open('https://dropify-seeds.s3.amazonaws.com/electric_alina_baraz.jpg')
+artist3.artist_img.attach(io: artist_file3, filename: 'alina_baraz.jpg')
+artist3.save!
+
+
+artist4 = Artist.create(name: 'Chris Brown', about: 'Tempo Maker')
+artist_file4 = open('https://dropify-seeds.s3.amazonaws.com/chris_brown.png')
+artist4.artist_img.attach(io: artist_file4, filename: 'chris_brown.jpg')
+artist4.save!
+
+
 
 song1 = Song.create(song_title: 'Electric', song_length: 245)
 song_file1 = open('https://dropify-seeds.s3.amazonaws.com/Alina+Baraz+ft+Khalid+-+Electric+(Clean).mp3')
@@ -40,41 +73,30 @@ song_file7 = open('https://dropify-seeds.s3.amazonaws.com/Chris+Brown+-+Yo+(Excu
 song7.audio_track.attach(io: song_file7, filename: 'yo_chris_brown.mp3')
 
 
-Album.destroy_all 
 
 album1 = Album.create(title: '24K Magic')
 album_file1 = open('https://dropify-seeds.s3.amazonaws.com/24k_bruno_mars.jpg')
 album1.album_img.attach(io: album_file1, filename: '24k_bruno_mars.jpg')
+album1.save! 
 
 album2 = Album.create(title: 'Electric')
 album_file2 = open('https://dropify-seeds.s3.amazonaws.com/electric_alina_baraz.jpg')
 album2.album_img.attach(io: album_file2, filename: 'electric_alina_baraz.jpg')
+album2.save! 
 
 album3 = Album.create(title: 'Heebeejeebies')
 album_file3 = open('https://dropify-seeds.s3.amazonaws.com/heebeejeebies_amine.png')
 album3.album_img.attach(io: album_file3, filename: 'heebeejeebies_amine.jpg')
+album3.save! 
+
 
 album4 = Album.create(title: 'Chris Brown (Album)')
 album_file4 = open('https://dropify-seeds.s3.amazonaws.com/chris_brown_album.jpg')
 album4.album_img.attach(io: album_file4, filename: 'chris_brown_album.jpg')
+album4.save! 
 
-Artist.destroy_all 
 
-artist1 = Artist.create(name: 'Bruno Mars', about: 'King of Pop')
-artist_file1 = open('https://dropify-seeds.s3.amazonaws.com/bruno_mars.jpg')
-artist1.artist_img.attach(io: artist_file1, filename: 'bruno_mars.jpg')
 
-artist2 = Artist.create(name: 'Amine', about: 'R&B Master')
-artist_file2 = open('https://dropify-seeds.s3.amazonaws.com/amine.jpg')
-artist2.artist_img.attach(io: artist_file2, filename: 'amine.jpg')
-
-artist3 = Artist.create(name: 'Alina Baraz', about: 'electricity')
-artist_file3 = open('https://dropify-seeds.s3.amazonaws.com/electric_alina_baraz.jpg')
-artist3.artist_img.attach(io: artist_file3, filename: 'alina_baraz.jpg')
-
-artist4 = Artist.create(name: 'Chris Brown', about: 'Tempo Maker')
-artist_file4 = open('https://dropify-seeds.s3.amazonaws.com/chris_brown.png')
-artist4.artist_img.attach(io: artist_file4, filename: 'chris_brown.jpg')
 
 
 

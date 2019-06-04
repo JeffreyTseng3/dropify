@@ -20,10 +20,10 @@ class Album < ApplicationRecord
         foreign_key: :artist_id, 
         class_name: :Artist 
 
-    belongs_to :genre,
-        primary_key: :id,
-        foreign_key: :genre_id, 
-        class_name: :Genre 
+    # belongs_to :genre,
+    #     primary_key: :id,
+    #     foreign_key: :genre_id, 
+    #     class_name: :Genre 
 
 
 end

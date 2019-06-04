@@ -9,10 +9,10 @@ export const receiveArtists = artists => {
     }
 }
 
-export const receiveArtist = artist => {
+export const receiveArtist = payload => {
     return {
         type: RECEIVE_ARTIST,
-        artist
+        payload
     }
 }
 
@@ -29,9 +29,9 @@ export const fetchArtists = () => dispatch => {
 
 export const fetchArtist = id => dispatch => {
     return ArtistAPIUtil.fetchArtist(id) 
-        .then(artist => {
-        // .then(payload => {
-            // dispatch(receiveArtist(payload))
-            dispatch(receiveArtist(artist))
+        // .then(artist => {
+        .then(payload => {
+            dispatch(receiveArtist(payload))
+            // dispatch(receiveArtist(artist))
         })
 }

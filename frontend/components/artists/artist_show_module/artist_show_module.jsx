@@ -7,24 +7,28 @@ class ArtistShowModule extends React.Component {
         super(props);
     }
 
+    // componentDidUpdate() {
+    //     let { artistId } = this.props.match.params;
+    //     let { fetchArtist } = this.props;
+    //     fetchArtist(artistId);
+    // }
+
     componentDidMount() {
         let { artistId } = this.props.match.params;
         let { fetchArtist } = this.props;
-        
         fetchArtist(artistId);
     }
 
     render() {
-        let { artists } = this.props
-      
-        let artist_prop = artists ? artists : null;
+        let { artist, songs } = this.props;
+        
 
 
         return (
             <>
                 <div className="artist-show-module">   
-                    <ArtistShowHeaderContainer artist={artist_prop} />
-                    < ArtistShowAreaContainer />
+                    <ArtistShowHeaderContainer artist={artist} />
+                    <ArtistShowAreaContainer songs={songs}/>
                     
         
                 </div>

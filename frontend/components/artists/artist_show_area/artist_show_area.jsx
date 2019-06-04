@@ -1,4 +1,5 @@
 import React from "react";
+import SongArtistItemContainer from "../../songs/songs_artist_item/songs_artist_item_container";
 
 class ArtistShowArea extends React.Component {
 
@@ -6,11 +7,31 @@ class ArtistShowArea extends React.Component {
         super(props);
     }
 
+    // componentDidUpdate() {
+    //     let { artistId } = this.props.match.params;
+    //     let { fetchArtist } = this.props;
+    //     fetchArtist(artistId);
+    // }
+
+    // componentDidMount() {
+    //     let { artistId } = this.props.match.params;
+    //     let { fetchArtist } = this.props;
+
+    //     fetchArtist(artistId);
+    // }
+
     render() {
+        let { songs } = this.props;
+       
+        let songs_display = songs.map( song => {
+            return < SongArtistItemContainer key={song.id} song={song}/>
+        })
+
+
         return (
             <>
                 <div className="artist-show-area">
-                    Songs
+                    {songs_display}
                 </div>
             </>
         )

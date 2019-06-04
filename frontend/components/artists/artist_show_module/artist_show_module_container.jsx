@@ -5,8 +5,11 @@ import ArtistShowModule from "./artist_show_module";
 import { fetchArtist } from "../../../actions/artist_actions";
 
 const msp = state => {
+    let artist = Object.values(state.entities.artists)[0];
+    let songs = Object.values(state.entities.songs);
     return ({
-        artists: state.entities.artists
+        artist: artist,
+        songs: songs,
     })
 }
 

@@ -6,9 +6,18 @@ class ArtistShowHeader extends React.Component {
         super(props);
     }
 
-    componentDidMount() {
-        
-    }
+    // componentDidUpdate() {
+    //     let { artistId } = this.props.match.params;
+    //     let { fetchArtist } = this.props;
+    //     fetchArtist(artistId);
+    // }
+
+    // componentDidMount() {
+    //     let { artistId } = this.props.match.params;
+    //     let { fetchArtist } = this.props;
+    
+    //     fetchArtist(artistId);
+    // }
 
     render() {
         let {artist} = this.props;

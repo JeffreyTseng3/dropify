@@ -1,0 +1,16 @@
+.song_item {
+    height: 30px;
+    width: 90%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px 40px;
+}
+
+.song_item:hover {
+    height: 30px;
+    width: 90%;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0px 40px;
+    background: black;
+}

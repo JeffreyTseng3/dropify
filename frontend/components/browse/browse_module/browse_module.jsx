@@ -7,6 +7,7 @@ class BrowseModule extends React.Component {
         super(props)
     }
 
+
     render() {
         return (
             <>

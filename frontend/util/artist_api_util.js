@@ -11,3 +11,4 @@ export const fetchArtist = id => {
         url: `api/artists/${id}`
     })
 }
+

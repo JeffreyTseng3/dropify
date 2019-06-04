@@ -2,6 +2,7 @@ import React from "react";
 import { withRouter } from 'react-router';
 import { connect } from "react-redux";
 import BrowseArea from "./browse_area";
+import { fetchArtists } from '../../../../actions/artist_actions';
 
 const msp = state => {
     return ({
@@ -12,7 +13,7 @@ const msp = state => {
 const mdp = dispatch => {
     return ({
         // fetchAlbums: () => dispatch(fetchAlbums),
-        // fetchArtists: () => dispatch(fetchArtists),
+        fetchArtists: () => dispatch(fetchArtists()),
     })
 }
 

@@ -8,8 +8,9 @@ class BrowseArea extends React.Component {
 
 
     componentDidMount() {
-
-        // fetchArtists();
+        debugger
+        let { fetchArtists } = this.props;
+        fetchArtists();
         // fetchAlbums();
     }
 

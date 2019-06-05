@@ -6,12 +6,12 @@ class SongsArtistItem extends React.Component {
     }
 
     render() {
-        let { song } = this.props;
+        let { song, receiveCurrentSong } = this.props;
         let song_title = song ? song.song_title : null;
         
         return (
             <> 
-            <button className="song_item"> 
+            <button className="song_item" onClick={() => receiveCurrentSong(song)}> 
                 {song_title}
             </button>
             </>

@@ -8,8 +8,8 @@ class MusicPlayerConsole extends React.Component {
     render() {
         return (
             <>
-                <div>
-                    MUSIC PLAYER
+                <div className="music-player-console">
+                    MUSIC PLAYER CONSOLE
                 </div>
             </>
         )

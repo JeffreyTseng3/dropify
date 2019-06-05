@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import MusicPlayerInfo from "./music_player_info";
 
-const msp = static => {
+const msp = state => {
     return {
 
     }

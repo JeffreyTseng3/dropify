@@ -8,7 +8,7 @@ class MusicPlayerInfo extends React.Component {
     render() {
         return(
             <>
-                <div>
+                <div className="music-player-info">
                     Album Art 
                     Artist
                 </div>

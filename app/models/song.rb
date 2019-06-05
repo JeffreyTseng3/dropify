@@ -26,6 +26,9 @@ class Song < ApplicationRecord
         foreign_key: :album_id,
         class_name: :Album
 
+    has_one :artist,
+        through: :album,
+        source: :artist
     
 
 end

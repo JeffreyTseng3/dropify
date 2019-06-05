@@ -20,14 +20,25 @@ class MainPage extends React.Component {
 
     render() {
         // THIS prevents overscrolling 
+        let { pathname } = this.props.location;
         let main_page_class = this.props.modal ? "main-page-module-modal-open" : "main-page-module";
 
+
+        // let background_color; 
+
+        // switch(pathname) {
+        //     default: 
+        //         background_color = "blue-background";
+        // }
+
         return (
-            <div className={main_page_class}> 
-                    <NavBarContainer /> 
-                    <ExploreModuleContainer /> 
-                    <MusicPlayerModuleContainer />
-            </div> 
+            // <div className={background_color}>
+                <div className={main_page_class}> 
+                        <NavBarContainer /> 
+                        <ExploreModuleContainer /> 
+                        <MusicPlayerModuleContainer />
+                </div> 
+            // </div>
             )
         }
         

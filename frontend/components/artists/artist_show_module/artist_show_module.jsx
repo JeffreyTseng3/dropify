@@ -20,15 +20,19 @@ class ArtistShowModule extends React.Component {
     }
 
     render() {
-        let { artist, songs } = this.props;
+        let { artists, songs } = this.props;
+        let { artistId } = this.props.match.params;
         
+        let artist = artists ?  artists.filter( artist => artist.id == artistId )[0] : null;
+        let my_songs = songs ? songs.filter(song => song.artist_id == artistId) : null;
+        // debugger
 
 
         return (
             <>
                 <div className="artist-show-module">   
                     <ArtistShowHeaderContainer artist={artist} />
-                    <ArtistShowAreaContainer songs={songs}/>
+                    <ArtistShowAreaContainer songs={my_songs}/>
                     
         
                 </div>

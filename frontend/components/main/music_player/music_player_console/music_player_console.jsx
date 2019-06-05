@@ -6,10 +6,11 @@ class MusicPlayerConsole extends React.Component {
         this.myAudioRef = React.createRef();
         this.state = {
             playStatus: 'play',
-            currentTime: 0
+            currentTime: 0,
+            volume: "100"
         }
         this.togglePlay = this.togglePlay.bind(this);
-
+        this.updateVolume = this.updateVolume.bind(this);
     }
 
 
@@ -34,9 +35,8 @@ class MusicPlayerConsole extends React.Component {
             setInterval(() => {
                 let currentTime = audio_ref.currentTime;
                 let duration = song_length;
-                let percent = ( currentTime / duration ) * 50 + '%';
+                let percent = ( Math.ceil(currentTime) / duration ) * 50 + '%';
                 this.updateScrubber(percent);
-                
                 console.log(currentTime, percent);
                 this.updateTime(currentTime);
             }, 1500 ); 
@@ -46,6 +46,22 @@ class MusicPlayerConsole extends React.Component {
         }
         this.setState({ playStatus: status })
         console.log(this.state);
+    }
+
+    updateVolume() {
+        return (e) => {
+            console.log(this.state);
+            this.setState({ volume: e.target.value })
+        }
+    }
+
+    setVolume() {
+        let audio_ref = this.myAudioRef.current;
+        audio_ref.volume = this.state.volume / 100;
+    }
+
+    componentDidUpdate() {
+        this.setVolume();
     }
 
     render() {
@@ -74,6 +90,14 @@ class MusicPlayerConsole extends React.Component {
                         volume
                         <div className='music-volume-overlay'></div>
                         <div className='music-volume-process'></div>
+                        <input 
+                            type="range" 
+                            value={this.state.volume}
+                             onChange={this.updateVolume()}
+                            min="0"
+                            max="100"
+                            />
+                        {/* <button onClick={() => this.handleVolume()}>volume</button> */}
                     </div>
     
                 </div>

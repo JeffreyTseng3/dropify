@@ -14,15 +14,14 @@ class ArtistShowArea extends React.Component {
     // }
 
     // componentDidMount() {
-    //     let { artistId } = this.props.match.params;
-    //     let { fetchArtist } = this.props;
-
-    //     fetchArtist(artistId);
-    // }
-
-    render() {
-        let { songs } = this.props;
+        
+        //     fetchArtist(artistId);
+        // }
+        
+        render() {
        
+        let  {songs }  = this.props;
+        
         let songs_display = songs.map( song => {
             return < SongArtistItemContainer key={song.id} song={song}/>
         })

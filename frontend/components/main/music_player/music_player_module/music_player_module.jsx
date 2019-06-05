@@ -8,6 +8,17 @@ class MusicPlayerModule extends React.Component {
         super(props);
     }
 
+    componentDidUpdate() {
+        let { currentSongId, fetchSong } = this.props;
+        debugger
+        // currentSongId ? fetchSong(currentSongId) : null;
+    }
+
+    componentDidMount() {
+        
+        // fetchSong(currentSongId);
+    }
+
     render() {
 
         return (

@@ -24,3 +24,10 @@ export const receiveCurrentSong = song => {
         song
     }
 }
+
+export const fetchSong = id => {
+    return SongAPIUtil.fetchSong(id)
+        .then(song => {
+            debugger
+            dispatch(receiveSong(song))})
+}

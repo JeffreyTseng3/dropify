@@ -25,20 +25,32 @@ class MainPage extends React.Component {
 
 
         // let background_color; 
-
+        //     debugger
         // switch(pathname) {
-        //     default: 
-        //         background_color = "blue-background";
+        //     case ("/main/browse/featured"):
+        //         background_color = 'blue-background';
+        //         break;
+        //     case (pathname.split('/').includes('artist')):
+        //         background_color = 'black-background';
+        //         break;
+        //     case (pathname.split('/').includes('collection')):
+        //         debugger
+        //         background_color = 'red-background';
+        //         break;
+        //         //  default: 
+        //         //      background_color = "blue-background";
+        //         //      break;
         // }
-
+        //     // background_color = 'hello';
+        //     debugger
         return (
-            // <div className={background_color}>
+            
                 <div className={main_page_class}> 
                         <NavBarContainer /> 
                         <ExploreModuleContainer /> 
                         <MusicPlayerModuleContainer />
                 </div> 
-            // </div>
+           
             )
         }
         

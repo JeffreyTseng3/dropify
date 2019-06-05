@@ -81,15 +81,21 @@ class MusicPlayerConsole extends React.Component {
                             <i className="far fa-play-circle fa-2x"></i>
                         </button>
                         <div className="music-scrubber">
-                            <div className="music-scrubber-overlay"></div>
-                            <div className="music-scrubber-process"></div>
+                            {/* <div className="music-scrubber-overlay"></div>
+                            <div className="music-scrubber-process"></div> */}
+                            <input
+                                type="range"
+                                // value={this.state.volume}
+                                // onChange={this.updateVolume()}
+                                min="0"
+                                max="1000"
+                            />
                         </div>
                     </div>
 
+                    
                     <div className="music-volume">
-                        volume
-                        <div className='music-volume-overlay'></div>
-                        <div className='music-volume-process'></div>
+                   
                         <input 
                             type="range" 
                             value={this.state.volume}

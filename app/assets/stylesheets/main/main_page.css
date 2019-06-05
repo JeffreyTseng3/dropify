@@ -41,12 +41,29 @@
     right: 0;
     left: 0;
     z-index: 0;
-    background-image: linear-gradient(to bottom right,hsl(171, 40%, 26%) 10%, hsl(173, 46%, 11%));
-    display: grid;
-    grid-template-columns: 230px auto;
-    grid-template-rows: auto 105px;
+    background-image: linear-gradient(to bottom right,hsl(171, 40%, 26%), hsl(173, 46%, 11%));
     
-    grid-template-areas: 
-        "navbar explore"
-        "music music";
 }
+
+.black-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    background-color: #171717;
+    /* background-image: linear-gradient(to bottom right,hsl(171, 40%, 26%) 10%, hsl(173, 46%, 11%)); */
+}
+
+.red-background {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 0;
+    /* background-color: #171717; */
+    background: linear-gradient(to bottom right,#62212a, #090304);
+}
+

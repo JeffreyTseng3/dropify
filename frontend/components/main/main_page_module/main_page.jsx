@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import NavBarContainer from "../navbar/navbar_container";
-import MusicPlayerBarContainer from "../music_player_bar/music_player_bar_container";
+import MusicPlayerModuleContainer from "../music_player/music_player_module/music_player_module_container";
 import ExploreModuleContainer from "../explore_module/explore_module_container"
 
 class MainPage extends React.Component {
@@ -26,7 +26,7 @@ class MainPage extends React.Component {
             <div className={main_page_class}> 
                     <NavBarContainer /> 
                     <ExploreModuleContainer /> 
-                    <MusicPlayerBarContainer />
+                    <MusicPlayerModuleContainer />
             </div> 
             )
         }

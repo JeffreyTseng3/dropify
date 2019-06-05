@@ -19,10 +19,10 @@ class MusicPlayerConsole extends React.Component {
         this.setState({currentTime: timestamp})
     }
 
-    updateScrubber(percent) {
-        let innerScrubber = document.querySelector('.music-scrubber-process');
-        innerScrubber.style['width'] = percent;
-    }
+    // updateScrubber(percent) {
+    //     let innerScrubber = document.querySelector('.music-scrubber-process');
+    //     innerScrubber.style['width'] = percent;
+    // }
 
     togglePlay() {
         let { current_song } = this.props;
@@ -34,10 +34,10 @@ class MusicPlayerConsole extends React.Component {
             audio_ref.play();
             setInterval(() => {
                 let currentTime = audio_ref.currentTime;
-                let duration = song_length;
-                let percent = ( Math.ceil(currentTime) / duration ) * 50 + '%';
-                this.updateScrubber(percent);
-                console.log(currentTime, percent);
+                // let duration = song_length;
+                // let percent = ( Math.ceil(currentTime) / duration ) * 50 + '%';
+                // this.updateScrubber(percent);
+                // console.log(currentTime, percent);
                 this.updateTime(currentTime);
             }, 1500 ); 
         } else {
@@ -80,17 +80,17 @@ class MusicPlayerConsole extends React.Component {
                                 >
                             <i className="far fa-play-circle fa-2x"></i>
                         </button>
-                        <div className="music-scrubber">
+                        {/* <div className="music-scrubber"> */}
                             {/* <div className="music-scrubber-overlay"></div>
                             <div className="music-scrubber-process"></div> */}
                             <input
                                 type="range"
-                                // value={this.state.volume}
+                                value={this.state.currentTime}
                                 // onChange={this.updateVolume()}
                                 min="0"
                                 max="1000"
                             />
-                        </div>
+                        {/* </div> */}
                     </div>
 
                     

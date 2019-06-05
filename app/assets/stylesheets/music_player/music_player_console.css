@@ -1,22 +1,20 @@
 .music-player-console {
-    margin: 10px;
     display: flex; 
-    /* justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    align-content: center; */
     width: 100%
 }
 
 .music-play-mod {
     height: 105px;
-    width: 80%;
+    width: 100%;
     display: flex; 
     flex-direction: column;
-    
-     justify-content: center;
+    justify-content: center;
     align-items: center;
-    align-content: center;
+    position: relative;
 }
+
 
 .music-play-pause {
     padding-bottom: 3px;
@@ -27,13 +25,11 @@
 
 .music-scrubber {
     margin: 5px;
-}
-
-.music-scrubber {
-    /* background-color: black; */
+    height: 10px;
     width: 70%;
     z-index: 0;
     display:flex;
+    align-items: center;
 }
 
 .music-scrubber-overlay {
@@ -50,8 +46,32 @@
 .music-scrubber-process {
     overflow: hidden;
     position: absolute;
-    /* margin-top: 5px; */
-    /* width: 0%; */
+    height: 4px;
+    border-radius: 2px;
+    z-index: 2;;
+    background:#b3b3b3
+}
+
+.music-volume {
+    width: 280px;
+    position: relative;
+    display: flex;
+    height: 40px;
+}
+
+.music-volume-overlay {
+      position: absolute;
+    border-radius: 2px;
+    height: 4px;
+    background-color: black;
+    /* background: #404040; */
+    z-index: 1;
+    width: 20%; 
+}
+
+.music-volume-process {
+    overflow: hidden;
+    position: absolute;
     height: 4px;
     border-radius: 2px;
     z-index: 2;;

@@ -4,18 +4,14 @@ class MusicPlayerConsole extends React.Component {
     constructor(props) {
         super(props);
         this.myAudioRef = React.createRef();
-        // this.audioPlay = this.audioPlay.bind(this);
         this.state = {
             playStatus: 'play',
             currentTime: 0
         }
         this.togglePlay = this.togglePlay.bind(this);
-        // this.updateTime = this.updateTime.bind(this);
+
     }
 
-    audioPlay() {
-        this.myAudioRef.current.play();
-    }
 
     updateTime(timestamp) {
         timestamp = Math.floor(timestamp);
@@ -43,7 +39,7 @@ class MusicPlayerConsole extends React.Component {
                 
                 console.log(currentTime, percent);
                 this.updateTime(currentTime);
-            }, 500 ); 
+            }, 1500 ); 
         } else {
             status = 'play'
             audio_ref.pause();
@@ -55,37 +51,31 @@ class MusicPlayerConsole extends React.Component {
     render() {
 
         let { current_song } = this.props;
-        // debugger
         let songUrl = current_song ? current_song.songUrl : null;
         return (
             <>
                 <div className="music-player-console">
-                    <audio ref={this.myAudioRef} src={songUrl} >
-                                {/* <source /> */}
-                            </audio>
+                    <audio ref={this.myAudioRef} src={songUrl}></audio>
                     
-                    <div className="music-play-mod">
-                        
+                    <div className="music-play-mod"> 
                         <button 
                             className="music-play-pause"
-                            onClick={() => this.togglePlay()}
-                            >
+                                onClick={() => this.togglePlay()}
+                                >
                             <i className="far fa-play-circle fa-2x"></i>
-
-                           
-
                         </button>
                         <div className="music-scrubber">
                             <div className="music-scrubber-overlay"></div>
                             <div className="music-scrubber-process"></div>
                         </div>
-                        
-
                     </div>
 
-                    {/* <div className="music-volume-mod">
-                        volume bar
-                    </div> */}
+                    <div className="music-volume">
+                        volume
+                        <div className='music-volume-overlay'></div>
+                        <div className='music-volume-process'></div>
+                    </div>
+    
                 </div>
             </>
         )

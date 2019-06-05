@@ -1,3 +1,59 @@
 .music-player-console {
-    margin: 10px
+    margin: 10px;
+    display: flex; 
+    /* justify-content: center;
+    align-items: center;
+    align-content: center; */
+    width: 100%
+}
+
+.music-play-mod {
+    height: 105px;
+    width: 80%;
+    display: flex; 
+    flex-direction: column;
+    
+     justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.music-play-pause {
+    padding-bottom: 3px;
+}
+.fa-play-circle {
+    color: white;
+}
+
+.music-scrubber {
+    margin: 5px;
+}
+
+.music-scrubber {
+    /* background-color: black; */
+    width: 70%;
+    z-index: 0;
+    display:flex;
+}
+
+.music-scrubber-overlay {
+    position: absolute;
+    border-radius: 2px;
+    height: 4px;
+    background-color: black;
+    /* background: #404040; */
+    z-index: 1;
+    width: 50%;
+    
+}
+
+.music-scrubber-process {
+    overflow: hidden;
+    position: absolute;
+    /* margin-top: 5px; */
+    /* width: 0%; */
+    height: 4px;
+    border-radius: 2px;
+    z-index: 2;;
+    background:#b3b3b3
 }

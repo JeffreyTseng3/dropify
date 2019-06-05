@@ -6,11 +6,13 @@ class MusicPlayerInfo extends React.Component {
     }
 
     render() {
+        let { current_song } = this.props;
+        let title = current_song ? current_song.song_title : null;
         return(
             <>
                 <div className="music-player-info">
                     Album Art 
-                    Artist
+                    { title }
                 </div>
             </>
         )

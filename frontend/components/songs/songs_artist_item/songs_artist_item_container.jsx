@@ -1,7 +1,7 @@
 import { withRouter } from 'react-router';
 import { connect } from "react-redux";
 import SongsArtistItem from './songs_artist_item';
-import { receiveCurrentSong } from '../../../actions/song_actions';
+import { fetchCurrentSong } from '../../../actions/song_actions';
 const msp = state => {
     return ({
 
@@ -10,7 +10,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return ({
-        receiveCurrentSong: song => dispatch(receiveCurrentSong(song)),
+        fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
     })
 }
 

@@ -10,7 +10,7 @@ class Api::SongsController < ApplicationController
 
 
     def show
-        @song = Song.first 
+        @song = Song.find(params[:id]) 
         render "api/songs/show"
     end 
 

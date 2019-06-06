@@ -23,15 +23,13 @@ class MusicPlayerConsole extends React.Component {
     updateScrubber() {
         return (e) => {
             this.setState({currentTime: Number(e.target.value)})
-            console.log(this.state);
+            // console.log(this.state);
             let audio_ref = this.myAudioRef.current;
             audio_ref.currentTime = Number(e.target.value);
         }
     }
 
     togglePlay() {
-        let { current_song } = this.props;
-        let song_length = current_song ? current_song.song_length : null;
         let audio_ref = this.myAudioRef.current;
         let status = this.state.playStatus;
         if (status === 'play') {
@@ -51,7 +49,7 @@ class MusicPlayerConsole extends React.Component {
 
     updateVolume() {
         return (e) => {
-            console.log(this.state);
+            // console.log(this.state);
             this.setState({ volume: e.target.value })
         }
     }
@@ -82,30 +80,28 @@ class MusicPlayerConsole extends React.Component {
                                 >
                             <i className="far fa-play-circle fa-2x"></i>
                         </button>
-                        {/* <div className="music-scrubber"> */}
-                            {/* <div className="music-scrubber-overlay"></div>
-                            <div className="music-scrubber-process"></div> */}
+
                             <input
+                                className="music-seek-input"
                                 type="range"
                                 value={this.state.currentTime}
                                 onChange={this.updateScrubber()}
                                 min="0"
                                 max={`${song_length}`}
                             />
-                        {/* </div> */}
                     </div>
 
                     
                     <div className="music-volume">
-                   
+
                         <input 
+                            className="music-volume-input"
                             type="range" 
                             value={this.state.volume}
-                             onChange={this.updateVolume()}
+                            onChange={this.updateVolume()}
                             min="0"
                             max="100"
                             />
-                        {/* <button onClick={() => this.handleVolume()}>volume</button> */}
                     </div>
     
                 </div>

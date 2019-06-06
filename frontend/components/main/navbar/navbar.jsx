@@ -35,7 +35,7 @@ class NavBar extends React.Component {
                     </Link>
                 </div>
 
-                <div className="nav-bar-recent">
+                {/* <div className="nav-bar-recent">
                     <h2 className="nav-bar-recent-text">RECENTLY PLAYED</h2>
                     <ul className="nav-bar-playlists">
                         <li className="nav-bar-playlist-item">
@@ -64,7 +64,7 @@ class NavBar extends React.Component {
                         </li>
 
                     </ul>
-                </div>
+                </div> */}
 
                 <Link onClick={this.props.logout} to="/">LOGOUT</Link>
 
@@ -72,10 +72,10 @@ class NavBar extends React.Component {
                 <div className="nav-bar-footer">
 
 
-                    <Link to="/" className="nav-bar-download">
+                    {/* <Link to="/" className="nav-bar-download">
                         <span to="/" className="nav-bar-download-img"><i className="fas fa-download"></i></span>
                         <span to="/" className="nav-bar-download-text">Install</span>
-                    </Link>
+                    </Link> */}
 
 
                     <Link to="/">

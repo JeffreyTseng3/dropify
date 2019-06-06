@@ -23,57 +23,38 @@
     color: white;
 }
 
-.music-scrubber {
-    margin: 5px;
-    height: 10px;
-    width: 70%;
-    z-index: 0;
-    display:flex;
-    align-items: center;
+.music-seek-input {
+    width: 80%;
+    border-radius: 5px;
+    height: 4px;
+    -webkit-appearance: none;
+     background:#404040;
+     margin: 5px;
 }
 
-.music-scrubber-overlay {
-    position: absolute;
-    border-radius: 2px;
-    height: 4px;
-    background-color: black;
-    /* background: #404040; */
-    z-index: 1;
-    width: 50%;
-    
-}
-
-.music-scrubber-process {
-    overflow: hidden;
-    position: absolute;
-    height: 4px;
-    border-radius: 2px;
-    z-index: 2;;
-    background:#b3b3b3
+.music-seek-input:hover {
+    background: #55ba55;
 }
 
 .music-volume {
-    width: 280px;
+    width: 150px;
     position: relative;
     display: flex;
     height: 40px;
+    align-items: center;  
 }
 
-.music-volume-overlay {
-      position: absolute;
-    border-radius: 2px;
+
+.music-volume-input {
+    width: 100px;
+    border-radius: 5px;
     height: 4px;
-    background-color: black;
-    /* background: #404040; */
-    z-index: 1;
-    width: 20%; 
+    -webkit-appearance: none;
+     background:#404040
 }
 
-.music-volume-process {
-    overflow: hidden;
-    position: absolute;
-    height: 4px;
-    border-radius: 2px;
-    z-index: 2;;
-    background:#b3b3b3
+.music-volume-input:hover {
+    background: #55ba55;
 }
+
+

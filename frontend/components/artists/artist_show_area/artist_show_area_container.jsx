@@ -2,7 +2,7 @@ import React from "react";
 import { withRouter } from 'react-router';
 import { connect } from "react-redux";
 import ArtistShowArea from "./artist_show_area";
-// import { fetchArtist } from '../../../actions/artist_actions';
+import { fetchArtist } from '../../../actions/artist_actions';
 
 const msp = state => {
     return ({
@@ -12,7 +12,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return ({
-        // fetchArtist: id => dispatch(fetchArtist(id)),
+        fetchArtist: id => dispatch(fetchArtist(id)),
 
     })
 }

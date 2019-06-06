@@ -1,16 +1,27 @@
-.song_item {
-    height: 30px;
+.song-item {
+    height: 65px;
     width: 90%;
     color: white;
     font-family: 'Montserrat', sans-serif;
+    height: 65px;
+    letter-spacing: .015em;
     margin: 0px 40px;
+    display: flex;
+    padding-left: 10px;
+    align-items: center;
+    transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
-.song_item:hover {
-    height: 30px;
-    width: 90%;
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    margin: 0px 40px;
-    background: black;
+.song-item:hover {
+    background: #090304;
+    
+}
+
+.song-title {
+    padding-left: 15px;
+}
+
+.fa-headphones-alt {
+    color: #b3b3b3;
+    padding: 5px 25px 5px 15px;
 }

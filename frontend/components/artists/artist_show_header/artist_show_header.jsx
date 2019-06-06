@@ -6,18 +6,7 @@ class ArtistShowHeader extends React.Component {
         super(props);
     }
 
-    // componentDidUpdate() {
-    //     let { artistId } = this.props.match.params;
-    //     let { fetchArtist } = this.props;
-    //     fetchArtist(artistId);
-    // }
-
-    // componentDidMount() {
-    //     let { artistId } = this.props.match.params;
-    //     let { fetchArtist } = this.props;
-    
-    //     fetchArtist(artistId);
-    // }
+  
 
     render() {
         let {artist} = this.props;
@@ -26,9 +15,9 @@ class ArtistShowHeader extends React.Component {
         return (
             <>
                 <div className="artist-show-header">
+                    <img src={img} className="artist-header-img"/>
                     <div className="artist-header-name">{name}</div>
                     
-                    <img src={img} className="artist-header-img"/>
                 </div>
             </>
         )

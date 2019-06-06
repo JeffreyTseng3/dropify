@@ -7,11 +7,7 @@ class ArtistShowModule extends React.Component {
         super(props);
     }
 
-    // componentDidUpdate() {
-    //     let { artistId } = this.props.match.params;
-    //     let { fetchArtist } = this.props;
-    //     fetchArtist(artistId);
-    // }
+ 
 
     componentDidMount() {
         let { artistId } = this.props.match.params;

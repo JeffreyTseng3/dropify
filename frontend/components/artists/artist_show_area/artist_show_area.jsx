@@ -7,23 +7,20 @@ class ArtistShowArea extends React.Component {
         super(props);
     }
 
-    // componentDidUpdate() {
-    //     let { artistId } = this.props.match.params;
-    //     let { fetchArtist } = this.props;
-    //     fetchArtist(artistId);
-    // }
 
-    // componentDidMount() {
+    componentDidMount() {
+        let { artistId } = this.props.match.params;
+        let { fetchArtist } = this.props;
+        fetchArtist(artistId);
+    }
         
-        //     fetchArtist(artistId);
-        // }
-        
-        render() {
+    render() {
        
-        let  {songs }  = this.props;
+        let  { songs }  = this.props;
         
         let songs_display = songs.map( song => {
             return < SongArtistItemContainer key={song.id} song={song}/>
+            
         })
 
 
@@ -32,6 +29,7 @@ class ArtistShowArea extends React.Component {
                 <div className="artist-show-area">
                     {songs_display}
                 </div>
+                
             </>
         )
     }

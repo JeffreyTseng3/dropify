@@ -69,6 +69,7 @@ class MusicPlayerConsole extends React.Component {
 
         let { current_song } = this.props;
         let songUrl = current_song ? current_song.songUrl : null;
+        let song_length = current_song ? current_song.song_length : null;
         return (
             <>
                 <div className="music-player-console">
@@ -89,7 +90,7 @@ class MusicPlayerConsole extends React.Component {
                                 value={this.state.currentTime}
                                 onChange={this.updateScrubber()}
                                 min="0"
-                                max="300"
+                                max={`${song_length}`}
                             />
                         {/* </div> */}
                     </div>

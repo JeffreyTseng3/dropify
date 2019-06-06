@@ -11,6 +11,7 @@ class MusicPlayerConsole extends React.Component {
         }
         this.togglePlay = this.togglePlay.bind(this);
         this.updateVolume = this.updateVolume.bind(this);
+        this.updateScrubber = this.updateScrubber.bind(this);
     }
 
 
@@ -19,10 +20,14 @@ class MusicPlayerConsole extends React.Component {
         this.setState({currentTime: timestamp})
     }
 
-    // updateScrubber(percent) {
-    //     let innerScrubber = document.querySelector('.music-scrubber-process');
-    //     innerScrubber.style['width'] = percent;
-    // }
+    updateScrubber() {
+        return (e) => {
+            this.setState({currentTime: Number(e.target.value)})
+            console.log(this.state);
+            let audio_ref = this.myAudioRef.current;
+            audio_ref.currentTime = Number(e.target.value);
+        }
+    }
 
     togglePlay() {
         let { current_song } = this.props;
@@ -34,10 +39,6 @@ class MusicPlayerConsole extends React.Component {
             audio_ref.play();
             setInterval(() => {
                 let currentTime = audio_ref.currentTime;
-                // let duration = song_length;
-                // let percent = ( Math.ceil(currentTime) / duration ) * 50 + '%';
-                // this.updateScrubber(percent);
-                // console.log(currentTime, percent);
                 this.updateTime(currentTime);
             }, 1500 ); 
         } else {
@@ -86,9 +87,9 @@ class MusicPlayerConsole extends React.Component {
                             <input
                                 type="range"
                                 value={this.state.currentTime}
-                                // onChange={this.updateVolume()}
+                                onChange={this.updateScrubber()}
                                 min="0"
-                                max="1000"
+                                max="300"
                             />
                         {/* </div> */}
                     </div>

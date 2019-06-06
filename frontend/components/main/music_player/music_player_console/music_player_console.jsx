@@ -73,8 +73,14 @@ class MusicPlayerConsole extends React.Component {
         audio_ref.volume = this.state.volume / 100;
     }
 
-    componentDidUpdate() {
+    componentDidUpdate(prevProps) {
         this.setVolume();
+        if (prevProps.current_song !== this.props.current_song) {
+            let audio_ref = this.myAudioRef.current;
+            audio_ref.play();
+        }
+
+
     }
 
     render() {
@@ -84,6 +90,11 @@ class MusicPlayerConsole extends React.Component {
         let song_length = current_song ? current_song.song_length : null;
         let song_max = this.secondsToMins(song_length);
         let time_current = this.secondsToMins(this.state.currentTime);
+
+        let playPauseImg = this.state.playStatus === 'play' ? 
+            <i className="far fa-play-circle fa-2x"></i> 
+            : <i className="far fa-pause-circle fa-2x"></i>
+
         return (
             <>
                 <div className="music-player-console">
@@ -98,9 +109,9 @@ class MusicPlayerConsole extends React.Component {
                     
                             <button 
                                 className="music-play-pause"
-                                    onClick={() => this.togglePlay()}
-                                    >
-                                <i className="far fa-play-circle fa-2x"></i>
+                                    onClick={() => this.togglePlay()} >
+                                        {playPauseImg}
+                                {/* <i className="far fa-play-circle fa-2x"></i> */}
                             </button>
                             <i className="fas fa-step-forward"></i>
                             <i className="far fa-thumbs-up"></i>

@@ -1,5 +1,6 @@
 import React from "react";
 
+
 class SongsAlbumItem extends React.Component {
     constructor(props) {
         super(props);
@@ -31,9 +32,12 @@ class SongsAlbumItem extends React.Component {
         let title = song ? song.song_title : null;
         return (
             <>
-                <button className="song-item" onClick={() => fetchCurrentSong(song.id)}>
+                <button className="song-item" onDoubleClick={() => fetchCurrentSong(song.id)}>
                      <div className="song-left">
-                        <i className="fas fa-headphones-alt fa-1x"></i>
+                        <button onClick={() => fetchCurrentSong(song.id)}>
+                            <i className="fas fa-headphones-alt fa-1x"></i>
+                        </button>
+
                         <div className="song-album-item-title">{title}</div>
 
                     </div>

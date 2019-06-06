@@ -36,9 +36,14 @@ class SongsArtistItem extends React.Component {
 
         return (
             <> 
-            <button className="song-item" onClick={() => fetchCurrentSong(song.id)}> 
+            <button className="song-item" onDoubleClick={() => fetchCurrentSong(song.id)}> 
                 <div className="song-left"> 
+
+                    <button onClick={() => fetchCurrentSong(song.id)}>
+
                     <i className="fas fa-headphones-alt fa-1x"></i>
+                    </button>
+
                     <img src={albumImg} className="music-album-img" />
                     <div className="song-title">{song_title} </div>
                 </div>

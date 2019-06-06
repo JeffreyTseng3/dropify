@@ -28,9 +28,19 @@
 
 .music-play-pause {
     padding-bottom: 3px;
+    transition: all .2s ease-in-out;
+}
+
+.music-play-pause:hover {
+    padding-bottom: 3px;
+    transform: scale(1.1);
 }
 
 .fa-play-circle {
+    color: white;
+}
+
+.fa-pause-circle {
     color: white;
 }
 

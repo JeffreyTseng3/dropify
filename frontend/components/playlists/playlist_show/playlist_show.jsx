@@ -23,12 +23,15 @@ class PlaylistsExplore extends React.Component {
 
     render() {
         let { playlistId } = this.props.match.params;
-        let { playlists } = this.props;
+        let { playlists, users } = this.props;
         
         let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
         let title = myPlaylist ? myPlaylist.title : null;
-        let author = myPlaylist ? myPlaylist.author_id : null;
-
+        // let author = myPlaylist ? myPlaylist.author_id : null;
+        // debugger
+        // let myUser = users !== [] ? users.filter(user => user.author_ids.includes(Number(playlistId)))[0] : null;
+        let myUser = users ? users[0] : null; 
+        let author = myUser ? myUser.username : null;
         return (
             <div className="playlist-show-container">
                 <div className="playlist-show-info-module">

@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { logout }from "../../../actions/session_actions";
 import { fetchPlaylists } from '../../../actions/playlist_actions';
 import { withRouter } from "react-router"
+import { fetchUser } from '../../../actions/user_actions';
 
 const msp = (state, ownProps) => {
     return ({
@@ -15,7 +16,9 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return ({
         logout: () => dispatch(logout()),
-        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),        
+        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),   
+        fetchUser: id => dispatch(fetchUser(id)),
+        
     });
 };
 

@@ -14,7 +14,10 @@ class MainPage extends React.Component {
 
     componentDidMount() {
      
-        // this.props.fetchPlaylists(this.state.author_id);
+        // i fetch user here to user for my playlistShowRender
+        let {currentUserId, fetchUser } = this.props;
+    
+        fetchUser(currentUserId)
 
     }
 

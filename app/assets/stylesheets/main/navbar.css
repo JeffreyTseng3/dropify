@@ -10,6 +10,7 @@
     z-index: 1;
     grid-area: navbar;
     width: 230px;
+    
 }
 
 .navbar-splash-logo-text-combo {
@@ -29,6 +30,15 @@
     padding: 10px;
 }
 
+.nav-bottom {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    bottom: 120px;
+    width: 120px;
+    padding-left: 20px;
+}
 
 
 .nav-item-img {
@@ -135,16 +145,17 @@
 } 
 
 .nav-bar-profile {
-    padding-left: 10px;
-    margin: 10px 0px 10px 10px;
+    /* padding-left: 10px; */
+    margin: 10px 0px 20px 0px;
     display: flex;
     align-content: center;  
     color: white;
     font-weight: bold;
-    font-size: 15px;
+    font-size: 25px;
     
 } 
 
-.nav-bar-footer {
-   
+.nav-logout {
+    font-size: 14px;
+
 }

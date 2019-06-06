@@ -16,13 +16,39 @@
 }
 
 
+.music-buttons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 300px;
+    padding-bottom: 10px;
+}
+
+
+
 .music-play-pause {
     padding-bottom: 3px;
 }
+
 .fa-play-circle {
     color: white;
 }
 
+.fa-thumbs-down {
+    color: white
+}
+
+.fa-thumbs-up {
+    color: white
+}
+
+.fa-step-forward {
+    color: white;
+}
+
+.fa-step-backward {
+    color: white;
+}
 .music-seek-input {
     width: 80%;
     border-radius: 5px;

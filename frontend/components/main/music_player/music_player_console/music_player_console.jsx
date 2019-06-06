@@ -90,12 +90,22 @@ class MusicPlayerConsole extends React.Component {
                     <audio ref={this.myAudioRef} src={songUrl}></audio>
                     
                     <div className="music-play-mod"> 
-                        <button 
-                            className="music-play-pause"
-                                onClick={() => this.togglePlay()}
-                                >
-                            <i className="far fa-play-circle fa-2x"></i>
-                        </button>
+
+                        <div className='music-buttons'> 
+                            <i className="far fa-thumbs-down"></i>
+                            <i className="fas fa-step-backward"></i>
+                        
+                    
+                            <button 
+                                className="music-play-pause"
+                                    onClick={() => this.togglePlay()}
+                                    >
+                                <i className="far fa-play-circle fa-2x"></i>
+                            </button>
+                            <i className="fas fa-step-forward"></i>
+                            <i className="far fa-thumbs-up"></i>
+                        </div>
+
 
                         <div className='music-seek-mod'>
 

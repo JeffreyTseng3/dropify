@@ -7,8 +7,17 @@ class NavBar extends React.Component {
         super(props);
     }
 
+
+    componentDidMount() {
+        let { currentUserId, fetchUser } = this.props;
+
+        // fetchUser(currentUserId)
+    }
+
     render() {
-       
+        let { users } = this.props;
+        let user = users ? users[0] : null;
+        let username = user ? user.username : null;
         return (
               
             <div className="nav-bar-module">
@@ -35,54 +44,17 @@ class NavBar extends React.Component {
                     </Link>
                 </div>
 
-                {/* <div className="nav-bar-recent">
-                    <h2 className="nav-bar-recent-text">RECENTLY PLAYED</h2>
-                    <ul className="nav-bar-playlists">
-                        <li className="nav-bar-playlist-item">
-                            <div>
-                                <Link to="/" className="nav-bar-playlist-item-detail">PlaylistName</Link>
-                                <div className="nav-bar-playlist-item-detail">Playlist</div>
-                            </div>
-                        </li>
-                        <li className="nav-bar-playlist-item">
-                            <div>
-                                <Link to="/" className="nav-bar-playlist-item-detail">PlaylistName</Link>
-                                <div className="nav-bar-playlist-item-detail">Playlist</div>
-                            </div>
-                        </li>
-                        <li className="nav-bar-playlist-item">
-                            <div>
-                                <Link to="/" className="nav-bar-playlist-item-detail">PlaylistName</Link>
-                                <div className="nav-bar-playlist-item-detail">Playlist</div>
-                            </div>
-                        </li>
-                        <li className="nav-bar-playlist-item">
-                            <div>
-                                <Link to="/" className="nav-bar-playlist-item-detail"> PlaylistName</Link>
-                                <div className="nav-bar-playlist-item-detail">Playlist</div>
-                            </div>
-                        </li>
-
-                    </ul>
-                </div> */}
-
-                <Link onClick={this.props.logout} to="/">LOGOUT</Link>
 
 
-                <div className="nav-bar-footer">
+                <div className="nav-bottom"> 
+                    <Link className="nav-logout" onClick={this.props.logout} to="/">Log Out</Link>
+                    <div className="nav-bar-footer">
+                        <Link to="/main/browse/featured">
+                            <img src="" alt="" />
+                            <span className="nav-bar-profile">{username}</span>
+                        </Link>
 
-
-                    {/* <Link to="/" className="nav-bar-download">
-                        <span to="/" className="nav-bar-download-img"><i className="fas fa-download"></i></span>
-                        <span to="/" className="nav-bar-download-text">Install</span>
-                    </Link> */}
-
-
-                    <Link to="/">
-                        <img src="" alt="" />
-                        <span className="nav-bar-profile">{"Name"}</span>
-                    </Link>
-
+                    </div>
                 </div>
 
             </div>

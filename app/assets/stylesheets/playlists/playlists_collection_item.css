@@ -2,19 +2,19 @@
     display: flex;
     flex-direction: column;
     margin: 5px;
-    height: 140px;
-    width: 120px;
+    height: 200px;
+    width: 200px;
     position: relative;
     align-items: center;
     
 }
 
 .playlists-explore-item-img {
-    background: grey;
+    background: hsl(0, 0%, 16%);
     /* border: black 1px solid; */
     margin: 5px;
-    height: 100px;
-    width: 100px; 
+    height: 170px;
+    width: 170px; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,6 +26,8 @@
     font-size: 12px;
     padding: 5px;
     margin: 5px;
+    color: white;
+    font-weight: 600;
 }
 
 /* .fa-play-circle {

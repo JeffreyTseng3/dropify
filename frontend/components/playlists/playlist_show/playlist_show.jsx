@@ -15,8 +15,8 @@ class PlaylistsExplore extends React.Component {
 
  
     componentDidMount() {
-        let { playlistId } =  this.props.match.params;
-        fetchPlaylists(playlistId);
+        // let { playlistId } =  this.props.match.params;
+        // fetchPlaylists(playlistId);
     }
 
     render() {

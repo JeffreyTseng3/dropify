@@ -14,7 +14,7 @@ class PlaylistsCollection extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchPlaylists(this.state.author_id);
+        // this.props.fetchPlaylists(this.state.author_id);
     }
 
 

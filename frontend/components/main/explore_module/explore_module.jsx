@@ -18,7 +18,7 @@ class ExploreModule extends React.Component {
 
         return (
         <div className="explore-module-main">
-            <Route path="/main/collection/" component={CollectionBarContainer} />
+            {/* <Route path="/main/collection/" component={CollectionBarContainer} /> */}
             <Route path="/main/collection/playlists" component={PlaylistsExploreContainer} />
             <Route path="/main/playlist/:playlistId" component={PlaylistShowContainer}/>
             <Route path="/main/browse/featured" component={BrowseModuleContainer}/>

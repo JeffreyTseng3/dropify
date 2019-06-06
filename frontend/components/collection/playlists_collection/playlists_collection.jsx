@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import PlaylistsCollectionItem from "../playlists_collection_item/playlists_collection_item_container";
+import CollectionBarContainer from "../collection_bar/collection_bar_container";
 
 class PlaylistsCollection extends React.Component {
 
@@ -33,7 +34,11 @@ class PlaylistsCollection extends React.Component {
 
         return (
             <div className="playlists-on-explore-container">
-                {displayPlayists}
+                <Route path="/main/collection/" component={CollectionBarContainer} />
+                <div className="playlist-items-scroll">   
+                    {displayPlayists}
+                </div>
+               
             </div>
         )
     }

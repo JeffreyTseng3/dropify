@@ -12,11 +12,12 @@ class MusicPlayerInfo extends React.Component {
     }
 
     render() {
-        let { current_song, albums } = this.props;
-        let songTitle = current_song ? current_song.song_title : null;
-        let album = albums && current_song ? albums.filter(album => album.song_ids.includes(current_song.id))[0] : null;
-        // let artistName = artists && current_song ? artists.filter(artist => artist.id == current_song.artist_id)[0] : null;
+        let { currentSong, albums, artists } = this.props;
+        let songTitle = currentSong ? currentSong.song_title : null;
+        let album = albums && currentSong ? albums.filter(album => album.song_ids.includes(currentSong.id))[0] : null;
         let albumImg = album ? album.albumUrl : null;
+        let artist = artists && currentSong ? artists.filter(artist => artist.id === currentSong.artist_id) : null;
+        let artistName = artist ? artist[0].name : null;
 
         return(
             <>
@@ -24,7 +25,7 @@ class MusicPlayerInfo extends React.Component {
                     <img src={albumImg} className="music-album-img"/>
                     <div className="music-text">
                         <div className='music-song-title'>{songTitle} </div>
-                        {/* <div className='music-song-artist'>{artistName} </div> */}
+                        <div className='music-song-artist'>{artistName} </div>
 
                     </div>
                 </div>

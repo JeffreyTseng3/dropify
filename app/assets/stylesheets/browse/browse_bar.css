@@ -1,5 +1,5 @@
 .browse-bar-module {
-    width: 80%;
+    width: 100%;
     height: 20px;
     display: flex;
     align-items: center;
@@ -7,6 +7,7 @@
     color: hsl(0, 0%, 70%);
     font-family: 'Montserrat', sans-serif;
     letter-spacing: .16em;
+    margin-top: 10px;
 }
 
 .browse-bar-item:hover {

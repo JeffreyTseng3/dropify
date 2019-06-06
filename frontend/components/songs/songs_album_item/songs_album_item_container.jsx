@@ -1,6 +1,6 @@
 import { withRouter } from 'react-router';
 import { connect } from "react-redux";
-import { fetchCurrentSong } from '../../../actions/song_actions';
+import { fetchCurrentSong } from '../../../actions/song_actions'
 import SongsAlbumItem from "./songs_album_item";
 const msp = state => {
 

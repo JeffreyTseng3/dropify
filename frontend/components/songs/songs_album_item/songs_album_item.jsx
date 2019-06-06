@@ -25,21 +25,22 @@ class SongsAlbumItem extends React.Component {
     }
 
     render() {
-        let { fetchCurrentSong } = this.props;
-        // let time = this.secondsToMins(song_length);
-
+       
+        let { song, fetchCurrentSong } = this.props;
+        let length = song ? this.secondsToMins(song.song_length) : null;
+        let title = song ? song.song_title : null;
         return (
             <>
                 <button className="song-item" onClick={() => fetchCurrentSong(song.id)}>
-                    {/* <div className="song-left">
+                     <div className="song-left">
                         <i className="fas fa-headphones-alt fa-1x"></i>
-                        <img src={albumImg} className="music-album-img" />
-                        <div className="song-title">{song_title} </div>
+                        <div className="song-album-item-title">{title}</div>
+
                     </div>
                     <div className="song-right">
                         <i className="fas fa-ellipsis-h"></i>
-                        <div className="song-time">{time}</div>
-                    </div> */}
+                        <div className="songs-album-item-length">{length}</div>
+                    </div> 
 
                 </button>
             </>

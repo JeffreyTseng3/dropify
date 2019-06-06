@@ -4,9 +4,11 @@ import { fetchAlbum } from "../../../../actions/album_actions";
 
 const msp = state => {
     let albums = Object.values(state.entities.albums);
+    let artists = Object.values(state.entities.artists);
     return {
         currentSong: state.current_song.currentSongId,
         albums: albums,
+        artists: artists,
     }
 }
 

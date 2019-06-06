@@ -10,7 +10,7 @@ class Api::SongsController < ApplicationController
 
 
     def show
-        @song = Song.find(params[:id]) 
+        @song = Song.includes(:album, :artist).with_attached_audio_track.find(params[:id]) 
        
 
         render "api/songs/show"

@@ -42,11 +42,12 @@
     display: flex;
     height: 40px;
     align-items: center;  
+    padding-right: 20px;
 }
 
 
 .music-volume-input {
-    width: 100px;
+    width: 300px;
     border-radius: 5px;
     height: 4px;
     -webkit-appearance: none;
@@ -57,4 +58,24 @@
     background: #55ba55;
 }
 
+.music-seek-mod {
+    display: flex; 
+    align-items: center;
+    height: 10px;
+    width: 800px;
+    justify-content: center;
+}
 
+
+.music-time-current {
+    color: #9c9c9c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-right: 3px;
+}
+.music-time-total {
+    color: #9c9c9c;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    margin-left: 3px;
+}

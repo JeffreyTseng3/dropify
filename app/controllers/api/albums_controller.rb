@@ -7,7 +7,7 @@ class Api::AlbumsController < ApplicationController
 
     def show 
         
-        @album = Album.find(params[:id])
+        @album = Album.includes(:songs, :artist).with_attached_album_img.find(params[:id])
         render 'api/albums/show'
     end
 

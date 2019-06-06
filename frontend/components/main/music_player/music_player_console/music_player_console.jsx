@@ -12,8 +12,22 @@ class MusicPlayerConsole extends React.Component {
         this.togglePlay = this.togglePlay.bind(this);
         this.updateVolume = this.updateVolume.bind(this);
         this.updateScrubber = this.updateScrubber.bind(this);
+        this.secondsToMins = this.secondsToMins.bind(this);
     }
 
+    secondsToMins(sec) {
+        let seconds = sec % 60;
+        let secondsAns;
+        if (seconds < 10) {
+            secondsAns = '0' + String(seconds);
+        } else {
+            secondsAns = String(seconds);
+        }
+        let mins = Math.floor(sec / 60);
+        let time = String(mins) + ':' + secondsAns;
+      
+        return time;
+    }
 
     updateTime(timestamp) {
         timestamp = Math.floor(timestamp);
@@ -38,7 +52,7 @@ class MusicPlayerConsole extends React.Component {
             setInterval(() => {
                 let currentTime = audio_ref.currentTime;
                 this.updateTime(currentTime);
-            }, 1500 ); 
+            }, 500 ); 
         } else {
             status = 'play'
             audio_ref.pause();
@@ -68,6 +82,8 @@ class MusicPlayerConsole extends React.Component {
         let { current_song } = this.props;
         let songUrl = current_song ? current_song.songUrl : null;
         let song_length = current_song ? current_song.song_length : null;
+        let song_max = this.secondsToMins(song_length);
+        let time_current = this.secondsToMins(this.state.currentTime);
         return (
             <>
                 <div className="music-player-console">
@@ -81,14 +97,19 @@ class MusicPlayerConsole extends React.Component {
                             <i className="far fa-play-circle fa-2x"></i>
                         </button>
 
+                        <div className='music-seek-mod'>
+
+                            <div className='music-time-current'>{time_current}</div>
                             <input
                                 className="music-seek-input"
                                 type="range"
                                 value={this.state.currentTime}
                                 onChange={this.updateScrubber()}
                                 min="0"
-                                max={`${song_length}`}
-                            />
+                                max={`${song_length}`} />
+                            <div className='music-time-total'>{song_max}</div>
+                        </div>
+                        
                     </div>
 
                     

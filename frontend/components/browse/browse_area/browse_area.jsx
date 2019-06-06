@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import ArtistIconContainer from '../../icons/artists/artist_icon_container';
+import AlbumIconContainer from '../../icons/albums/album_icon_container';
 
 class BrowseArea extends React.Component {
     constructor(props) {
@@ -10,18 +11,20 @@ class BrowseArea extends React.Component {
 
     componentDidMount() {
   
-        let { fetchArtists } = this.props;
+        let { fetchArtists, fetchAlbums } = this.props;
         fetchArtists();
-        // fetchAlbums();
+        fetchAlbums();
     }
 
 
     render() {
-        const { artists } = this.props;
+        const { artists, albums } = this.props;
         let artist_display = artists.map(artist => {
             return <ArtistIconContainer key={artist.id} artist={artist}/>
         })
-
+        let album_display = albums.map(album => {
+            return <AlbumIconContainer key={album.id} album={album}/>
+        })
     
 
         return (
@@ -42,7 +45,7 @@ class BrowseArea extends React.Component {
                         Albums
                     </div>
                     <div className="browse-albums">
-                     
+                        {album_display}
                     </div>
 
                 </div>

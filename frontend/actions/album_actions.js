@@ -10,10 +10,10 @@ export const receiveAlbums = albums => {
     }
 }
 
-export const receiveAlbum = album => {
+export const receiveAlbum = payload => {
     return {
         type: RECEIVE_ALBUM,
-        album
+        payload
     }
 }
 

@@ -7,6 +7,7 @@ import PlaylistsExploreContainer from "../../collection/playlists_collection/pla
 import PlaylistShowContainer from "../../playlists/playlist_show/playlist_show_container";
 import BrowseModuleContainer from "../../browse/browse_module/browse_module_container";
 import ArtistShowModuleContainer from "../../artists/artist_show_module/artist_show_module_container";
+import AlbumShowModuleContainer from '../../albums/album_show_module/album_show_module_container';
 
 class ExploreModule extends React.Component {
     constructor(props) {
@@ -22,6 +23,7 @@ class ExploreModule extends React.Component {
             <Route path="/main/playlist/:playlistId" component={PlaylistShowContainer}/>
             <Route path="/main/browse/featured" component={BrowseModuleContainer}/>
             <Route path="/main/artist/:artistId" component={ArtistShowModuleContainer}/> 
+            <Route path="/main/album/:albumId" component={AlbumShowModuleContainer} />
         </div>
         )
     }

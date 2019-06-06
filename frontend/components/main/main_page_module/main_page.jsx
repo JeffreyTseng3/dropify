@@ -43,14 +43,22 @@ class MainPage extends React.Component {
         // }
         //     // background_color = 'hello';
         //     debugger
+
+        let backgroundColors = ['blue-background', 'red-background', 'black-background',
+                                'grey-background', 'purple-background', 'yellow-background',
+                                'orange-background']
+        let backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
+
         return (
+            <div className={backgroundColor}> 
+
             
                 <div className={main_page_class}> 
                         <NavBarContainer /> 
                         <ExploreModuleContainer /> 
                         <MusicPlayerModuleContainer />
                 </div> 
-           
+            </div>
             )
         }
         

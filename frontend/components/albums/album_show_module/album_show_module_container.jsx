@@ -12,7 +12,7 @@ const msp = state => {
     return ({
         artists: artists,
         songs: songs,
-        albums
+        albums: albums,
     })
 }
 

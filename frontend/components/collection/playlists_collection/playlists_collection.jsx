@@ -14,7 +14,7 @@ class PlaylistsCollection extends React.Component {
     }
 
     componentDidMount() {
-        // this.props.fetchPlaylists(this.state.author_id);
+        this.props.fetchPlaylists(this.state.author_id);
     }
 
 
@@ -25,7 +25,7 @@ class PlaylistsCollection extends React.Component {
         let displayPlayists = playlists ? playlists.map(playlist => {
             return (
 
-                    <PlaylistsOnExploreItem key={playlist.id} playlist={playlist} />
+                    <PlaylistsCollectionItem key={playlist.id} playlist={playlist} />
 
             )
         }) : null ;

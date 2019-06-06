@@ -11,6 +11,7 @@ class SplashPageHeader extends React.Component {
     }
 
     componentDidMount() {
+        
     }
 
     render() { 
@@ -37,7 +38,7 @@ class SplashPageHeader extends React.Component {
                         <div className="splash-header-navbar">
                             <div className="splash-logo-text-combo">
                                 <Link to="/">
-                                    <i className="fab fa-spotify fa-3x"></i>
+                                    <i className="fas fa-feather fa-4x"></i>
                                 </Link>
 
                                 <Link to="/" className="splash-logo-text">DROPIFY</Link>

@@ -15,21 +15,22 @@ class PlaylistsExplore extends React.Component {
 
  
     componentDidMount() {
-        // let { playlistId } =  this.props.match.params;
-        // fetchPlaylists(playlistId);
+        let { playlistId } =  this.props.match.params;
+        let { fetchPlaylist, fetchUser, currentUserId} = this.props;
+        fetchPlaylist(playlistId);
+        fetchUser(currentUserId)
     }
 
     render() {
-
-        let { showPlaylist } = this.props;
-
+        let { playlistId } = this.props.match.params;
+        let { playlists } = this.props;
         
-        let title = showPlaylist ? showPlaylist.title : null;
-        let author = showPlaylist ? showPlaylist.author_id : null;
+        let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
+        let title = myPlaylist ? myPlaylist.title : null;
+        let author = myPlaylist ? myPlaylist.author_id : null;
 
         return (
             <div className="playlist-show-container">
-
                 <div className="playlist-show-info-module">
                     <div className="playlist-show-picture">Picture</div>
                     <div className="playlist-show-info">

@@ -3,17 +3,22 @@ import PlaylistShow from "./playlist_show"
 import { connect } from "react-redux";
 import { withRouter } from "react-router"
 import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
-
+import { fetchUser } from '../../../actions/user_actions';
+import { log } from "util";
 const msp = (state, ownProps) => {
+    let playlists = Object.values(state.entities.playlists);
+    let currentUserId = state.session.currentUserId;
     return ({
-        showPlaylist: state.entities.playlists.showSinglePlaylist,
+       playlists: playlists,
+       currentUserId,
     });
 };
 
 const mdp = dispatch => {
     return ({
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
-        fetchPlaylists: () => dispatch(fetchPlaylists())
+        fetchUser: id => dispatch(fetchUser(id)),
+        // fetchPlaylists: () => dispatch(fetchPlaylists())
     });
 };
 

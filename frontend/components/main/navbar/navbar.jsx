@@ -12,8 +12,8 @@ class NavBar extends React.Component {
         return (
               
             <div className="nav-bar-module">
-                <Link className="navbar-splash-logo-text-combo" to="/">
-                    <span ><i className="fab fa-spotify fa-3x"></i></span>
+                <Link className="navbar-splash-logo-text-combo" to="/main/browse/featured">
+                    <span ><i className="fas fa-feather fa-3x"></i></span>
                     <span className="splash-logo-text">DROPIFY</span>
                 </Link>
 
@@ -24,7 +24,7 @@ class NavBar extends React.Component {
                         <span className="nav-item">Home</span>
                     </Link>
 
-                    <Link className="nav-bar-search" to="/">
+                    <Link className="nav-bar-search" to="/main/browse/featured">
                         <span className="nav-item-img"><i className="fas fa-search fa-2x"></i></span>
                         <span className="nav-item-search">Search</span>
                     </Link>

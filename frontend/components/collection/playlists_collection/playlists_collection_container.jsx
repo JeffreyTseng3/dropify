@@ -6,7 +6,7 @@ import {withRouter} from 'react-router';
 const msp = (state, ownProps) => {
     
     return ({
-        playlists: state.entities.playlists.allPlaylists,
+        playlists: Object.values(state.entities.playlists),
         currentUserId: state.session.currentUserId,
     });
 };

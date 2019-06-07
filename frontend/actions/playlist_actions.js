@@ -23,6 +23,7 @@ export const createPlaylist = (playlist, history) => dispatch => {
 
     return PlaylistAPIUtil.createPlaylist(playlist)
         .then(playlist => {
+        
             history.push(`/main/playlist/${playlist.id}`);
             dispatch(receivePlaylist(playlist));
         });

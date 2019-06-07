@@ -55,12 +55,12 @@ class SongsAlbumItem extends React.Component {
                     onMouseOut={() => this.setState({ playImg: (<i className="fas fa-headphones-alt fa-1x"></i>)})}
                     >
                     
-                    <button className="song-icon-btn"
-                        onClick={() => fetchCurrentSong(song.id)}>
+                    {/* <button className="song-icon-btn" */}
+                         {/* onClick={() => fetchCurrentSong(song.id)}> */}
                         
                         {/* <i className="fas fa-headphones-alt fa-1x"></i> */}
                         {btnDisplay}
-                    </button>
+                    {/* </button> */}
 
                     <button className="song-info-btn"
                         onDoubleClick={() => fetchCurrentSong(song.id)}>

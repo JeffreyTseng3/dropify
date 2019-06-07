@@ -4,6 +4,10 @@ class SongsArtistItem extends React.Component {
     constructor(props) {
         super(props);
         this.secondsToMins = this.secondsToMins.bind(this);
+        this.state = {
+            // playImg: (<i className="fas fa-play"></i>)
+            playImg: (<i className="fas fa-headphones-alt fa-1x"></i>)
+        }
     }
 
     componentDidMount() {
@@ -27,32 +31,48 @@ class SongsArtistItem extends React.Component {
     }
 
     render() {
-        let { song, albums, fetchCurrentSong } = this.props;
+        let { song, albums, fetchCurrentSong, currentSong } = this.props;
         let song_title = song ? song.song_title : null;
         let song_length = song ? song.song_length : null;
         let album = albums ? albums.filter(album => album.song_ids.includes(song.id))[0] : null;
         let albumImg = album ? album.albumUrl : null;
         let time = this.secondsToMins(song_length);
 
+        let btnDisplay = this.state.playImg ? this.state.playImg : null;
+
+        let mySong = song ? song : null;
+        let myCurrentSong = currentSong ? currentSong : null;
+        let css = (mySong && myCurrentSong) && mySong.id === myCurrentSong.id ? 'song-item-selected' : 'song-item';
+
+        // debugger
+
         return (
             <> 
-            <button className="song-item" onDoubleClick={() => fetchCurrentSong(song.id)}> 
-                <div className="song-left"> 
+                <div className={css} 
+                    onMouseEnter={() => this.setState({ playImg: (<i className="fas fa-play fa-1x"></i>) })}
+                    onMouseOut={() => this.setState({ playImg: (<i className="fas fa-headphones-alt fa-1x"></i>) })}>
+                    
+                    {btnDisplay}
 
-                    <button onClick={() => fetchCurrentSong(song.id)}>
+                    <button 
+                        className="song-info-btn" onDoubleClick={() => fetchCurrentSong(song.id)}
+                        > 
+                    <div className="song-left"> 
 
-                    <i className="fas fa-headphones-alt fa-1x"></i>
+                        {/* <button onClick={() => fetchCurrentSong(song.id)}> */}
+                        {/* <i className="fas fa-headphones-alt fa-1x"></i> */}
+                        {/* </button> */}
+
+                        <img src={albumImg} className="music-album-img" />
+                        <div className="song-title">{song_title} </div>
+                    </div>
+                    <div className="song-right">
+                        <i className="fas fa-ellipsis-h"></i>
+                        <div className="song-time">{time}</div>
+                    </div>
+                
                     </button>
-
-                    <img src={albumImg} className="music-album-img" />
-                    <div className="song-title">{song_title} </div>
                 </div>
-                <div className="song-right">
-                    <i className="fas fa-ellipsis-h"></i>
-                    <div className="song-time">{time}</div>
-                </div>
-               
-            </button>
             </>
         )
     }

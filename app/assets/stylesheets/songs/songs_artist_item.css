@@ -40,7 +40,7 @@
     width: 100%;
     height: 65px;
     justify-content: space-between;
-
+    align-items: center;
 }
 
 .song-item:hover {
@@ -53,6 +53,10 @@
 }
 
 .fa-headphones-alt {
+    /* color: #b3b3b3; */
+    padding: 5px 25px 5px 15px;
+}
+.fa-play {
     /* color: #b3b3b3; */
     padding: 5px 25px 5px 15px;
 }

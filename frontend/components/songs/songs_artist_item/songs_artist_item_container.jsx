@@ -6,9 +6,12 @@ import { fetchCurrentSong } from '../../../actions/song_actions';
 
 const msp = state => {
     let albums = Object.values(state.entities.albums);
+    let currentSong = state.current_song.currentSongId;
 
     return ({   
         albums: albums,
+        currentSong: currentSong,
+
     })
 }
 

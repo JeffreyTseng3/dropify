@@ -25,7 +25,7 @@ artist_file1 = open('https://dropify-seeds.s3.amazonaws.com/bruno_mars.jpg')
 artist1.artist_img.attach(io: artist_file1, filename: 'bruno_mars.jpg')
 artist1.save!
 
-artist2 = genre_rb.artists.create(name: 'Amine', about: 'R&B Master')
+artist2 = genre_rb.artists.create(name: 'Aminé', about: 'R&B Master')
 artist_file2 = open('https://dropify-seeds.s3.amazonaws.com/amine.jpg')
 artist2.artist_img.attach(io: artist_file2, filename: 'amine.jpg')
 artist2.save!

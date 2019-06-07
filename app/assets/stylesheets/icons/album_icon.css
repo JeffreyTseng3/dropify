@@ -1,9 +1,10 @@
 .album-icon {
     display: flex;
     align-items: center;
-    margin: 10px;
+    margin: 20px;
     height: 200px;
     width: 150px;
+
 }
 
 .album-icon-text {
@@ -23,5 +24,6 @@
     height: 170px;
     /* border-radius: 50%; */
     box-shadow: 0 0 10px rgba(0,0,0,.3);
+    margin: 20px;
     
 }

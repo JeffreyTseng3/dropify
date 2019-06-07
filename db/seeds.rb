@@ -42,6 +42,26 @@ artist_file4 = open('https://dropify-seeds.s3.amazonaws.com/chris_brown.png')
 artist4.artist_img.attach(io: artist_file4, filename: 'chris_brown.jpg')
 artist4.save!
 
+artist5 = genre_rap.artists.create(name: 'Drake', about: 'D')
+artist_file5 = open('https://dropify-seeds.s3.amazonaws.com/drake_photo.jpg')
+artist5.artist_img.attach(io: artist_file5, filename: 'drake_photo.jpg')
+artist5.save!
+
+artist6 = genre_pop.artists.create(name: 'Post Malone', about: 'Post')
+artist_file6 = open('https://dropify-seeds.s3.amazonaws.com/post.jpg')
+artist6.artist_img.attach(io: artist_file6, filename: 'post_photo.jpg')
+artist6.save!
+
+artist7 = genre_pop.artists.create(name: "Taylor Swift", about: 'Tay')
+artist_file7 = open('https://dropify-seeds.s3.amazonaws.com/taylorswift.jpg')
+artist7.artist_img.attach(io: artist_file7, filename: 'taylor_swift_photo.jpg')
+artist7.save!
+
+artist8 = genre_rb.artists.create(name: "Kehlani", about: 'K')
+artist_file8 = open('https://dropify-seeds.s3.amazonaws.com/kehlani.jpg')
+artist8.artist_img.attach(io: artist_file8, filename: 'kehlani.jpg')
+artist8.save!
+
 
 
 album1 = artist1.albums.create(title: '24K Magic')
@@ -65,13 +85,35 @@ album_file4 = open('https://dropify-seeds.s3.amazonaws.com/chris_brown_album.jpg
 album4.album_img.attach(io: album_file4, filename: 'chris_brown_album.jpg')
 album4.save! 
 
+album5 = artist5.albums.create(title: 'Scorpion')
+album_file5 = open('https://dropify-seeds.s3.amazonaws.com/d_scorpion.jpg')
+album5.album_img.attach(io: album_file5, filename: 'drake_scorpion.jpg')
+album5.save! 
+
+album6 = artist6.albums.create(title: 'Beerbongs & Bentleys')
+album_file6 = open('https://dropify-seeds.s3.amazonaws.com/bentley.jpg')
+album6.album_img.attach(io: album_file6, filename: 'post_beer.jpg')
+album6.save! 
+
+album7 = artist7.albums.create(title: 'ME!')
+album_file7 = open('https://dropify-seeds.s3.amazonaws.com/me!.jpg')
+album7.album_img.attach(io: album_file7, filename: 'me_taylor.jpg')
+album7.save! 
+
+album8 = artist8.albums.create(title: 'CRZY')
+album_file8 = open('https://dropify-seeds.s3.amazonaws.com/crzy.jpg')
+album8.album_img.attach(io: album_file8, filename: 'crzy_kehlani.jpg')
+album8.save! 
+
+
+
 
 song1 = album2.songs.create(song_title: 'Electric', song_length: 245)
 song_file1 = open('https://dropify-seeds.s3.amazonaws.com/Alina+Baraz+ft+Khalid+-+Electric+(Clean).mp3')
 song1.audio_track.attach(io: song_file1, filename: 'electric_alina_baraz.mp3')
 
 song2 = album3.songs.create(song_title: 'Heebeejeebies', song_length: 220)
-song_file2 = open('https://dropify-seeds.s3.amazonaws.com/Cardi+B+-+Press+(Dirty).mp3')
+song_file2 = open('https://dropify-seeds.s3.amazonaws.com/Amine+ft+Kehlani+-+Heebiejeebies+(Dirty).mp3')
 song2.audio_track.attach(io: song_file2, filename: 'heebeejeebies_amine.mp3')
 
 song3 = album1.songs.create(song_title: 'Chunky', song_length: 185)
@@ -93,6 +135,22 @@ song6.audio_track.attach(io: song_file6, filename: 'run_it_chris_brown.mp3')
 song7  = album4.songs.create(song_title: 'Yo (Excuse Me Miss)', song_length: 225)
 song_file7 = open('https://dropify-seeds.s3.amazonaws.com/Chris+Brown+-+Yo+(Excuse+Me+Miss)+(Clean).mp3')
 song7.audio_track.attach(io: song_file7, filename: 'yo_chris_brown.mp3')
+
+song8  = album5.songs.create(song_title: "God's Plan", song_length: 199)
+song_file8 = open('https://dropify-seeds.s3.amazonaws.com/Chris+Brown+-+Yo+(Excuse+Me+Miss)+(Clean).mp3')
+song8.audio_track.attach(io: song_file8, filename: 'yo_chris_brown.mp3')
+
+song9  = album6.songs.create(song_title: "Candy Paint", song_length: 229)
+song_file9 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Candy+Paint+(Dirty).mp3')
+song9.audio_track.attach(io: song_file9, filename: 'candy_paint.mp3')
+
+song10  = album7.songs.create(song_title: "ME!", song_length: 193)
+song_file10 = open('https://dropify-seeds.s3.amazonaws.com/Taylor+Swift+ft+Brendon+Urie+-+ME!+(Clean).mp3')
+song10.audio_track.attach(io: song_file10, filename: 'me.mp3')
+
+song11  = album8.songs.create(song_title: "CRZY", song_length: 191)
+song_file10 = open('https://dropify-seeds.s3.amazonaws.com/Kehlani+-+CRZY+(Dirty).mp3')
+song11.audio_track.attach(io: song_file10, filename: 'crzy.mp3')
 
 
 

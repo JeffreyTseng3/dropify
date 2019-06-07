@@ -6,8 +6,8 @@ import { fetchArtists } from '../../../actions/artist_actions';
 import { fetchAlbums } from "../../../actions/album_actions";
 
 const msp = state => {
-    let artists =  Object.values(state.entities.artists).slice(0,4)
-    let albums = Object.values(state.entities.albums).slice(0,4)
+    let artists =  Object.values(state.entities.artists)
+    let albums = Object.values(state.entities.albums)
     return ({
         artists: artists,
         albums: albums

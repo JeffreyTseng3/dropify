@@ -137,7 +137,7 @@ song_file7 = open('https://dropify-seeds.s3.amazonaws.com/Chris+Brown+-+Yo+(Excu
 song7.audio_track.attach(io: song_file7, filename: 'yo_chris_brown.mp3')
 
 song8  = album5.songs.create(song_title: "God's Plan", song_length: 199)
-song_file8 = open('https://dropify-seeds.s3.amazonaws.com/Chris+Brown+-+Yo+(Excuse+Me+Miss)+(Clean).mp3')
+song_file8 = open("https://dropify-seeds.s3.amazonaws.com/Drake+-+God's+Plan+(Dirty).mp3")
 song8.audio_track.attach(io: song_file8, filename: 'yo_chris_brown.mp3')
 
 song9  = album6.songs.create(song_title: "Candy Paint", song_length: 229)

@@ -1,0 +1,78 @@
+.top-artist-icon {
+    height: 340px;
+    width: 500px;
+    margin: 50px;
+    z-index: 0;
+}
+
+.top-artist-background{ 
+     height: 340px;
+    width: 500px;
+    background-color: #FFF;
+    opacity: .05;
+    position: absolute;
+}
+
+.top-artist-img {
+    width: 280px;
+    height: 280px;
+    position: relative;
+    top: -30px;
+    left: 250px;
+}
+
+.top-artist-info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    bottom: 250px;
+    height: 150px;
+    justify-content:  center;
+}
+
+.top-artist-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: 600;
+    width: 90px;
+    height: 25px;
+    background-color: rgba(30, 50, 100, 0.25);
+    position: relative;
+    left: -8px;
+}
+
+.top-artist-name {
+    background-color:#1E3264;
+    padding: 12px 40px;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    font-size: 24px;
+    letter-spacing: -0.01em;
+    width: 220px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    position: relative;
+    left: -30px;
+
+}
+
+.top-artist-play {
+    color: #1DB954;
+    transition-duration: 0.3s;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    letter-spacing: 0.1em;
+    position: relative;
+    left: 20px;
+}
+
+.top-artist-play:hover {
+    color: #1ED760;
+}

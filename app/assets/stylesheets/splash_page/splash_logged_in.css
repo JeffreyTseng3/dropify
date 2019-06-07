@@ -72,12 +72,12 @@
     height: 800px;
     width: 100%;
     background-image: linear-gradient(to right,#2c5d92, #542f6d);
-    /* background-image: linear-gradient(to right,#bf77b5, #88afe0); */
     opacity: 0.9;
-    /* background-color: linear-gradient(to right,#be74b2,#89b4e7); */
     position: relative;
     z-index: 0;
-  /* background-image: linear-gradient(transparent, #000); */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
 }
 
 .loggedin-white{
@@ -127,6 +127,7 @@
     justify-content: center;
     color:white;
     flex-direction: column;
+    position: relative;
 }
 
 .splash-loggedin-left-text {
@@ -161,3 +162,11 @@
     background: #1ED760;
 
 }   
+
+.splash-loggedin-right {
+    width: 800px;
+    height: 500px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+}

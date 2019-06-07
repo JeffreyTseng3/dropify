@@ -1,6 +1,9 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import AlbumIconContainer  from '../../icons/albums/album_icon_container';
+import TopArtistContainer from '../../icons/splash/top_artist_container';
+
 
 class SplashPageHeader extends React.Component {
 
@@ -11,10 +14,26 @@ class SplashPageHeader extends React.Component {
     }
 
     componentDidMount() {
-        
+        let { fetchAlbums, fetchArtists } = this.props;
+        fetchAlbums();
+        fetchArtists();
     }
 
     render() { 
+        let { albums, artists } = this.props;
+        let myAlbums = albums ? albums.slice(0,6) : null;
+        let myArtists = artists ? artists.slice(6,8) : null;
+
+
+        let displayAlbums = myAlbums ? myAlbums.map( album => {
+            return <AlbumIconContainer key={album.id} album={album} />
+        }) : null;
+
+        let displayArtists = myArtists ? myArtists.map(artist => {
+            return <TopArtistContainer key={artist.id} artist={artist}/> 
+        }) : null;
+
+        
         
         const displaySessionButtons = this.props.loggedIn ? ( 
                 <div>
@@ -116,14 +135,14 @@ class SplashPageHeader extends React.Component {
 
                     </div>
 
-                    <div></div>
+                    <div className="splash-loggedin-right"> {displayAlbums}</div>
                 </div>
 
                 <div className="splash-loggedin-tophalf">
                 </div>
                 
                 <div className="splash-loggedin-midhalf">
-
+                    {displayArtists}
                 </div>
 
                 <div className="loggedin-white">

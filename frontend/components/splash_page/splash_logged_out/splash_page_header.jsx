@@ -18,7 +18,7 @@ class SplashPageHeader extends React.Component {
         
         const displaySessionButtons = this.props.loggedIn ? ( 
                 <div>
-                    <Link onClick={this.props.logout} to="/">LOG OUT</Link>
+                    <Link onClick={this.props.logout} to="/">Log Out</Link>
                 </div>
         ) : 
 
@@ -75,16 +75,72 @@ class SplashPageHeader extends React.Component {
             </div>
         )
 
-      
+        let { loggedIn } = this.props;
+
         let displayLoggedIn = (
-        
-            <div>
-                <p>hello,</p>
-                <Link onClick={this.props.logout} to="/">Log Out</Link>
+            
+            <div className="splash-loggedin-module"> 
+                
+
+                
+                <div className='splash-loggedin-navbar'>
+                    <div className='splash-loggedin-nav-holder'>
+                        <div className="splash-logo-loggedin">
+                            <Link to="/">
+                                <i className="fas fa-feather fa-3x"></i>
+                            </Link>
+
+                            <Link to="/" className="splash-logo-text">DROPIFY</Link>
+                        </div>
+
+
+                        <div className="splash-nav-logout-btn">
+                            {displaySessionButtons}
+                        </div>
+                    </div>
+                </div>
+
+                <div className="splash-loggedin-gradient">  
+                    
+                </div>
+
+                <div className="splash-loggedin-topinfo">
+                    <div className="splash-loggedin-left">
+                        <div className="splash-loggedin-left-text">
+                            Drop right in. 
+                        </div>
+                        <div className="splash-loggedin-left-small-text"> Pick back up listening.</div>
+                        <button className="splash-loggedin-redirect" onClick={() => this.props.history.push('/main/browse/featured')}>
+                            OPEN WEB PLAYER
+                        </button>
+
+                    </div>
+
+                    <div></div>
+                </div>
+
+                <div className="splash-loggedin-tophalf">
+                </div>
+                
+                <div className="splash-loggedin-midhalf">
+
+                </div>
+
+                <div className="loggedin-white">
+
+                </div>
+
+                <div className="loggedin-black">
+                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">Github</a>
+                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">LinkedIn</a>
+
+                </div>
+                
+
             </div> 
         )
         
-        let display = false ? displayLoggedIn : displayLoggedOut;
+        let display = loggedIn ? displayLoggedIn : displayLoggedOut;
 
             
 

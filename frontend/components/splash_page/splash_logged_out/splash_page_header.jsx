@@ -36,7 +36,7 @@ class SplashPageHeader extends React.Component {
         
         
         const displaySessionButtons = this.props.loggedIn ? ( 
-                <div>
+                <div className="session-logout-btn">
                     <Link onClick={this.props.logout} to="/">Log Out</Link>
                 </div>
         ) : 
@@ -67,9 +67,9 @@ class SplashPageHeader extends React.Component {
                     </div>
 
                     <div className="splash-tophalf-info">
-                        <div className="splash-info-1">Music for everyone.</div>
-                        <div className="splash-info-2">Millions of songs. No credit card needed.</div>
-                        <Link className="splash-info-btn" to="/signup">GET DROPIFY FREE</Link>  
+                        <div className="splash-info-1">Music for App Academy</div>
+                        <div className="splash-info-2">Just some songs seeded. Any donation would be appreciated.</div>
+                        <Link className="splash-info-btn" to="/signup">DROP CASH NOW</Link>  
                     </div>
 
                     <svg className="splash-img" viewBox="0 0 860 670" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">
@@ -83,13 +83,20 @@ class SplashPageHeader extends React.Component {
 
                 <div className="splash-white-space">
                     <div className="splash-get-premium">
-                        Welcome!
+                        
+                        <div className="quote">Yeah, everybody's got a bomb. We could all die any day. But before I'll let that happen. I'll dance my life away. -Prince</div>   
+                        <div className="quote">Music does a lot of things for a lot of people. It's transporting, for sure. It can take you right back, years back, to the very moment certain things happened in your life. It's uplifting, it's encouraging, it's strengthening. - Aretha Franklin</div>
+
                     </div>
                 </div>
                 
                 <div className='splash-footer'>
-                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">Github</a>
-                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">LinkedIn</a>
+                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">
+                        <i className="fab fa-github fa-3x"></i>
+                    </a>
+                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">
+                        <i className="fab fa-linkedin fa-3x"></i>
+                    </a>
                 </div>
             </div>
         )
@@ -145,13 +152,17 @@ class SplashPageHeader extends React.Component {
                     {displayArtists}
                 </div>
 
-                <div className="loggedin-white">
+                {/* <div className="loggedin-white">
 
-                </div>
+                </div> */}
 
                 <div className="loggedin-black">
-                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">Github</a>
-                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">LinkedIn</a>
+                    <a className="splash-github-jeff" href="https://github.com/JeffreyTseng3">
+                        <i className="fab fa-github fa-3x"></i>
+                    </a>
+                    <a className="splash-linkedin-jeff" href="https://www.linkedin.com/in/jeffrey-tseng-32789965">
+                        <i className="fab fa-linkedin fa-3x"></i>
+                    </a>
 
                 </div>
                 

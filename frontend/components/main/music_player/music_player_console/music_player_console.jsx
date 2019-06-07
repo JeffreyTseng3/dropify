@@ -7,12 +7,14 @@ class MusicPlayerConsole extends React.Component {
         this.state = {
             playStatus: 'play',
             currentTime: 0,
-            volume: "100"
+            volume: "100", 
+            playPauseBtn: (<i className="far fa-play-circle fa-2x"></i> )
         }
         this.togglePlay = this.togglePlay.bind(this);
         this.updateVolume = this.updateVolume.bind(this);
         this.updateScrubber = this.updateScrubber.bind(this);
         this.secondsToMins = this.secondsToMins.bind(this);
+        this.updatePlayPauseBtn = this.updatePlayPauseBtn.bind(this);
     }
 
     secondsToMins(sec) {
@@ -52,10 +54,13 @@ class MusicPlayerConsole extends React.Component {
             setInterval(() => {
                 let currentTime = audio_ref.currentTime;
                 this.updateTime(currentTime);
+                this.setState({ playPauseBtn: (<i className="far fa-pause-circle fa-2x"></i>) });
             }, 500 ); 
         } else {
             status = 'play'
             audio_ref.pause();
+            this.setState({ playPauseBtn: (<i className="far fa-play-circle fa-2x"></i>) });
+
         }
         this.setState({ playStatus: status })
         console.log(this.state);
@@ -78,9 +83,28 @@ class MusicPlayerConsole extends React.Component {
         if (prevProps.current_song !== this.props.current_song) {
             let audio_ref = this.myAudioRef.current;
             audio_ref.play();
+            this.setState({playStatus: 'pause'});
+            this.updatePlayPauseBtn();
+        } 
+    }
+
+    updatePlayPauseBtn() {
+        if (this.state.playStatus === 'play') {
+            this.setState({ playPauseBtn: (<i className="far fa-pause-circle fa-2x"></i>)});
+            this.state.playStatus = 'pause'
+        } else {
+            this.setState({ playPauseBtn: (<i className="far fa-play-circle fa-2x"></i> )});
+            this.state.playStatus = 'play'
+
         }
+    }
 
-
+    getPlayPauseBtn() {
+        if (this.state.playStatus === 'play') {
+            return  (<i className="far fa-play-circle fa-2x"></i>) ;
+        } else {
+            return (<i className="far fa-pause-circle fa-2x"></i>) ;
+        }
     }
 
     render() {
@@ -91,9 +115,13 @@ class MusicPlayerConsole extends React.Component {
         let song_max = this.secondsToMins(song_length);
         let time_current = this.secondsToMins(this.state.currentTime);
 
-        let playPauseImg = this.state.playStatus === 'play' ? 
-            <i className="far fa-play-circle fa-2x"></i> 
-            : <i className="far fa-pause-circle fa-2x"></i>
+
+        // let playPauseImg = this.state.playStatus === 'play' ? 
+        //     <i className="far fa-play-circle fa-2x"></i> 
+        //     : <i className="far fa-pause-circle fa-2x"></i>
+
+        let playPauseImg = this.getPlayPauseBtn();
+        // let playPauseImg = this.state.playPauseBtn;
 
         return (
             <>

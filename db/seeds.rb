@@ -13,6 +13,10 @@ Song.destroy_all
 Album.destroy_all 
 Artist.destroy_all 
 Genre.destroy_all 
+User.destroy_all
+
+demo_user = User.create(email: 'jt@gmail.com', username: 'frey_jay', password: "123123", birth_month: '01', birth_day: 1, birth_year: 1, gender: "male", password_digest: '123', session_token: '14324234')
+demo_user.save! 
 
 genre_pop = Genre.create(category: "pop")
 genre_rap = Genre.create(category: 'rap')

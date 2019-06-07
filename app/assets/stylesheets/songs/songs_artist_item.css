@@ -3,14 +3,44 @@
     width: 90%;
     color: white;
     font-family: 'Montserrat', sans-serif;
-    height: 65px;
+  
     letter-spacing: .015em;
     margin: 0px 40px;
     display: flex;
-    padding-left: 10px;
+    /* padding-left: 10px; */
     align-items: center;
-    justify-content: space-between;
     transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.song-icon-btn {
+    height: 65px;
+    width: 85px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.song-item-selected {
+    letter-spacing: .015em;
+    background: #090304;
+    color:#1ed760;
+    align-items: center;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    height: 65px;
+    width: 90%;
+    margin: 0px 40px;
+    transition: background-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.song-info-btn {
+    display: flex;
+    position: relative;
+    width: 100%;
+    height: 65px;
+    justify-content: space-between;
+
 }
 
 .song-item:hover {
@@ -23,7 +53,7 @@
 }
 
 .fa-headphones-alt {
-    color: #b3b3b3;
+    /* color: #b3b3b3; */
     padding: 5px 25px 5px 15px;
 }
 
@@ -44,3 +74,4 @@
 .fa-ellipsis-h {
     padding-right: 20px;
 }
+

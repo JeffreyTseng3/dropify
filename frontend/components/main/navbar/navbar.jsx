@@ -18,6 +18,12 @@ class NavBar extends React.Component {
         let { users } = this.props;
         let user = users ? users[0] : null;
         let username = user ? user.username : null;
+
+        let pathname = this.props.history.location.pathname;
+        // debugger
+
+        let css = pathname == "/main/settings" ? "nav-bar-profile-selected" : "nav-bar-profile";
+
         return (
               
             <div className="nav-bar-module">
@@ -33,7 +39,7 @@ class NavBar extends React.Component {
                         <span className="nav-item">Home</span>
                     </Link>
 
-                    <Link className="nav-bar-search" to="/main/browse/featured">
+                    <Link className="nav-bar-search" to="/main/search">
                         <span className="nav-item-img"><i className="fas fa-search fa-2x"></i></span>
                         <span className="nav-item-search">Search</span>
                     </Link>
@@ -48,13 +54,17 @@ class NavBar extends React.Component {
 
                 <div className="nav-bottom"> 
                     
-                    <div className="nav-bar-footer">
-                        <Link to="/main/settings">
-                            <img src="" alt="" />
-                            <span className="nav-bar-profile">{username}</span>
-                        </Link>
 
-                    </div>
+                        <button className="nav-bar-footer"
+
+                            onClick={() => this.props.history.push("/main/settings")}>
+                            <img 
+                                className="nav-photo"
+                                src="https://dropify-seeds.s3.amazonaws.com/jeffrey.jpg"   />
+                            <span className={css}>{username}</span>
+                        </button>
+
+                    
                 </div>
 
             </div>

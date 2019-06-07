@@ -2,7 +2,7 @@ import { connect } from "react-redux";
 import NavBar from "./navbar";
 import { logout } from "../../../actions/session_actions";
 import { fetchUser } from '../../../actions/user_actions';
-
+import { withRouter } from "react-router";
 
 const msp = state => {
     
@@ -20,4 +20,4 @@ const mdp = dispatch => {
     };
 };
 
-export default connect(msp, mdp)(NavBar);
+export default withRouter(connect(msp, mdp)(NavBar));

@@ -68,7 +68,7 @@ class SplashPageHeader extends React.Component {
 
                     <div className="splash-tophalf-info">
                         <div className="splash-info-1">Music for App Academy</div>
-                        <div className="splash-info-2">Just some songs seeded. Any donation would be appreciated.</div>
+                        <div className="splash-info-2">Just a few songs seeded. Any donation would be appreciated.</div>
                         <Link className="splash-info-btn" to="/signup">GET DROPIFY NOW</Link>  
                     </div>
 

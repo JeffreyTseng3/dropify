@@ -9,6 +9,8 @@ import BrowseModuleContainer from "../../browse/browse_module/browse_module_cont
 import ArtistShowModuleContainer from "../../artists/artist_show_module/artist_show_module_container";
 import AlbumShowModuleContainer from '../../albums/album_show_module/album_show_module_container';
 import SettingsContainer from '../../settings/settings_container';
+import SearchModuleContainer from '../../search/search_module/search_module_container';
+
 class ExploreModule extends React.Component {
     constructor(props) {
         super(props);
@@ -25,6 +27,7 @@ class ExploreModule extends React.Component {
             <Route path="/main/artist/:artistId" component={ArtistShowModuleContainer}/> 
             <Route path="/main/album/:albumId" component={AlbumShowModuleContainer} />
             <Route path="/main/settings" component={SettingsContainer} />
+            <Route path="/main/search" component={SearchModuleContainer} />
         </div>
         )
     }

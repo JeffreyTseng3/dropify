@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
 
     handleDemoLogin(e) {
         e.preventDefault();
-        const demoUser = {info: "jt1", password: "123123"};
+        const demoUser = {info: "frey_jay", password: "123123"};
         this.props.login(demoUser).then(() => this.props.history.push('/main/browse/featured'));
     }
 
@@ -42,7 +42,7 @@ class SignupForm extends React.Component {
     }
 
     componentDidMount() {
-        this.forceUpdate();
+        // this.forceUpdate();
     }
 
 

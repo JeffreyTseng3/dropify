@@ -69,7 +69,7 @@ class SplashPageHeader extends React.Component {
                     <div className="splash-tophalf-info">
                         <div className="splash-info-1">Music for App Academy</div>
                         <div className="splash-info-2">Just some songs seeded. Any donation would be appreciated.</div>
-                        <Link className="splash-info-btn" to="/signup">DROP CASH NOW</Link>  
+                        <Link className="splash-info-btn" to="/signup">GET DROPIFY NOW</Link>  
                     </div>
 
                     <svg className="splash-img" viewBox="0 0 860 670" version="1.1" xmlns="http://www.w3.org/2000/svg" xlink="http://www.w3.org/1999/xlink">

@@ -151,7 +151,10 @@
     align-content: center;  
     color: white;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 15px;
+    padding-top: 20px;
+    width: 150px;
+    border-top: 1px grey solid;
     
 } 
 

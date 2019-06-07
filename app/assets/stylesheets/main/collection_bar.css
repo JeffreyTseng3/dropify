@@ -6,13 +6,10 @@
     margin-top: 30px;
     letter-spacing: .16em;
     position: relative;
-    /* top: 0px; */
-    /* right: 0px;
-    left: 230px; */
-    /* padding-right: 100px; */
     width: 100%;
     align-content: center;
     justify-content: center;
+    padding-right: 400px;
 }
 
 .collection-bar {
@@ -47,7 +44,9 @@
 /* background: #1ED760 */
 
 .new-playlist-modal-btn:hover{
-   
+  
+    transform: scale(1.1);
+}
 }
 
 .new-playlist-modal-btn-text{

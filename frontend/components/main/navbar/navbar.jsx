@@ -47,9 +47,9 @@ class NavBar extends React.Component {
 
 
                 <div className="nav-bottom"> 
-                    <Link className="nav-logout" onClick={this.props.logout} to="/">Log Out</Link>
+                    
                     <div className="nav-bar-footer">
-                        <Link to="/main/browse/featured">
+                        <Link to="/main/settings">
                             <img src="" alt="" />
                             <span className="nav-bar-profile">{username}</span>
                         </Link>

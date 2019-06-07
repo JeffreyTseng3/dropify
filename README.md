@@ -51,6 +51,6 @@ The project has some items that I will describe in depth in this README.
 + updating the redux store for browsing artists/albums 
 + music player seeking and volume control
 
-![LoginError] 
+![LoginError](https://github.com/JeffreyTseng3/dropify/blob/master/README_images/login_errors.png?raw=true)
 
 

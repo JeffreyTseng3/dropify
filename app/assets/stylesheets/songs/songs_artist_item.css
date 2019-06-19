@@ -79,3 +79,6 @@
     padding-right: 20px;
 }
 
+.fa-ellipsis-h:hover {
+    transform: scale(1.1);
+}

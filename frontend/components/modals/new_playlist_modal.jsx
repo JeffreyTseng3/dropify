@@ -30,11 +30,9 @@ class NewPlaylistModal extends React.Component {
         
         const new_playlist = Object.assign({}, this.state);
         createPlaylist(new_playlist, this.props.history)
-        // .then(playlist => {
-            
+        // .then(playlist => { 
             // this.props.history.push(`/main/playlist/${showSinglePlaylist.id}`)}
         // });
-
         closeModal();
     }
     
@@ -42,8 +40,7 @@ class NewPlaylistModal extends React.Component {
     
     
     componentDidMount() {
-        
-        fetchPlaylists(this.state.author_id);
+
         // CHECK IF THIS IS OKAY TO RESET TITLE, it was not clearing cache previosuly without
         // this in the case of test an empty title submission
         this.state.title = "";

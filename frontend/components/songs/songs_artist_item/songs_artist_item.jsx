@@ -67,7 +67,9 @@ class SongsArtistItem extends React.Component {
                         <div className="song-title">{song_title} </div>
                     </div>
                     <div className="song-right">
+                        
                         <i className="fas fa-ellipsis-h"></i>
+
                         <div className="song-time">{time}</div>
                     </div>
                 

@@ -27,9 +27,7 @@ class PlaylistsExplore extends React.Component {
         
         let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
         let title = myPlaylist ? myPlaylist.title : null;
-        // let author = myPlaylist ? myPlaylist.author_id : null;
-        // debugger
-        // let myUser = users !== [] ? users.filter(user => user.author_ids.includes(Number(playlistId)))[0] : null;
+
         let myUser = users ? users[0] : null; 
         let author = myUser ? myUser.username : null;
         return (

@@ -11,8 +11,8 @@ class Api::PlaylistsController < ApplicationController
     end
 
     def index
-        author_id = params[:author_id]
-        @playlists = Playlist.where(author_id: author_id)
+       
+        @playlists = Playlist.all 
         render "api/playlists/index"
     end 
 

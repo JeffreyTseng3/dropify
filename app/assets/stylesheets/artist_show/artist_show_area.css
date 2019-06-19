@@ -2,10 +2,58 @@
     position: relative;
     width:100%;
     height: 100%;
-    z-index: 1;
-    background: #171717;
+   
+    background:#181818;
     display: flex;
     flex-direction: column;
     padding-top: 20px;
-    overflow-y: scroll;
+
+}
+
+.artist-show-music-mod {
+    margin: 0px 40px;
+}
+
+.artist-show-popular-text {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    margin-bottom: 24px;
+}
+
+.artist-show-popular {
+  margin-bottom: 32px;  
+}
+
+.artist-show-albums{
+     font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: .05em;
+    margin-bottom: 24px;
+}
+
+.artist-about-text-mod {
+    margin: 42px;
+}
+
+.artist-about-biography {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: .05em;
+    margin-bottom: 24px;
+}
+
+.artist-about-text {
+    color: #b3b3b3;
+    font-size: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+
+
 }

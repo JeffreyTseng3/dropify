@@ -18,7 +18,7 @@ const mdp = dispatch => {
     return {
         createPlaylist: (new_playlist, history ) => dispatch(createPlaylist(new_playlist,history)),
         closeModal: () => dispatch(closeModal()),
-        fetchPlaylists: (author_id) => dispatch(fetchPlaylists(author_id)),                      
+        fetchPlaylists: () => dispatch(fetchPlaylists()),                      
     }
 }
 

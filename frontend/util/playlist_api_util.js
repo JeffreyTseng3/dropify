@@ -7,12 +7,12 @@ export const createPlaylist = playlist => {
     })
 }
 
-export const fetchPlaylists = (author_id) => {
+export const fetchPlaylists = () => {
     
     return $.ajax({
         method: "GET",
         url: '/api/playlists',
-        data: { author_id }
+       
     })
 }
 

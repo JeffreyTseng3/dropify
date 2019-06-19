@@ -30,9 +30,9 @@ export const createPlaylist = (playlist, history) => dispatch => {
 };
 
 // IDENTIFIES FROM AUTHOR_ID, to show all the author's playlists, consider getting all playlists and filter out frontend
-export const fetchPlaylists = author_id => dispatch => {
+export const fetchPlaylists = () => dispatch => {
 
-    return PlaylistAPIUtil.fetchPlaylists(author_id)
+    return PlaylistAPIUtil.fetchPlaylists()
         .then(playlists => {
             dispatch(receivePlaylists(playlists))
         });

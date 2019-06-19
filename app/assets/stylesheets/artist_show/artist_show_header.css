@@ -2,13 +2,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    /* flex-direction: column; */
+    flex-direction: column;
     width: 100%;
-    height: 200px;
+    height: 400px;
     position: relative;
     /* background: #171717; */
     background: linear-gradient(transparent -30%,#181818);
     padding-top: 20px;
+
 }
 
 .artist-header-name {
@@ -24,9 +25,103 @@
 
 .artist-header-img {
     position: relative;
-    /* padding-top: 30px; */
+
      width: 200px;
     height: 200px;
     border-radius: 50%;
      box-shadow: 0 0 10px rgba(0,0,0,.5);
 }
+
+.artist-play-library {
+      color: white;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+    align-items: center; 
+    justify-content: center;
+}
+
+.artist-show-img-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.artist-show-play {
+    background-color: #1db954;
+    padding: 11px 44px;
+    border-radius: 500px;
+    font-size: 11px;
+    letter-spacing: .16em;
+    margin: 10px;
+    
+
+}
+
+.artist-show-play:hover {
+    
+    transform: scale(1.1);
+    background-color: #1ED760;
+}
+.artist-save-lib {
+
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: inset 0 0 0 2px #b3b3b3;
+    text-transform: uppercase;
+    letter-spacing: .16em;
+    font-size: 11px;
+
+
+    border-radius: 500px;
+    padding: 11px 44px;
+    background: rgba(24,24,24,.7);
+    margin: 10px;
+}
+
+.artist-save-lib:hover {
+    transform: scale(1.1);
+
+}
+
+.artist-header-options {
+    color: #b3b3b3;
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    margin: 10px;
+    font-size: 12px;
+   
+    font-weight: 500;
+    transition: color .2s linear;
+}
+
+
+
+.artist-overview {
+    transition: color .2s linear;
+    padding: 5px 10px;
+     letter-spacing: .12em;
+}
+.artist-related {
+    transition: color .2s linear;
+    padding: 5px 10px;
+     letter-spacing: .12em;
+}
+.artist-about{
+    transition: color .2s linear;
+    padding: 5px 10px;
+     letter-spacing: .12em;
+}
+
+.artist-overview:hover {
+    color: white;
+}
+.artist-related:hover {
+    color: white;
+}
+.artist-about:hover {
+    color: white;
+}
+
+

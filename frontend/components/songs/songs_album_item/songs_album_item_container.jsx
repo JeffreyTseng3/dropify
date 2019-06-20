@@ -2,6 +2,8 @@ import { withRouter } from 'react-router';
 import { connect } from "react-redux";
 import { fetchCurrentSong } from '../../../actions/song_actions'
 import SongsAlbumItem from "./songs_album_item";
+import { openModal } from '../../../actions/modal_actions';
+
 const msp = state => {
     let currentSong = state.current_song.currentSongId;
     return ({
@@ -12,6 +14,7 @@ const msp = state => {
 const mdp = dispatch => {
     return ({
         fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
+        openModal: () => dispatch(openModal('options')),
     })
 }
 

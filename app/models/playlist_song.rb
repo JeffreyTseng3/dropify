@@ -11,6 +11,7 @@
 
 class PlaylistSong < ApplicationRecord 
     
+    
     belongs_to :song, 
         primary_key: :id, 
         foreign_key: :song_id, 

@@ -70,7 +70,9 @@ class SongsAlbumItem extends React.Component {
                         </div>
 
                         <div className="song-right">
-                            <i className="fas fa-ellipsis-h"></i>
+                            <div onClick={this.props.openModal}>
+                                <i className="fas fa-ellipsis-h"></i>
+                            </div>
                             <div className="songs-album-item-length">{length}</div>
                         </div> 
 

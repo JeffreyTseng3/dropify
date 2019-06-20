@@ -49,7 +49,7 @@ class NewPlaylistModal extends React.Component {
     render () {
         let { modal, closeModal } = this.props;
 
-        if (!modal) {
+        if (modal !== 'new') {
             return null;
         }
 

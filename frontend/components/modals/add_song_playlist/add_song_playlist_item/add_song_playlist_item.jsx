@@ -11,18 +11,18 @@ class AddSongPlaylistItem extends React.Component {
 
     render() {
         let playlist_title = this.props.playlist.title;
-        let playlist_id = this.props.playlist.id;
+        let playlistId = this.props.playlist.id;
         let { modal } = this.props;
         let songId = parseInt(modal.split(',')[1]);
         
-
+        let playlistSongRelation = { song_id: songId, playlist_id: playlistId}; 
         // most of the below code comes from playlists_collection_item.jsx
         return (
             <>
         
                 <button
                     // onClick={() => this.props.history.push(`/main/playlist/${playlist_id}`)}
-                    onClick={() => this.props.addToPlaylist(songId, playlist_id)}
+                    onClick={() => this.props.addToPlaylist(playlistSongRelation)}
                     className="playlists-explore-item">
                     <div className="playlists-explore-item-img">
                         <i className="fas fa-music fa-3x"></i>

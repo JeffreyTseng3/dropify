@@ -4,10 +4,10 @@ import * as PlaylistAPIUtil from "../util/playlist_api_util";
 import { log } from "util";
 
 
-export const receivePlaylist = playlist => {
+export const receivePlaylist = payload => {
     return{
         type: RECEIVE_PLAYLIST,
-        playlist
+        payload
     };
 };
 
@@ -25,7 +25,7 @@ export const createPlaylist = (playlist, history) => dispatch => {
         .then(playlist => {
         
             history.push(`/main/playlist/${playlist.id}`);
-            dispatch(receivePlaylist(playlist));
+            dispatch(receivePlaylist(payload));
         });
 };
 

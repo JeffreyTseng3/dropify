@@ -41,7 +41,8 @@ class SongsAlbumItem extends React.Component {
         let mySong = song ? song : null;
         let myCurrentSong = currentSong ? currentSong : null;
         let css = (mySong && myCurrentSong) && mySong.id === myCurrentSong.id ? 'song-item-selected' : 'song-item' ;
-
+        let options_album_modal = mySong ? 'options,album,' + String(mySong.id) : null;
+        
         // let css = currentSong.id === song.id ? 'song-icon-btn' : 'song-item';
         // let targetSong = song ? song : null;
         // let mySongId = currentSong ? currentSong.id : null;
@@ -70,7 +71,7 @@ class SongsAlbumItem extends React.Component {
                         </div>
 
                         <div className="song-right">
-                            <div onClick={this.props.openModal}>
+                            <div onClick={() => this.props.openModal(options_album_modal)}>
                                 <i className="fas fa-ellipsis-h"></i>
                             </div>
                             <div className="songs-album-item-length">{length}</div>

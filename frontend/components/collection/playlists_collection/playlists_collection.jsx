@@ -22,11 +22,10 @@ class PlaylistsCollection extends React.Component {
 
     render() {
         
-        const playlists = this.props.playlists;
-    
-        let displayPlayists = playlists ? playlists.map(playlist => {
+        const { playlists, currentUserId } = this.props;
+        let myPlaylists = playlists ? playlists.filter(playlist => playlist.author_id === currentUserId) : null;
+        let displayPlayists = myPlaylists ? playlists.map(playlist => {
             return (
-
                     <PlaylistsCollectionItem key={playlist.id} playlist={playlist} />
 
             )

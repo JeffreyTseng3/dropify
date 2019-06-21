@@ -29,13 +29,13 @@
 
 }
 
-.options-lib,.options-queue,.options-add-playlist {
+.options-lib,.options-queue,.options-add-playlist, .options-remove-song{
     height: 40px;
     width: 190px;
     padding: 0px 10px;
 }
 
-.options-lib:hover,.options-queue:hover,.options-add-playlist:hover {
+.options-lib:hover,.options-queue:hover,.options-add-playlist:hover, .options-remove-song:hover {
     background: hsl(0, 0%, 19%);
     color: white;
 }

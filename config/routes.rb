@@ -4,11 +4,15 @@ Rails.application.routes.draw do
     resources :users, only: [:create, :show]
     resource :session, only: [:create, :destroy]
 
-    resources :playlists, only: [:create, :index, :update, :show, :destroy]
+    resources :playlists, only: [:create, :index, :update, :show, :destroy] 
     resources :songs, only: [:index, :show]
     resources :artists, only: [:index, :show]
     resources :albums, only: [:index, :show]
-    resources :playlist_songs, only: [:create, :destroy]
+    resources :playlist_songs, only: [:create, :destroy] do 
+      collection do 
+        delete 'remove_song'
+      end 
+    end 
   end 
   
 

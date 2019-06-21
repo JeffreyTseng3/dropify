@@ -11,7 +11,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-        addToPlaylist: (songId, playlist_id) => dispatch(addToPlaylist(songId, playlist_id)),
+        addToPlaylist: (playlistSongRelation) => dispatch(addToPlaylist(playlistSongRelation)),
     }
 }
 

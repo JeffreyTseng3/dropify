@@ -43,7 +43,7 @@ class SongsArtistItem extends React.Component {
         let mySong = song ? song : null;
         let myCurrentSong = currentSong ? currentSong : null;
         let css = (mySong && myCurrentSong) && mySong.id === myCurrentSong.id ? 'song-item-selected' : 'song-item';
-        let options_modal = mySong ? 'options,' + String(mySong.id)  : null;
+        let options_artist_modal = mySong ? 'options,artist,' + String(mySong.id)  : null;
         // debugger
 
         return (
@@ -67,7 +67,7 @@ class SongsArtistItem extends React.Component {
                         <div className="song-title">{song_title} </div>
                     </div>
                     <div className="song-right">
-                        <div onClick={() => this.props.openModal(options_modal)}>
+                        <div onClick={() => this.props.openModal(options_artist_modal)}>
                             <i className="fas fa-ellipsis-h"></i>
                         </div>
 

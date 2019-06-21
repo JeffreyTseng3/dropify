@@ -14,7 +14,7 @@ const msp = state => {
 const mdp = dispatch => {
     return ({
         fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
-        openModal: () => dispatch(openModal('options')),
+        openModal: (options_album_modal) => dispatch(openModal(options_album_modal)),
     })
 }
 

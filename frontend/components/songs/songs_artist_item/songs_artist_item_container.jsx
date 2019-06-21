@@ -20,7 +20,7 @@ const mdp = dispatch => {
     return ({
         fetchAlbum: id => dispatch(fetchAlbum),
         fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
-        openModal: (options_modal) => dispatch(openModal(options_modal)),
+        openModal: (options_artist_modal) => dispatch(openModal(options_artist_modal)),
     })
 }
 

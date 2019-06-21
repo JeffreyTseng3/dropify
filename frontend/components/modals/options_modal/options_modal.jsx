@@ -5,13 +5,25 @@ class OptionsModal extends React.Component {
         super(props);
 
         this.state = { x: '200px', y: '350px' };
-
+        this.handleDelete = this.handleDelete.bind(this);
     }
 
-    componentDidMount() {
-
+    componentDidUpdate() {
+ 
     }
 
+
+    handleDelete(playlistSongRelation) {
+        let { closeModal, deletePlaylistSong, fetchPlaylist, fetchPlaylists, fetchUser,currentUserId } = this.props;
+        let historyArr = this.props.location.pathname.split("/");
+        let playlistId = historyArr ? Number(historyArr[historyArr.length - 1]) : null;
+        
+        deletePlaylistSong(playlistSongRelation);
+        closeModal();
+  
+        // fetchPlaylist(playlistId);
+     
+    }
     
     
     render() {
@@ -25,7 +37,7 @@ class OptionsModal extends React.Component {
             return null;
         }
 
-        let addPlaylistModal = modal ? 'addSongToPlaylist,' + modal.split(',')[1] : null;
+        let addPlaylistModal = modal ? 'addSongToPlaylist,' + modal.split(',')[2] : null;
 
         let buttons = (
             <>
@@ -49,6 +61,23 @@ class OptionsModal extends React.Component {
             </>
         );
 
+        let songId = modal ? Number(modal.split(',')[2]) : null;
+        let historyArr = this.props.location.pathname.split("/");
+
+        let  playlistId = historyArr ? Number(historyArr[historyArr.length - 1]) : null;
+        let playlistSongRelation = { song_id: songId, playlist_id: playlistId }
+        let { deletePlaylistSong } = this.props;
+
+        let removeSongBtn = modal.split(',')[1] === 'playlist' ? (
+            <>
+                <button 
+                    onClick={() => this.handleDelete(playlistSongRelation)}
+                    className="options-remove-song"> 
+                    Remove from Playlist
+                </button>
+            </>
+        ) : null;
+
         const { x, y } = this.state; 
         const optionsModalStyle = {
             top: y,
@@ -63,6 +92,7 @@ class OptionsModal extends React.Component {
                     style={optionsModalStyle}
                     >
                     {buttons}
+                    {removeSongBtn}
                 </div>
             </div>
         </>)

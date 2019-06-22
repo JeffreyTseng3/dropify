@@ -3,6 +3,8 @@ import { connect } from "react-redux";
 import { fetchCurrentSong } from '../../../actions/song_actions'
 import SongsAlbumItem from "./songs_album_item";
 import { openModal } from '../../../actions/modal_actions';
+import { receiveMusicPlayType } from "../../../actions/queue_actions";
+
 
 const msp = state => {
     let currentSong = state.current_song.currentSongId;
@@ -15,6 +17,8 @@ const mdp = dispatch => {
     return ({
         fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
         openModal: (options_album_modal) => dispatch(openModal(options_album_modal)),
+        setMusicPlayType: musicPlayType => dispatch(receiveMusicPlayType(musicPlayType)),
+
     })
 }
 

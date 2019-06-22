@@ -9,6 +9,8 @@ class SongsAlbumItem extends React.Component {
             // playImg: (<i className="fas fa-play"></i>)
             playImg: (<i className="fas fa-headphones-alt fa-1x"></i>)
         }
+        this.handleDoubleClick = this.handleDoubleClick.bind(this);
+
     }
 
     componentDidMount() {
@@ -29,12 +31,21 @@ class SongsAlbumItem extends React.Component {
         return time;
     }
 
+    handleDoubleClick(albumId, songId) {
+        let { fetchCurrentSong, setMusicPlayType } = this.props;
+        fetchCurrentSong(songId);
+        let musicPlayType = { album: albumId }
+        setMusicPlayType(musicPlayType);
+    }
+
     render() {
        
         let { song, fetchCurrentSong, currentSong } = this.props;
         let length = song ? this.secondsToMins(song.song_length) : null;
         let title = song ? song.song_title : null;
         let btnDisplay = this.state.playImg ? this.state.playImg : null;
+
+        let { albumId } = this.props.match.params;
 
         
         // debugger
@@ -64,7 +75,7 @@ class SongsAlbumItem extends React.Component {
                     {/* </button> */}
 
                     <button className="song-info-btn"
-                        onDoubleClick={() => fetchCurrentSong(song.id)}>
+                        onDoubleClick={() => this.handleDoubleClick(albumId, mySong.id)}>
 
                         <div className="song-left">
                             <div className="song-album-item-title">{title}</div>

@@ -8,6 +8,8 @@ const msp = state => {
         current_song: Object.values(state.current_song)[0],
         queue: state.queue,
         artists: Object.values(state.entities.artists),
+        albums: Object.values(state.entities.albums),
+        playlists: Object.values(state.entities.playlists),
         musicPlayType: state.musicPlayType,
  
     }

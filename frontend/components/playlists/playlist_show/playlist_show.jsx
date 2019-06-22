@@ -23,6 +23,8 @@ class PlaylistsExplore extends React.Component {
         
     }
 
+    
+
     render() {
         let { playlistId } = this.props.match.params;
         let { playlists, users, songs } = this.props;
@@ -42,7 +44,12 @@ class PlaylistsExplore extends React.Component {
         return (
             <div className="playlist-show-container">
                 <div className="playlist-show-info-module">
-                    <div className="playlist-show-picture">Picture</div>
+                    {/* <div className="playlist-show-picture">  */}
+                        <div className="playlists-explore-item-img">
+                            <i className="fas fa-music fa-3x"></i>
+                            {/* <i class="fas fa-play-circle"></i> */}
+                        </div>
+                    {/* </div> */}
                     <div className="playlist-show-info">
                         <div className="playlist-show-title">{title} </div>
                         <div className="playlist-show-author"> By {author}</div>

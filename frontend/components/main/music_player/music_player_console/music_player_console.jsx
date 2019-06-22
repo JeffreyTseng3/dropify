@@ -118,7 +118,7 @@ class MusicPlayerConsole extends React.Component {
     }
 
     prevSong() {
-        let { queue, dequeue, fetchCurrentSong, artists, current_song, musicPlayType } = this.props;
+        let {fetchCurrentSong, artists, current_song, musicPlayType, albums, playlists } = this.props;
         let type = Object.keys(musicPlayType)[0];
         let typeId = Object.values(musicPlayType)[0]; 
 
@@ -130,12 +130,28 @@ class MusicPlayerConsole extends React.Component {
                 let prevSongId = artistQueue[currentSongIndex - 1];
                 fetchCurrentSong(prevSongId);
             }
+        } else if (type === 'album') {
+            let album = albums ? albums.filter(album => album.id == typeId)[0] : null;
+            let albumQueue = album ? album.song_ids : null; 
+            let currentSongIndex = current_song ? albumQueue.indexOf(current_song.id) : null; 
+            if (currentSongIndex > 0) {
+                let prevSongId = albumQueue[currentSongIndex - 1];
+                fetchCurrentSong(prevSongId);
+            }
+        } else if (type === 'playlist') {
+            let playlist = playlists ? playlists.filter(playlist => playlist.id == typeId)[0] : null;
+            let playlistQueue = playlist ? playlist.song_ids : null;
+            let currentSongIndex = current_song ? playlistQueue.indexOf(current_song.id) : null;
+            if (currentSongIndex > 0) {
+                let prevSongId = playlistQueue[currentSongIndex - 1];
+                fetchCurrentSong(prevSongId);
+            }
         }
     }
 
 
     nextSong() {
-        let { queue, dequeue, fetchCurrentSong, artists, current_song, musicPlayType } = this.props;
+        let { queue, dequeue, fetchCurrentSong, artists, current_song, musicPlayType, playlists, albums } = this.props;
         let type = Object.keys(musicPlayType)[0];
         let typeId = Object.values(musicPlayType)[0]; 
         if (queue.length !== 0) {
@@ -147,15 +163,28 @@ class MusicPlayerConsole extends React.Component {
    
             let artist = artists ? artists.filter(artist => artist.id == typeId)[0] : null;
             let artistQueue = artist ? artist.song_ids : null;
-            let nextSongIndex = current_song ? artistQueue.indexOf(current_song.id) + 1: null;
-            if (nextSongIndex > -1) {
-                let nextSongId = artistQueue[nextSongIndex];
+            let currentSongIndex = current_song ? artistQueue.indexOf(current_song.id): null;
+            if (currentSongIndex > -1) {
+                let nextSongId = artistQueue[currentSongIndex + 1];
                 fetchCurrentSong(nextSongId);
             }
            
-        } else if (this.props.location.pathname.split('/').includes('playlist')) {
-            console.log('PLAYLIST')
-
+        } else if (type === 'album') {
+            let album = albums ? albums.filter(album => album.id == typeId)[0] : null;
+            let albumQueue = album ? album.song_ids : null;
+            let currentSongIndex = current_song ? albumQueue.indexOf(current_song.id) : null;
+            if (currentSongIndex > -1) {
+                let nextSongId = albumQueue[currentSongIndex + 1];
+                fetchCurrentSong(nextSongId);
+            }
+        } else if (type === 'playlist') {
+            let playlist = playlists ? playlists.filter(playlist => playlist.id == typeId)[0] : null;
+            let playlistQueue = playlist ? playlist.song_ids : null;
+            let currentSongIndex = current_song ? playlistQueue.indexOf(current_song.id) : null;
+            if (currentSongIndex > -1) {
+                let nextSongId = playlistQueue[currentSongIndex + 1];
+                fetchCurrentSong(nextSongId);
+            }
         }
 
     }

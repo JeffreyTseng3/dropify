@@ -34,7 +34,7 @@ class PlaylistsCollection extends React.Component {
 
         return (
             <div className="playlists-on-explore-container">
-                <Route path="/main/collection/" component={CollectionBarContainer} />
+                {/* <Route path="/main/collection/" component={CollectionBarContainer} /> */}
                 <div className="playlist-items-scroll">   
                     {displayPlayists}
                 </div>

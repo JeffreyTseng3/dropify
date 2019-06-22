@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { fetchPlaylists } from "../../../actions/playlist_actions";
-import PlaylistSongItemContainer from '../playlist_song_item/playlist_song_item_container';
+import PlaylistSongItemContainer from "../playlist_song_item/playlist_song_item_container";
 
 class PlaylistsExplore extends React.Component {
     constructor(props) {
@@ -19,7 +19,8 @@ class PlaylistsExplore extends React.Component {
         let { playlistId } =  this.props.match.params;
         let { fetchPlaylist, fetchUser, currentUserId} = this.props;
         fetchPlaylist(playlistId);
-        fetchUser(currentUserId)
+        fetchUser(currentUserId);
+        
     }
 
     render() {

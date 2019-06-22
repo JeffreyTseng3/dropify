@@ -15,6 +15,8 @@ class MusicPlayerConsole extends React.Component {
         this.updateScrubber = this.updateScrubber.bind(this);
         this.secondsToMins = this.secondsToMins.bind(this);
         this.updatePlayPauseBtn = this.updatePlayPauseBtn.bind(this);
+        this.nextSong = this.nextSong.bind(this);
+        this.prevSong = this.prevSong.bind(this);
     }
 
     secondsToMins(sec) {
@@ -37,9 +39,10 @@ class MusicPlayerConsole extends React.Component {
     }
 
     updateScrubber() {
+        // debugger
+        // console.log(this.state.currentTime);
         return (e) => {
             this.setState({currentTime: Number(e.target.value)})
-            // console.log(this.state);
             let audio_ref = this.myAudioRef.current;
             audio_ref.currentTime = Number(e.target.value);
         }
@@ -63,7 +66,7 @@ class MusicPlayerConsole extends React.Component {
 
         }
         this.setState({ playStatus: status })
-        console.log(this.state);
+        // console.log(this.state);
     }
 
     updateVolume() {
@@ -82,10 +85,17 @@ class MusicPlayerConsole extends React.Component {
         this.setVolume();
         if (prevProps.current_song !== this.props.current_song) {
             let audio_ref = this.myAudioRef.current;
-            audio_ref.play();
+            // audio_ref.play();
+            this.togglePlay();
             this.setState({playStatus: 'pause'});
             this.updatePlayPauseBtn();
         } 
+
+        // this enables queue changes to enable songs to be played when press nextSong
+        if (prevProps.current_song !== this.props.current_song && this.state.playStatus === 'play') {
+            let audio_ref = this.myAudioRef.current;
+            audio_ref.play();
+        }
     }
 
     updatePlayPauseBtn() {
@@ -105,6 +115,49 @@ class MusicPlayerConsole extends React.Component {
         } else {
             return (<i className="far fa-pause-circle fa-2x"></i>) ;
         }
+    }
+
+    prevSong() {
+        let { queue, dequeue, fetchCurrentSong, artists, current_song, musicPlayType } = this.props;
+        let type = Object.keys(musicPlayType)[0];
+        let typeId = Object.values(musicPlayType)[0]; 
+
+        if (type === 'artist') {
+            let artist = artists ? artists.filter(artist => artist.id == typeId)[0] : null;
+            let artistQueue = artist ? artist.song_ids : null;
+            let currentSongIndex = current_song ? artistQueue.indexOf(current_song.id) : null;
+            if (currentSongIndex > 0) {
+                let prevSongId = artistQueue[currentSongIndex - 1];
+                fetchCurrentSong(prevSongId);
+            }
+        }
+    }
+
+
+    nextSong() {
+        let { queue, dequeue, fetchCurrentSong, artists, current_song, musicPlayType } = this.props;
+        let type = Object.keys(musicPlayType)[0];
+        let typeId = Object.values(musicPlayType)[0]; 
+        if (queue.length !== 0) {
+            let nextSongId = queue[0];
+            fetchCurrentSong(nextSongId);
+            dequeue();
+        } else if (type === 'artist') {
+            // the following gets the following song for the current artist
+   
+            let artist = artists ? artists.filter(artist => artist.id == typeId)[0] : null;
+            let artistQueue = artist ? artist.song_ids : null;
+            let nextSongIndex = current_song ? artistQueue.indexOf(current_song.id) + 1: null;
+            if (nextSongIndex > -1) {
+                let nextSongId = artistQueue[nextSongIndex];
+                fetchCurrentSong(nextSongId);
+            }
+           
+        } else if (this.props.location.pathname.split('/').includes('playlist')) {
+            console.log('PLAYLIST')
+
+        }
+
     }
 
     render() {
@@ -132,7 +185,12 @@ class MusicPlayerConsole extends React.Component {
 
                         <div className='music-buttons'> 
                             <i className="far fa-thumbs-down"></i>
-                            <i className="fas fa-step-backward"></i>
+                            
+                            <button 
+                                className='music-prev-button'
+                                onClick={() => this.prevSong()}>
+                                <i className="fas fa-step-backward"></i>
+                            </button>
                         
                     
                             <button 
@@ -141,7 +199,12 @@ class MusicPlayerConsole extends React.Component {
                                         {playPauseImg}
                                 {/* <i className="far fa-play-circle fa-2x"></i> */}
                             </button>
-                            <i className="fas fa-step-forward"></i>
+
+                            <button 
+                                onClick={() => this.nextSong()}
+                                className="music-next-btn">
+                                <i className="fas fa-step-forward"></i>
+                            </button>
                             <i className="far fa-thumbs-up"></i>
                         </div>
 

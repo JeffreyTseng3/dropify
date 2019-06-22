@@ -6,6 +6,8 @@ import { openModal } from '../../../actions/modal_actions';
 import { deletePlaylistSong } from '../../../actions/playlist_song_actions';
 import { fetchPlaylist, fetchPlaylists } from '../../../actions/playlist_actions';
 import { fetchUser } from '../../../actions/user_actions';
+import { receiveSongQueue } from '../../../actions/queue_actions';
+
 const msp = state => {
 
     return {
@@ -21,8 +23,7 @@ const mdp = dispatch => {
         openModal: (addPlaylistModal) => dispatch(openModal(addPlaylistModal)),
         deletePlaylistSong: playlistSongRelation => dispatch(deletePlaylistSong(playlistSongRelation)),
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
-        // fetchPlaylists: id => dispatch(fetchPlaylists()),
-        // fetchUser: id => dispatch(fetchUser(id)),
+        addToQueue: id => dispatch(receiveSongQueue(id)),
     }
 }
 

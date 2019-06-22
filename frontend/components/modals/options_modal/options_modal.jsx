@@ -6,6 +6,7 @@ class OptionsModal extends React.Component {
 
         this.state = { x: '200px', y: '350px' };
         this.handleDelete = this.handleDelete.bind(this);
+        this.handleQueue = this.handleQueue.bind(this);
     }
 
     componentDidUpdate() {
@@ -22,9 +23,14 @@ class OptionsModal extends React.Component {
         closeModal();
   
         // fetchPlaylist(playlistId);
-     
     }
     
+    handleQueue(songId) {
+        let { closeModal, addToQueue } = this.props;
+        addToQueue(songId);
+        closeModal();
+
+    }
     
     render() {
 
@@ -38,6 +44,7 @@ class OptionsModal extends React.Component {
         }
 
         let addPlaylistModal = modal ? 'addSongToPlaylist,' + modal.split(',')[2] : null;
+        let songId = modal ? Number(modal.split(',')[2]) : null;
 
         let buttons = (
             <>
@@ -48,7 +55,7 @@ class OptionsModal extends React.Component {
                 </button>
                 <button 
                     
-                    onClick={() => closeModal()}
+                    onClick={() => this.handleQueue(songId)}
                     className="options-queue">
                     Add to Queue
                 </button>
@@ -61,7 +68,6 @@ class OptionsModal extends React.Component {
             </>
         );
 
-        let songId = modal ? Number(modal.split(',')[2]) : null;
         let historyArr = this.props.location.pathname.split("/");
 
         let  playlistId = historyArr ? Number(historyArr[historyArr.length - 1]) : null;

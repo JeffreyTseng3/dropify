@@ -23,6 +23,7 @@ const mdp = dispatch => {
     return ({
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
         fetchUser: id => dispatch(fetchUser(id)),
+        
         // fetchPlaylists: () => dispatch(fetchPlaylists())
     });
 };

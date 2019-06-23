@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import SearchModule from './search_module';
 import { withRouter } from "react-router"
+import { search } from '../../../actions/search_actions';
 
 const msp = state => {
 
@@ -11,7 +12,7 @@ const msp = state => {
 
 const mdp = dispatch => {
     return {
-
+        search: (searchInput) => dispatch(search(searchInput)),
 
     };
 };

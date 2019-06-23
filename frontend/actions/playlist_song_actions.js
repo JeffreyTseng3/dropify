@@ -1,4 +1,4 @@
-import * as PlaylistSongsAPIUtil from "../util/playlist_song_util";
+import * as PlaylistSongsAPIUtil from "../util/playlist_song_api_util";
 import { closeModal } from './modal_actions';
 import { receivePlaylist } from "./playlist_actions";
 

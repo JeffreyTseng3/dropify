@@ -12,10 +12,11 @@ class SearchModule extends React.Component {
 
   
     handleInput() {
+        let { search } = this.props;
         return (e) => {
             this.setState({ searchInput: e.target.value });
             this.props.history.push(`/main/search/${e.target.value}`);
-            
+            search(e.target.value);
         };
     }
 

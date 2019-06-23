@@ -22,9 +22,9 @@ export const receivePlaylists = playlists => {
 export const createPlaylist = (playlist, history) => dispatch => {
 
     return PlaylistAPIUtil.createPlaylist(playlist)
-        .then(playlist => {
-        
-            history.push(`/main/playlist/${playlist.id}`);
+        .then(payload => {
+    
+            history.push(`/main/playlist/${payload.playlist.id}`);
             dispatch(receivePlaylist(payload));
         });
 };

@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 class NavBar extends React.Component {
     constructor(props) {
         super(props);
+        this.handleSearch = this.handleSearch.bind(this);
     }
 
 
@@ -12,6 +13,11 @@ class NavBar extends React.Component {
         let { currentUserId, fetchUser } = this.props;
 
         // fetchUser(currentUserId)
+    }
+
+    handleSearch() {
+        this.props.history.push("/main/search");
+       
     }
 
     render() {
@@ -39,10 +45,16 @@ class NavBar extends React.Component {
                         <span className="nav-item">Home</span>
                     </Link>
 
-                    <Link className="nav-bar-search" to="/main/search">
+                    <button className="nav-bar-search" onClick={() => this.handleSearch() }>
                         <span className="nav-item-img"><i className="fas fa-search fa-2x"></i></span>
                         <span className="nav-item-search">Search</span>
-                    </Link>
+                    </button>
+
+                    {/* <Link className="nav-bar-search" to="/main/search">
+                        <span className="nav-item-img"><i className="fas fa-search fa-2x"></i></span>
+                        <span className="nav-item-search">Search</span>
+                       
+                    </Link> */}
 
                     <Link className="nav-bar-lib" to="/main/collection/playlists">
                         <span className="nav-item-img"><i className="fas fa-book-open fa-2x"></i></span>

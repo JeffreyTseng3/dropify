@@ -4,18 +4,56 @@ import { Link } from 'react-router-dom';
 class SearchModule extends React.Component {
     constructor(props) {
         super(props);
+        this.myInputRef = React.createRef();
+        this.state = {
+            searchInput: ""
+        }
+    }
+
+  
+    handleInput() {
+        return (e) => {
+            this.setState({ searchInput: e.target.value });
+            this.props.history.push(`/main/search/${e.target.value}`);
+            
+        };
+    }
+
+    // componentDidUpdate(ownProps) {
+    //     // debugger
+    // }
+
+    componentDidMount() {
+        const input = this.myInputRef.current;
+        input.focus();
     }
 
     render() {
+
+        let searchBar = (<div className="search-results-bar">
+            <div>Top Results</div>
+            <div>Artists</div>
+            <div>Songs</div>
+            <div>Albums</div>
+            <div>Playlists</div>
+        </div>)
 
     
         return (
             <>
                 <div className="search-module">
-                    <img
-                        className='search-photo'
-                        src="https://dropify-seeds.s3.amazonaws.com/Screen+Shot+2019-06-07+at+3.00.44+AM.png" />
+                    <input 
+                        onChange={this.handleInput()}
+                        className="search-bar"
+                        value={this.state.searchInput}
+                        placeholder="Start typing..."
+                        type="text"
+                        ref={this.myInputRef}/>
+
+                    <div className="search-results">
                     
+                    </div>
+
                 </div>
             </>)
     }

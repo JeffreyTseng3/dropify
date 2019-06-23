@@ -13,6 +13,11 @@ Rails.application.routes.draw do
         delete 'remove_song'
       end 
     end 
+    resources :searches, only: [:create, :destroy] do 
+      collection do 
+        delete 'remove_song'
+      end 
+    end
   end 
   
 

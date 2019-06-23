@@ -8,7 +8,8 @@ class MainPage extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            author_id: this.props.currentUserId
+            author_id: this.props.currentUserId,
+            // colorIndex: 0,
         }
     }
 
@@ -50,7 +51,10 @@ class MainPage extends React.Component {
         let backgroundColors = ['blue-background', 'red-background', 'black-background',
                                 'grey-background', 'purple-background', 'yellow-background',
                                 'orange-background']
-        let backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
+        // let backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
+
+        // let backgroundColor = backgroundColors[this.state.colorIndex];
+        let backgroundColor = backgroundColors[6];
 
         return (
             <div className={backgroundColor}> 

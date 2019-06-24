@@ -11,6 +11,7 @@
 }
 
 .browse-bar-item:hover {
+    transition: color .15s ease-in-out, box-shadow .15s ease-in-out;
     color: white;
     transition  : 0.5s ease;
 }

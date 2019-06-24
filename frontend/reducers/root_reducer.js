@@ -6,6 +6,8 @@ import uiReducer from './ui_reducer';
 import currentSongReducer from "./current_song_reducer";
 import queueReducer from "./queue_reducer";
 import musicPlayTypeReducer from './music_play_type_reducer';
+import searchReducer from './search_reducer';
+
 
 const rootReducer = combineReducers({
     entities: entitiesReducer,
@@ -15,6 +17,7 @@ const rootReducer = combineReducers({
     current_song: currentSongReducer,
     queue: queueReducer,
     musicPlayType: musicPlayTypeReducer,
+    search: searchReducer,
 });
 
 

@@ -1,11 +1,15 @@
 .search-module {
-    height: 100%;
-    width: 100%;
+    position: absolute;
+    top: 0;
+    bottom: 110px;
+    right: 0;
+    left: 230px;
     background-color: #0a0a0a;
     /* display: flex; */
     flex-direction: column;
     justify-content: center; 
     align-items: center; 
+    overflow-y: scroll;
 }
 
 .search-bar {
@@ -15,9 +19,91 @@
     font-size: 36px;
     font-weight: 700;
     color: white;
-        caret-color: #1db954;
+    caret-color: #1db954;
     background-color: #272727;
-        letter-spacing: -.005em;
+    letter-spacing: -.005em;
     font-family: 'Montserrat', sans-serif;
+    position: fixed;
+    top: 0;
+    display: flex;
+    align-items: center;
+    z-index: 2;
 }
 
+.search-results {
+    padding-top: 110px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+}
+
+.search-results-bar {
+    color: #b3b3b3;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: .16em;
+    font-size: 12px;
+    width: 100%;
+    height: 50px;
+    z-index: 1;
+        display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 100px 50px 100px;
+}
+.search-empty-text{
+    display: flex;
+    padding-top: 10px;
+    z-index: 1;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    flex-direction: column;
+}
+.search-empty-dropify {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -.02em;
+    padding-bottom: 10px;
+}
+
+.search-empty-details {
+    color: #b3b3b3;    
+    font-size: 12px;
+    letter-spacing: .02em;
+}
+
+.search-results-text {
+    padding: 0px 5px;
+    transition  : 0.5s ease;
+}
+
+.search-results-text:hover {
+    color: white;
+}
+
+.search-all-results {
+    z-index: 1;
+    color: white;
+}
+
+.search-result {
+    margin: 10px 30px;
+}
+
+.search-result-text {
+    color: white;
+    font-size: 32px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+}
+
+.search-playlists-icons {
+    display: flex;
+}

@@ -16,8 +16,7 @@ class NavBar extends React.Component {
     }
 
     handleSearch() {
-        this.props.history.push("/main/search");
-       
+        this.props.history.push("/main/search/recent");
     }
 
     render() {

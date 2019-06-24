@@ -1,5 +1,8 @@
 import React from "react";
 import { Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
+import SearchBar from '../search_bar/search_bar';
+import SearchResultsContainer from '../search_results/search_results_container';
 
 class SearchModule extends React.Component {
     constructor(props) {
@@ -15,14 +18,15 @@ class SearchModule extends React.Component {
         let { search } = this.props;
         return (e) => {
             this.setState({ searchInput: e.target.value });
-            this.props.history.push(`/main/search/${e.target.value}`);
+            if (e.target.value === '') {
+                this.props.history.push('/main/search/recent')
+            } else {
+                this.props.history.push(`/main/search/results/${e.target.value}`);
+            }
             search(e.target.value);
         };
     }
 
-    // componentDidUpdate(ownProps) {
-    //     // debugger
-    // }
 
     componentDidMount() {
         const input = this.myInputRef.current;
@@ -31,15 +35,18 @@ class SearchModule extends React.Component {
 
     render() {
 
-        let searchBar = (<div className="search-results-bar">
-            <div>Top Results</div>
-            <div>Artists</div>
-            <div>Songs</div>
-            <div>Albums</div>
-            <div>Playlists</div>
-        </div>)
+      
+        let searchBarRoute = this.props.location.pathname !== "/main/search/recent" ? <Route path="/main/search/results/:input" component={SearchBar} /> : (
+            <div className='search-empty-text'>
+                <div className="search-empty-dropify">Search Dropify</div>
+                <div className='search-empty-details'>Find your favorite songs, artists, albums, podcasts and playlists.</div>
+            </div>
+        ) ;
 
-    
+        let searchResultsRoute = this.props.location.pathname !== "/main/search/recent" ? <Route path="/main/search/results/:input" component={SearchResultsContainer} /> : null;
+   
+   
+         
         return (
             <>
                 <div className="search-module">
@@ -52,7 +59,8 @@ class SearchModule extends React.Component {
                         ref={this.myInputRef}/>
 
                     <div className="search-results">
-                    
+                            {searchBarRoute}
+                            {searchResultsRoute}
                     </div>
 
                 </div>

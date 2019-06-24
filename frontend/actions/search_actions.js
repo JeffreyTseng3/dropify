@@ -14,7 +14,7 @@ export const search = searchInput => dispatch => {
 
     return SearchAPIUtil.search(searchInput)
         .then(payload => {
-            console.log(payload)
+            dispatch(receiveSearch(payload))
         });
         
 }

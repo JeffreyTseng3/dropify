@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import Settings from './settings';
 import { logout } from "../../actions/session_actions";
+import { withRouter } from 'react-router';
 
 const msp = state => {
 
@@ -12,8 +13,7 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         logout: () => dispatch(logout()),
-
     };
 };
 
-export default connect(msp, mdp)(Settings);
+export default withRouter(connect(msp, mdp)(Settings));

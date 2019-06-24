@@ -48,13 +48,13 @@ class LoginForm extends React.Component {
 
     render() {
        
-        let infoError = this.props.errors ? 
+        let infoError = this.props.errors !== [] ? 
             this.props.errors.includes("info") ? <div className="info-errors"> Please enter your Dropify username or email address.</div> : null 
             : null;
-        let passwordError = this.props.errors ? 
+        let passwordError = this.props.errors !== [] ? 
             this.props.errors.includes("password") ? <div className="password-errors">Please enter your password.</div> : null
             : null;
-        let invalidError = this.props.errors ? 
+        let invalidError = this.props.errors !== [] ? 
             this.props.errors.includes("Invalid username/password combination") ? <div className="invalid-errors"><div> Incorrect username or password.</div></div> : null
             : null;
         

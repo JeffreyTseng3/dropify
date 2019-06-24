@@ -4,6 +4,13 @@ import { Link } from 'react-router-dom';
 class Settings extends React.Component {
     constructor(props) {
         super(props);
+        this.handleLogOut = this.handleLogOut.bind(this);
+    }
+
+    handleLogOut() {
+        let { logout } = this.props;
+        logout();
+        this.props.history.push('/');
     }
 
     render() {
@@ -18,7 +25,7 @@ class Settings extends React.Component {
                     className='settings-photo'
                     src="https://dropify-seeds.s3.amazonaws.com/jeffrey.jpg" />
                     <div className="settings-username"> {username} </div>
-                    <Link className="settings-logout" onClick={this.props.logout} to="/">Log Out</Link>
+                    <button className="settings-logout" onClick={() => this.handleLogOut()}>Log Out</button>
             </div>
         </>)
     }

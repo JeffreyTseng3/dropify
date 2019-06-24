@@ -14,8 +14,9 @@ Album.destroy_all
 Artist.destroy_all 
 Genre.destroy_all 
 User.destroy_all
+Playlist.destroy_all
 
-demo_user = User.create(email: 'jt@gmail.com', username: 'frey_jay', password: "123123", birth_month: '01', birth_day: 1, birth_year: 1, gender: "male")
+demo_user = User.create(email: 'jt@gmail.com', username: 'jeffrey.tseng3', password: "123123", birth_month: '01', birth_day: 1, birth_year: 1, gender: "male")
 demo_user.save! 
 
 genre_pop = Genre.create(category: "pop")

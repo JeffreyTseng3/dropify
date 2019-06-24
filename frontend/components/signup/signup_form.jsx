@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
 
     handleDemoLogin(e) {
         e.preventDefault();
-        const demoUser = {info: "frey_jay", password: "123123"};
+        const demoUser = {info: "jeffrey.tseng3", password: "123123"};
         this.props.login(demoUser).then(() => this.props.history.push('/main/browse/featured'));
     }
 

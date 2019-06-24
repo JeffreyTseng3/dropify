@@ -24,13 +24,13 @@ class PlaylistsCollection extends React.Component {
         
         const { playlists, currentUserId } = this.props;
         let myPlaylists = playlists ? playlists.filter(playlist => playlist.author_id === currentUserId) : null;
-        let displayPlayists = myPlaylists ? playlists.map(playlist => {
+        let displayPlayists = myPlaylists ? myPlaylists.map(playlist => {
             return (
                     <PlaylistsCollectionItem key={playlist.id} playlist={playlist} />
 
             )
         }) : null ;
-
+        
 
         return (
             <div className="playlists-on-explore-container">

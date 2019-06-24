@@ -54,7 +54,7 @@ class MainPage extends React.Component {
         // let backgroundColor = backgroundColors[Math.floor(Math.random() * backgroundColors.length)]
 
         // let backgroundColor = backgroundColors[this.state.colorIndex];
-        let backgroundColor = backgroundColors[6];
+        let backgroundColor = backgroundColors[0];
 
         return (
             <div className={backgroundColor}> 

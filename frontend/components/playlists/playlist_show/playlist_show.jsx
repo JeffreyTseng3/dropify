@@ -27,7 +27,7 @@ class PlaylistsExplore extends React.Component {
 
     render() {
         let { playlistId } = this.props.match.params;
-        let { playlists, users, songs } = this.props;
+        let { playlists, users, songs, currentUserId } = this.props;
         
         let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
         let title = myPlaylist ? myPlaylist.title : null;
@@ -39,7 +39,7 @@ class PlaylistsExplore extends React.Component {
             return <PlaylistSongItemContainer key={song.id} song={song} />
         }) : null;
 
-        let myUser = users ? users[0] : null; 
+        let myUser = users ? users.filter(user => user.id === currentUserId)[0] : null; 
         let author = myUser ? myUser.username : null;
         return (
             <div className="playlist-show-container">

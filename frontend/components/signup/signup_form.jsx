@@ -48,13 +48,33 @@ class SignupForm extends React.Component {
 
 
     render() {    
-        let emailError = this.props.errors.includes("email") ? <div className="signup-email-errors"> Please enter your email.</div> : null;
-        let passwordError = this.props.errors.includes("password") ? <div className="signup-password-errors">Please choose your password.</div> : null;
-        let usernameError = this.props.errors.includes("username") ? <div className="signup-username-errors">What should we call you?</div> : null;
-        let monthError = this.props.errors.includes("birth_month") ? <div className="signup-month-errors">Please enter your birth month.</div> : null;
-        let dayError = this.props.errors.includes("birth_day") ? <div className="signup-day-errors">Please enter your birth day.</div> : null;
-        let yearError = this.props.errors.includes("birth_year") ? <div className="signup-year-errors">Please enter your birth year.</div> : null;
-        let genderError = this.props.errors.includes("gender") ? <div className="signup-gender-errors">Please indicate your gender.</div> : null;
+        let emailError = this.props.errors ? 
+            this.props.errors.includes("email") ? <div className="signup-email-errors"> Please enter your email.</div> : null 
+        :null;
+
+        let passwordError = this.props.errors ? 
+             this.props.errors.includes("password") ? <div className="signup-password-errors">Please choose your password.</div> : null 
+        :null;
+
+        let usernameError = this.props.errors ? 
+            this.props.errors.includes("username") ? <div className="signup-username-errors">What should we call you?</div> : null
+        : null;
+
+        let monthError = this.props.errors ? 
+            this.props.errors.includes("birth_month") ? <div className="signup-month-errors">Please enter your birth month.</div> : null
+        : null;
+
+        let dayError = this.props.errors ? 
+            this.props.errors.includes("birth_day") ? <div className="signup-day-errors">Please enter your birth day.</div> : null
+        : null;
+
+        let yearError = this.props.errors ? 
+            this.props.errors.includes("birth_year") ? <div className="signup-year-errors">Please enter your birth year.</div> : null 
+        : null;
+
+        let genderError = this.props.errors ? 
+            this.props.errors.includes("gender") ? <div className="signup-gender-errors">Please indicate your gender.</div> : null
+        : null;
 
         return (
             <>

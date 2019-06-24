@@ -15,13 +15,13 @@
       
     if !errors.empty?
       render json: errors, status: 401
-      return 
+      return
     end
 
+    
     # REGULAR
       @user = User.find_by_credentials(
         # keyinginto info to return an email or username
-   
         params[:user][:info],
         params[:user][:password]
       )

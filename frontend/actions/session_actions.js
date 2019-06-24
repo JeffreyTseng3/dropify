@@ -16,12 +16,18 @@ export const logoutCurrentUser = () => ({
 });
 
 export const receiveSessionErrors = errors => {
+    if (errors === undefined) {
+        errors = [];
+    }
     return {
     type: RECEIVE_SESSION_ERRORS,
     errors
 }};
 
 export const receiveUsersErrors = errors => {
+    if (errors === undefined) {
+        errors = [];
+    }
     return {
     type: RECEIVE_USERS_ERRORS,
     errors
@@ -67,7 +73,7 @@ export const logout = () => dispatch => {
 };
 
 export const demoLogin = () => dispatch => {
-    debugger
+ 
     let formUser = { info: "frey_jay", password: "123123"};
     return SessionAPIUtil.login(formUser)
         .then(

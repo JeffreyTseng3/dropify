@@ -1,4 +1,4 @@
-# README
+<!-- # README
 
 # Dropify
 
@@ -150,4 +150,4 @@ The below are sample views of my app.
 + Adding songs to playlists 
 + Song functions: queue, shuffle, repeat, volume mute
 
-
+ -->

@@ -47,7 +47,7 @@ export const signup = formUser => dispatch => {
 };
 
 export const login = formUser => dispatch => {
-
+ 
     return SessionAPIUtil.login(formUser)
         .then(
             user => {
@@ -65,3 +65,17 @@ export const logout = () => dispatch => {
             return dispatch(logoutCurrentUser())
         })
 };
+
+export const demoLogin = () => dispatch => {
+    debugger
+    let formUser = { info: "frey_jay", password: "123123"};
+    return SessionAPIUtil.login(formUser)
+        .then(
+            user => {
+
+                return dispatch(receiveCurrentUser(user))
+            }, err => {
+
+                return dispatch(receiveSessionErrors(err.responseJSON))
+            })
+}

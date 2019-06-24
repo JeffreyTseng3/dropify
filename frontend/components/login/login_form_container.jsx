@@ -2,6 +2,7 @@ import { connect } from "react-redux";
 import { login, receiveClearFormErrors } from "../../actions/session_actions";
 import LoginForm from './login_form';
 import { withRouter } from 'react-router';
+import { demoLogin } from "../../actions/session_actions";
 
 const msp = state => {
    
@@ -14,7 +15,8 @@ const msp = state => {
 const mdp = dispatch => {
     return {
         login: (formUser) => dispatch(login(formUser)),
-        clearErrors: () => dispatch(receiveClearFormErrors())
+        clearErrors: () => dispatch(receiveClearFormErrors()),
+        demoLogin: () => dispatch(demoLogin()),
     };
 };
 

@@ -1,7 +1,7 @@
  class Api::SessionsController < ApplicationController
  
   def create
-      
+
     # ERRORS
    
     errors = []
@@ -21,6 +21,7 @@
     # REGULAR
       @user = User.find_by_credentials(
         # keyinginto info to return an email or username
+   
         params[:user][:info],
         params[:user][:password]
       )

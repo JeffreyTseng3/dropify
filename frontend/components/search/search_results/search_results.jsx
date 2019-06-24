@@ -23,22 +23,25 @@ class SearchResults extends React.Component {
         let playlist_display = playlists ? playlists.map(playlist => {
             return <PlaylistsCollectionItem key={playlist.id} playlist={playlist} />
         }) : null;
-
+    
+        let artistText = artists !== null ? "Artists" : null;
+        let albumText = albums !== null ? 'Albums' : null;
+        let playlistText = playlists !== null ? 'Playlists' : null;
         return (<> 
             <div className="search-all-results">
 
                 <div className='search-result'>
-                    <div className='search-result-text'>Artists</div>
+                    <div className='search-result-text'>{artistText}</div>
                     <div className='search-artists-icons'>{artist_display}</div>
                 </div>
 
                 <div className='search-result'>
-                    <div className='search-result-text'>Albums</div>
+                    <div className='search-result-text'>{albumText}</div>
                     <div className='search-albums-icons'>{album_display}</div> 
                 </div>
 
                 <div className='search-result'>
-                    <div className='search-result-text'>Playlists</div>
+                    <div className='search-result-text'>{playlistText}</div>
                     <div className='search-playlists-icons'>{playlist_display}</div>
                 </div>
 

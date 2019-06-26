@@ -7,10 +7,10 @@ import PlaylistSongItemContainer from "../playlist_song_item/playlist_song_item_
 class PlaylistsExplore extends React.Component {
     constructor(props) {
         super(props);
-        
+        this.sortSongs = this.sortSongs.bind(this);
     }
 
-  
+    
  
     componentDidMount() {
         let { playlistId } =  this.props.match.params;
@@ -20,7 +20,26 @@ class PlaylistsExplore extends React.Component {
         
     }
 
-    
+    sortSongs(songIds, mySongs) {
+        if (songIds.length === mySongs.length) {
+            let sorted = [];
+            for (let i = 0; i < songIds.length; i++) {
+                let sortedId = songIds[i];
+                for (let j = 0; j < mySongs.length; j++) {
+                    let songobj = mySongs[j];
+                    let unsortedId = songobj.id;
+                    if (unsortedId === sortedId) {
+                        sorted.push(songobj);
+                    }
+                }
+                // let songIdx = mySongs.indexOf(id);
+                // let song = mySongs[songIdx];
+                // sorted.push(song);
+            }
+            // debugger
+            return sorted;
+        }
+    }
 
     render() {
         let { playlistId } = this.props.match.params;
@@ -29,10 +48,13 @@ class PlaylistsExplore extends React.Component {
         let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
         let title = myPlaylist ? myPlaylist.title : null;
 
-        // let mySongs = songs ? songs.filter(song => song.playlist_ids.includes(Number(playlistId))) : null;
-        let mySongs = songs ? songs.filter(song => myPlaylist.song_ids.includes(Number(song.id))) : null;
+        let mySongs = songs ? songs.filter(song => song.playlist_ids.includes(Number(playlistId))) : null;
+        // let mySongs = songs ? songs.filter(song => myPlaylist.song_ids.includes(Number(song.id))) : null;
         // debugger
-        let songsDisplay = mySongs ? mySongs.map(song => {
+
+        let sortedSongs = myPlaylist && mySongs ? this.sortSongs(myPlaylist.song_ids, mySongs) : null;
+        
+        let songsDisplay = sortedSongs ? sortedSongs.map(song => {
             return <PlaylistSongItemContainer key={song.id} song={song} />
         }) : null;
 

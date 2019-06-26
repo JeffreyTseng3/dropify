@@ -17,6 +17,7 @@ class MusicPlayerConsole extends React.Component {
         this.updatePlayPauseBtn = this.updatePlayPauseBtn.bind(this);
         this.nextSong = this.nextSong.bind(this);
         this.prevSong = this.prevSong.bind(this);
+        this.forcePrevSong = this.forcePrevSong.bind(this);
     }
 
     secondsToMins(sec) {
@@ -117,10 +118,11 @@ class MusicPlayerConsole extends React.Component {
         }
     }
 
-    prevSong() {
-        let {fetchCurrentSong, artists, current_song, musicPlayType, albums, playlists } = this.props;
+
+    forcePrevSong() {
+        let { fetchCurrentSong, artists, current_song, musicPlayType, albums, playlists } = this.props;
         let type = Object.keys(musicPlayType)[0];
-        let typeId = Object.values(musicPlayType)[0]; 
+        let typeId = Object.values(musicPlayType)[0];
 
         if (type === 'artist') {
             let artist = artists ? artists.filter(artist => artist.id == typeId)[0] : null;
@@ -132,8 +134,8 @@ class MusicPlayerConsole extends React.Component {
             }
         } else if (type === 'album') {
             let album = albums ? albums.filter(album => album.id == typeId)[0] : null;
-            let albumQueue = album ? album.song_ids : null; 
-            let currentSongIndex = current_song ? albumQueue.indexOf(current_song.id) : null; 
+            let albumQueue = album ? album.song_ids : null;
+            let currentSongIndex = current_song ? albumQueue.indexOf(current_song.id) : null;
             if (currentSongIndex > 0) {
                 let prevSongId = albumQueue[currentSongIndex - 1];
                 fetchCurrentSong(prevSongId);
@@ -147,6 +149,31 @@ class MusicPlayerConsole extends React.Component {
                 fetchCurrentSong(prevSongId);
             }
         }
+    }
+    
+    prevSong(command) {
+
+
+        let audio_ref = this.myAudioRef.current;
+
+
+        if (command === 'forcePrev') {
+            this.forcePrevSong();
+        }
+
+
+
+
+
+        if (audio_ref.currentTime < 3) {
+            audio_ref.currentTime = 0;
+            return;
+        }
+        if (audio_ref.currentTime > 2){ 
+            this.forcePrevSong();
+         
+        }
+
     }
 
 
@@ -180,6 +207,7 @@ class MusicPlayerConsole extends React.Component {
         } else if (type === 'playlist') {
             let playlist = playlists ? playlists.filter(playlist => playlist.id == typeId)[0] : null;
             let playlistQueue = playlist ? playlist.song_ids : null;
+            // debugger
             let currentSongIndex = current_song ? playlistQueue.indexOf(current_song.id) : null;
             if (currentSongIndex > -1) {
                 let nextSongId = playlistQueue[currentSongIndex + 1];
@@ -217,6 +245,7 @@ class MusicPlayerConsole extends React.Component {
                             
                             <button 
                                 className='music-prev-button'
+                                onDoubleClick={() => this.prevSong('forcePrev')}
                                 onClick={() => this.prevSong()}>
                                 <i className="fas fa-step-backward"></i>
                             </button>

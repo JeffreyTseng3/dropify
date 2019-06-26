@@ -10,10 +10,7 @@ class PlaylistsExplore extends React.Component {
         
     }
 
-    componentDidUpdate(prevProps) {
-
-    }
-
+  
  
     componentDidMount() {
         let { playlistId } =  this.props.match.params;

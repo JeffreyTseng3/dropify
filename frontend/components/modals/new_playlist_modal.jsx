@@ -29,7 +29,8 @@ class NewPlaylistModal extends React.Component {
         }
         
         const new_playlist = Object.assign({}, this.state);
-        createPlaylist(new_playlist, this.props.history)
+        createPlaylist(new_playlist)
+        // createPlaylist(new_playlist, this.props.history)
         // .then(playlist => { 
             // this.props.history.push(`/main/playlist/${showSinglePlaylist.id}`)}
         // });

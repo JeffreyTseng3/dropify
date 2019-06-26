@@ -15,7 +15,7 @@ class CollectionBar extends React.Component {
                         <Link className="collection-bar-playlists" to="/main/collection/playlists">
                             <span className="collection-bar-item">PLAYLISTS</span> 
                         </Link>
-                        <Link className="collection-bar-artist" to="/main/collection/made">
+                        <Link className="collection-bar-artist" to="/main/collection/artists">
                             <span className="collection-bar-item">ARTISTS</span> 
                         </Link>
                         <Link className="collection-bar-songs" to="/main/collection/songs">

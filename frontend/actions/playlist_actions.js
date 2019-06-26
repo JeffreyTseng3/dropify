@@ -19,12 +19,12 @@ export const receivePlaylists = playlists => {
 };
 
 
-export const createPlaylist = (playlist, history) => dispatch => {
+export const createPlaylist = (playlist) => dispatch => {
 
     return PlaylistAPIUtil.createPlaylist(playlist)
         .then(payload => {
     
-            history.push(`/main/playlist/${payload.playlist.id}`);
+            // history.push(`/main/playlist/${payload.playlist.id}`);
             dispatch(receivePlaylist(payload));
         });
 };

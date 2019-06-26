@@ -74,7 +74,7 @@ export const logout = () => dispatch => {
 
 export const demoLogin = () => dispatch => {
  
-    let formUser = { info: "frey_jay", password: "123123"};
+    let formUser = { info: "jeffrey.tseng3", password: "123123"};
     return SessionAPIUtil.login(formUser)
         .then(
             user => {

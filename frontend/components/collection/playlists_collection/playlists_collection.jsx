@@ -14,6 +14,16 @@ class PlaylistsCollection extends React.Component {
         }
     }
 
+    componentDidUpdate(prevProps) {
+        // debugger
+        if (prevProps.playlists.length + 1 === this.props.playlists.length) {
+            // debugger
+            let newId = this.props.playlists[this.props.playlists.length - 1].id;
+            this.props.history.push(`/main/playlist/${newId}`);
+        }
+    }
+
+
     componentDidMount() {
         let { fetchPlaylists } = this.props;
         fetchPlaylists();

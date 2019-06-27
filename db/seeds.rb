@@ -67,6 +67,11 @@ artist_file8 = open('https://dropify-seeds.s3.amazonaws.com/kehlani.jpg')
 artist8.artist_img.attach(io: artist_file8, filename: 'kehlani.jpg')
 artist8.save!
 
+artist9 = genre_pop.artists.create(name: "LANY", about: 'LANY')
+artist_file9 = open('https://dropify-seeds.s3.amazonaws.com/LANY.jpg')
+artist9.artist_img.attach(io: artist_file9, filename: 'lany.jpg')
+artist9.save!
+
 
 
 album1 = artist1.albums.create(title: '24K Magic')
@@ -110,6 +115,11 @@ album_file8 = open('https://dropify-seeds.s3.amazonaws.com/crzy.jpg')
 album8.album_img.attach(io: album_file8, filename: 'crzy_kehlani.jpg')
 album8.save! 
 
+album9 = artist9.albums.create(title: 'LANY')
+album_file9 = open('https://dropify-seeds.s3.amazonaws.com/LNAYALBUM.jpg')
+album9.album_img.attach(io: album_file9, filename: 'lany.jpg')
+album9.save! 
+
 
 
 
@@ -143,7 +153,7 @@ song7.audio_track.attach(io: song_file7, filename: 'yo_chris_brown.mp3')
 
 song8  = album5.songs.create(song_title: "God's Plan", song_length: 199)
 song_file8 = open("https://dropify-seeds.s3.amazonaws.com/Drake+-+God's+Plan+(Dirty).mp3")
-song8.audio_track.attach(io: song_file8, filename: 'yo_chris_brown.mp3')
+song8.audio_track.attach(io: song_file8, filename: 'godsplan.mp3')
 
 song9  = album6.songs.create(song_title: "Candy Paint", song_length: 229)
 song_file9 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Candy+Paint+(Dirty).mp3')
@@ -154,11 +164,57 @@ song_file10 = open('https://dropify-seeds.s3.amazonaws.com/Taylor+Swift+ft+Brend
 song10.audio_track.attach(io: song_file10, filename: 'me.mp3')
 
 song11  = album8.songs.create(song_title: "CRZY", song_length: 191)
-song_file10 = open('https://dropify-seeds.s3.amazonaws.com/Kehlani+-+CRZY+(Dirty).mp3')
-song11.audio_track.attach(io: song_file10, filename: 'crzy.mp3')
+song_file11 = open('https://dropify-seeds.s3.amazonaws.com/Kehlani+-+CRZY+(Dirty).mp3')
+song11.audio_track.attach(io: song_file11, filename: 'crzy.mp3')
 
 
+song12  = album5.songs.create(song_title: "Nonstop", song_length: 238)
+song_file12 = open("https://dropify-seeds.s3.amazonaws.com/Drake+-+Nonstop+(Dirty).mp3")
+song12.audio_track.attach(io: song_file12, filename: 'nonstop.mp3')
 
+song13  = album5.songs.create(song_title: "I'm Upset", song_length: 214)
+song_file13 = open("https://dropify-seeds.s3.amazonaws.com/Drake+-+I'm+Upset+(Dirty).mp3")
+song13.audio_track.attach(io: song_file13, filename: 'imupset.mp3')
+
+song14  = album6.songs.create(song_title: "Better Now", song_length: 231)
+song_file14 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Better+Now+(Dirty).mp3')
+song14.audio_track.attach(io: song_file14, filename: 'betternow.mp3')
+
+song15  = album6.songs.create(song_title: "Over Now", song_length: 247)
+song_file15 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Over+Now+(Dirty).mp3')
+song15.audio_track.attach(io: song_file15, filename: 'overnow.mp3')
+
+song16  = album6.songs.create(song_title: "Paranoid", song_length: 221)
+song_file16 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Paranoid+(Dirty).mp3')
+song16.audio_track.attach(io: song_file16, filename: 'paranoid.mp3')
+
+song17  = album6.songs.create(song_title: "Rich & Sad", song_length: 206)
+song_file17 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Rich+%26+Sad+(Dirty).mp3')
+song17.audio_track.attach(io: song_file17, filename: 'rich&sad.mp3')
+
+song19  = album6.songs.create(song_title: "Stay", song_length: 228)
+song_file19 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Sugar+Wraith+(Dirty).mp3')
+song19.audio_track.attach(io: song_file19, filename: 'stay.mp3')
+
+song20  = album6.songs.create(song_title: "Zack & Codeine", song_length: 206)
+song_file20 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+-+Zack+%26+Codeine+(Dirty).mp3')
+song20.audio_track.attach(io: song_file20, filename: 'zackcodeine.mp3')
+
+song21  = album6.songs.create(song_title: "Psycho", song_length: 220)
+song_file21 = open('https://dropify-seeds.s3.amazonaws.com/Post+Malone+ft+Ty+Dolla+Sign+-+Psycho+(Dirty).mp3')
+song21.audio_track.attach(io: song_file21, filename: 'psycho.mp3')
+
+song22  = album9.songs.create(song_title: "Good Girls", song_length: 249)
+song_file22 = open('https://dropify-seeds.s3.amazonaws.com/LANY+-+Good+Girls+(Clean).mp3')
+song22.audio_track.attach(io: song_file22, filename: 'goodgirls.mp3')
+
+song23  = album9.songs.create(song_title: "Hurts", song_length: 216)
+song_file23 = open('https://dropify-seeds.s3.amazonaws.com/LANY+-+Hurts+(Clean).mp3')
+song23.audio_track.attach(io: song_file23, filename: 'hurts.mp3')
+
+song24  = album9.songs.create(song_title: "ILYSB", song_length: 211)
+song_file24 = open('https://dropify-seeds.s3.amazonaws.com/LANY+-+ILYSB+(Clean).mp3')
+song24.audio_track.attach(io: song_file24, filename: 'ILYSB.mp3')
 
 
 

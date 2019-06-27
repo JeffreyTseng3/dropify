@@ -20,10 +20,10 @@ class BrowseArea extends React.Component {
     render() {
         const { artists, albums } = this.props;
 
-        let artist_display = artists.slice(0,9).map(artist => {
+        let artist_display = artists.slice(0,10).map(artist => {
             return <ArtistIconContainer key={artist.id} artist={artist}/>
         })
-        let album_display = albums.slice(0,9).map(album => {
+        let album_display = albums.slice(0,10).map(album => {
             return <AlbumIconContainer key={album.id} album={album}/>
         })
     

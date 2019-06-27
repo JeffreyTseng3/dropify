@@ -1,7 +1,7 @@
 class Api::AlbumsController < ApplicationController
 
     def index
-        @albums = Album.all.sample(8); 
+        @albums = Album.all.sample(9); 
         render 'api/albums/index'
     end 
 

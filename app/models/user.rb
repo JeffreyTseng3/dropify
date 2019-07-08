@@ -25,6 +25,10 @@ class User < ApplicationRecord
    
     # ASSOCIATIONS
 
+    # polymorphic
+    has_many :artists, as :followable
+    # end polymorphic
+
     has_many :playlists,
         primary_key: :id, 
         foreign_key: :author_id,

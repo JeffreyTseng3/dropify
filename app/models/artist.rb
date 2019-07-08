@@ -11,7 +11,7 @@
 #
 
 class Artist < ApplicationRecord 
-    validates :name, :about, presence: true 
+    validates :name, :about, presence: true
 
     belongs_to :genre,
         primary_key: :id, 

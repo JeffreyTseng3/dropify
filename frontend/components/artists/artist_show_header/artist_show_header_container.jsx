@@ -13,6 +13,7 @@ const msp = state => {
 const mdp = dispatch => {
     return ({
         // fetchArtist: id => dispatch(fetchArtist(id)),
+        saveToCollection: (artistId, type) => console.log(artistId, type),
     })
 }
 

@@ -16,6 +16,7 @@ class ArtistShowHeader extends React.Component {
         let about = artist ? artist.about : null;
      
         let { artistId } = this.props.match.params;
+        let type = 'Artist';
         return (
             <>
                 <div className="artist-show-header">
@@ -26,7 +27,14 @@ class ArtistShowHeader extends React.Component {
                     
                     <div className="artist-play-library">
                         <button className="artist-show-play">PLAY</button>
-                        <button className='artist-save-lib'>SAVE TO LIBRARY</button>
+                        
+                        <button 
+                            className='artist-save-lib'
+                            onClick={() => this.props.saveToCollection(artistId, type)}>
+                            
+                            SAVE TO LIBRARY
+                        </button>
+                    
                     </div>
 
                     <div className="artist-header-options"> 

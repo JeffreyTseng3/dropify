@@ -13,6 +13,11 @@
 class Artist < ApplicationRecord 
     validates :name, :about, presence: true
 
+
+    # polymorphic
+    has_many :users, as: :followable
+    # end polymorphic
+
     belongs_to :genre,
         primary_key: :id, 
         foreign_key: :genre_id,

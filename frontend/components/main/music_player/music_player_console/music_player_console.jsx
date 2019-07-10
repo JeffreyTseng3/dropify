@@ -48,6 +48,7 @@ class MusicPlayerConsole extends React.Component {
             audio_ref.currentTime = Number(e.target.value);
         }
     }
+    
 
     togglePlay() {
         let audio_ref = this.myAudioRef.current;

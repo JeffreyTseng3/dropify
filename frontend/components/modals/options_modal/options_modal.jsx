@@ -7,6 +7,7 @@ class OptionsModal extends React.Component {
         this.state = { x: '200px', y: '350px' };
         this.handleDelete = this.handleDelete.bind(this);
         this.handleQueue = this.handleQueue.bind(this);
+        this.handleSave = this.handleSave.bind(this);
     }
 
     componentDidUpdate() {
@@ -31,6 +32,14 @@ class OptionsModal extends React.Component {
         closeModal();
 
     }
+
+    handleSave(songId) {
+        let { closeModal, currentUserId, saveToCollection } = this.props;
+        let type = 'Song';
+        saveToCollection(currentUserId, songId, type);
+
+        closeModal();
+    }
     
     render() {
 
@@ -49,7 +58,7 @@ class OptionsModal extends React.Component {
         let buttons = (
             <>
                 <button 
-                    onClick={() => closeModal()}
+                    onClick={() => this.handleSave(songId)}
                     className="options-lib">
                     Save to Your Library
                 </button>

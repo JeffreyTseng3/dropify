@@ -15,7 +15,7 @@ const mdp = dispatch => {
     return ({
         // fetchArtist: id => dispatch(fetchArtist(id)),
         // saveToCollection: (currentUserId, artistId, type) => console.log(currentUserId, artistId, type),
-        saveToCollection: (currentUserId, artistId, type) => dispatch(addToCollection(currentUserId, artistId, type)),
+        addToCollection: (currentUserId, artistId, type) => dispatch(addToCollection(currentUserId, artistId, type)),
     })
 }
 

@@ -30,7 +30,7 @@ class ArtistShowHeader extends React.Component {
                         
                         <button 
                             className='artist-save-lib'
-                            onClick={() => this.props.saveToCollection(currentUserId, artistId, type)}>
+                            onClick={() => this.props.addToCollection(currentUserId, artistId, type)}>
                             
                             SAVE TO LIBRARY
                         </button>

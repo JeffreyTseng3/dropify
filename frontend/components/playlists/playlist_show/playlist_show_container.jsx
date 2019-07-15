@@ -4,6 +4,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router"
 import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 import { fetchUser } from '../../../actions/user_actions';
+import { addToCollection } from "../../../actions/collection_actions";
+
 // import { log } from "util";
 const msp = (state, ownProps) => {
     let playlists = Object.values(state.entities.playlists);
@@ -23,6 +25,7 @@ const mdp = dispatch => {
     return ({
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
         fetchUser: id => dispatch(fetchUser(id)),
+        addToCollection: (currentUserId, playlistId, type) => dispatch(addToCollection(currentUserId, playlistId, type))
         
         // fetchPlaylists: () => dispatch(fetchPlaylists())
     });

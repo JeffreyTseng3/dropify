@@ -43,7 +43,7 @@ class PlaylistsExplore extends React.Component {
 
     render() {
         let { playlistId } = this.props.match.params;
-        let { playlists, users, songs, currentUserId } = this.props;
+        let { playlists, users, songs, currentUserId, addToCollection } = this.props;
         
         let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
         let title = myPlaylist ? myPlaylist.title : null;
@@ -57,7 +57,7 @@ class PlaylistsExplore extends React.Component {
         let songsDisplay = sortedSongs ? sortedSongs.map(song => {
             return <PlaylistSongItemContainer key={song.id} song={song} />
         }) : null;
-
+        let type = 'Playlist';
         let myUser = users ? users.filter(user => user.id === currentUserId)[0] : null; 
         let author = myUser ? myUser.username : null;
         return (
@@ -72,8 +72,24 @@ class PlaylistsExplore extends React.Component {
                     <div className="playlist-show-info">
                         <div className="playlist-show-title">{title} </div>
                         <div className="playlist-show-author"> By {author}</div>
+                        
+                        <div className="playlist-buttons">
+                            <button
+                                className="artist-show-play">
+                                PLAY
+                            </button>
+                            <button
+                                className='artist-save-lib'
+                            onClick={() => addToCollection(currentUserId, playlistId, type)}
+                            >
+
+                                SAVE TO LIBRARY
+                        </button>
+
+                        </div>
+                       
                     </div>
-                    
+                  
 
                 </div>
                     <div className='album-show-right'>{songsDisplay}</div>

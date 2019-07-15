@@ -13,7 +13,7 @@ class AlbumShowModule extends React.Component {
     }
 
     render() {
-        let { artists, songs, albums } = this.props;
+        let { artists, songs, albums, currentUserId, addToCollection } = this.props;
         let { albumId } = this.props.match.params;
 
         let artist = artists ? artists.filter(artist => artist.album_ids.includes(Number(albumId)))[0] : null;
@@ -23,7 +23,7 @@ class AlbumShowModule extends React.Component {
         let album = albums ? albums.filter(album => album.id == albumId)[0] : null;
         let albumTitle = album ? album.title : null;
         let albumUrl = album ? album.albumUrl : null; 
-        
+        let type = 'Album';
         let songsDisplay = mySongs ? mySongs.map(song => {
             return <SongsAlbumItem key={song.id} song={song}/>
         }) : null;
@@ -35,6 +35,17 @@ class AlbumShowModule extends React.Component {
                     <img src={albumUrl} className="album-show-img" />
                     <div className="album-show-title">{albumTitle}</div>
                     <div className="album-show-artist">{artistName}</div>
+                    <button
+                        className="artist-show-play">
+                        PLAY
+                    </button>
+                        <button
+                            className='artist-save-lib'
+                            onClick={() => addToCollection(currentUserId, albumId, type)}
+                            >
+
+                            SAVE TO LIBRARY
+                        </button>
                 </div>
                 <div className='album-show-right'>{songsDisplay}</div>
             </div>

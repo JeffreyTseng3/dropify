@@ -7,4 +7,5 @@ export const addToCollection = (currentUserId, artistId, type) => dispatch => {
         followable_type: type
     }
     console.log(data);
+    return CollectionAPIUtil.createCollectionItem(data);
 }

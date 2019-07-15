@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import AlbumShowModule from './album_show_module';
 import { fetchAlbum } from '../../../actions/album_actions';
 import { fetchArtist } from '../../../actions/artist_actions'; 
+import { addToCollection } from "../../../actions/collection_actions";
 
 const msp = state => {
     let artists = Object.values(state.entities.artists);
@@ -12,6 +13,7 @@ const msp = state => {
     return ({
         artists: artists,
         songs: songs,
+        currentUserId: state.session.currentUserId,
         albums: albums,
     })
 }
@@ -20,6 +22,7 @@ const mdp = dispatch => {
     return ({
         fetchAlbum: id => dispatch(fetchAlbum(id)),
         fetchArtist: id => dispatch(fetchArtist(id)),
+        addToCollection: (currentUserId, albumId, type)=> dispatch(addToCollection(currentUserId, albumId, type))
     })
 }
 

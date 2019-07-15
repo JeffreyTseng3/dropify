@@ -5,3 +5,10 @@ export const createCollectionItem = data => {
         data: { data },
     })
 }
+
+export const fetchCollection = () => {
+    return $.ajax({
+        method: "GET",
+        url: "/api/follows",
+    })
+}

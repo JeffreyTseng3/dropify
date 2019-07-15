@@ -7,6 +7,7 @@ import currentSongReducer from "./current_song_reducer";
 import queueReducer from "./queue_reducer";
 import musicPlayTypeReducer from './music_play_type_reducer';
 import searchReducer from './search_reducer';
+import CollectionsReducer from "./collections_reducer";
 
 
 const rootReducer = combineReducers({
@@ -18,6 +19,7 @@ const rootReducer = combineReducers({
     queue: queueReducer,
     musicPlayType: musicPlayTypeReducer,
     search: searchReducer,
+    collection: CollectionsReducer,
 });
 
 

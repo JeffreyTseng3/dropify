@@ -14,7 +14,8 @@ class Api::FollowsController < ApplicationController
     end 
 
     def index 
-        # debugger
+        @follows = Follow.all
+        render 'api/follows/index'
         #search imitate
     end
 

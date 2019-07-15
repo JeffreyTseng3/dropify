@@ -10,11 +10,11 @@ class ArtistShowHeader extends React.Component {
   
 
     render() {
-        let {artist} = this.props;
+        let { artist, currentUserId } = this.props;
         let name = artist ? artist.name : null;
         let img = artist ? artist.photoUrl : null;
         let about = artist ? artist.about : null;
-     
+        
         let { artistId } = this.props.match.params;
         let type = 'Artist';
         return (
@@ -30,7 +30,7 @@ class ArtistShowHeader extends React.Component {
                         
                         <button 
                             className='artist-save-lib'
-                            onClick={() => this.props.saveToCollection(artistId, type)}>
+                            onClick={() => this.props.saveToCollection(currentUserId, artistId, type)}>
                             
                             SAVE TO LIBRARY
                         </button>

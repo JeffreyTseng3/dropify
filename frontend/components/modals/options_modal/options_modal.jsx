@@ -8,6 +8,8 @@ class OptionsModal extends React.Component {
         this.handleDelete = this.handleDelete.bind(this);
         this.handleQueue = this.handleQueue.bind(this);
         this.handleSave = this.handleSave.bind(this);
+        this.handleRemove = this.handleRemove.bind(this);
+        this.ifSaved = this.ifSaved.bind(this);
     }
 
     componentDidUpdate() {
@@ -34,14 +36,49 @@ class OptionsModal extends React.Component {
     }
 
     handleSave(songId) {
-        let { closeModal, currentUserId, saveToCollection } = this.props;
+        let { closeModal, currentUserId, addToCollection, fetchCollection } = this.props;
         let type = 'Song';
-        saveToCollection(currentUserId, songId, type);
-
+        addToCollection(currentUserId, songId, type);
+        fetchCollection();
         closeModal();
     }
+
+
+    handleRemove(songId) {
+ 
+        let { currentUserId, fetchCollection, removeFromCollection, collection, closeModal } = this.props;
+        let type = 'Song';
+        let ans = collection.filter(item => item.followable_id == songId && item.followable_type == type && currentUserId === item.user_id);
+        let id = ans ? ans[0].id : null;
+
+        // console.log(ans, id);
+
+        removeFromCollection(id);
+        fetchCollection();
+        closeModal();
+
+    }
+
+    ifSaved(songId) {
+        let { collection, currentUserId } = this.props;
+        if (collection === undefined) {
+
+        } else {
+            console.log(collection);
+            
+            let type = "Song";
+            let ans = collection.filter(item => item.followable_id == songId && item.followable_type == type && currentUserId === item.user_id);
+            console.log(ans);
+            if (ans.length === 1) {
+                return true;
+            }
+        }
+    }
+
     
     render() {
+
+
 
         let { modal, closeModal, openModal } = this.props;
 
@@ -55,13 +92,38 @@ class OptionsModal extends React.Component {
         let addPlaylistModal = modal ? 'addSongToPlaylist,' + modal.split(',')[2] : null;
         let songId = modal ? Number(modal.split(',')[2]) : null;
 
+
+
+        let followBtn;
+
+        if (this.ifSaved(songId)) {
+            console.log('saved');
+
+            followBtn = (
+                <button
+                    className='options-lib'
+                    onClick={() => this.handleRemove(songId)}>
+                    Remove from Your Library
+                </button>)
+
+        } else {
+            followBtn = (
+                <button
+                    className='options-lib'
+                    onClick={() => this.handleSave(songId)}>
+                    Save to Your Library
+                </button>)
+        };
+
+
         let buttons = (
             <>
-                <button 
+                {/* <button 
                     onClick={() => this.handleSave(songId)}
                     className="options-lib">
                     Save to Your Library
-                </button>
+                </button> */}
+                {followBtn}
                 <button 
                     
                     onClick={() => this.handleQueue(songId)}
@@ -98,6 +160,11 @@ class OptionsModal extends React.Component {
             top: y,
             right: x,
         }
+
+
+
+
+
 
         return ( <> 
             <div className="options-modal-background" onClick={this.props.closeModal}>

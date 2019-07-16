@@ -7,13 +7,16 @@ import { deletePlaylistSong } from '../../../actions/playlist_song_actions';
 import { fetchPlaylist, fetchPlaylists } from '../../../actions/playlist_actions';
 import { fetchUser } from '../../../actions/user_actions';
 import { receiveSongQueue } from '../../../actions/queue_actions';
-import { addToCollection } from "../../../actions/collection_actions";
+import { addToCollection, removeFromCollection, fetchCollection } from "../../../actions/collection_actions";
 
 const msp = state => {
+    let collection = Object.values(state.collection);
 
     return {
         modal: state.ui.modal,
         currentUserId: state.session.currentUserId,
+        collection: collection,
+
     }
 
 }
@@ -25,7 +28,9 @@ const mdp = dispatch => {
         deletePlaylistSong: playlistSongRelation => dispatch(deletePlaylistSong(playlistSongRelation)),
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
         addToQueue: id => dispatch(receiveSongQueue(id)),
-        saveToCollection: (currentUserId, artistId, type) => dispatch(addToCollection(currentUserId, artistId, type)),
+        addToCollection: (currentUserId, songId, type) => dispatch(addToCollection(currentUserId, songId, type)),
+        fetchCollection: () => dispatch(fetchCollection()),
+        removeFromCollection: (currentUserId, songId, type) => dispatch(removeFromCollection(currentUserId, songId, type)),
 
     }
 }

@@ -9,8 +9,7 @@ class CollectionModule extends React.Component {
     }
 
     componentDidMount() {
-        let { fetchCollection } = this.props;
-        fetchCollection();
+       
     }
 
     render() {

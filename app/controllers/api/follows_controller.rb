@@ -9,6 +9,7 @@ class Api::FollowsController < ApplicationController
         else
             @follow = Follow.new(follow_params)
             @follow.save
+            render "api/follows/show"
         end 
 
     end 

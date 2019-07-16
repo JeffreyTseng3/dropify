@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ArtistShowHeader from "./artist_show_header";
 // import { fetchArtist } from '../../../actions/artist_actions';
 import { addToCollection } from "../../../actions/collection_actions";
+import { fetchCollection } from '../../../actions/collection_actions';
  
 const msp = state => {
     return ({
@@ -16,6 +17,7 @@ const mdp = dispatch => {
         // fetchArtist: id => dispatch(fetchArtist(id)),
         // saveToCollection: (currentUserId, artistId, type) => console.log(currentUserId, artistId, type),
         addToCollection: (currentUserId, artistId, type) => dispatch(addToCollection(currentUserId, artistId, type)),
+        fetchCollection: () => dispatch(fetchCollection()),
     })
 }
 

@@ -16,6 +16,11 @@ class ExploreModule extends React.Component {
         super(props);
     }
 
+    componentDidMount() {
+        let { fetchCollection } = this.props;
+        fetchCollection();
+    }
+
     render() {
 
         return (

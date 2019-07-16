@@ -1,6 +1,7 @@
 import React from "react";
 import ExploreModule from "./explore_module";
 import { connect } from "react-redux";
+import { fetchCollection } from '../../../actions/collection_actions';
 
 const msp = (state, ownProps) => {
     return ({
@@ -10,7 +11,7 @@ const msp = (state, ownProps) => {
 
 const mdp = dispatch => {
     return ({
-
+        fetchCollection: () => dispatch(fetchCollection()),
     });
 };
 

@@ -5,9 +5,17 @@ class ArtistShowHeader extends React.Component {
 
     constructor(props) {
         super(props);
+        this.handleAddToCollection = this.handleAddToCollection.bind(this);
     }
 
   
+    handleAddToCollection() {
+        let { artistId } = this.props.match.params;
+        let { currentUserId, fetchCollection, addToCollection } = this.props;
+        let type = 'Artist';
+        addToCollection(currentUserId, artistId, type);
+        fetchCollection();
+    }
 
     render() {
         let { artist, currentUserId } = this.props;
@@ -16,7 +24,7 @@ class ArtistShowHeader extends React.Component {
         let about = artist ? artist.about : null;
         
         let { artistId } = this.props.match.params;
-        let type = 'Artist';
+        
         return (
             <>
                 <div className="artist-show-header">
@@ -30,7 +38,7 @@ class ArtistShowHeader extends React.Component {
                         
                         <button 
                             className='artist-save-lib'
-                            onClick={() => this.props.addToCollection(currentUserId, artistId, type)}>
+                            onClick={() => this.handleAddToCollection()}>
                             
                             SAVE TO LIBRARY
                         </button>

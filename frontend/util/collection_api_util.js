@@ -12,3 +12,12 @@ export const fetchCollection = () => {
         url: "/api/follows",
     })
 }
+
+
+export const deleteCollectionItem = id => {
+    return $.ajax({
+        method: "DELETE",
+        url: `/api/follows/${id}`,
+        
+    })
+}

@@ -1,5 +1,5 @@
 import merge from 'lodash/merge';
-import { RECEIVE_COLLECTION, RECEIVE_COLLECTION_ITEM } from '../actions/collection_actions';
+import { RECEIVE_COLLECTION, RECEIVE_COLLECTION_ITEM, REMOVE_COLLECTION_ITEM } from '../actions/collection_actions';
 
 const CollectionsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -10,6 +10,11 @@ const CollectionsReducer = (state = {}, action) => {
         case RECEIVE_COLLECTION_ITEM: 
             let item = action.item;
             return merge({}, state, {[item.id]: item});
+        case REMOVE_COLLECTION_ITEM: 
+            let newState = merge({}, state);
+            delete newState[action.id];
+            return newState;
+            
         default:
             return state;
     }

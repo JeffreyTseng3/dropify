@@ -44,7 +44,7 @@ class AlbumShowModule extends React.Component {
                             onClick={() => addToCollection(currentUserId, albumId, type)}
                             >
 
-                            SAVE TO LIBRARY
+                            FOLLOW
                         </button>
                 </div>
                 <div className='album-show-right'>{songsDisplay}</div>

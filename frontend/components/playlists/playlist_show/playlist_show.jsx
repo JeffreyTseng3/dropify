@@ -83,7 +83,7 @@ class PlaylistsExplore extends React.Component {
                             onClick={() => addToCollection(currentUserId, playlistId, type)}
                             >
 
-                                SAVE TO LIBRARY
+                                FOLLOW
                         </button>
 
                         </div>

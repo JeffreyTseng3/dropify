@@ -21,7 +21,15 @@ class Api::FollowsController < ApplicationController
     end
 
     def destroy 
+       
+        id = params[:id]
+        item = Follow.find(id)
+        item.destroy!
 
+        @follows = Follow.all
+        render 'api/follows/index'
+
+        
     end 
 
     def follow_params 

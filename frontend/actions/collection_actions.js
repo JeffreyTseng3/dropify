@@ -39,6 +39,7 @@ export const addToCollection = (currentUserId, artistId, type) => dispatch => {
 }
 
 export const removeFromCollection = ( id ) => dispatch => {
+
     return CollectionAPIUtil.deleteCollectionItem(id)
         .then(() => { 
             dispatch(removeCollectionItem(id))

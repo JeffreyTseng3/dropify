@@ -4,6 +4,7 @@ import { RECEIVE_COLLECTION, RECEIVE_COLLECTION_ITEM, REMOVE_COLLECTION_ITEM } f
 const CollectionsReducer = (state = {}, action) => {
     Object.freeze(state);
     
+    
     switch (action.type) {
         case RECEIVE_COLLECTION:
             return merge({}, state, action.collection);
@@ -21,6 +22,3 @@ const CollectionsReducer = (state = {}, action) => {
 }
 
 export default CollectionsReducer;
-
-// artist = action.payload.artist;
-// return merge({}, state, { [artist.id]: artist })

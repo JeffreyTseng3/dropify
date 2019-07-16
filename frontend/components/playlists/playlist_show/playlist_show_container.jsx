@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { withRouter } from "react-router"
 import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 import { fetchUser } from '../../../actions/user_actions';
-import { addToCollection } from "../../../actions/collection_actions";
+
+import { addToCollection, removeFromCollection, fetchCollection } from "../../../actions/collection_actions";
 
 // import { log } from "util";
 const msp = (state, ownProps) => {
@@ -12,12 +13,15 @@ const msp = (state, ownProps) => {
     let currentUserId = state.session.currentUserId;
     let users = Object.values(state.entities.users);
     let songs = Object.values(state.entities.songs);
+    let collection = Object.values(state.collection);
 
     return ({
        playlists: playlists,
        currentUserId,
        users,
-       songs
+       songs,
+        collection: collection,
+
     });
 };
 
@@ -25,8 +29,9 @@ const mdp = dispatch => {
     return ({
         fetchPlaylist: id => dispatch(fetchPlaylist(id)),
         fetchUser: id => dispatch(fetchUser(id)),
-        addToCollection: (currentUserId, playlistId, type) => dispatch(addToCollection(currentUserId, playlistId, type))
-        
+        addToCollection: (currentUserId, playlistId, type) => dispatch(addToCollection(currentUserId, playlistId, type)),
+        fetchCollection: () => dispatch(fetchCollection()),
+        removeFromCollection: (currentUserId, playlistId, type) => dispatch(removeFromCollection(currentUserId, playlistId, type)),
         // fetchPlaylists: () => dispatch(fetchPlaylists())
     });
 };

@@ -44,8 +44,7 @@ class ArtistShowHeader extends React.Component {
             if (ans.length === 1) {
                 return true;
             }
-        }
-        
+        } 
     }
 
     render() {

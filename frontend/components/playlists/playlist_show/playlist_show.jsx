@@ -8,6 +8,9 @@ class PlaylistsExplore extends React.Component {
     constructor(props) {
         super(props);
         this.sortSongs = this.sortSongs.bind(this);
+        this.handleAddToCollection = this.handleAddToCollection.bind(this);
+        this.handleRemoveFromCollection = this.handleRemoveFromCollection.bind(this);
+        this.ifSaved = this.ifSaved.bind(this);
     }
 
     
@@ -41,6 +44,44 @@ class PlaylistsExplore extends React.Component {
         }
     }
 
+
+    handleAddToCollection() {
+        let { playlistId } = this.props.match.params;
+        let { currentUserId, fetchCollection, addToCollection } = this.props;
+        let type = 'Playlist';
+        addToCollection(currentUserId, playlistId, type);
+        fetchCollection();
+    }
+
+    handleRemoveFromCollection() {
+        let { playlistId } = this.props.match.params;
+        let { currentUserId, fetchCollection, removeFromCollection, collection } = this.props;
+        let type = 'Playlist';
+        let ans = collection.filter(item => item.followable_id == playlistId && item.followable_type == type && currentUserId === item.user_id);
+        let id = ans ? ans[0].id : null;
+
+        // console.log(ans, id);
+
+        removeFromCollection(id);
+        fetchCollection();
+    }
+
+    ifSaved() {
+        let { collection, currentUserId } = this.props;
+        if (collection === undefined) {
+
+        } else {
+            console.log(collection);
+            let { playlistId } = this.props.match.params;
+            let type = "Playlist";
+            let ans = collection.filter(item => item.followable_id == playlistId && item.followable_type == type && currentUserId === item.user_id);
+            console.log(ans);
+            if (ans.length === 1) {
+                return true;
+            }
+        }
+    }
+
     render() {
         let { playlistId } = this.props.match.params;
         let { playlists, users, songs, currentUserId, addToCollection } = this.props;
@@ -60,6 +101,30 @@ class PlaylistsExplore extends React.Component {
         let type = 'Playlist';
         let myUser = users ? users.filter(user => user.id === currentUserId)[0] : null; 
         let author = myUser ? myUser.username : null;
+
+
+        let followBtn;
+
+        if (this.ifSaved()) {
+            console.log('saved');
+
+            followBtn = (
+                <button
+                    className='artist-save-lib'
+                    onClick={() => this.handleRemoveFromCollection()}>
+                    UNFOLLOW
+                </button>)
+
+        } else {
+            followBtn = (
+                <button
+                    className='artist-save-lib'
+                    onClick={() => this.handleAddToCollection()}>
+                    FOLLOW
+                </button>)
+        };
+
+
         return (
             <div className="playlist-show-container">
                 <div className="playlist-show-info-module">
@@ -78,13 +143,15 @@ class PlaylistsExplore extends React.Component {
                                 className="artist-show-play">
                                 PLAY
                             </button>
-                            <button
+                            {/* <button
                                 className='artist-save-lib'
                             onClick={() => addToCollection(currentUserId, playlistId, type)}
                             >
 
                                 FOLLOW
-                        </button>
+                        </button> */}
+                            {followBtn}
+
 
                         </div>
                        

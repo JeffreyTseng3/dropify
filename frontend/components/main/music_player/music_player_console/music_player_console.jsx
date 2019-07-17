@@ -124,6 +124,8 @@ class MusicPlayerConsole extends React.Component {
         let type = Object.keys(musicPlayType)[0];
         let typeId = Object.values(musicPlayType)[0];
 
+
+
         if (type === 'artist') {
             let artist = artists ? artists.filter(artist => artist.id == typeId)[0] : null;
             let artistQueue = artist ? artist.song_ids : null;
@@ -146,6 +148,14 @@ class MusicPlayerConsole extends React.Component {
             let currentSongIndex = current_song ? playlistQueue.indexOf(current_song.id) : null;
             if (currentSongIndex > 0) {
                 let prevSongId = playlistQueue[currentSongIndex - 1];
+                fetchCurrentSong(prevSongId);
+            }
+        } else if (type === "songCollection") {
+            let songCollectionIds = Object.values(musicPlayType)[0];
+            console.log('songcollection', songCollectionIds);
+            let currentSongIndex = current_song ? songCollectionIds.indexOf(current_song.id) : null;
+            if (currentSongIndex > 0) {
+                let prevSongId = songCollectionIds[currentSongIndex - 1];
                 fetchCurrentSong(prevSongId);
             }
         }
@@ -213,8 +223,15 @@ class MusicPlayerConsole extends React.Component {
                 let nextSongId = playlistQueue[currentSongIndex + 1];
                 fetchCurrentSong(nextSongId);
             }
+        } else if (type === "songCollection") {
+            let songCollectionIds = Object.values(musicPlayType)[0];
+            console.log('songcollection', songCollectionIds);
+            let currentSongIndex = current_song ? songCollectionIds.indexOf(current_song.id) : null;
+            if (currentSongIndex > -1) {
+                let nextSongId = songCollectionIds[currentSongIndex + 1];
+                fetchCurrentSong(nextSongId);
+            }
         }
-
     }
 
     render() {

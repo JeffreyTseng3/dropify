@@ -21,6 +21,10 @@ class ArtistsCollection extends React.Component {
         return ans;
     }
 
+    componentDidMount() {
+        this.props.fetchArtists();
+    }
+    
     render() {
 
        let myIds = this.returnMyIds();

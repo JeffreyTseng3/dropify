@@ -30,3 +30,11 @@ export const fetchCurrentSong = id => dispatch => {
         .then(song => {
             dispatch(receiveCurrentSong(song))})
 }
+
+export const fetchSongs = () => dispatch => {
+  
+    return SongAPIUtil.fetchSongs()
+        .then(songs => {
+            dispatch(receiveSongs(songs))
+        })
+}

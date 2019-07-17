@@ -7,6 +7,9 @@ const songsReducer = (state = {}, action) => {
     Object.freeze(state);
     let songs;
     switch(action.type) {
+        case RECEIVE_SONGS:
+            songs = action.songs;
+            return merge({}. state, songs);
         case RECEIVE_ARTIST:
             songs = action.payload.songs; 
             return merge({}, state, songs)
@@ -14,7 +17,6 @@ const songsReducer = (state = {}, action) => {
             songs = action.payload.songs;
             return merge({}, state, songs)
         case RECEIVE_PLAYLIST:
-
             let songs = action.payload.songs;
             return merge({}, state, songs);
         default: 

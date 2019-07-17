@@ -11,7 +11,9 @@ class SongsCollection extends React.Component {
 
     }
 
-
+    componentDidMount() {
+        this.props.fetchSongs();
+    }
 
     returnMyIds() {
         let { collection, currentUserId } = this.props;

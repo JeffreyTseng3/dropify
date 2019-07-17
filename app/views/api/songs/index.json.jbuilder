@@ -1,3 +1,5 @@
-json.array! @songs, :id, :song_title, :song_length
-
-# tentative not debugged
+@songs.each do |song|
+    json.set! song.id do 
+        json.partial! 'api/songs/song', song: song
+    end
+end

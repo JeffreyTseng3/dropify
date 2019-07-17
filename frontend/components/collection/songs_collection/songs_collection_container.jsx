@@ -2,6 +2,7 @@
 import { connect } from "react-redux";
 import { withRouter } from 'react-router';
 import SongsCollection from './songs_collection';
+import { fetchSongs } from "../../../actions/song_actions";
 
 const msp = (state) => {
     return ({
@@ -12,7 +13,7 @@ const msp = (state) => {
 
 const mdp = dispatch => {
     return ({
-
+        fetchSongs: () => dispatch(fetchSongs()),
     });
 };
 

@@ -8,7 +8,7 @@ class NewPlaylistModal extends React.Component {
         super(props);
         this.state = {
             title: "",
-            author_id: this.props.currentUserId,
+            // author_id: this.props.currentUserId,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,8 +27,8 @@ class NewPlaylistModal extends React.Component {
         if (this.state.title === "") {
             return
         }
-        
-        const new_playlist = Object.assign({}, this.state);
+        // debugger
+        const new_playlist = Object.assign({}, this.state, {author_id: this.props.currentUserId});
         createPlaylist(new_playlist)
         // createPlaylist(new_playlist, this.props.history)
         // .then(playlist => { 

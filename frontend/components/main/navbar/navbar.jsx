@@ -10,8 +10,8 @@ class NavBar extends React.Component {
 
 
     componentDidMount() {
-        let { currentUserId, fetchUser } = this.props;
-
+        let { currentUserId, fetchUser, fetchUsers } = this.props;
+        fetchUsers();
         // fetchUser(currentUserId)
     }
 
@@ -20,8 +20,8 @@ class NavBar extends React.Component {
     }
 
     render() {
-        let { users } = this.props;
-        let user = users ? users[0] : null;
+        let { users, currentUserId } = this.props;
+        let user = users ? users.filter(user => user.id === currentUserId)[0] : null;
         let username = user ? user.username : null;
 
         let pathname = this.props.history.location.pathname;

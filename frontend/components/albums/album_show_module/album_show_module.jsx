@@ -7,6 +7,8 @@ class AlbumShowModule extends React.Component {
         this.handleAddToCollection = this.handleAddToCollection.bind(this);
         this.handleRemoveFromCollection = this.handleRemoveFromCollection.bind(this);
         this.ifSaved = this.ifSaved.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
+
     }
 
     componentDidMount() {
@@ -32,6 +34,21 @@ class AlbumShowModule extends React.Component {
 
         removeFromCollection(id);
         fetchCollection();
+    }
+
+
+
+    handlePlay() {
+        let { albumId } = this.props.match.params;
+        let { albums, fetchCurrentSong, setMusicPlayType } = this.props;
+        let album = albums ? albums.filter(album => album.id == albumId)[0]: null;
+        
+        let songIds = album ? album.song_ids : null;
+        let songId = songIds ? songIds[0] : null;
+        fetchCurrentSong(songId);
+        
+        let musicPlayType = { album: albumId }
+        setMusicPlayType(musicPlayType);
     }
 
     ifSaved() {
@@ -97,6 +114,7 @@ class AlbumShowModule extends React.Component {
                     <div className="album-show-title">{albumTitle}</div>
                     <div className="album-show-artist">{artistName}</div>
                     <button
+                        onClick={() => this.handlePlay()}
                         className="artist-show-play">
                         PLAY
                     </button>

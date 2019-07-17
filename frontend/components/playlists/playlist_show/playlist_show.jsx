@@ -11,6 +11,7 @@ class PlaylistsExplore extends React.Component {
         this.handleAddToCollection = this.handleAddToCollection.bind(this);
         this.handleRemoveFromCollection = this.handleRemoveFromCollection.bind(this);
         this.ifSaved = this.ifSaved.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
     }
 
     
@@ -82,6 +83,19 @@ class PlaylistsExplore extends React.Component {
         }
     }
 
+    handlePlay() {
+        let { playlistId } = this.props.match.params;
+        let { playlists, fetchCurrentSong, setMusicPlayType } = this.props;
+        let playlist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
+
+        let songIds = playlist ? playlist.song_ids : null;
+        let songId = songIds ? songIds[0] : null;
+        fetchCurrentSong(songId);
+
+        let musicPlayType = { playlist: playlistId }
+        setMusicPlayType(musicPlayType);
+    }
+
     render() {
         let { playlistId } = this.props.match.params;
         let { playlists, users, songs, currentUserId, addToCollection } = this.props;
@@ -142,6 +156,7 @@ class PlaylistsExplore extends React.Component {
                         
                         <div className="playlist-buttons">
                             <button
+                                onClick={() => this.handlePlay()}
                                 className="artist-show-play">
                                 PLAY
                             </button>

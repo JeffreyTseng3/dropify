@@ -8,6 +8,7 @@ class ArtistShowHeader extends React.Component {
         this.handleAddToCollection = this.handleAddToCollection.bind(this);
         this.handleRemoveFromCollection = this.handleRemoveFromCollection.bind(this);
         this.ifSaved = this.ifSaved.bind(this);
+        this.handlePlay = this.handlePlay.bind(this);
     }
 
   
@@ -47,6 +48,19 @@ class ArtistShowHeader extends React.Component {
         } 
     }
 
+    handlePlay() {
+        console.log('handleplay')
+        let { artistId } = this.props.match.params;
+        let { artist, fetchCurrentSong, setMusicPlayType } = this.props;
+        let songIds = artist ? artist.song_ids : null;
+        let songId = songIds ? songIds[0] : null;
+        fetchCurrentSong(songId);
+        console.log(songId);
+        let musicPlayType = { artist: artistId }
+        setMusicPlayType(musicPlayType);
+
+    }
+
     render() {
         let { artist, currentUserId } = this.props;
         let name = artist ? artist.name : null;
@@ -83,7 +97,9 @@ class ArtistShowHeader extends React.Component {
                     </div>
                     
                     <div className="artist-play-library">
-                        <button className="artist-show-play">PLAY</button>
+                        <button className="artist-show-play"
+                            onClick={() => this.handlePlay()}>
+                                PLAY</button>
                         {followBtn}
                        
                     

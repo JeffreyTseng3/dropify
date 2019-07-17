@@ -5,6 +5,8 @@ import AlbumShowModule from './album_show_module';
 import { fetchAlbum } from '../../../actions/album_actions';
 import { fetchArtist } from '../../../actions/artist_actions'; 
 import { addToCollection, removeFromCollection, fetchCollection } from "../../../actions/collection_actions";
+import { receiveMusicPlayType } from "../../../actions/queue_actions";
+import { fetchCurrentSong } from '../../../actions/song_actions';
 
 const msp = state => {
     let artists = Object.values(state.entities.artists);
@@ -19,6 +21,7 @@ const msp = state => {
         albums: albums,
         collection: collection,
         
+        
 
     })
 }
@@ -30,6 +33,8 @@ const mdp = dispatch => {
         addToCollection: (currentUserId, albumId, type)=> dispatch(addToCollection(currentUserId, albumId, type)),
         fetchCollection: () => dispatch(fetchCollection()),
         removeFromCollection: (currentUserId, albumId, type) => dispatch(removeFromCollection(currentUserId, albumId, type)),
+        setMusicPlayType: musicPlayType => dispatch(receiveMusicPlayType(musicPlayType)),
+        fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
     })
 }
 

@@ -5,6 +5,8 @@ import { withRouter } from "react-router"
 import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
 import { fetchUser } from '../../../actions/user_actions';
 
+import { receiveMusicPlayType } from "../../../actions/queue_actions";
+import { fetchCurrentSong } from '../../../actions/song_actions';
 import { addToCollection, removeFromCollection, fetchCollection } from "../../../actions/collection_actions";
 
 // import { log } from "util";
@@ -33,6 +35,8 @@ const mdp = dispatch => {
         fetchCollection: () => dispatch(fetchCollection()),
         removeFromCollection: (currentUserId, playlistId, type) => dispatch(removeFromCollection(currentUserId, playlistId, type)),
         // fetchPlaylists: () => dispatch(fetchPlaylists())
+        setMusicPlayType: musicPlayType => dispatch(receiveMusicPlayType(musicPlayType)),
+        fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
     });
 };
 

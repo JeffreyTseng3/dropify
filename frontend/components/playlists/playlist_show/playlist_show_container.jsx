@@ -3,7 +3,7 @@ import PlaylistShow from "./playlist_show"
 import { connect } from "react-redux";
 import { withRouter } from "react-router"
 import { fetchPlaylist, fetchPlaylists } from "../../../actions/playlist_actions";
-import { fetchUser } from '../../../actions/user_actions';
+import { fetchUser, fetchUsers } from '../../../actions/user_actions';
 
 import { receiveMusicPlayType } from "../../../actions/queue_actions";
 import { fetchCurrentSong } from '../../../actions/song_actions';
@@ -37,6 +37,7 @@ const mdp = dispatch => {
         // fetchPlaylists: () => dispatch(fetchPlaylists())
         setMusicPlayType: musicPlayType => dispatch(receiveMusicPlayType(musicPlayType)),
         fetchCurrentSong: id => dispatch(fetchCurrentSong(id)),
+        fetchUsers: () => dispatch(fetchUsers()),
     });
 };
 

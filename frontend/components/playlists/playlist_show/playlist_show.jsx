@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { fetchPlaylists } from "../../../actions/playlist_actions";
 import PlaylistSongItemContainer from "../playlist_song_item/playlist_song_item_container";
+import { fetchUsers } from "../../../actions/user_actions";
 
 class PlaylistsExplore extends React.Component {
     constructor(props) {
@@ -14,14 +15,22 @@ class PlaylistsExplore extends React.Component {
         this.handlePlay = this.handlePlay.bind(this);
     }
 
-    
+    // componentDidUpdate(prevProps) {
+        // if (prevProps !== this.props) {
+        //     let { playlistId } = this.props.match.params;
+        //     let { playlists, fetchUser } = this.props;
+        //     let myPlaylist = playlists ? playlists.filter(playlist => playlist.id == playlistId)[0] : null;
+        //     let authorId = playlists ? myPlaylist.author_id : null;
+        //     fetchUser(authorId);
+        // }
+    // }
  
     componentDidMount() {
         let { playlistId } =  this.props.match.params;
-        let { fetchPlaylist, fetchUser, currentUserId} = this.props;
+        let { fetchPlaylist, fetchUser, currentUserId, fetchUsers } = this.props;
         fetchPlaylist(playlistId);
         fetchUser(currentUserId);
-        
+        fetchUsers();
     }
 
     sortSongs(songIds, mySongs) {
@@ -95,6 +104,9 @@ class PlaylistsExplore extends React.Component {
         let musicPlayType = { playlist: playlistId }
         setMusicPlayType(musicPlayType);
     }
+    
+
+
 
     render() {
         let { playlistId } = this.props.match.params;
@@ -113,8 +125,10 @@ class PlaylistsExplore extends React.Component {
             return <PlaylistSongItemContainer key={song.id} song={song} />
         }) : null;
         let type = 'Playlist';
-        let myUser = users ? users.filter(user => user.id === currentUserId)[0] : null; 
+        let authorId = myPlaylist ? myPlaylist.author_id : null;
+        let myUser = users && authorId ? users.filter(user => user.id === authorId)[0] : null; 
         let author = myUser ? myUser.username : null;
+       
 
 
         let followBtn;
@@ -138,7 +152,7 @@ class PlaylistsExplore extends React.Component {
                 </button>)
         };
 
-        let displayFollowBtn = myUser ? (myUser.id === currentUserId ? 
+        let displayFollowBtn = myUser ? (authorId === currentUserId ? 
               null : followBtn) : null;
 
         return (

@@ -54,6 +54,10 @@ class Api::UsersController < ApplicationController
     render "api/users/show"
   end
 
+  def index 
+    @users = User.all 
+    render "api/users/index"
+  end
 
   private
 

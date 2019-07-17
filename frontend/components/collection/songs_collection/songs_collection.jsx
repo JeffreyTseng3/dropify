@@ -2,6 +2,8 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import PlaylistSongItemContainer from "../../playlists/playlist_song_item/playlist_song_item_container";
+
 
 class SongsCollection extends React.Component {
 
@@ -28,13 +30,19 @@ class SongsCollection extends React.Component {
 
     render() {
 
+        let { songs } = this.props;
 
         let myIds = this.returnMyIds();
         console.log(myIds);
 
+        let mySongs = songs && myIds ? songs.filter(song => myIds.includes(song.id)) : null;
+        let songsDisplay = mySongs.map(song => {
+            return <PlaylistSongItemContainer key={song.id} song={song} />
+        })
+
         return (
             <>
-
+                {songsDisplay}
             </>
 
         )

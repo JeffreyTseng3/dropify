@@ -11,6 +11,7 @@ const msp = (state) => {
         
         currentUserId: state.session.currentUserId,
         collection: Object.values(state.collection), 
+        artists: Object.values(state.entities.artists),
     });
 };
 

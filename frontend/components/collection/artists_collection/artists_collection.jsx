@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from 'react-router-dom';
 import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import ArtistIconContainer from '../../icons/artists/artist_icon_container';
 
 class ArtistsCollection extends React.Component {
 
@@ -24,15 +25,25 @@ class ArtistsCollection extends React.Component {
     componentDidMount() {
         this.props.fetchArtists();
     }
-    
-    render() {
 
-       let myIds = this.returnMyIds();
+    render() {
+        let { artists } = this.props;
+
+        let myIds = this.returnMyIds();
         console.log(myIds);
 
-
+        let myArtists = artists && myIds ? artists.filter(artist => myIds.includes(artist.id)) : null; 
+        let artistsDisplay = myArtists.map(artist => {
+            return <ArtistIconContainer key={artist.id} artist={artist} />
+        })
         return (
-            <>
+            <>  
+                <div className="albums-on-explore-container">
+
+                    <div className="album-items-scroll">
+                        {artistsDisplay}
+                    </div>
+                </div>
                 
             </>
            

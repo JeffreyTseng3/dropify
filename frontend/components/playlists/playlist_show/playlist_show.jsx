@@ -60,7 +60,7 @@ class PlaylistsExplore extends React.Component {
         let ans = collection.filter(item => item.followable_id == playlistId && item.followable_type == type && currentUserId === item.user_id);
         let id = ans ? ans[0].id : null;
 
-        // console.log(ans, id);
+
 
         removeFromCollection(id);
         fetchCollection();
@@ -71,11 +71,11 @@ class PlaylistsExplore extends React.Component {
         if (collection === undefined) {
 
         } else {
-            console.log(collection);
+        
             let { playlistId } = this.props.match.params;
             let type = "Playlist";
             let ans = collection.filter(item => item.followable_id == playlistId && item.followable_type == type && currentUserId === item.user_id);
-            console.log(ans);
+            
             if (ans.length === 1) {
                 return true;
             }
@@ -106,7 +106,7 @@ class PlaylistsExplore extends React.Component {
         let followBtn;
 
         if (this.ifSaved()) {
-            console.log('saved');
+         
 
             followBtn = (
                 <button
@@ -124,6 +124,8 @@ class PlaylistsExplore extends React.Component {
                 </button>)
         };
 
+        let displayFollowBtn = myUser ? (myUser.id === currentUserId ? 
+              null : followBtn) : null;
 
         return (
             <div className="playlist-show-container">
@@ -150,7 +152,7 @@ class PlaylistsExplore extends React.Component {
 
                                 FOLLOW
                         </button> */}
-                            {followBtn}
+                            {displayFollowBtn}
 
 
                         </div>

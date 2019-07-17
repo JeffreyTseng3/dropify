@@ -3,7 +3,7 @@ import { closeModal } from './modal_actions';
 import { receivePlaylist } from "./playlist_actions";
 
 export const addToPlaylist = (playlistSongRelation) => dispatch => {
-    // console.log(songId, playlist_id);
+
     
     return PlaylistSongsAPIUtil.createPlaylistSong(playlistSongRelation);
 }

@@ -51,7 +51,6 @@ class OptionsModal extends React.Component {
         let ans = collection.filter(item => item.followable_id == songId && item.followable_type == type && currentUserId === item.user_id);
         let id = ans ? ans[0].id : null;
 
-        // console.log(ans, id);
 
         removeFromCollection(id);
         fetchCollection();
@@ -64,11 +63,11 @@ class OptionsModal extends React.Component {
         if (collection === undefined) {
 
         } else {
-            console.log(collection);
+
             
             let type = "Song";
             let ans = collection.filter(item => item.followable_id == songId && item.followable_type == type && currentUserId === item.user_id);
-            console.log(ans);
+            
             if (ans.length === 1) {
                 return true;
             }
@@ -97,7 +96,7 @@ class OptionsModal extends React.Component {
         let followBtn;
 
         if (this.ifSaved(songId)) {
-            console.log('saved');
+          
 
             followBtn = (
                 <button

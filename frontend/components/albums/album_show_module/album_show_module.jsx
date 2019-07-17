@@ -30,8 +30,6 @@ class AlbumShowModule extends React.Component {
         let ans = collection.filter(item => item.followable_id == albumId && item.followable_type == type && currentUserId === item.user_id);
         let id = ans ? ans[0].id : null;
 
-        // console.log(ans, id);
-
         removeFromCollection(id);
         fetchCollection();
     }
@@ -41,11 +39,11 @@ class AlbumShowModule extends React.Component {
         if (collection === undefined) {
             
         } else {
-            console.log(collection);
+ 
             let { albumId } = this.props.match.params;
             let type = "Album";
             let ans = collection.filter(item => item.followable_id == albumId && item.followable_type == type && currentUserId === item.user_id);
-            console.log(ans);
+         
             if (ans.length === 1) {
                 return true;
             }
@@ -72,7 +70,7 @@ class AlbumShowModule extends React.Component {
         let followBtn;
 
         if (this.ifSaved()) {
-            console.log('saved');
+            
 
             followBtn = (
                 <button

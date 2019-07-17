@@ -31,7 +31,7 @@ export const addToCollection = (currentUserId, artistId, type) => dispatch => {
         followable_id: artistId, 
         followable_type: type
     }
-    console.log(data);
+    
     return CollectionAPIUtil.createCollectionItem(data)
     .then(item => {
         dispatch(receiveCollectionItem(item))

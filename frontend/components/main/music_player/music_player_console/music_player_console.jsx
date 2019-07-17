@@ -40,8 +40,7 @@ class MusicPlayerConsole extends React.Component {
     }
 
     updateScrubber() {
-        // debugger
-        // console.log(this.state.currentTime);
+       
         return (e) => {
             this.setState({currentTime: Number(e.target.value)})
             let audio_ref = this.myAudioRef.current;
@@ -68,12 +67,12 @@ class MusicPlayerConsole extends React.Component {
 
         }
         this.setState({ playStatus: status })
-        // console.log(this.state);
+ 
     }
 
     updateVolume() {
         return (e) => {
-            // console.log(this.state);
+        
             this.setState({ volume: e.target.value })
         }
     }

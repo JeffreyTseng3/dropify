@@ -26,7 +26,7 @@ class ArtistShowHeader extends React.Component {
         let ans = collection.filter(item => item.followable_id == artistId && item.followable_type == type && currentUserId === item.user_id);
         let id = ans ? ans[0].id : null;
         
-        // console.log(ans, id);
+ 
         
         removeFromCollection(id);
         fetchCollection();
@@ -55,7 +55,7 @@ class ArtistShowHeader extends React.Component {
         let { artistId } = this.props.match.params;
         let followBtn;
         if (this.ifSaved()){
-            console.log('saved');
+      
 
             followBtn = (
                 <button

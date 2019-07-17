@@ -12,6 +12,8 @@ class PlaylistsCollection extends React.Component {
         this.state = {
             author_id: this.props.currentUserId
         }
+        this.returnMyIds = this.returnMyIds.bind(this);
+
     }
 
     componentDidUpdate(prevProps) {
@@ -30,11 +32,27 @@ class PlaylistsCollection extends React.Component {
     }
 
 
+    returnMyIds() {
+        let { collection, currentUserId } = this.props;
+        let type = "Playlist";
+
+        let myItems = collection.filter(item => item.followable_type === 'Playlist' && item.user_id === currentUserId)
+
+        let ans = [];
+        myItems.forEach(item => ans.push(item.followable_id));
+        return ans;
+    }
+
     render() {
         
         const { playlists, currentUserId } = this.props;
+        let myIds = this.returnMyIds();
+        let myPlaylistsCollection = playlists && myIds ? playlists.filter(playlist => myIds.includes(playlist.id)) : null; 
+        
         let myPlaylists = playlists ? playlists.filter(playlist => playlist.author_id === currentUserId) : null;
-        let displayPlayists = myPlaylists ? myPlaylists.map(playlist => {
+        let allPlaylists = myPlaylists.concat(myPlaylistsCollection);
+        console.log(myPlaylistsCollection, myPlaylists);
+        let displayPlayists = allPlaylists ? allPlaylists.map(playlist => {
             return (
                     <PlaylistsCollectionItem key={playlist.id} playlist={playlist} />
 

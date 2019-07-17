@@ -8,6 +8,7 @@ const msp = (state, ownProps) => {
     return ({
         playlists: Object.values(state.entities.playlists),
         currentUserId: state.session.currentUserId,
+        collection: Object.values(state.collection), 
     });
 };
 

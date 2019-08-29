@@ -22,6 +22,7 @@ class NewPlaylistModal extends React.Component {
     
     handleSubmit(e) {
         e.preventDefault();
+        
         let { closeModal, createPlaylist, showSinglePlaylist} = this.props;
 
         if (this.state.title === "") {

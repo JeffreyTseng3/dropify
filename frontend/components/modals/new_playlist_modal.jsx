@@ -20,6 +20,7 @@ class NewPlaylistModal extends React.Component {
         };
     }
     
+    
     handleSubmit(e) {
         e.preventDefault();
         

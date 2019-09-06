@@ -9,6 +9,7 @@ const msp = (state) => {
     
     return ({
         
+
         
         currentUserId: state.session.currentUserId,
         collection: Object.values(state.collection), 

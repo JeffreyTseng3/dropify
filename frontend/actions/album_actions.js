@@ -17,6 +17,7 @@ export const receiveAlbum = payload => {
     }
 }
 
+
 export const fetchAlbums = () => dispatch => {
     return AlbumAPIUtil.fetchAlbums()
         .then(albums => {

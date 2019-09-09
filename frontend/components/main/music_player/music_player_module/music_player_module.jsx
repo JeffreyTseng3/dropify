@@ -21,9 +21,10 @@ class MusicPlayerModule extends React.Component {
 
     render() {
         let { current_song, fetchCurrentSong, songs } = this.props;
-        current_song = current_song === undefined && songs !== [] ? songs[0] : current_song;
+
+        current_song = current_song === undefined ? (songs ? songs[0] : null) : current_song;
     
-   
+        // debugger
         return (
             <div className="music-player-module">
                 <MusicPlayerInfoContainer current_song={current_song}/>

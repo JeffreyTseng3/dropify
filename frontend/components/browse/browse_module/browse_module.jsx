@@ -7,6 +7,10 @@ class BrowseModule extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        let { fetchSongs } = this.props;
+        fetchSongs();
+    }
 
     render() {
         return (

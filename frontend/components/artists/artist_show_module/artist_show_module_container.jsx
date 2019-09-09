@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import ArtistShowModule from "./artist_show_module";
 import { fetchArtist } from "../../../actions/artist_actions";
 
+
 const msp = state => {
     let artists = Object.values(state.entities.artists);
     let songs = Object.values(state.entities.songs);
@@ -16,6 +17,7 @@ const msp = state => {
 const mdp = dispatch => {
     return ({
         fetchArtist: id => dispatch(fetchArtist(id)),
+        
     })
 }
 

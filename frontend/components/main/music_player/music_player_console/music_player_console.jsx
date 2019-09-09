@@ -258,7 +258,7 @@ class MusicPlayerConsole extends React.Component {
                     <div className="music-play-mod"> 
 
                         <div className='music-buttons'> 
-                            <i className="far fa-thumbs-down"></i>
+                            {/* <i className="far fa-thumbs-down"></i> */}
                             
                             <button 
                                 className='music-prev-button'
@@ -280,7 +280,7 @@ class MusicPlayerConsole extends React.Component {
                                 className="music-next-btn">
                                 <i className="fas fa-step-forward"></i>
                             </button>
-                            <i className="far fa-thumbs-up"></i>
+                            {/* <i className="far fa-thumbs-up"></i> */}
                         </div>
 
 

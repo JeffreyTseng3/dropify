@@ -1,6 +1,7 @@
 import React from "react";
 import ArtistShowHeaderContainer from "../artist_show_header/artist_show_header_container";
 import ArtistShowAreaContainer from "../artist_show_area/artist_show_area_container";
+import { fetchSongs } from "../../../actions/song_actions";
 
 class ArtistShowModule extends React.Component {
     constructor(props) {
@@ -11,7 +12,8 @@ class ArtistShowModule extends React.Component {
 
     componentDidMount() {
         let { artistId } = this.props.match.params;
-        let { fetchArtist } = this.props;
+        let { fetchArtist} = this.props;
+  
         fetchArtist(artistId);
     }
 

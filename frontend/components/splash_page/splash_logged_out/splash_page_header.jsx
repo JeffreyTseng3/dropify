@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import AlbumIconContainer  from '../../icons/albums/album_icon_container';
 import TopArtistContainer from '../../icons/splash/top_artist_container';
+import { fetchSongs } from '../../../actions/song_actions';
 
 
 class SplashPageHeader extends React.Component {
@@ -17,6 +18,7 @@ class SplashPageHeader extends React.Component {
         let { fetchAlbums, fetchArtists } = this.props;
         fetchAlbums();
         fetchArtists();
+   
     }
 
     render() { 
@@ -68,7 +70,7 @@ class SplashPageHeader extends React.Component {
 
                     <div className="splash-tophalf-info">
                         <div className="splash-info-1">Music for App Academy</div>
-                        <div className="splash-info-2">Just a few songs seeded. Any donation would be appreciated.</div>
+                        {/* <div className="splash-info-2">Just a few songs seeded. Any donation would be appreciated.</div> */}
                         <Link className="splash-info-btn" to="/signup">GET DROPIFY NOW</Link>  
                     </div>
 
@@ -82,12 +84,12 @@ class SplashPageHeader extends React.Component {
                 </div>
 
                 <div className="splash-white-space">
-                    <div className="splash-get-premium">
+                    {/* <div className="splash-get-premium">
                         
                         <div className="quote">Yeah, everybody's got a bomb. We could all die any day. But before I'll let that happen. I'll dance my life away. -Prince</div>   
                         <div className="quote">Music does a lot of things for a lot of people. It's transporting, for sure. It can take you right back, years back, to the very moment certain things happened in your life. It's uplifting, it's encouraging, it's strengthening. - Aretha Franklin</div>
 
-                    </div>
+                    </div> */}
                 </div>
                 
                 <div className='splash-footer'>

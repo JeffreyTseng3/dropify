@@ -4,6 +4,8 @@ import { logout } from "../../../actions/session_actions";
 import { withRouter } from 'react-router'
 import { fetchAlbums } from "../../../actions/album_actions";
 import { fetchArtists } from '../../../actions/artist_actions';
+import { fetchSongs } from '../../../actions/song_actions';
+
 const msp = state => {
     let albums = Object.values(state.entities.albums);
     let artists = Object.values(state.entities.artists);
@@ -20,6 +22,7 @@ const mdp = dispatch => {
         logout: () => dispatch(logout()),
         fetchAlbums: () => dispatch(fetchAlbums()),
         fetchArtists: () => dispatch(fetchArtists()),
+       
     };
 
 };

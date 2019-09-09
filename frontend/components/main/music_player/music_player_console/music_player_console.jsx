@@ -236,8 +236,8 @@ class MusicPlayerConsole extends React.Component {
 
     render() {
 
-        let { current_song } = this.props;
-        let songUrl = current_song ? current_song.songUrl : null;
+        let { current_song, demo_song } = this.props;
+        let songUrl = current_song ? current_song.songUrl : (demo_song ? demo_song.songUrl : null);
         let song_length = current_song ? current_song.song_length : null;
         let song_max = this.secondsToMins(song_length);
         let time_current = this.secondsToMins(this.state.currentTime);

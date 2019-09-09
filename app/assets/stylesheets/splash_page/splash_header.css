@@ -116,7 +116,7 @@
 
 
 .splash-white-space {
-    height: 500px;
+    height: 50px;
     background: white;
     position:relative;
     display: flex;
@@ -139,7 +139,7 @@
 
 
 .splash-footer {
-   height: 100px; 
+   height: 200px; 
    background:#000;
     position:relative;
     width: 100%;

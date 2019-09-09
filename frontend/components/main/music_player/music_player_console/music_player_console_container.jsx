@@ -11,7 +11,7 @@ const msp = state => {
         albums: Object.values(state.entities.albums),
         playlists: Object.values(state.entities.playlists),
         musicPlayType: state.musicPlayType,
- 
+        demo_song: Object.values(state.entities.songs)[0],
     }
 }
 

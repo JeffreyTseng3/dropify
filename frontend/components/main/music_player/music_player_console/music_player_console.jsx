@@ -231,9 +231,12 @@ class MusicPlayerConsole extends React.Component {
 
     handleMute() {
         let audio_ref = this.myAudioRef.current;
-        audio_ref.volume = 0;
-        this.setState({ volume: '0'})
-        console.log('hello');
+        if (this.state.volume !== "0") {
+            this.setState({prevVolume: this.state.volume });
+            this.setState({ volume: '0'})
+        } else {
+            this.setState({volume: this.state.prevVolume});
+        }
     }
 
     render() {

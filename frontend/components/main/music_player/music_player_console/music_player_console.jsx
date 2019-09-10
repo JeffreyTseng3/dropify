@@ -8,7 +8,8 @@ class MusicPlayerConsole extends React.Component {
             playStatus: 'play',
             currentTime: 0,
             volume: "100", 
-            playPauseBtn: (<i className="far fa-play-circle fa-2x"></i> )
+            playPauseBtn: (<i className="far fa-play-circle fa-2x"></i> ),
+            prevVolume: '100',
         }
         this.togglePlay = this.togglePlay.bind(this);
         this.updateVolume = this.updateVolume.bind(this);
@@ -18,6 +19,7 @@ class MusicPlayerConsole extends React.Component {
         this.nextSong = this.nextSong.bind(this);
         this.prevSong = this.prevSong.bind(this);
         this.forcePrevSong = this.forcePrevSong.bind(this);
+        this.handleMute = this.handleMute.bind(this);
     }
 
     secondsToMins(sec) {
@@ -163,17 +165,11 @@ class MusicPlayerConsole extends React.Component {
     
     prevSong(command) {
 
-
         let audio_ref = this.myAudioRef.current;
-
 
         if (command === 'forcePrev') {
             this.forcePrevSong();
         }
-
-
-
-
 
         if (audio_ref.currentTime < 3) {
             audio_ref.currentTime = 0;
@@ -181,7 +177,6 @@ class MusicPlayerConsole extends React.Component {
         }
         if (audio_ref.currentTime > 2){ 
             this.forcePrevSong();
-         
         }
 
     }
@@ -234,6 +229,13 @@ class MusicPlayerConsole extends React.Component {
         }
     }
 
+    handleMute() {
+        let audio_ref = this.myAudioRef.current;
+        audio_ref.volume = 0;
+        this.setState({ volume: '0'})
+        console.log('hello');
+    }
+
     render() {
 
         let { current_song, demo_song } = this.props;
@@ -249,6 +251,10 @@ class MusicPlayerConsole extends React.Component {
 
         let playPauseImg = this.getPlayPauseBtn();
         // let playPauseImg = this.state.playPauseBtn;
+
+        let volumeButton = this.state.volume === "0" ? 
+            <i className="fas fa-volume-mute"></i> : 
+            <i className="fas fa-volume-up"></i>;
 
         return (
             <>
@@ -301,6 +307,12 @@ class MusicPlayerConsole extends React.Component {
 
                     
                     <div className="music-volume">
+
+                        <button 
+                            className="music-volume-on"
+                            onClick={() => this.handleMute()}>
+                            { volumeButton }
+                        </button>
 
                         <input 
                             className="music-volume-input"

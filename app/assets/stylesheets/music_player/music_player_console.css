@@ -59,6 +59,13 @@
 .fa-step-backward {
     color: white;
 }
+
+.fa-volume-up {
+    color: grey;
+}
+.fa-volume-mute {
+    color: grey;
+}
 .music-seek-input {
     width: 80%;
     border-radius: 5px;
@@ -73,12 +80,16 @@
 }
 
 .music-volume {
-    width: 150px;
+    width: 180px;
     position: relative;
     display: flex;
     height: 40px;
     align-items: center;  
     padding-right: 20px;
+}
+
+.music-volume-on {
+    padding: 0px 10px;
 }
 
 
